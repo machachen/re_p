@@ -14,7 +14,7 @@
       "type": "可撤銷生前信託",
       "ownershipPct": 80.0,
       "equityContributed": 38400000,
-      "currentEquityValue": 70478400,
+      "currentEquityValue": 70475200,
       "role": "管理成員",
       "since": "2019-03-01"
     },
@@ -23,7 +23,7 @@
       "type": "私募股權有限合夥",
       "ownershipPct": 20.0,
       "equityContributed": 9600000,
-      "currentEquityValue": 17619600,
+      "currentEquityValue": 17618800,
       "role": "被動投資人",
       "since": "2019-03-01"
     }
@@ -58,11 +58,11 @@
     }
   ],
   "capitalStack": {
-    "assetValue": 171840000,
+    "assetValue": 171836000,
     "seniorDebt": 83742000,
     "equityContributed": 53400000,
     "accumulatedRetainedEarnings": 7500000,
-    "netEquity": 88098000,
+    "netEquity": 88094000,
     "seniorDebtPct": 48.7,
     "equityPct": 51.3
   },

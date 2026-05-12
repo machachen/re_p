@@ -26,7 +26,7 @@
     { "label": "每m²均價",        "value": "$182,000",  "subLabel": "土地及建物綜合均價",    "trend": "up",   "trendValue": "+$12,000 vs 去年" },
     { "label": "租賃入住率",      "value": "100%",       "subLabel": "全聯福利中心（單一租戶）","trend": "flat", "trendValue": "穩定" },
     { "label": "貸款餘額",        "value": "$27.8M",     "subLabel": "截至2026年5月",          "trend": "down", "trendValue": "-$2.2M 年初至今" },
-    { "label": "業主淨權益",      "value": "$205.8M",    "subLabel": "資產價值扣除貸款",       "trend": "up",   "trendValue": "+$13.5M 年增" }
+    { "label": "業主淨權益",      "value": "$205.7M",    "subLabel": "資產價值扣除貸款",       "trend": "up",   "trendValue": "+$13.5M 年增" }
   ],
   "kpiCards": [
     {

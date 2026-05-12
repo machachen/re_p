@@ -14,7 +14,7 @@
       "type": "可撤銷生前信託",
       "ownershipPct": 100.0,
       "equityContributed": 74400000,
-      "currentEquityValue": 93500000,
+      "currentEquityValue": 93512000,
       "role": "唯一所有人（受益人：陳氏家族成員）",
       "since": "2013-03-18"
     }
@@ -27,11 +27,11 @@
   "totalEquityContributed": 74400000,
   "debtSummary": [],
   "capitalStack": {
-    "assetValue": 93500000,
+    "assetValue": 93512000,
     "seniorDebt": 0,
     "equityContributed": 74400000,
     "accumulatedRetainedEarnings": 0,
-    "netEquity": 93500000,
+    "netEquity": 93512000,
     "seniorDebtPct": 0.0,
     "equityPct": 100.0
   },

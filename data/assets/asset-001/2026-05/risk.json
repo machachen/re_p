@@ -163,11 +163,11 @@
       "id": "S-05",
       "name": "估值下跌-15%",
       "category": "估值",
-      "baseValue": 171840000,
-      "baseEquity": 88098000,
+      "baseValue": 171836000,
+      "baseEquity": 88094000,
       "baseLTV": 48.7,
-      "scenarioValue": 146064000,
-      "scenarioEquity": 62322000,
+      "scenarioValue": 146060600,
+      "scenarioEquity": 62318600,
       "scenarioLTV": 57.3,
       "verdict": "LTV上升至57.3%——仍在財務契約範圍內。權益縮減NT$2,578萬，但資產未發生資不抵債。"
     }

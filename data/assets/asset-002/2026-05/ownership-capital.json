@@ -14,7 +14,7 @@
       "type": "可撤銷生前信託",
       "ownershipPct": 100.0,
       "equityContributed": 22000000,
-      "currentEquityValue": 205760000,
+      "currentEquityValue": 205744000,
       "role": "唯一所有人",
       "since": "2003-07-15"
     }
@@ -46,11 +46,11 @@
     }
   ],
   "capitalStack": {
-    "assetValue": 233600000,
+    "assetValue": 233584000,
     "seniorDebt": 27840000,
     "equityContributed": 28420000,
     "accumulatedRetainedEarnings": 35000000,
-    "netEquity": 205760000,
+    "netEquity": 205744000,
     "seniorDebtPct": 11.9,
     "equityPct": 88.1
   },

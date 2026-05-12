@@ -21,24 +21,24 @@
   "valuation": {
     "purchasePrice": 22000000,
     "purchaseDate": "2003-07-15",
-    "lastAppraisalValue": 218500000,
+    "lastAppraisalValue": 218464000,
     "lastAppraisalDate": "2025-10-15",
-    "currentEstimatedValue": 233600000,
+    "currentEstimatedValue": 233584000,
     "estimationBasis": "信義房屋商業不動產部門估價意見書（2026年5月）；採收益法及市場比較法",
     "impliedCapRate": "1.86%",
     "valuePM2": 182000,
-    "valueChange": 211600000,
-    "valueChangePct": 961.8,
-    "netEquity": 205760000,
+    "valueChange": 211584000,
+    "valueChangePct": 961.7,
+    "netEquity": 205744000,
     "history": [
       { "date": "2003-07-15", "value": 22000000,  "source": "取得價格" },
-      { "date": "2008-06-01", "value": 35400000,  "source": "仲介估價" },
-      { "date": "2012-11-01", "value": 57600000,  "source": "正式鑑價" },
-      { "date": "2016-05-01", "value": 94800000,  "source": "正式鑑價" },
-      { "date": "2019-11-01", "value": 138500000, "source": "正式鑑價" },
-      { "date": "2022-10-01", "value": 167400000, "source": "正式鑑價" },
-      { "date": "2025-10-15", "value": 218500000, "source": "正式鑑價" },
-      { "date": "2026-05-01", "value": 233600000, "source": "仲介估價意見書" }
+      { "date": "2008-06-01", "value": 35376000,  "source": "仲介估價" },
+      { "date": "2012-11-01", "value": 57624000,  "source": "正式鑑價" },
+      { "date": "2016-05-01", "value": 94776000,  "source": "正式鑑價" },
+      { "date": "2019-11-01", "value": 138464000, "source": "正式鑑價" },
+      { "date": "2022-10-01", "value": 167424000, "source": "正式鑑價" },
+      { "date": "2025-10-15", "value": 218464000, "source": "正式鑑價" },
+      { "date": "2026-05-01", "value": 233584000, "source": "仲介估價意見書" }
     ]
   },
   "capex": [
@@ -56,7 +56,7 @@
     },
     "value": {
       "Downside": [223000000, 225800000, 228600000, 231400000, 234200000],
-      "Base":     [233600000, 240400000, 247400000, 254800000, 262600000],
+      "Base":     [233584000, 240400000, 247400000, 254800000, 262600000],
       "Upside":   [233600000, 247200000, 261800000, 277200000, 293900000]
     }
   }

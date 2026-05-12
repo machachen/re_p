@@ -23,24 +23,24 @@
   "valuation": {
     "purchasePrice": 126000000,
     "purchaseDate": "2019-03-01",
-    "lastAppraisalValue": 163500000,
+    "lastAppraisalValue": 163492000,
     "lastAppraisalDate": "2025-11-20",
-    "currentEstimatedValue": 171840000,
+    "currentEstimatedValue": 171836000,
     "estimationBasis": "仲介估價意見書（2026年5月）；以過去12個月NOI應用資本化率推算",
     "impliedCapRate": "5.94%",
     "valuePM2": 162000,
-    "valueChange": 45840000,
+    "valueChange": 45836000,
     "valueChangePct": 36.4,
-    "netEquity": 88098000,
+    "netEquity": 88094000,
     "history": [
       { "date": "2019-03-01", "value": 126000000, "source": "取得價格" },
-      { "date": "2020-12-01", "value": 132800000, "source": "仲介估價" },
-      { "date": "2021-11-15", "value": 141600000, "source": "正式鑑價" },
-      { "date": "2022-11-20", "value": 149800000, "source": "正式鑑價" },
-      { "date": "2023-11-18", "value": 155200000, "source": "正式鑑價" },
-      { "date": "2024-11-22", "value": 160500000, "source": "正式鑑價" },
-      { "date": "2025-11-20", "value": 163500000, "source": "正式鑑價" },
-      { "date": "2026-05-01", "value": 171840000, "source": "仲介估價意見書" }
+      { "date": "2020-12-01", "value": 132843000, "source": "仲介估價" },
+      { "date": "2021-11-15", "value": 141576000, "source": "正式鑑價" },
+      { "date": "2022-11-20", "value": 149824000, "source": "正式鑑價" },
+      { "date": "2023-11-18", "value": 155184000, "source": "正式鑑價" },
+      { "date": "2024-11-22", "value": 160488000, "source": "正式鑑價" },
+      { "date": "2025-11-20", "value": 163492000, "source": "正式鑑價" },
+      { "date": "2026-05-01", "value": 171836000, "source": "仲介估價意見書" }
     ]
   },
   "capex": [
@@ -59,7 +59,7 @@
     },
     "value": {
       "Downside": [162600000, 164700000, 166800000, 168900000, 171000000],
-      "Base":     [171840000, 181200000, 191400000, 202200000, 213800000],
+      "Base":     [171836000, 181200000, 191400000, 202200000, 213800000],
       "Upside":   [178400000, 194600000, 209200000, 225300000, 242600000]
     }
   }
