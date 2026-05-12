@@ -1,0 +1,37 @@
+{
+  "importantDocuments": [
+    { "name": "貸款合約 — 台北富邦銀行",          "category": "融資",   "date": "2021-10-15", "type": "PDF", "url": "#", "notes": "現有貸款；2026年10月到期。再融資關鍵文件。" },
+    { "name": "2025年房地產鑑價報告",             "category": "估值",   "date": "2025-11-20", "type": "PDF", "url": "#", "notes": "最新正式鑑價。NT$170,000,000。" },
+    { "name": "港景置業有限公司章程及股東協議",   "category": "所有權", "date": "2019-01-20", "type": "PDF", "url": "#", "notes": "公司治理文件；分配瀑布結構定義於此。" },
+    { "name": "2026年5月資產報告",               "category": "報告",   "date": "2026-05-08", "type": "PDF", "url": "#", "notes": "本報告。當期摘要。" },
+    { "name": "翻修範圍說明書 — 第二期（4B及7A戶）", "category": "營運",  "date": "2026-03-01", "type": "PDF", "url": "#", "notes": "進行中資本支出計畫。完工60%。" }
+  ],
+  "library": [
+    { "id": "DOC-001", "name": "買賣契約書",                          "category": "取得",   "date": "2018-12-10", "source": "履約保證公司",          "relatedSection": "所有權", "type": "PDF", "url": "#", "notes": "原始買賣契約；取得港景資產" },
+    { "id": "DOC-002", "name": "交割對帳單",                          "category": "取得",   "date": "2019-03-01", "source": "地政士事務所",          "relatedSection": "所有權", "type": "PDF", "url": "#", "notes": "最終對帳結算單" },
+    { "id": "DOC-003", "name": "第一期環境場址評估報告",              "category": "取得",   "date": "2018-11-20", "source": "台灣環境顧問有限公司",  "relatedSection": "風險",   "type": "PDF", "url": "#", "notes": "未發現認定環境條件" },
+    { "id": "DOC-004", "name": "港景置業有限公司章程及股東協議",      "category": "所有權", "date": "2019-01-20", "source": "港景法律事務所",        "relatedSection": "所有權", "type": "PDF", "url": "#", "notes": "80/20結構；分配瀑布" },
+    { "id": "DOC-005", "name": "陳氏家族信託信託書",                  "category": "所有權", "date": "2016-04-15", "source": "信託法律顧問",          "relatedSection": "所有權", "type": "PDF", "url": "#", "notes": "有限公司成員資格信託認證" },
+    { "id": "DOC-006", "name": "宏達資本有限合夥事業認購協議",        "category": "所有權", "date": "2019-02-10", "source": "宏達資本",              "relatedSection": "所有權", "type": "PDF", "url": "#", "notes": "有限合夥認購協議" },
+    { "id": "DOC-007", "name": "不動產所有權狀 — 港景住商混合資產",  "category": "所有權", "date": "2019-03-01", "source": "台北市地政事務所",      "relatedSection": "所有權", "type": "PDF", "url": "#", "notes": "已登記所有權狀；地號：XXXXXXXX" },
+    { "id": "DOC-008", "name": "貸款合約 — 台北富邦銀行",            "category": "融資",   "date": "2021-10-15", "source": "台北富邦銀行",          "relatedSection": "財務",   "type": "PDF", "url": "#", "notes": "現有優先貸款；2.25%固定利率；2026年10月到期" },
+    { "id": "DOC-009", "name": "不動產抵押設定契約",                  "category": "融資",   "date": "2021-10-15", "source": "地政士事務所",          "relatedSection": "財務",   "type": "PDF", "url": "#", "notes": "富邦銀行貸款擔保文件" },
+    { "id": "DOC-010", "name": "本票",                                "category": "融資",   "date": "2021-10-15", "source": "台北富邦銀行",          "relatedSection": "財務",   "type": "PDF", "url": "#", "notes": "原始NT$94,500,000本票" },
+    { "id": "DOC-011", "name": "個人連帶保證書 — 陳氏家族信託",      "category": "融資",   "date": "2021-10-15", "source": "台北富邦銀行",          "relatedSection": "財務",   "type": "PDF", "url": "#", "notes": "全額連帶保證" },
+    { "id": "DOC-012", "name": "2025年度財務報表",                    "category": "財務",   "date": "2026-02-28", "source": "CPA — 陳顧問事務所",    "relatedSection": "財務",   "type": "PDF", "url": "#", "notes": "經審計；作為申報稅務之基礎" },
+    { "id": "DOC-013", "name": "2024年度財務報表",                    "category": "財務",   "date": "2025-03-01", "source": "CPA — 陳顧問事務所",    "relatedSection": "財務",   "type": "PDF", "url": "#", "notes": "經審計" },
+    { "id": "DOC-014", "name": "2025年度個人所得稅申報資料",          "category": "財務",   "date": "2026-03-15", "source": "CPA — 陳顧問事務所",    "relatedSection": "財務",   "type": "PDF", "url": "#", "notes": "2025年度稅務申報" },
+    { "id": "DOC-015", "name": "2025年房地產鑑價報告",               "category": "估值",   "date": "2025-11-20", "source": "台灣太平洋不動產估價師事務所", "relatedSection": "財務", "type": "PDF", "url": "#", "notes": "NT$170,000,000；收益法及比較法" },
+    { "id": "DOC-016", "name": "2022年房地產鑑價報告",               "category": "估值",   "date": "2022-11-20", "source": "台灣太平洋不動產估價師事務所", "relatedSection": "財務", "type": "PDF", "url": "#", "notes": "NT$151,500,000" },
+    { "id": "DOC-017", "name": "仲介估價意見書 — 2026年5月",         "category": "估值",   "date": "2026-05-01", "source": "台灣信義房屋顧問有限公司","relatedSection": "財務",  "type": "PDF", "url": "#", "notes": "NT$175,000,000估算" },
+    { "id": "DOC-018", "name": "翻修合約 — 第二期",                  "category": "營運",   "date": "2026-03-10", "source": "永達室內裝修有限公司",  "relatedSection": "營運",   "type": "PDF", "url": "#", "notes": "NT$2,460,000合約；4B及7A戶" },
+    { "id": "DOC-019", "name": "翻修工作範圍說明書 — 第二期",        "category": "營運",   "date": "2026-03-01", "source": "永達室內裝修有限公司",  "relatedSection": "營運",   "type": "PDF", "url": "#", "notes": "4B及7A戶詳細工作範圍說明" },
+    { "id": "DOC-020", "name": "屋頂評估報告",                        "category": "營運",   "date": "2025-07-30", "source": "台灣屋頂顧問有限公司",  "relatedSection": "風險",   "type": "PDF", "url": "#", "notes": "發現防水膜磨損；建議2027年前全面更換" },
+    { "id": "DOC-021", "name": "物業管理合約",                        "category": "廠商",   "date": "2021-10-01", "source": "信義物業管理",          "relatedSection": "營運",   "type": "PDF", "url": "#", "notes": "EGI 5%；2026年9月到期" },
+    { "id": "DOC-022", "name": "保險單 — 財產及責任",                "category": "廠商",   "date": "2025-07-15", "source": "富邦產險",              "relatedSection": "風險",   "type": "PDF", "url": "#", "notes": "2026年7月到期須續約" },
+    { "id": "DOC-023", "name": "台北大安區市場報告 Q1 2026",         "category": "市場",   "date": "2026-04-10", "source": "信義房屋研究中心",      "relatedSection": "市場",   "type": "PDF", "url": "#", "notes": "次市場空置率、租金走勢" },
+    { "id": "DOC-024", "name": "竣工平面圖",                          "category": "圖說",   "date": "2019-05-01", "source": "建築師事務所",          "relatedSection": "總覽",   "type": "DWG", "url": "#", "notes": "12戶配置；1975年建物" },
+    { "id": "DOC-025", "name": "建物現況照片 — 2026年5月",           "category": "圖說",   "date": "2026-05-01", "source": "物業管理人",            "relatedSection": "總覽",   "type": "ZIP", "url": "#", "notes": "現況照片 — 外觀及各戶型" },
+    { "id": "DOC-026", "name": "2026年5月資產報告",                  "category": "報告",   "date": "2026-05-08", "source": "Asset Intelligence",    "relatedSection": "總覽",   "type": "PDF", "url": "#", "notes": "當期報告（本文件）" }
+  ]
+}

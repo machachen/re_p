@@ -1,0 +1,61 @@
+{
+  "incomeStatement": {
+    "period": "2026年度（自用持有，無租金收益）",
+    "currency": "NTD",
+    "rows": [
+      { "label": "租金收入（自用，不計入）",      "actual": 0,       "budget": 0,       "priorYear": 0,      "type": "income",    "indent": 0 },
+      { "label": "市場租金參考值（未實現）",       "actual": 0,       "budget": 0,       "priorYear": 0,      "type": "income",    "indent": 1 },
+      { "label": "有效總收入 (EGI)",               "actual": 0,       "budget": 0,       "priorYear": 0,      "type": "subtotal",  "indent": 0 },
+      { "label": "— 管理費（月費NT$35,000）",      "actual": -420000, "budget": -420000, "priorYear": -408720,"type": "expense",   "indent": 1 },
+      { "label": "— 房屋稅",                       "actual": -83427,  "budget": -83880,  "priorYear": -78618, "type": "expense",   "indent": 1 },
+      { "label": "— 地價稅",                       "actual": -34918,  "budget": -35760,  "priorYear": -33584, "type": "expense",   "indent": 1 },
+      { "label": "— 保險費",                       "actual": -47316,  "budget": -47880,  "priorYear": -46188, "type": "expense",   "indent": 1 },
+      { "label": "— 水電費及維修",                 "actual": -71834,  "budget": -71760,  "priorYear": -67812, "type": "expense",   "indent": 1 },
+      { "label": "年度持有費用合計",               "actual": -657495, "budget": -659280, "priorYear": -634922,"type": "subtotal",  "indent": 0 },
+      { "label": "淨持有成本 (NOI)",               "actual": -657495, "budget": -659280, "priorYear": -634922,"type": "noi",       "indent": 0 },
+      { "label": "債務本息攤還",                   "actual": 0,       "budget": 0,       "priorYear": 0,      "type": "deduction", "indent": 1 },
+      { "label": "年度淨現金支出",                 "actual": -657495, "budget": -659280, "priorYear": -634922,"type": "total",     "indent": 0 }
+    ]
+  },
+  "valuation": {
+    "purchasePrice": 62400000,
+    "purchaseDate": "2013-03-18",
+    "lastAppraisalValue": 85600000,
+    "lastAppraisalDate": "2025-02-15",
+    "currentEstimatedValue": 93500000,
+    "estimationBasis": "信義房屋估價意見書（2026年5月）；採市場比較法",
+    "impliedCapRate": "N/A（自用）",
+    "valuePM2": 283000,
+    "valueChange": 31100000,
+    "valueChangePct": 49.8,
+    "netEquity": 93500000,
+    "history": [
+      { "date": "2013-03-18", "value": 62400000,  "source": "預售取得價格" },
+      { "date": "2016-05-20", "value": 68400000,  "source": "交屋市值評估" },
+      { "date": "2018-11-01", "value": 72600000,  "source": "仲介估價" },
+      { "date": "2020-10-01", "value": 77800000,  "source": "正式鑑價" },
+      { "date": "2022-11-01", "value": 82400000,  "source": "正式鑑價" },
+      { "date": "2025-02-15", "value": 85600000,  "source": "正式鑑價" },
+      { "date": "2026-05-01", "value": 93500000,  "source": "仲介估價意見書" }
+    ]
+  },
+  "capex": [
+    { "project": "室內裝潢（交屋後裝修）",        "year": 2016, "budgeted": 11000000, "actual": 12000000, "status": "Complete",    "notes": "2016年9月完工；廚衛設備、地板、燈具" },
+    { "project": "智能家居系統升級",              "year": 2021, "budgeted": 480000,   "actual": 520000,   "status": "Complete",    "notes": "2021年11月完工；門禁、空調控制、安全監控" },
+    { "project": "室內翻新（評估中）",            "year": 2027, "budgeted": 4000000,  "actual": 0,        "status": "Proposed",    "notes": "廚房、主浴及地板翻新；待業主決策" }
+  ],
+  "projections": {
+    "scenarios": ["悲觀", "基本", "樂觀"],
+    "years": ["2026", "2027", "2028", "2029", "2030"],
+    "noi": {
+      "Downside": [-720000, -744000, -768000, -792000, -816000],
+      "Base":     [-657495, -669000, -681600, -694400, -707200],
+      "Upside":   [-594000, -607200, -619200, -631200, -643200]
+    },
+    "value": {
+      "Downside": [90300000, 88600000, 87200000, 86100000, 85400000],
+      "Base":     [93500000, 96800000, 100300000, 103900000, 107700000],
+      "Upside":   [93500000, 99200000, 105400000, 112000000, 119200000]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "incomeStatement": {
+    "period": "過去12個月（2025年6月 – 2026年5月）",
+    "currency": "NTD",
+    "rows": [
+      { "label": "潛在租金總收入",          "actual": 16876319,  "budget": 16754210,  "priorYear": 16201440, "type": "income",    "indent": 0 },
+      { "label": "空置及信用損失",           "actual": -1012579,  "budget": -1005253,  "priorYear": -972086,  "type": "deduction", "indent": 1 },
+      { "label": "其他收入（洗衣機、停車）", "actual": 436250,    "budget": 363800,    "priorYear": 325400,   "type": "income",    "indent": 1 },
+      { "label": "有效總收入 (EGI)",         "actual": 16299990,  "budget": 16112757,  "priorYear": 15554754, "type": "subtotal",  "indent": 0 },
+      { "label": "— 地價稅與房屋稅",        "actual": -1587312,  "budget": -1562784,  "priorYear": -1514136, "type": "expense",   "indent": 1 },
+      { "label": "— 保險費",                "actual": -556127,   "budget": -542610,   "priorYear": -518034,  "type": "expense",   "indent": 1 },
+      { "label": "— 公共設施水電費",        "actual": -663841,   "budget": -651468,   "priorYear": -613872,  "type": "expense",   "indent": 1 },
+      { "label": "— 修繕及維護費",          "actual": -1148763,  "budget": -1084212,  "priorYear": -1028436, "type": "expense",   "indent": 1 },
+      { "label": "— 物業管理費",            "actual": -818032,   "budget": -806640,   "priorYear": -779340,  "type": "expense",   "indent": 1 },
+      { "label": "— 專業服務費",            "actual": -428317,   "budget": -362520,   "priorYear": -344520,  "type": "expense",   "indent": 1 },
+      { "label": "— 資本準備金（已提列）",   "actual": -897516,   "budget": -866280,   "priorYear": -812556,  "type": "expense",   "indent": 1 },
+      { "label": "營運費用合計",             "actual": -6099908,  "budget": -5876514,  "priorYear": -5610894, "type": "subtotal",  "indent": 0 },
+      { "label": "淨營業收益 (NOI)",        "actual": 10200082,  "budget": 10236243,  "priorYear": 9943860,  "type": "noi",       "indent": 0 },
+      { "label": "債務本息攤還",            "actual": -5037816,  "budget": -5037816,  "priorYear": -5037816, "type": "deduction", "indent": 1 },
+      { "label": "稅前淨現金流",            "actual": 5162266,   "budget": 5198427,   "priorYear": 4906044,  "type": "total",     "indent": 0 }
+    ]
+  },
+  "valuation": {
+    "purchasePrice": 126000000,
+    "purchaseDate": "2019-03-01",
+    "lastAppraisalValue": 163500000,
+    "lastAppraisalDate": "2025-11-20",
+    "currentEstimatedValue": 171840000,
+    "estimationBasis": "仲介估價意見書（2026年5月）；以過去12個月NOI應用資本化率推算",
+    "impliedCapRate": "5.94%",
+    "valuePM2": 162000,
+    "valueChange": 45840000,
+    "valueChangePct": 36.4,
+    "netEquity": 88098000,
+    "history": [
+      { "date": "2019-03-01", "value": 126000000, "source": "取得價格" },
+      { "date": "2020-12-01", "value": 132800000, "source": "仲介估價" },
+      { "date": "2021-11-15", "value": 141600000, "source": "正式鑑價" },
+      { "date": "2022-11-20", "value": 149800000, "source": "正式鑑價" },
+      { "date": "2023-11-18", "value": 155200000, "source": "正式鑑價" },
+      { "date": "2024-11-22", "value": 160500000, "source": "正式鑑價" },
+      { "date": "2025-11-20", "value": 163500000, "source": "正式鑑價" },
+      { "date": "2026-05-01", "value": 171840000, "source": "仲介估價意見書" }
+    ]
+  },
+  "capex": [
+    { "project": "第一期戶型翻修（1A–3B戶）", "year": 2021, "budgeted": 3300000, "actual": 3552000, "status": "Complete",    "notes": "2021年6月完工" },
+    { "project": "外牆及公共區域升級",          "year": 2024, "budgeted": 1740000, "actual": 1836000, "status": "Complete",    "notes": "2024年4月完工" },
+    { "project": "第二期戶型翻修（4B及7A戶）",  "year": 2026, "budgeted": 2460000, "actual": 1476000, "status": "In Progress", "notes": "完工60%；預計2026年7月完工" },
+    { "project": "屋頂防水膜更換（提案中）",    "year": 2027, "budgeted": 2250000, "actual": 0,       "status": "Proposed",    "notes": "待屋頂檢查後決定" }
+  ],
+  "projections": {
+    "scenarios": ["悲觀", "基本", "樂觀"],
+    "years": ["2026", "2027", "2028", "2029", "2030"],
+    "noi": {
+      "Downside": [8400000, 8724000, 8928000, 9132000, 9360000],
+      "Base":     [10200000, 10848000, 11328000, 11838000, 12372000],
+      "Upside":   [10740000, 11556000, 12228000, 12960000, 13740000]
+    },
+    "value": {
+      "Downside": [162600000, 164700000, 166800000, 168900000, 171000000],
+      "Base":     [171840000, 181200000, 191400000, 202200000, 213800000],
+      "Upside":   [178400000, 194600000, 209200000, 225300000, 242600000]
+    }
+  }
+}

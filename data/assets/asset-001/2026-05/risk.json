@@ -1,0 +1,189 @@
+{
+  "summary": {
+    "overallRiskLevel": "中度",
+    "openRisks": 7,
+    "highRisks": 2,
+    "mediumRisks": 3,
+    "lowRisks": 2,
+    "lastReviewed": "2026-05-08"
+  },
+  "register": [
+    {
+      "id": "R-01",
+      "category": "融資",
+      "title": "以明顯較高利率辦理再融資",
+      "description": "台北富邦銀行優先貸款2026年10月到期。若市場利率維持高位，以2.75%以上辦理再融資，每年債務服務將較目前2.25%增加NT$42萬至NT$65萬。",
+      "probability": 3,
+      "impact": 3,
+      "riskScore": 9,
+      "level": "Medium",
+      "owner": "陳氏家族信託",
+      "mitigation": "2026年第二季啟動金融機構接觸；儘早鎖定利率；考慮利率上限產品。",
+      "status": "Monitoring",
+      "reviewDate": "2026-06-30"
+    },
+    {
+      "id": "R-02",
+      "category": "法規",
+      "title": "租賃住宅管理條例修訂",
+      "description": "立法院正討論限制住宅年租金調漲幅度上限為3%。若通過，租金成長將低於預估通膨，自第二年起每年NOI成長將壓縮NT$36萬至NT$54萬。",
+      "probability": 3,
+      "impact": 4,
+      "riskScore": 12,
+      "level": "High",
+      "owner": "陳氏家族信託 / 法律顧問",
+      "mitigation": "監控2026年第三季立法進展。調整財務預測。評估在法規生效前加快租約續簽。",
+      "status": "Monitoring",
+      "reviewDate": "2026-09-30"
+    },
+    {
+      "id": "R-03",
+      "category": "物理",
+      "title": "屋頂延遲維護問題升高",
+      "description": "工程評估報告顯示防水膜磨損。若延遲至2027年後才處理，恐造成漏水、戶型損害及緊急修繕費用超過NT$3,600,000。",
+      "probability": 2,
+      "impact": 3,
+      "riskScore": 6,
+      "level": "Low",
+      "owner": "物業管理人",
+      "mitigation": "委託2026年8月前進行正式屋頂檢查。更新資本準備金時程表。",
+      "status": "Open",
+      "reviewDate": "2026-08-31"
+    },
+    {
+      "id": "R-04",
+      "category": "市場",
+      "title": "台灣科技業景氣下滑影響租屋需求",
+      "description": "科技業重大修正可能降低大安區租屋吸收力，使空置率從6%上升至10–14%。EGI每年將因此減少NT$100萬至NT$168萬。",
+      "probability": 2,
+      "impact": 4,
+      "riskScore": 8,
+      "level": "Medium",
+      "owner": "陳氏家族信託",
+      "mitigation": "維持市場競爭性租金；強化租戶留任計畫；戶型品質提升降低重新出租風險。",
+      "status": "Monitoring",
+      "reviewDate": "2026-12-31"
+    },
+    {
+      "id": "R-05",
+      "category": "營運",
+      "title": "第二期翻修費用超支",
+      "description": "4B及7A戶翻修目前進度60%。承包商通報可能因管線問題額外增加NT$36萬至NT$54萬費用，現有預算緩衝為NT$24萬。",
+      "probability": 3,
+      "impact": 2,
+      "riskScore": 6,
+      "level": "Low",
+      "owner": "物業管理人",
+      "mitigation": "要求詳細變更單範圍說明；協商固定價格完工合約。若超預算NT$30萬則向業主呈報。",
+      "status": "Open",
+      "reviewDate": "2026-06-15"
+    },
+    {
+      "id": "R-06",
+      "category": "法律",
+      "title": "租戶糾紛 — 9C戶",
+      "description": "9C戶租戶對租約續簽條款提出異議。若未能解決，恐面臨佔用或不法留置訴訟。預估法律費用NT$15萬至NT$45萬。",
+      "probability": 2,
+      "impact": 2,
+      "riskScore": 4,
+      "level": "Low",
+      "owner": "法律顧問",
+      "mitigation": "律師已委任。調解會議排定於2026年6月進行。",
+      "status": "In Progress",
+      "reviewDate": "2026-06-30"
+    },
+    {
+      "id": "R-07",
+      "category": "融資",
+      "title": "再融資前利率急升",
+      "description": "若中央銀行在2026年10月到期前意外升息，再融資成本將進一步上升。情境：升息1碼（0.25%）每年約增加NT$21萬債務服務。",
+      "probability": 2,
+      "impact": 4,
+      "riskScore": 8,
+      "level": "High",
+      "owner": "陳氏家族信託",
+      "mitigation": "向顧問詢問利率上限產品報價；評估2年期固定利率上限商品。2026年6月前啟動流程。",
+      "status": "Monitoring",
+      "reviewDate": "2026-06-30"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S-01",
+      "name": "再融資利率上升+1碼",
+      "category": "融資",
+      "baseNOI": 10198836,
+      "baseDebtService": 5037816,
+      "baseCashFlow": 5162266,
+      "scenarioDebtService": 5910000,
+      "scenarioCashFlow": 4320000,
+      "cashFlowDelta": -870000,
+      "newDSCR": "1.73x",
+      "verdict": "資產仍可維持運作；現金流受壓縮但仍高於財務契約最低要求。"
+    },
+    {
+      "id": "S-02",
+      "name": "入住率下降至80%（科技業景氣衝擊）",
+      "category": "市場",
+      "baseNOI": 10198836,
+      "baseDebtService": 5037816,
+      "baseCashFlow": 5162266,
+      "scenarioNOI": 8940000,
+      "scenarioCashFlow": 3900000,
+      "cashFlowDelta": -1290000,
+      "newDSCR": "1.77x",
+      "verdict": "現金流明顯下降；DSCR仍高於財務契約要求。可能動用準備金。"
+    },
+    {
+      "id": "S-03",
+      "name": "營運費用增加+15%",
+      "category": "營運",
+      "baseNOI": 10198836,
+      "baseDebtService": 5037816,
+      "baseCashFlow": 5162266,
+      "scenarioNOI": 9300000,
+      "scenarioCashFlow": 4260000,
+      "cashFlowDelta": -930000,
+      "newDSCR": "1.85x",
+      "verdict": "可控。主要驅動因素：公告地價調整及保險費率上漲。"
+    },
+    {
+      "id": "S-04",
+      "name": "資本支出超支+NT$120萬（屋頂）",
+      "category": "Capex",
+      "baseNOI": 10198836,
+      "baseDebtService": 5037816,
+      "baseCashFlow": 5162266,
+      "scenarioCashFlow": 3960396,
+      "cashFlowDelta": -1200000,
+      "newDSCR": "2.03x",
+      "verdict": "一次性現金衝擊；由準備金支應。對DSCR無影響。"
+    },
+    {
+      "id": "S-05",
+      "name": "估值下跌-15%",
+      "category": "估值",
+      "baseValue": 171840000,
+      "baseEquity": 88098000,
+      "baseLTV": 48.7,
+      "scenarioValue": 146064000,
+      "scenarioEquity": 62322000,
+      "scenarioLTV": 57.3,
+      "verdict": "LTV上升至57.3%——仍在財務契約範圍內。權益縮減NT$2,578萬，但資產未發生資不抵債。"
+    }
+  ],
+  "scenarioChart": {
+    "labels": ["2026", "2027", "2028", "2029", "2030"],
+    "cashFlow": {
+      "Downside": [3990000, 4140000, 4260000, 4440000, 4650000],
+      "Base":     [5190000, 5820000, 6300000, 6810000, 7350000],
+      "Upside":   [5700000, 6540000, 7260000, 8040000, 8850000]
+    }
+  },
+  "mitigationPlan": [
+    { "riskId": "R-01", "action": "接觸台北富邦銀行及兩家競爭金融機構，取得貸款條件書",               "owner": "陳氏家族信託",  "deadline": "2026-06-30", "status": "Not Started" },
+    { "riskId": "R-02", "action": "委任不動產法律顧問監控立法動態並就合規事宜提供建議",              "owner": "法律顧問",       "deadline": "2026-07-31", "status": "In Progress" },
+    { "riskId": "R-03", "action": "委託合格屋頂工程師進行正式檢查",                                   "owner": "物業管理人",     "deadline": "2026-08-31", "status": "Not Started" },
+    { "riskId": "R-07", "action": "向顧問詢問利率上限產品報價；評估2年期固定利率上限商品",           "owner": "陳氏家族信託",   "deadline": "2026-06-15", "status": "Not Started" }
+  ]
+}

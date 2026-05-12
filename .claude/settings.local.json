@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"/Users/masachen/Library/Mobile Documents/com~apple~CloudDocs/CODE/TEMP - Code - Test/re_portfolio/data/assets/asset-001/2026-05\")",
+      "Bash(python3 -m http.server 8181)",
+      "Bash(echo \"PID: $!\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\" http://localhost:8181/index.html)",
+      "Bash(curl -s -o /dev/null -w \"latest.json: %{http_code}\\\\nmanifest.json: \" http://localhost:8181/data/assets/asset-001/latest.json)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\noverview.json: \" http://localhost:8181/data/assets/asset-001/2026-05/manifest.json)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8181/data/assets/asset-001/2026-05/overview.json)",
+      "Bash(node --check \"/Users/masachen/Library/Mobile Documents/com~apple~CloudDocs/CODE/TEMP - Code - Test/re_portfolio/app.js\")",
+      "Bash(open http://localhost:8181)",
+      "Bash(python3 -m json.tool data/assets/asset-001/2026-05/overview.json)",
+      "Bash(grep -rn \"185000000\\\\|175000000\\\\|174000000\\\\|95000000\\\\|NT\\\\$1億8,500\\\\|NT\\\\$1億1,100\\\\|94\\\\.7%\\\\|38\\\\.9%\" \"/Users/masachen/Library/Mobile Documents/com~apple~CloudDocs/CODE/TEMP - Code - Test/re_portfolio/data/assets/\")",
+      "Bash(grep -rn \"185000000\\\\|175000000\\\\|174000000\\\\|95000000\\\\|NT\\\\$1億8,500\\\\|NT\\\\$1億1,100\\\\|94\\\\.7%\\\\|1\\\\.81x\\\\|48\\\\.0%\" \"/Users/masachen/Library/Mobile Documents/com~apple~CloudDocs/CODE/TEMP - Code - Test/re_portfolio/data/assets/\")"
+    ],
+    "additionalDirectories": [
+      "/Users/masachen/Library/Mobile Documents/com~apple~CloudDocs/CODE/TEMP - Code - Test/re_portfolio/data/assets/asset-001"
+    ]
+  }
+}
