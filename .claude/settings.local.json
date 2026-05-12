@@ -12,7 +12,9 @@
       "Bash(open http://localhost:8181)",
       "Bash(python3 -m json.tool data/assets/asset-001/2026-05/overview.json)",
       "Bash(grep -rn \"185000000\\\\|175000000\\\\|174000000\\\\|95000000\\\\|NT\\\\$1億8,500\\\\|NT\\\\$1億1,100\\\\|94\\\\.7%\\\\|38\\\\.9%\" \"/Users/masachen/Library/Mobile Documents/com~apple~CloudDocs/CODE/TEMP - Code - Test/re_portfolio/data/assets/\")",
-      "Bash(grep -rn \"185000000\\\\|175000000\\\\|174000000\\\\|95000000\\\\|NT\\\\$1億8,500\\\\|NT\\\\$1億1,100\\\\|94\\\\.7%\\\\|1\\\\.81x\\\\|48\\\\.0%\" \"/Users/masachen/Library/Mobile Documents/com~apple~CloudDocs/CODE/TEMP - Code - Test/re_portfolio/data/assets/\")"
+      "Bash(grep -rn \"185000000\\\\|175000000\\\\|174000000\\\\|95000000\\\\|NT\\\\$1億8,500\\\\|NT\\\\$1億1,100\\\\|94\\\\.7%\\\\|1\\\\.81x\\\\|48\\\\.0%\" \"/Users/masachen/Library/Mobile Documents/com~apple~CloudDocs/CODE/TEMP - Code - Test/re_portfolio/data/assets/\")",
+      "Bash(grep -rn \"93500000\\\\|85600000\\\\|82400000\\\\|68400000\\\\|72600000\\\\|77800000\\\\|171840000\\\\|163500000\\\\|88098000\\\\|233600000\\\\|218500000\\\\|205760000\\\\|NT\\\\$9,350\\\\|NT\\\\$5,610\\\\|49\\\\.8%\\\\|178,000,000\\\\|28,000,000\\\\|NT\\\\$95,000,000\" data/assets/)",
+      "Bash(grep -rn \"93500000\\\\|85600000\\\\|82400000\\\\|68400000\\\\|72600000\\\\|77800000\\\\|171840000\\\\|163500000\\\\|88098000\\\\|233600000\\\\|218500000\\\\|205760000\\\\|NT\\\\$9,350\\\\|NT\\\\$5,610\\\\|49\\\\.8%\\\\|178,000,000\\\\|28,000,000\\\\|NT\\\\$95,000,000\\\\|70478400\\\\|17619600\" data/assets/)"
     ],
     "additionalDirectories": [
       "/Users/masachen/Library/Mobile Documents/com~apple~CloudDocs/CODE/TEMP - Code - Test/re_portfolio/data/assets/asset-001"

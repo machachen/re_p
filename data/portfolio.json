@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "portfolioName": "陳氏家族信託 — 不動產資產組合",
+    "reportingPeriod": "2026年5月",
+    "periodLabel": "2026年5月",
+    "lastUpdated": "2026-05-08",
+    "assetCount": 3,
+    "currency": "NTD",
+    "preparedBy": "Asset Intelligence 資產智能平台"
+  },
+  "summary": {
+    "narrative": "陳氏家族信託不動產資產組合由三項性質各異之資產構成：台北大安區住商混合資產（港景置業有限公司）、新北林口全聯NNN長約商業物業，以及大安區豪宅自用宅（大安仁愛苑）。截至2026年5月，組合總估值達NT$4億9,893萬元，較去年同期成長6.7%；陳氏家族信託淨持有權益為NT$3億6,973萬元，整體財務槓桿健康，加權貸款成數僅22.4%。可產生租金收益之兩項資產年度淨營業收益合計NT$1,454萬元，稅前淨現金流NT$578萬元，呈現穩定正向現金流。組合資產類型分散（住商混合、商業零售、自用住宅），地域集中大安區及林口區，風險適度可控。目前最迫切之決策事項為：港景資產台北富邦銀行貸款將於2026年10月到期，須於本季完成再融資安排；林口全聯之下次租金調漲亦預定2027年1月執行，應提前完成通知義務。",
+    "keyMessage": "組合總估值NT$4.99億 · 家族淨權益NT$3.70億 · 加權LTV 22.4% · 最迫切事項：港景資產再融資（2026年10月到期，請於2026年6月前啟動）"
+  },
+  "totals": {
+    "totalAUM": 498932000,
+    "totalDebt": 111582000,
+    "portfolioNetEquity": 387350000,
+    "chenFamilyEquity": 369731200,
+    "blendedLTV": 22.4,
+    "weightedAvgRate": 2.15,
+    "incomeGeneratingNOI": 14543206,
+    "netPortfolioIncome": 13885711,
+    "totalNetCashFlow": 5776483,
+    "annualDebtService": 8109228,
+    "yoyAUMGrowth": 6.7
+  },
+  "keyFigures": [
+    { "label": "組合總估值",    "value": "$499M",  "subLabel": "三資產合計市場估值",        "trend": "up",   "trendValue": "+6.7% 年增" },
+    { "label": "家族淨權益",    "value": "$370M",  "subLabel": "陳氏家族信託持有部分",      "trend": "up",   "trendValue": "+$22M 年增" },
+    { "label": "加權LTV",      "value": "22.4%",  "subLabel": "整體財務槓桿保守",          "trend": "up",   "trendValue": "財務結構穩健" },
+    { "label": "年度NOI",      "value": "$14.5M", "subLabel": "可收益兩資產合計",          "trend": "up",   "trendValue": "+2.6% 年增" },
+    { "label": "年度淨現金流",  "value": "$5.8M",  "subLabel": "債務本息後淨流入",          "trend": "up",   "trendValue": "穩定正向" },
+    { "label": "持有資產數",    "value": "3",      "subLabel": "雙北市核心地段",            "trend": "flat", "trendValue": "多元配置" }
+  ],
+  "assetCards": [
+    {
+      "id": "asset-001",
+      "name": "港景住商混合資產",
+      "shortName": "港景住商",
+      "type": "住宅／商業混合",
+      "location": "台北市大安區仁愛路四段",
+      "value": 171836000,
+      "debt": 83742000,
+      "equity": 88094000,
+      "chenEquity": 70475200,
+      "chenPct": 80.0,
+      "ltv": 48.7,
+      "noi": 10200082,
+      "netCF": 5162266,
+      "capRate": 5.94,
+      "status": "持有並改善",
+      "statusColor": "amber",
+      "ownershipSummary": "陳氏家族信託 80%",
+      "keyHighlight": "再融資 — 2026年10月到期",
+      "urgency": "high",
+      "href": "index.html?id=asset-001"
+    },
+    {
+      "id": "asset-002",
+      "name": "林口全聯商業物業",
+      "shortName": "林口全聯",
+      "type": "商業零售（NNN長約）",
+      "location": "新北市林口區南勢民有街",
+      "value": 233584000,
+      "debt": 27840000,
+      "equity": 205744000,
+      "chenEquity": 205744000,
+      "chenPct": 100.0,
+      "ltv": 11.9,
+      "noi": 4343124,
+      "netCF": 1271712,
+      "capRate": 1.86,
+      "status": "穩定持有",
+      "statusColor": "green",
+      "ownershipSummary": "陳氏家族信託 100%",
+      "keyHighlight": "租金調漲 — 2027年1月",
+      "urgency": "medium",
+      "href": "index.html?id=asset-002"
+    },
+    {
+      "id": "asset-003",
+      "name": "大安仁愛苑",
+      "shortName": "大安仁愛苑",
+      "type": "高級住宅（自用）",
+      "location": "台北市大安區仁愛路四段",
+      "value": 93512000,
+      "debt": 0,
+      "equity": 93512000,
+      "chenEquity": 93512000,
+      "chenPct": 100.0,
+      "ltv": 0.0,
+      "noi": -657495,
+      "netCF": -657495,
+      "capRate": null,
+      "status": "自用持有",
+      "statusColor": "green",
+      "ownershipSummary": "陳氏家族信託 100%",
+      "keyHighlight": "無貸款 · 潛在抵押空間NT$5,611萬",
+      "urgency": "low",
+      "href": "index.html?id=asset-003"
+    }
+  ],
+  "allocation": {
+    "labels":  ["港景住商", "林口全聯", "大安仁愛苑"],
+    "values":  [171836000, 233584000, 93512000],
+    "pcts":    [34.4, 46.8, 18.7],
+    "colors":  ["#1a6ef5", "#1e8a4c", "#e67e22"]
+  },
+  "incomeBreakdown": {
+    "labels":  ["港景住商", "林口全聯", "大安仁愛苑（持有成本）"],
+    "noi":     [10200082, 4343124, -657495],
+    "netCF":   [5162266, 1271712, -657495],
+    "colors":  ["#1a6ef5", "#1e8a4c", "#c0392b"]
+  },
+  "debtMatrix": [
+    {
+      "asset": "港景住商",
+      "assetId": "asset-001",
+      "lender": "台北富邦銀行",
+      "balance": 83742000,
+      "rate": "2.25%",
+      "ltv": "48.7%",
+      "dscr": "2.03x",
+      "maturity": "2026-10-01",
+      "urgency": "high",
+      "urgencyLabel": "緊急"
+    },
+    {
+      "asset": "林口全聯",
+      "assetId": "asset-002",
+      "lender": "臺灣土地銀行",
+      "balance": 27840000,
+      "rate": "1.85%",
+      "ltv": "11.9%",
+      "dscr": "1.41x",
+      "maturity": "2036-08-01",
+      "urgency": "low",
+      "urgencyLabel": "穩定"
+    },
+    {
+      "asset": "大安仁愛苑",
+      "assetId": "asset-003",
+      "lender": "—",
+      "balance": 0,
+      "rate": "—",
+      "ltv": "0.0%",
+      "dscr": "—",
+      "maturity": "—",
+      "urgency": "none",
+      "urgencyLabel": "無貸款"
+    }
+  ],
+  "portfolioHistory": {
+    "labels": ["2019", "2022", "2025", "2026"],
+    "assets": {
+      "asset-001": [126000000, 149824000, 163492000, 171836000],
+      "asset-002": [138464000, 167424000, 218464000, 233584000],
+      "asset-003": [72624000,  82376000,  85624000,  93512000]
+    },
+    "total":     [337088000, 399624000, 467580000, 498932000]
+  },
+  "actions": [
+    {
+      "assetId": "asset-001", "assetName": "港景住商",
+      "title": "4B及7A戶翻修 — 竣工授權",
+      "priority": "Medium", "deadline": "2026-06-15", "status": "In Progress"
+    },
+    {
+      "assetId": "asset-001", "assetName": "港景住商",
+      "title": "再融資決策 — 現有貸款2026年第四季到期",
+      "priority": "High", "deadline": "2026-06-30", "status": "Open"
+    },
+    {
+      "assetId": "asset-003", "assetName": "大安仁愛苑",
+      "title": "委任正式鑑價 — 距上次已逾14個月",
+      "priority": "Medium", "deadline": "2026-06-30", "status": "Open"
+    },
+    {
+      "assetId": "asset-001", "assetName": "港景住商",
+      "title": "屋頂檢查 — 延遲維護警示",
+      "priority": "Low", "deadline": "2026-08-31", "status": "Open"
+    },
+    {
+      "assetId": "asset-002", "assetName": "林口全聯",
+      "title": "停車場翻新 — 改善設施競爭力",
+      "priority": "Low", "deadline": "2026-09-30", "status": "Open"
+    },
+    {
+      "assetId": "asset-003", "assetName": "大安仁愛苑",
+      "title": "抵押融資規劃 — 評估最適動用時機",
+      "priority": "Low", "deadline": "2026-09-30", "status": "Open"
+    },
+    {
+      "assetId": "asset-002", "assetName": "林口全聯",
+      "title": "2027年1月租金調漲 — 確認執行與通知",
+      "priority": "High", "deadline": "2026-10-01", "status": "Open"
+    },
+    {
+      "assetId": "asset-003", "assetName": "大安仁愛苑",
+      "title": "室內裝潢翻新評估（2016年完工逾10年）",
+      "priority": "Low", "deadline": "2026-12-31", "status": "Open"
+    },
+    {
+      "assetId": "asset-002", "assetName": "林口全聯",
+      "title": "2033年租約到期 — 早期租賃策略規劃",
+      "priority": "Medium", "deadline": "2026-12-31", "status": "Open"
+    }
+  ],
+  "riskSummary": {
+    "totalOpenRisks": 11,
+    "highCount": 2,
+    "mediumCount": 4,
+    "lowCount": 5,
+    "topConcern": "港景資產台北富邦銀行貸款2026年10月到期；若市場利率維持高位，再融資成本將明顯上升，建議本季啟動多家金融機構接觸流程。"
+  }
+}

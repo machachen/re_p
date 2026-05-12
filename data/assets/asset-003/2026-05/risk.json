@@ -70,11 +70,11 @@
       "id": "S-01",
       "name": "豪宅市場回調-15%",
       "category": "估值",
-      "baseValue": 93500000,
-      "baseEquity": 93500000,
+      "baseValue": 93512000,
+      "baseEquity": 93512000,
       "baseLTV": 0.0,
-      "scenarioValue": 79475000,
-      "scenarioEquity": 79475000,
+      "scenarioValue": 79485200,
+      "scenarioEquity": 79485200,
       "scenarioLTV": 0.0,
       "verdict": "無貸款結構下，估值回調僅影響帳面財富，不產生財務壓力或違約風險。"
     },
@@ -82,11 +82,11 @@
       "id": "S-02",
       "name": "申辦60% LTV抵押貸款後市場回調-15%",
       "category": "估值",
-      "baseValue": 93500000,
-      "baseEquity": 37400000,
+      "baseValue": 93512000,
+      "baseEquity": 37404800,
       "baseLTV": 60.0,
-      "scenarioValue": 79475000,
-      "scenarioEquity": 23375000,
+      "scenarioValue": 79485200,
+      "scenarioEquity": 23378000,
       "scenarioLTV": 70.6,
       "verdict": "LTV升至70.6%，可能觸發部分貸款條款；顯示若申辦抵押貸款應保守操作（40–50% LTV較佳）。"
     },
@@ -94,8 +94,8 @@
       "id": "S-03",
       "name": "豪宅稅調漲+50%",
       "category": "持有成本",
-      "baseNOI": -657480,
-      "scenarioNOI": -718680,
+      "baseNOI": -657495,
+      "scenarioNOI": -718695,
       "cashFlowDelta": -61200,
       "newDSCR": "N/A",
       "verdict": "持有成本增加，影響有限，年增約NT$60,000，不影響資產持有決策。"
@@ -105,7 +105,7 @@
     "labels": ["2026", "2027", "2028", "2029", "2030"],
     "cashFlow": {
       "Downside": [-720000, -744000, -768000, -792000, -816000],
-      "Base":     [-657480, -669000, -681600, -694400, -707200],
+      "Base":     [-657495, -669000, -681600, -694400, -707200],
       "Upside":   [-600000, -612000, -624000, -636000, -648000]
     }
   },

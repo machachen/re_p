@@ -2,7 +2,7 @@
   "importantDocuments": [
     { "name": "全聯租賃合約 — 2023年至2033年",       "category": "租賃", "date": "2023-01-01", "type": "PDF", "url": "#", "notes": "現行10年租約。NT$420,000/月。含2.5%租金調漲條款。" },
     { "name": "臺灣土地銀行貸款合約",                 "category": "融資", "date": "2006-08-01", "type": "PDF", "url": "#", "notes": "30年期。1.85%固定利率。餘額NT$27,840,000。到期2036年。" },
-    { "name": "2025年不動產鑑價報告",                "category": "估值", "date": "2025-10-15", "type": "PDF", "url": "#", "notes": "NT$178,000,000。收益法及市場比較法。" },
+    { "name": "2025年不動產鑑價報告",                "category": "估值", "date": "2025-10-15", "type": "PDF", "url": "#", "notes": "NT$218,464,000。收益法及市場比較法。" },
     { "name": "2026年5月資產報告（本文件）",          "category": "報告", "date": "2026-05-08", "type": "PDF", "url": "#", "notes": "本期摘要報告。" },
     { "name": "土地所有權狀",                        "category": "所有權","date": "2003-07-15", "type": "PDF", "url": "#", "notes": "地號 林口區南勢段XXXXXXXX。面積1,607m²。" }
   ],
@@ -18,7 +18,7 @@
     { "id": "DOC-009", "name": "不動產抵押設定契約",                     "category": "融資",   "date": "2006-08-01", "source": "地政士事務所",              "relatedSection": "財務",   "type": "PDF", "url": "#", "notes": "土地及建物第一順位抵押" },
     { "id": "DOC-010", "name": "個人連帶保證書 — 陳氏家族信託",         "category": "融資",   "date": "2006-08-01", "source": "臺灣土地銀行",              "relatedSection": "財務",   "type": "PDF", "url": "#", "notes": "全額連帶保證" },
     { "id": "DOC-011", "name": "建築執照及使用執照",                     "category": "法規",   "date": "2006-09-30", "source": "新北市工務局",              "relatedSection": "總覽",   "type": "PDF", "url": "#", "notes": "2006年建物竣工使照" },
-    { "id": "DOC-012", "name": "2025年不動產鑑價報告",                  "category": "估值",   "date": "2025-10-15", "source": "台灣太平洋不動產估價師事務所","relatedSection": "財務",  "type": "PDF", "url": "#", "notes": "NT$178,000,000；收益法及比較法" },
+    { "id": "DOC-012", "name": "2025年不動產鑑價報告",                  "category": "估值",   "date": "2025-10-15", "source": "台灣太平洋不動產估價師事務所","relatedSection": "財務",  "type": "PDF", "url": "#", "notes": "NT$218,464,000；收益法及比較法" },
     { "id": "DOC-013", "name": "2025年度財務報表",                       "category": "財務",   "date": "2026-02-28", "source": "CPA — 陳顧問事務所",        "relatedSection": "財務",   "type": "PDF", "url": "#", "notes": "已審計" },
     { "id": "DOC-014", "name": "地籍圖謄本",                             "category": "圖說",   "date": "2026-01-10", "source": "新北市林口地政事務所",      "relatedSection": "總覽",   "type": "PDF", "url": "#", "notes": "最新地籍圖謄本" },
     { "id": "DOC-015", "name": "建物現況照片 — 2026年5月",              "category": "圖說",   "date": "2026-05-01", "source": "物業管理人",                "relatedSection": "總覽",   "type": "ZIP", "url": "#", "notes": "外觀及停車場現況照片" },
