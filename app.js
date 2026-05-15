@@ -252,11 +252,11 @@ function renderOverview() {
       <div class="kpi-value">${escHtml(k.value)}</div>
       <div class="kpi-period">${escHtml(k.period)}</div>
       <div class="kpi-trend ${k.trendDir}">${escHtml(k.trend)}</div>
-      <div class="kpi-chart chart-sm" id="kpi-chart-${k.id}"></div>
+      <div class="kpi-chart" id="kpi-chart-${k.id}"></div>
     </div>`).join('');
 
-  /* Render KPI mini-charts */
-  d.kpiCards.forEach(k => renderKpiChart(k));
+  /* Defer init to rAF so grid layout is computed and clientWidth is available */
+  requestAnimationFrame(() => d.kpiCards.forEach(k => renderKpiChart(k)));
 
   /* Actions */
   el('ov-actions').innerHTML = d.actions.map(a => `
@@ -326,7 +326,7 @@ function renderKpiChart(kpi) {
   const isLine = kpi.chartType === 'line';
   chart.setOption({
     ...ECHARTS_BASE,
-    grid: { top: 6, bottom: 18, left: 6, right: 6, containLabel: true },
+    grid: { top: 4, bottom: 20, left: 0, right: 0, containLabel: false },
     tooltip: { trigger: 'axis', confine: true, textStyle: { fontSize: 11 } },
     xAxis: { type: 'category', data: cd.labels, axisLine: { show: false }, axisTick: { show: false }, axisLabel: { fontSize: 9, color: CHART_COLORS.gray } },
     yAxis: { type: 'value', show: false },

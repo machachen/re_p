@@ -2,6 +2,10 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    if (sessionStorage.getItem('ap_auth') !== '1') window.location.replace('login.html');
+    else if (!new URLSearchParams(location.search).get('id')) window.location.replace('portfolio.html');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atlas Point by BPM — 港景住商混合資產</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,7 +60,7 @@
 <!-- ── Breadcrumb ────────────────────────────────────────── -->
 <div id="breadcrumb">
   <div class="page-inner bc-inner">
-    <span class="bc-root">資產</span>
+    <a class="bc-root" href="portfolio.html">陳氏家族信託</a>
     <span class="bc-sep">›</span>
     <span class="bc-asset" id="bc-asset-name">—</span>
     <span class="bc-sep">›</span>
@@ -152,7 +156,7 @@
     </div>
 
     <!-- Basic Info + Key Figures -->
-    <div class="grid-2-3 mb-16">
+    <div class="grid-2-3 mb-16" style="align-items:start">
       <div class="card" style="padding:18px 20px;">
         <div class="card-title">資產基本資訊</div>
         <div id="ov-basic-info"></div>

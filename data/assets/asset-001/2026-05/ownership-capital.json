@@ -1,6 +1,6 @@
 {
   "entity": {
-    "name": "港景置業有限公司",
+    "name": "淡水河岸置業有限公司",
     "type": "台灣有限公司",
     "ein": "XX-XXXXXXX",
     "formed": "2019-01-15",
@@ -13,8 +13,8 @@
       "name": "陳氏家族信託",
       "type": "可撤銷生前信託",
       "ownershipPct": 80.0,
-      "equityContributed": 38400000,
-      "currentEquityValue": 70475200,
+      "equityContributed": 29904000,
+      "currentEquityValue": 49933342,
       "role": "管理成員",
       "since": "2019-03-01"
     },
@@ -22,35 +22,35 @@
       "name": "宏達資本有限合夥事業",
       "type": "私募股權有限合夥",
       "ownershipPct": 20.0,
-      "equityContributed": 9600000,
-      "currentEquityValue": 17618800,
+      "equityContributed": 7476000,
+      "currentEquityValue": 12483336,
       "role": "被動投資人",
       "since": "2019-03-01"
     }
   ],
   "capitalContributions": [
-    { "date": "2019-03-01", "contributor": "陳氏家族信託",         "amount": 38400000, "type": "取得股權",     "note": "交割時初始股權" },
-    { "date": "2019-03-01", "contributor": "宏達資本有限合夥事業", "amount": 9600000,  "type": "取得股權",     "note": "共同投資人股權" },
-    { "date": "2021-06-10", "contributor": "陳氏家族信託",         "amount": 2880000,  "type": "資本支出出資", "note": "第一期戶型翻修計畫" },
-    { "date": "2021-06-10", "contributor": "宏達資本有限合夥事業", "amount": 720000,   "type": "資本支出出資", "note": "第一期戶型翻修計畫" },
-    { "date": "2024-02-20", "contributor": "陳氏家族信託",         "amount": 1440000,  "type": "資本支出出資", "note": "外牆及公共區域升級" },
-    { "date": "2024-02-20", "contributor": "宏達資本有限合夥事業", "amount": 360000,   "type": "資本支出出資", "note": "外牆及公共區域升級" }
+    { "date": "2019-03-01", "contributor": "陳氏家族信託",         "amount": 26880000, "type": "取得股權",     "note": "交割時初始股權" },
+    { "date": "2019-03-01", "contributor": "宏達資本有限合夥事業", "amount": 6720000,  "type": "取得股權",     "note": "共同投資人股權" },
+    { "date": "2021-06-10", "contributor": "陳氏家族信託",         "amount": 2016000,  "type": "資本支出出資", "note": "第一期戶型翻修計畫" },
+    { "date": "2021-06-10", "contributor": "宏達資本有限合夥事業", "amount": 504000,   "type": "資本支出出資", "note": "第一期戶型翻修計畫" },
+    { "date": "2024-02-20", "contributor": "陳氏家族信託",         "amount": 1008000,  "type": "資本支出出資", "note": "外牆及公共區域升級" },
+    { "date": "2024-02-20", "contributor": "宏達資本有限合夥事業", "amount": 252000,   "type": "資本支出出資", "note": "外牆及公共區域升級" }
   ],
-  "totalEquityContributed": 53400000,
+  "totalEquityContributed": 37380000,
   "debtSummary": [
     {
       "id": "D-001",
       "lender": "台北富邦銀行",
       "type": "商業不動產抵押貸款",
-      "originalBalance": 94500000,
-      "currentBalance": 83742000,
+      "originalBalance": 66000000,
+      "currentBalance": 59256841,
       "interestRate": "2.25%",
       "rateType": "固定",
       "maturityDate": "2026-10-01",
-      "monthlyPayment": 419818,
-      "annualDebtService": 5037816,
+      "monthlyPayment": 297063,
+      "annualDebtService": 3564759,
       "ltv": "48.7%",
-      "dscr": "2.03x",
+      "dscr": "2.00x",
       "covenants": "DSCR ≥ 1.25x；LTV ≤ 65%",
       "guarantor": "陳氏家族信託（個人連帶保證）",
       "collateral": "不動產第一順位抵押權",
@@ -58,27 +58,27 @@
     }
   ],
   "capitalStack": {
-    "assetValue": 171836000,
-    "seniorDebt": 83742000,
-    "equityContributed": 53400000,
-    "accumulatedRetainedEarnings": 7500000,
-    "netEquity": 88094000,
+    "assetValue": 121673519,
+    "seniorDebt": 59256841,
+    "equityContributed": 37380000,
+    "accumulatedRetainedEarnings": 5250000,
+    "netEquity": 62416678,
     "seniorDebtPct": 48.7,
     "equityPct": 51.3
   },
   "distributions": [
-    { "date": "2021-12-15", "amount": 1350000, "type": "年度分配", "chenShare": 1080000, "pacificShare": 270000 },
-    { "date": "2022-12-20", "amount": 1860000, "type": "年度分配", "chenShare": 1488000, "pacificShare": 372000 },
-    { "date": "2023-12-18", "amount": 2250000, "type": "年度分配", "chenShare": 1800000, "pacificShare": 450000 },
-    { "date": "2024-12-16", "amount": 2640000, "type": "年度分配", "chenShare": 2112000, "pacificShare": 528000 },
-    { "date": "2025-12-12", "amount": 2880000, "type": "年度分配", "chenShare": 2304000, "pacificShare": 576000 }
+    { "date": "2021-12-15", "amount": 945000,  "type": "年度分配", "chenShare": 756000,  "pacificShare": 189000 },
+    { "date": "2022-12-20", "amount": 1302000, "type": "年度分配", "chenShare": 1041600, "pacificShare": 260400 },
+    { "date": "2023-12-18", "amount": 1575000, "type": "年度分配", "chenShare": 1260000, "pacificShare": 315000 },
+    { "date": "2024-12-16", "amount": 1848000, "type": "年度分配", "chenShare": 1478400, "pacificShare": 369600 },
+    { "date": "2025-12-12", "amount": 2016000, "type": "年度分配", "chenShare": 1612800, "pacificShare": 403200 }
   ],
   "guaranteesObligations": [
     {
       "type": "個人連帶保證",
       "obligor": "陳氏家族信託",
       "beneficiary": "台北富邦銀行",
-      "amount": 83742000,
+      "amount": 59256841,
       "description": "優先抵押貸款全額連帶保證。當LTV降至40%以下或貸款清償時，保證責任解除。",
       "expiryDate": "2026-10-01",
       "status": "Active"

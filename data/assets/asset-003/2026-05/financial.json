@@ -18,25 +18,25 @@
     ]
   },
   "valuation": {
-    "purchasePrice": 62400000,
+    "purchasePrice": 62513284,
     "purchaseDate": "2013-03-18",
-    "lastAppraisalValue": 85624000,
+    "lastAppraisalValue": 85624739,
     "lastAppraisalDate": "2025-02-15",
-    "currentEstimatedValue": 93512000,
+    "currentEstimatedValue": 93512417,
     "estimationBasis": "信義房屋估價意見書（2026年5月）；採市場比較法",
     "impliedCapRate": "N/A（自用）",
     "valuePM2": 283000,
-    "valueChange": 31112000,
-    "valueChangePct": 49.9,
-    "netEquity": 93512000,
+    "valueChange": 30999133,
+    "valueChangePct": 49.6,
+    "netEquity": 93512417,
     "history": [
-      { "date": "2013-03-18", "value": 62400000,  "source": "預售取得價格" },
-      { "date": "2016-05-20", "value": 68376000,  "source": "交屋市值評估" },
-      { "date": "2018-11-01", "value": 72624000,  "source": "仲介估價" },
-      { "date": "2020-10-01", "value": 77792000,  "source": "正式鑑價" },
-      { "date": "2022-11-01", "value": 82376000,  "source": "正式鑑價" },
-      { "date": "2025-02-15", "value": 85624000,  "source": "正式鑑價" },
-      { "date": "2026-05-01", "value": 93512000,  "source": "仲介估價意見書" }
+      { "date": "2013-03-18", "value": 62513284,  "source": "預售取得價格" },
+      { "date": "2016-05-20", "value": 68376293,  "source": "交屋市值評估" },
+      { "date": "2018-11-01", "value": 72624847,  "source": "仲介估價" },
+      { "date": "2020-10-01", "value": 77792163,  "source": "正式鑑價" },
+      { "date": "2022-11-01", "value": 82376518,  "source": "正式鑑價" },
+      { "date": "2025-02-15", "value": 85624739,  "source": "正式鑑價" },
+      { "date": "2026-05-01", "value": 93512417,  "source": "仲介估價意見書" }
     ]
   },
   "capex": [
@@ -54,8 +54,8 @@
     },
     "value": {
       "Downside": [90300000, 88600000, 87200000, 86100000, 85400000],
-      "Base":     [93512000, 96800000, 100300000, 103900000, 107700000],
-      "Upside":   [93512000, 99200000, 105400000, 112000000, 119200000]
+      "Base":     [93512417, 96800000, 100300000, 103900000, 107700000],
+      "Upside":   [93512417, 99200000, 105400000, 112000000, 119200000]
     }
   }
 }

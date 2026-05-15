@@ -155,7 +155,8 @@ body {
   display: flex; align-items: center; gap: 6px;
   padding-top: 9px; padding-bottom: 9px;
 }
-.bc-root    { color: var(--text-muted); font-size: 12px; }
+.bc-root    { color: var(--text-muted); font-size: 12px; text-decoration: none; }
+.bc-root:hover { color: var(--accent); text-decoration: underline; }
 .bc-asset   { color: var(--text-secondary); }
 .bc-current { color: var(--text-primary); font-weight: 600; }
 .bc-sep     { color: var(--text-muted); font-size: 14px; }
@@ -379,7 +380,7 @@ body {
 }
 .kpi-trend.up   { color: var(--green); }
 .kpi-trend.down { color: var(--red); }
-.kpi-chart { flex: 1; min-height: 70px; }
+.kpi-chart { height: 110px; flex-shrink: 0; margin-top: 4px; }
 
 /* ── Summary Narrative ───────────────────────────────────── */
 .summary-card { border-left: 3px solid var(--accent); }
