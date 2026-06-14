@@ -2,9 +2,12 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="auth.js"></script>
   <script>
-    if (sessionStorage.getItem('ap_auth') !== '1') window.location.replace('login.html');
-    else if (!new URLSearchParams(location.search).get('id')) window.location.replace('portfolio.html');
+    if (window.requireAuth) requireAuth();
+    if (!new URLSearchParams(location.search).get('id')) window.location.replace('portfolio.html');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BPM Intelligence — 資產明細</title>
@@ -40,7 +43,7 @@
       <span class="live-tick"><span class="live-dot"></span>Live · <span id="nav-period-display">2026-05</span> TPE</span>
       <span class="top-divider"></span>
       <button class="locale-btn" type="button" title="語言（示範）"><span class="on">繁中</span><span class="sep">/</span><span class="off">EN</span></button>
-      <span class="avatar">陳</span>
+      <button class="avatar" type="button" title="登出 · Sign out" onclick="bpmSignOut()" style="border:0;cursor:pointer;">陳</button>
     </div>
   </header>
 
@@ -489,6 +492,7 @@
 
 </div><!-- /.app-shell -->
 
+<script src="data.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

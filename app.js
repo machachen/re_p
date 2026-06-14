@@ -124,15 +124,11 @@ async function fetchJSON(url) {
 async function loadData() {
   showLoading(true);
   try {
-    state.latest = await fetchJSON(`${BASE_URL}${ASSET_ID}/latest.json`);
-    const period = state.latest.currentPeriod;
-    state.manifest = await fetchJSON(`${BASE_URL}${ASSET_ID}/${period}/manifest.json`);
-
-    const fetches = state.manifest.sections.map(async (sec) => {
-      const data = await fetchJSON(`${BASE_URL}${ASSET_ID}/${period}/${sec.file}`);
-      state.data[sec.id] = data;
-    });
-    await Promise.all(fetches);
+    if (window.requireAuth) { const s = await window.requireAuth(); if (!s) return; }
+    const res = await bpmLoadAsset(ASSET_ID);
+    state.latest = res.latest;
+    state.manifest = res.manifest;
+    state.data = res.data;
     renderAll();
   } catch (err) {
     console.error(err);

@@ -88,7 +88,8 @@ function showError(msg) {
 async function loadData() {
   showLoading(true);
   try {
-    const d = await fetch(PF_DATA_URL).then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
+    if (window.requireAuth) { const s = await window.requireAuth(); if (!s) return; }
+    const d = await bpmLoadPortfolio();
     renderAll(d);
   } catch (err) {
     console.error(err);
