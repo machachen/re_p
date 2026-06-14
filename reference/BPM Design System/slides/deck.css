@@ -1,0 +1,90 @@
+/* Slide templates — 1280 × 720, shared styles */
+@import url("../colors_and_type.css");
+
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+body {
+  background: #6A6A71;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--ink);
+}
+
+.slide {
+  width: 1280px;
+  height: 720px;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+/* Slide chrome — universal top/bottom hairlines + brand mark */
+.slide-chrome-top {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--bpm-red);
+}
+.slide-chrome-bottom {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 1px; background: var(--rule);
+}
+.slide-brand {
+  position: absolute; top: 28px; left: 64px;
+  display: inline-flex; align-items: baseline; gap: 6px;
+}
+.slide-brand .mark {
+  font-family: var(--font-sans); font-weight: 800; font-size: 22px;
+  letter-spacing: -0.04em; color: var(--ink); line-height: 1;
+}
+.slide-brand .tri {
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 6px solid var(--bpm-red);
+  display: inline-block;
+  transform: translateY(-6px);
+}
+.slide-brand .sub {
+  font-family: var(--font-sans); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);
+  margin-left: 6px;
+}
+.slide-meta-right {
+  position: absolute; top: 28px; right: 64px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.04em; color: var(--ink-3);
+  display: flex; gap: 12px; align-items: center;
+}
+.slide-meta-right .dot { width: 4px; height: 4px; border-radius: 999px; background: var(--rule-2); }
+.slide-foot-left, .slide-foot-right {
+  position: absolute; bottom: 26px;
+  font-family: var(--font-sans); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3);
+}
+.slide-foot-left  { left: 64px; }
+.slide-foot-right { right: 64px; }
+
+/* Type helpers (slides use larger sizes than the rest of the system) */
+.s-eyebrow {
+  font-family: var(--font-sans); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--bpm-red);
+}
+.s-headline {
+  font-family: var(--font-display); font-weight: 500;
+  letter-spacing: -0.022em; line-height: 1.04; color: var(--ink); margin: 0;
+}
+.s-headline-tc {
+  font-family: var(--font-cjk-display); font-weight: 600;
+  letter-spacing: 0.01em; line-height: 1.15; color: var(--ink); margin: 0;
+}
+.s-body { font-family: var(--font-sans); font-size: 18px; line-height: 1.55; color: var(--ink-2); }
+.s-num  { font-family: var(--font-display); font-feature-settings: 'tnum' 1, 'lnum' 1; font-weight: 500; letter-spacing: -0.022em; color: var(--ink); }
+.s-rule { height: 1px; background: var(--rule); border: 0; margin: 0; }
+
+/* Page number / step indicator */
+.s-step {
+  position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
+  color: var(--ink-3);
+}

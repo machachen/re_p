@@ -1,0 +1,43 @@
+/* Shared styles for the marketing kit */
+@import url("../../colors_and_type.css");
+
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+button, .btn { cursor: pointer; }
+.btn {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-sans); font-size:14px; font-weight:500;
+  padding:11px 18px; border-radius:2px; border:1px solid transparent; line-height:1;
+  transition:background var(--d-hover) var(--ease), border-color var(--d-hover) var(--ease), color var(--d-hover) var(--ease);
+}
+.btn-primary { background:var(--bpm-red); color:var(--paper); }
+.btn-primary:hover { background:var(--bpm-red-hover); }
+.btn-secondary { background:transparent; color:var(--ink); border-color:var(--ink); }
+.btn-secondary:hover { background:var(--ink-05); }
+.btn-tertiary  { background:transparent; color:var(--ink); border-color:transparent; padding:11px 6px; }
+.btn-tertiary:hover { text-decoration:underline; text-underline-offset:3px; }
+.btn-on-ink-primary { background:var(--bpm-red); color:var(--paper); }
+.btn-on-ink-secondary { background:transparent; color:var(--paper); border-color:var(--paper); }
+.btn-on-ink-secondary:hover { background:rgba(245,241,234,0.06); }
+
+.page { max-width: 1280px; margin: 0 auto; padding: 0 64px; }
+.eyebrow { font-family:var(--font-sans); font-size:11px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); }
+.eyebrow-red { color: var(--bpm-red); }
+.eyebrow-paper { color: rgba(245,241,234,0.7); }
+.rule { height: 1px; background: var(--rule); border: 0; margin: 0; }
+.rule-emph { height: 2px; background: var(--ink); border: 0; margin: 0; }
+.rule-red  { height: 2px; background: var(--bpm-red); border: 0; margin: 0; }
+
+.serif { font-family:var(--font-serif); letter-spacing:-0.012em; }
+.serif-tc { font-family:var(--font-cjk-serif); letter-spacing:0; }
+
+.biling { display:flex; flex-direction:column; gap:6px; }
+.biling .en { color:var(--ink-3); font-family:var(--font-sans); font-size:0.45em; letter-spacing:0; line-height:1.4; }

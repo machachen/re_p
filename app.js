@@ -33,21 +33,32 @@ function initChart(domId) {
 }
 window.addEventListener('resize', () => chartInstances.forEach(c => c.resize()));
 
-/* ── ECharts base theme (shared palette) ─────────────────── */
-const CHART_COLORS = {
-  blue:   '#1a6ef5',
-  green:  '#1e8a4c',
-  red:    '#c0392b',
-  amber:  '#e67e22',
-  gray:   '#8a97a8',
-  slate:  '#556272',
-  light:  '#e2e6ea'
-};
+/* ── ECharts base theme (BPM palette) ────────────────────── */
+/* BPM data-viz palette — order: you/portfolio, peer/market, benchmark, forecast, mute */
+const BPM_SERIES = ['#8E1B1F', '#33547A', '#1F5C4A', '#B5832A', '#8A8A8F'];
+const CHART_COLORS = { blue: '#8E1B1F', green: '#1F5C4A', red: '#8E1B1F', amber: '#B5832A', gray: '#8A8A8F' };
+const BPM = { ink:'#0B0B0C', ink3:'#5C5C61', rule:'#D8D5CE', grid:'#E5E5E7', paper:'#F5F1EA', bone:'#FBF8F2' };
+const BPM_FONT = "'Inter','Noto Sans TC',system-ui,sans-serif";
+const BPM_MONO = "'JetBrains Mono',ui-monospace,monospace";
 
 const ECHARTS_BASE = {
-  textStyle: { fontFamily: "'Inter','Microsoft JhengHei','PingFang TC','Noto Sans TC',sans-serif", fontSize: 11 },
-  color: [CHART_COLORS.blue, CHART_COLORS.green, CHART_COLORS.red, CHART_COLORS.amber, CHART_COLORS.gray]
+  color: BPM_SERIES,
+  textStyle: { fontFamily: BPM_FONT, fontSize: 11, color: BPM.ink3 },
+  tooltip: {
+    backgroundColor: BPM.bone, borderColor: BPM.rule, borderWidth: 1,
+    textStyle: { color: BPM.ink, fontFamily: BPM_FONT, fontSize: 12 },
+    extraCssText: 'border-radius:2px;box-shadow:0 8px 24px -12px rgba(11,11,12,0.15);'
+  }
 };
+function bpmAxis(extra = {}) {
+  return Object.assign({
+    axisLine:  { lineStyle: { color: BPM.rule } },
+    axisTick:  { show: false },
+    axisLabel: { color: BPM.ink3, fontSize: 10, fontFamily: BPM_FONT },
+    splitLine: { lineStyle: { color: BPM.grid, type: 'solid' } },
+    nameTextStyle: { color: BPM.ink3, fontSize: 10 }
+  }, extra);
+}
 
 /* ── Utility helpers ─────────────────────────────────────── */
 function fmt(n, decimals = 0) {
@@ -151,8 +162,16 @@ function renderAll() {
 function renderNav() {
   const m = state.manifest;
   const updated = new Date(m.lastUpdated).toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' });
-  el('nav-updated-date').textContent = updated;
-  el('nav-period-select').value = m.period;
+  const updatedEl = el('nav-updated-date');
+  if (updatedEl) updatedEl.textContent = updated;
+  const periodSelect = el('nav-period-select');
+  if (periodSelect) periodSelect.value = m.period;
+  const periodDisplay = el('nav-period-display');
+  if (periodDisplay) periodDisplay.textContent = m.period;
+  // Mark the matching asset row active in the sidebar
+  document.querySelectorAll('.side-row[data-asset]').forEach(row => {
+    row.classList.toggle('active', row.getAttribute('data-asset') === ASSET_ID);
+  });
 }
 
 /* ── Asset Header ────────────────────────────────────────── */
@@ -327,17 +346,17 @@ function renderKpiChart(kpi) {
   chart.setOption({
     ...ECHARTS_BASE,
     grid: { top: 4, bottom: 20, left: 0, right: 0, containLabel: false },
-    tooltip: { trigger: 'axis', confine: true, textStyle: { fontSize: 11 } },
-    xAxis: { type: 'category', data: cd.labels, axisLine: { show: false }, axisTick: { show: false }, axisLabel: { fontSize: 9, color: CHART_COLORS.gray } },
+    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'axis', confine: true },
+    xAxis: bpmAxis({ type: 'category', data: cd.labels, axisLine: { show: false }, axisTick: { show: false }, axisLabel: { fontSize: 9, color: BPM.ink3, fontFamily: BPM_FONT }, splitLine: { show: false } }),
     yAxis: { type: 'value', show: false },
     series: [{
       type: isLine ? 'line' : 'bar',
       data: cd.values,
       smooth: true,
       symbol: 'none',
-      itemStyle: { color: CHART_COLORS.blue, borderRadius: isLine ? 0 : [2, 2, 0, 0] },
+      itemStyle: { color: CHART_COLORS.red, borderRadius: 0 },
       lineStyle: { width: 2 },
-      areaStyle: isLine ? { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(26,110,245,0.2)' }, { offset: 1, color: 'rgba(26,110,245,0)' }] } } : null
+      areaStyle: isLine ? { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(142,27,31,0.2)' }, { offset: 1, color: 'rgba(142,27,31,0)' }] } } : null
     }]
   });
 }
@@ -385,13 +404,13 @@ function renderOwnership() {
   const ownershipChart = initChart('ow-donut-chart');
   ownershipChart.setOption({
     ...ECHARTS_BASE,
-    tooltip: { trigger: 'item', formatter: '{b}: {d}%' },
-    legend: { bottom: 0, textStyle: { fontSize: 11 } },
+    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'item', formatter: '{b}: {d}%' },
+    legend: { bottom: 0, textStyle: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 } },
     series: [{
       type: 'pie', radius: ['40%', '68%'], center: ['50%', '45%'],
-      data: d.owners.map(o => ({ name: o.name, value: o.ownershipPct })),
-      label: { fontSize: 11, formatter: '{b}\n{d}%' },
-      itemStyle: { borderWidth: 2, borderColor: '#fff' }
+      data: d.owners.map((o, i) => ({ name: o.name, value: o.ownershipPct, itemStyle: { color: BPM_SERIES[i % BPM_SERIES.length] } })),
+      label: { fontSize: 11, color: BPM.ink3, formatter: '{b}\n{d}%' },
+      itemStyle: { borderWidth: 2, borderColor: '#FBF8F2' }
     }]
   });
 
@@ -423,24 +442,24 @@ function renderOwnership() {
       <div class="cs-segment cs-equity"style="width:${eqPct}%">權益 ${eqPct.toFixed(1)}%</div>
     </div>
     <div class="cs-legend mb-12">
-      <div class="cs-legend-item"><div class="cs-legend-dot" style="background:#c0392b"></div>優先貸款 — ${fmtNTD(cs.seniorDebt)}</div>
-      <div class="cs-legend-item"><div class="cs-legend-dot" style="background:var(--accent)"></div>淨權益 — ${fmtNTD(cs.netEquity)}</div>
+      <div class="cs-legend-item"><div class="cs-legend-dot" style="background:var(--red)"></div>優先貸款 — ${fmtNTD(cs.seniorDebt)}</div>
+      <div class="cs-legend-item"><div class="cs-legend-dot" style="background:var(--info)"></div>淨權益 — ${fmtNTD(cs.netEquity)}</div>
     </div>`;
 
   /* Capital stack waterfall chart */
   const stackChart = initChart('ow-stack-chart');
   stackChart.setOption({
     ...ECHARTS_BASE,
-    tooltip: { trigger: 'axis', confine: true, formatter: (p) => p.map(s => `${s.seriesName}: ${fmtCompact(s.value)}`).join('<br>') },
-    legend: { bottom: 0, textStyle: { fontSize: 11 } },
+    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'axis', confine: true, formatter: (p) => p.map(s => `${s.seriesName}: ${fmtCompact(s.value)}`).join('<br>') },
+    legend: { bottom: 0, textStyle: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 } },
     grid: { top: 10, bottom: 40, left: 80, right: 20 },
-    xAxis: { type: 'category', data: ['優先貸款', '出資金額', '累計保留盈餘', '淨權益'], axisLabel: { fontSize: 10 } },
-    yAxis: { type: 'value', axisLabel: { formatter: v => '$' + (v/1e6).toFixed(0) + 'M', fontSize: 10 } },
+    xAxis: bpmAxis({ type: 'category', data: ['優先貸款', '出資金額', '累計保留盈餘', '淨權益'], splitLine: { show: false } }),
+    yAxis: bpmAxis({ type: 'value', axisLabel: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 10, formatter: v => '$' + (v/1e6).toFixed(0) + 'M' } }),
     series: [{
       name: '金額', type: 'bar', barWidth: '50%',
       data: [cs.seniorDebt, cs.equityContributed, cs.accumulatedRetainedEarnings, cs.netEquity],
-      itemStyle: { color: (params) => [CHART_COLORS.red, CHART_COLORS.blue, CHART_COLORS.green, '#6366f1'][params.dataIndex], borderRadius: [3, 3, 0, 0] },
-      label: { show: true, position: 'top', formatter: p => '$' + (p.value/1e6).toFixed(0) + 'M', fontSize: 10 }
+      itemStyle: { color: (params) => [BPM_SERIES[0], BPM_SERIES[1], BPM_SERIES[2], BPM_SERIES[3]][params.dataIndex], borderRadius: 0 },
+      label: { show: true, position: 'top', color: BPM.ink3, formatter: p => '$' + (p.value/1e6).toFixed(0) + 'M', fontSize: 10 }
     }]
   });
 
@@ -590,17 +609,17 @@ function renderFinancial() {
   const vhChart = initChart('fin-valuation-chart');
   vhChart.setOption({
     ...ECHARTS_BASE,
-    tooltip: { trigger: 'axis', formatter: p => `${p[0].axisValue}<br>估值：${fmtCompact(p[0].value)}` },
+    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'axis', formatter: p => `${p[0].axisValue}<br>估值：${fmtCompact(p[0].value)}` },
     grid: { top: 10, bottom: 30, left: 90, right: 20 },
-    xAxis: { type: 'category', data: v.history.map(h => h.date.substr(0,7)), axisLabel: { fontSize: 10 } },
-    yAxis: { type: 'value', axisLabel: { formatter: val => '$' + (val/1e6).toFixed(0)+'M', fontSize: 10 } },
+    xAxis: bpmAxis({ type: 'category', data: v.history.map(h => h.date.substr(0,7)), splitLine: { show: false } }),
+    yAxis: bpmAxis({ type: 'value', axisLabel: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 10, formatter: val => '$' + (val/1e6).toFixed(0)+'M' } }),
     series: [{
       type: 'line', data: v.history.map(h => h.value),
       smooth: true, symbol: 'circle', symbolSize: 6,
-      itemStyle: { color: CHART_COLORS.blue },
+      itemStyle: { color: CHART_COLORS.red },
       lineStyle: { width: 2.5 },
-      areaStyle: { color: { type:'linear', x:0,y:0,x2:0,y2:1, colorStops:[{offset:0,color:'rgba(26,110,245,0.18)'},{offset:1,color:'rgba(26,110,245,0)'}] } },
-      markPoint: { data: [{ type: 'max', name: '最高' }], symbolSize: 36, label: { fontSize: 10 } }
+      areaStyle: { color: { type:'linear', x:0,y:0,x2:0,y2:1, colorStops:[{offset:0,color:'rgba(142,27,31,0.18)'},{offset:1,color:'rgba(142,27,31,0)'}] } },
+      markPoint: { data: [{ type: 'max', name: '最高' }], symbolSize: 36, label: { color: '#FBF8F2', fontSize: 10 } }
     }]
   });
 
@@ -609,15 +628,15 @@ function renderFinancial() {
   const projChart = initChart('fin-projection-chart');
   projChart.setOption({
     ...ECHARTS_BASE,
-    tooltip: { trigger: 'axis', formatter: (p) => `${p[0].axisValue}<br>${p.map(s=>`${s.seriesName}: ${fmtCompact(s.value)}`).join('<br>')}` },
-    legend: { bottom: 0, textStyle: { fontSize: 11 } },
+    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'axis', formatter: (p) => `${p[0].axisValue}<br>${p.map(s=>`${s.seriesName}: ${fmtCompact(s.value)}`).join('<br>')}` },
+    legend: { bottom: 0, textStyle: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 } },
     grid: { top: 10, bottom: 40, left: 90, right: 20 },
-    xAxis: { type: 'category', data: proj.years, axisLabel: { fontSize: 11 } },
-    yAxis: { type: 'value', axisLabel: { formatter: v => '$' + (v/1e6).toFixed(0)+'M', fontSize: 10 } },
+    xAxis: bpmAxis({ type: 'category', data: proj.years, axisLabel: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 }, splitLine: { show: false } }),
+    yAxis: bpmAxis({ type: 'value', axisLabel: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 10, formatter: v => '$' + (v/1e6).toFixed(0)+'M' } }),
     series: [
-      { name: '悲觀', type: 'line', data: proj.value.Downside, smooth: true, symbol: 'none', lineStyle: { color: CHART_COLORS.red, type: 'dashed', width: 1.5 }, itemStyle: { color: CHART_COLORS.red } },
-      { name: '基本', type: 'line', data: proj.value.Base,     smooth: true, symbol: 'none', lineStyle: { color: CHART_COLORS.blue, width: 2.5 }, itemStyle: { color: CHART_COLORS.blue } },
-      { name: '樂觀', type: 'line', data: proj.value.Upside,   smooth: true, symbol: 'none', lineStyle: { color: CHART_COLORS.green, type: 'dashed', width: 1.5 }, itemStyle: { color: CHART_COLORS.green } }
+      { name: '悲觀', type: 'line', data: proj.value.Downside, smooth: true, symbol: 'none', lineStyle: { color: '#8E1B1F', type: 'dashed', width: 1.5 }, itemStyle: { color: '#8E1B1F' } },
+      { name: '基本', type: 'line', data: proj.value.Base,     smooth: true, symbol: 'none', lineStyle: { color: '#0B0B0C', width: 2.5 }, itemStyle: { color: '#0B0B0C' } },
+      { name: '樂觀', type: 'line', data: proj.value.Upside,   smooth: true, symbol: 'none', lineStyle: { color: '#1F5C4A', type: 'dashed', width: 1.5 }, itemStyle: { color: '#1F5C4A' } }
     ]
   });
 
@@ -725,15 +744,15 @@ function renderRisk() {
   const scenChart = initChart('risk-scenario-chart');
   scenChart.setOption({
     ...ECHARTS_BASE,
-    tooltip: { trigger: 'axis', formatter: p => `${p[0].axisValue}<br>${p.map(s=>`${s.seriesName}: ${fmtCompact(s.value)}`).join('<br>')}` },
-    legend: { bottom: 0, textStyle: { fontSize: 11 } },
+    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'axis', formatter: p => `${p[0].axisValue}<br>${p.map(s=>`${s.seriesName}: ${fmtCompact(s.value)}`).join('<br>')}` },
+    legend: { bottom: 0, textStyle: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 } },
     grid: { top: 10, bottom: 40, left: 90, right: 20 },
-    xAxis: { type: 'category', data: sc.labels },
-    yAxis: { type: 'value', axisLabel: { formatter: v => fmtCompact(v), fontSize: 10 } },
+    xAxis: bpmAxis({ type: 'category', data: sc.labels, splitLine: { show: false } }),
+    yAxis: bpmAxis({ type: 'value', axisLabel: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 10, formatter: v => fmtCompact(v) } }),
     series: [
-      { name: '悲觀', type: 'line', data: sc.cashFlow.Downside, smooth: true, symbol: 'none', lineStyle: { color: CHART_COLORS.red,   type: 'dashed', width: 1.5 } },
-      { name: '基本', type: 'line', data: sc.cashFlow.Base,     smooth: true, symbol: 'none', lineStyle: { color: CHART_COLORS.blue,  width: 2.5 } },
-      { name: '樂觀', type: 'line', data: sc.cashFlow.Upside,   smooth: true, symbol: 'none', lineStyle: { color: CHART_COLORS.green, type: 'dashed', width: 1.5 } }
+      { name: '悲觀', type: 'line', data: sc.cashFlow.Downside, smooth: true, symbol: 'none', lineStyle: { color: '#8E1B1F', type: 'dashed', width: 1.5 }, itemStyle: { color: '#8E1B1F' } },
+      { name: '基本', type: 'line', data: sc.cashFlow.Base,     smooth: true, symbol: 'none', lineStyle: { color: '#0B0B0C', width: 2.5 }, itemStyle: { color: '#0B0B0C' } },
+      { name: '樂觀', type: 'line', data: sc.cashFlow.Upside,   smooth: true, symbol: 'none', lineStyle: { color: '#1F5C4A', type: 'dashed', width: 1.5 }, itemStyle: { color: '#1F5C4A' } }
     ]
   });
 
@@ -758,26 +777,27 @@ function renderRisk() {
 function renderRiskMatrix(register) {
   /* ECharts scatter plot as probability/impact matrix */
   const chart = initChart('risk-matrix-chart');
-  const colorMap = { High: CHART_COLORS.red, Medium: CHART_COLORS.amber, Low: CHART_COLORS.green };
+  const colorMap = { High: '#8E1B1F', Medium: '#B5832A', Low: '#1F5C4A' };
   const levelLabel = { High: '高', Medium: '中', Low: '低' };
   chart.setOption({
     ...ECHARTS_BASE,
     tooltip: {
+      ...ECHARTS_BASE.tooltip,
       trigger: 'item',
       formatter: p => {
         const r = register.find(x => x.id === p.data[2]);
         return r ? `<b>${r.id} — ${r.title}</b><br>發生機率：${r.probability} / 影響程度：${r.impact}<br>等級：${levelLabel[r.level] || r.level}` : '';
       }
     },
-    xAxis: { type: 'value', name: '影響程度', min: 0, max: 6, nameLocation: 'middle', nameGap: 25, axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { type: 'dashed' } } },
-    yAxis: { type: 'value', name: '發生機率', min: 0, max: 6, nameLocation: 'middle', nameGap: 30, axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { type: 'dashed' } } },
+    xAxis: bpmAxis({ type: 'value', name: '影響程度', min: 0, max: 6, nameLocation: 'middle', nameGap: 25 }),
+    yAxis: bpmAxis({ type: 'value', name: '發生機率', min: 0, max: 6, nameLocation: 'middle', nameGap: 30 }),
     grid: { top: 20, bottom: 50, left: 60, right: 20 },
     series: [{
       type: 'scatter',
       symbolSize: 32,
       data: register.map(r => [r.impact, r.probability, r.id]),
       itemStyle: { color: p => colorMap[register.find(x => x.id === p.data[2])?.level] || CHART_COLORS.gray, opacity: 0.85 },
-      label: { show: true, formatter: p => p.data[2], fontSize: 9, fontWeight: 700, color: '#fff' }
+      label: { show: true, formatter: p => p.data[2], fontSize: 9, fontWeight: 700, color: '#FBF8F2' }
     }]
   });
 }
@@ -1029,7 +1049,7 @@ function renderMarket() {
       </tr></thead>
       <tbody>${d.rentComparables.map(r => {
         const isSubject = r.address.includes('本案');
-        return `<tr ${isSubject ? 'style="background:#e8f0fe;font-weight:600;"' : ''}>
+        return `<tr ${isSubject ? 'style="background:var(--bpm-red-tint);font-weight:600;"' : ''}>
           <td>${escHtml(r.address)} ${isSubject ? '<span class="comp-badge">本案</span>' : ''}</td>
           <td>${escHtml(r.unitType)}</td>
           <td class="num">${r.areaM2}</td>
@@ -1047,14 +1067,15 @@ function renderMarket() {
   const crt = d.capRateTrend;
   crChart.setOption({
     ...ECHARTS_BASE,
-    tooltip: { trigger: 'axis', formatter: p => `${p[0].axisValue}<br>資本化率：${p[0].value}%` },
+    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'axis', formatter: p => `${p[0].axisValue}<br>資本化率：${p[0].value}%` },
     grid: { top: 10, bottom: 30, left: 44, right: 20 },
-    xAxis: { type: 'category', data: crt.labels, axisLabel: { fontSize: 9, rotate: 30 } },
-    yAxis: { type: 'value', name: '', min: 2.0, max: 3.5, axisLabel: { formatter: v => v.toFixed(1)+'%', fontSize: 10 }, splitLine: { lineStyle: { type: 'dashed' } } },
+    xAxis: bpmAxis({ type: 'category', data: crt.labels, axisLabel: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 9, rotate: 30 }, splitLine: { show: false } }),
+    yAxis: bpmAxis({ type: 'value', name: '', min: 2.0, max: 3.5, axisLabel: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 10, formatter: v => v.toFixed(1)+'%' } }),
     series: [{
       type: 'line', data: crt.values, smooth: true, symbol: 'none',
-      lineStyle: { color: CHART_COLORS.blue, width: 2 },
-      areaStyle: { color: { type:'linear', x:0,y:0,x2:0,y2:1, colorStops:[{offset:0,color:'rgba(26,110,245,0.15)'},{offset:1,color:'rgba(26,110,245,0)'}] } }
+      lineStyle: { color: CHART_COLORS.red, width: 2 },
+      itemStyle: { color: CHART_COLORS.red },
+      areaStyle: { color: { type:'linear', x:0,y:0,x2:0,y2:1, colorStops:[{offset:0,color:'rgba(142,27,31,0.15)'},{offset:1,color:'rgba(142,27,31,0)'}] } }
     }]
   });
 
@@ -1063,14 +1084,14 @@ function renderMarket() {
   const vt = d.vacancyTrend;
   vcChart.setOption({
     ...ECHARTS_BASE,
-    tooltip: { trigger: 'axis', formatter: p => `${p[0].axisValue}<br>${p.map(s=>`${s.seriesName}: ${s.value}%`).join('<br>')}` },
-    legend: { bottom: 0, textStyle: { fontSize: 11 } },
+    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'axis', formatter: p => `${p[0].axisValue}<br>${p.map(s=>`${s.seriesName}: ${s.value}%`).join('<br>')}` },
+    legend: { bottom: 0, textStyle: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 } },
     grid: { top: 10, bottom: 40, left: 44, right: 20 },
-    xAxis: { type: 'category', data: vt.labels, axisLabel: { fontSize: 9, rotate: 30 } },
-    yAxis: { type: 'value', axisLabel: { formatter: v => v+'%', fontSize: 10 }, splitLine: { lineStyle: { type: 'dashed' } } },
+    xAxis: bpmAxis({ type: 'category', data: vt.labels, axisLabel: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 9, rotate: 30 }, splitLine: { show: false } }),
+    yAxis: bpmAxis({ type: 'value', axisLabel: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 10, formatter: v => v+'%' } }),
     series: [
-      { name: '次市場', type: 'line', data: vt.submarket, smooth: true, symbol: 'none', lineStyle: { color: CHART_COLORS.gray, width: 2 } },
-      { name: '港景', type: 'line', data: vt.asset, smooth: true, symbol: 'circle', symbolSize: 5, lineStyle: { color: CHART_COLORS.blue, width: 2 } }
+      { name: '次市場', type: 'line', data: vt.submarket, smooth: true, symbol: 'none', lineStyle: { color: '#8A8A8F', width: 2 }, itemStyle: { color: '#8A8A8F' } },
+      { name: '港景', type: 'line', data: vt.asset, smooth: true, symbol: 'circle', symbolSize: 5, lineStyle: { color: '#8E1B1F', width: 2 }, itemStyle: { color: '#8E1B1F' } }
     ]
   });
 

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- @dsCard group="UI Kit — Marketing" name="BPM · Marketing site" subtitle="Homepage — hero, capabilities, coverage, insights, CTA" viewport="1280x1100" -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BPM · Read the building. Then read the book.</title>
+  <meta name="viewport" content="width=1280">
+  <link rel="stylesheet" href="kit.css">
+  <link rel="icon" type="image/svg+xml" href="../../assets/bpm-monogram.svg">
+</head>
+<body id="top">
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="NavBar.jsx"></script>
+  <script type="text/babel" src="Hero.jsx"></script>
+  <script type="text/babel" src="CapabilityGrid.jsx"></script>
+  <script type="text/babel" src="StatStrip.jsx"></script>
+  <script type="text/babel" src="Coverage.jsx"></script>
+  <script type="text/babel" src="Footer.jsx"></script>
+
+  <script type="text/babel" data-presets="env,react">
+  const { useState } = React;
+
+  function Site() {
+    const [locale, setLocale] = useState("en");
+    const toggle = () => setLocale(l => l === "en" ? "tc" : "en");
+    const tr = (en, tc) => (locale === "tc" ? tc : en);
+
+    return (
+      <div>
+        <NavBar locale={locale} onToggleLocale={toggle} />
+
+        <div className="page">
+          <Hero locale={locale} />
+        </div>
+
+        <StatStrip locale={locale} />
+
+        <div className="page">
+          <CapabilityGrid locale={locale} />
+        </div>
+
+        <div style={{ background: "var(--bone)", borderTop: "1px solid var(--rule)", borderBottom: "1px solid var(--rule)" }}>
+          <div className="page">
+            <Coverage locale={locale} />
+          </div>
+        </div>
+
+        {/* Insights teaser */}
+        <div className="page">
+          <section id="insights" style={{ padding: "96px 0" }}>
+            <span className="eyebrow eyebrow-red">{tr("Insights · 洞察", "洞察")}</span>
+            <h2 className="serif" style={{ fontSize: 44, fontWeight: 500, lineHeight: 1.15, margin: "12px 0 48px", maxWidth: "16em" }}>
+              {tr("What our analysts wrote down this quarter.", "本季分析師寫下的觀察。")}
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", borderTop: "1px solid var(--ink)" }}>
+              {[
+                {
+                  date: "2025-07-14",
+                  cat: tr("Office · TPE", "商辦 · 台北"),
+                  title_en: "Why Xinyi cap rates compressed when nobody bought a building",
+                  title_tc: "信義區資本化率為何在無交易下仍壓縮",
+                  by: "Audrey Cheung",
+                  read: "9 min",
+                },
+                {
+                  date: "2025-06-28",
+                  cat: tr("Retail · APAC", "零售 · 亞太"),
+                  title_en: "Three lease re-pricings, one thesis: footfall has decoupled from rent",
+                  title_tc: "三筆續租重訂，一個假設：人流已與租金脫鉤",
+                  by: "Jonathan Park",
+                  read: "12 min",
+                },
+                {
+                  date: "2025-06-10",
+                  cat: tr("Logistics · TYO", "物流 · 東京"),
+                  title_en: "The forgotten Tokyo bay warehouses, four years later",
+                  title_tc: "被遺忘的東京灣倉儲，四年後的觀察",
+                  by: "Mika Tanaka",
+                  read: "7 min",
+                },
+              ].map((p, i) => (
+                <a key={p.title_en} href="#" style={{
+                  display: "block",
+                  padding: "28px 28px 32px",
+                  borderRight: i < 2 ? "1px solid var(--rule)" : "none",
+                  borderBottom: "1px solid var(--rule)",
+                  textDecoration: "none",
+                  color: "inherit",
+                  border: 0,
+                  borderRightWidth: i < 2 ? 1 : 0,
+                  borderRightStyle: "solid",
+                  borderRightColor: "var(--rule)",
+                  borderBottomWidth: 1,
+                  borderBottomStyle: "solid",
+                  borderBottomColor: "var(--rule)",
+                }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 24 }}>
+                    <span className="eyebrow">{p.cat}</span>
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--ink-3)" }}>{p.date}</span>
+                  </div>
+                  <h3 className="serif-tc" style={{ fontSize: 24, lineHeight: 1.3, margin: 0, color: "var(--ink)", fontWeight: 600 }}>
+                    {locale === "tc" ? p.title_tc : p.title_en}
+                  </h3>
+                  <div style={{ marginTop: 32, fontFamily: "var(--font-sans)", fontSize: 12, color: "var(--ink-3)", display: "flex", justifyContent: "space-between" }}>
+                    <span>{p.by}</span>
+                    <span>{p.read}</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        {/* Closing CTA on ink */}
+        <section style={{ background: "var(--ink)", color: "var(--paper)" }}>
+          <div className="page" style={{ padding: "120px 64px", display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 64, alignItems: "end" }}>
+            <div>
+              <span className="eyebrow eyebrow-paper" style={{ color: "var(--bpm-red)" }}>
+                {tr("Talk to us · 聯絡我們", "聯絡我們")}
+              </span>
+              <h2 className="serif-tc" style={{ fontSize: 72, fontWeight: 600, lineHeight: 1.08, color: "var(--paper)", margin: "20px 0 0" }}>
+                如果您管理的不只是一棟樓，
+              </h2>
+              <h2 className="serif" style={{ fontSize: 36, fontWeight: 400, lineHeight: 1.2, color: "rgba(245,241,234,0.72)", margin: "16px 0 0", fontStyle: "italic" }}>
+                {tr("we'd like to read your book.", "我們想看您整本帳。")}
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              <button className="btn btn-on-ink-primary" style={{ padding: "16px 22px", fontSize: 16, justifyContent: "center" }}>
+                {tr("Request access", "申請使用")}
+              </button>
+              <button className="btn btn-on-ink-secondary" style={{ padding: "16px 22px", fontSize: 16, justifyContent: "center" }}>
+                {tr("Meet an analyst", "與分析師見面")}
+              </button>
+              <div style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", color: "rgba(245,241,234,0.55)", fontSize: 14, marginTop: 8, lineHeight: 1.55 }}>
+                {tr(
+                  "We respond within one business day, in your language. A short call, then a written follow-up.",
+                  "一個工作天內以您的語言回覆。先一通簡短電話，後續以書面跟進。"
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Footer locale={locale} onToggleLocale={toggle} />
+      </div>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<Site />);
+  </script>
+</body>
+</html>

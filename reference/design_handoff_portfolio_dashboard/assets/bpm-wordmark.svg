@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" width="320" height="72" role="img" aria-label="BPM">
+  
+  <text class="wm" x="0" y="50">BPM</text>
+  <line x1="140" y1="22" x2="140" y2="48" stroke="#D8D5CE" stroke-width="1"></line>
+  <text class="sub" x="152" y="34">Portfolio</text>
+  <text class="sub" x="152" y="48">Intelligence</text>
+</svg>

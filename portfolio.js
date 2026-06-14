@@ -12,14 +12,33 @@ function initChart(domId) {
 }
 window.addEventListener('resize', () => chartInstances.forEach(c => c.resize()));
 
-const CHART_COLORS = {
-  blue: '#1a6ef5', green: '#1e8a4c', red: '#c0392b', amber: '#e67e22', gray: '#8a97a8'
-};
-const ECHARTS_BASE = {
-  textStyle: { fontFamily: "'Inter','Microsoft JhengHei','PingFang TC','Noto Sans TC',sans-serif", fontSize: 11 },
-  color: ['#1a6ef5', '#1e8a4c', '#e67e22', '#c0392b', '#8a97a8']
-};
+/* ── BPM data-viz palette — order: you/portfolio, peer/market, benchmark, forecast, mute ── */
+const BPM_SERIES = ['#8E1B1F', '#33547A', '#1F5C4A', '#B5832A', '#8A8A8F'];
+const CHART_COLORS = { blue: '#8E1B1F', green: '#1F5C4A', red: '#8E1B1F', amber: '#B5832A', gray: '#8A8A8F' };
+const BPM = { ink: '#0B0B0C', ink3: '#5C5C61', rule: '#D8D5CE', grid: '#E5E5E7', paper: '#F5F1EA', bone: '#FBF8F2' };
+const BPM_FONT = "'Inter','Noto Sans TC',system-ui,sans-serif";
+const BPM_MONO = "'JetBrains Mono',ui-monospace,monospace";
 
+const ECHARTS_BASE = {
+  color: BPM_SERIES,
+  textStyle: { fontFamily: BPM_FONT, fontSize: 11, color: BPM.ink3 },
+  tooltip: {
+    backgroundColor: BPM.bone, borderColor: BPM.rule, borderWidth: 1,
+    textStyle: { color: BPM.ink, fontFamily: BPM_FONT, fontSize: 12 },
+    extraCssText: 'border-radius:2px;box-shadow:0 8px 24px -12px rgba(11,11,12,0.15);'
+  }
+};
+function bpmAxis(extra = {}) {
+  return Object.assign({
+    axisLine:  { lineStyle: { color: BPM.rule } },
+    axisTick:  { show: false },
+    axisLabel: { color: BPM.ink3, fontSize: 10, fontFamily: BPM_FONT },
+    splitLine: { lineStyle: { color: BPM.grid, type: 'solid' } },
+    nameTextStyle: { color: BPM.ink3, fontSize: 10 }
+  }, extra);
+}
+
+/* ── Formatters ─────────────────────────────────────────── */
 function fmt(n, decimals = 0) {
   if (n == null) return '—';
   return new Intl.NumberFormat('zh-TW', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(n);
@@ -50,9 +69,18 @@ function statusBadgeHtml(s) {
   return `<span class="status-badge ${clsMap[s] || 'not-started'}">${labelMap[s] || escHtml(s)}</span>`;
 }
 
-function showLoading(v) { el('loading-overlay').style.display = v ? 'flex' : 'none'; }
+/* Status dot colour for chips (BPM semantic) */
+function statusDotColor(statusColor) {
+  if (statusColor === 'green') return 'var(--pos)';
+  if (statusColor === 'amber') return 'var(--warn)';
+  if (statusColor === 'red')   return 'var(--bpm-red)';
+  return 'var(--info)';
+}
+
+function showLoading(v) { const o = el('loading-overlay'); if (o) o.style.display = v ? 'flex' : 'none'; }
 function showError(msg) {
   const b = el('error-banner');
+  if (!b) return;
   b.textContent = '⚠ 資料載入失敗：' + msg;
   b.style.display = 'block';
 }
@@ -72,9 +100,12 @@ async function loadData() {
 
 function renderAll(d) {
   renderNav(d);
-  renderHeader(d);
-  renderKeyFigures(d);
+  renderPageHead(d);
+  renderKpiStrip(d);
+  renderMap(d);
   renderSummary(d);
+  renderHoldings(d);
+  renderComposer(d);
   renderAssetCards(d);
   renderAllocationChart(d);
   renderIncomeChart(d);
@@ -88,47 +119,347 @@ function renderAll(d) {
 
 /* ── Navigation ─────────────────────────────────────────── */
 function renderNav(d) {
-  const updated = new Date(d.meta.lastUpdated).toLocaleDateString('zh-TW', {
-    year: 'numeric', month: 'long', day: 'numeric'
-  });
-  el('nav-updated-date').textContent = updated;
-  el('nav-period-display').textContent = d.meta.periodLabel;
-  el('pf-period-badge').textContent   = d.meta.periodLabel;
+  const np = el('nav-period-display');
+  if (np) np.textContent = d.meta.periodLabel;
 }
 
-/* ── Portfolio Header ───────────────────────────────────── */
-function renderHeader(d) {
+/* ── Page header ────────────────────────────────────────── */
+function renderPageHead(d) {
+  const name = el('pf-name');
+  if (name) name.textContent = '不動產組合';
+  const sub = el('pf-sub');
+  if (sub) sub.textContent = 'Chen Family Trust · ' + d.meta.assetCount + ' assets · re-marked May 2026';
+}
+
+/* ── KPI strip (handoff 4-up band) ──────────────────────── */
+function renderKpiStrip(d) {
+  const host = el('pf-kpi-strip');
+  if (!host) return;
   const t = d.totals;
-  el('pf-hdr-aum').textContent    = fmtCompact(t.totalAUM);
-  el('pf-hdr-equity').textContent = fmtCompact(t.chenFamilyEquity);
-  el('pf-hdr-ltv').textContent    = fmtPct(t.blendedLTV);
-  el('pf-asset-count').textContent = d.meta.assetCount + '個資產';
-}
 
-/* ── Key Figures Strip ─────────────────────────────────── */
-function renderKeyFigures(d) {
-  el('pf-key-figures').innerHTML = d.keyFigures.map(kf => `
-    <div class="kf-item">
-      <div class="kf-label">${escHtml(kf.label)}</div>
-      <div class="kf-value">${escHtml(kf.value)}</div>
-      <div class="kf-sub">
-        <span>${escHtml(kf.subLabel)}</span>
-        ${kf.trend ? `<span class="kf-trend ${kf.trend}">${escHtml(kf.trendValue)}</span>` : ''}
+  // refinancing maturity from debt matrix (high-urgency loan)
+  const refi = (d.debtMatrix || []).find(r => r.urgency === 'high');
+  const refiDate = refi ? refi.maturity : '2026-10-01';
+
+  const cells = [
+    {
+      label: '組合總估值 · Gross mark',
+      value: fmtCompact(t.totalAUM),
+      deltaSign: '▲', deltaCls: 'pos',
+      delta: '+' + t.yoyAUMGrowth.toFixed(1) + '%',
+      deltaMeta: '年增'
+    },
+    {
+      label: '加權 LTV · Blended LTV',
+      value: t.blendedLTV.toFixed(1), unit: '%',
+      deltaSign: '▲', deltaCls: 'pos',
+      delta: '財務結構穩健',
+      deltaMeta: '保守槓桿'
+    },
+    {
+      label: '年度 NOI · Annual NOI',
+      value: fmtCompact(t.incomeGeneratingNOI),
+      deltaSign: '▲', deltaCls: 'pos',
+      delta: '+2.4%',
+      deltaMeta: '可收益兩資產'
+    },
+    {
+      label: '待決 · Pending',
+      value: '再融資',
+      deltaSign: '▼', deltaCls: 'neg',
+      delta: refiDate,
+      deltaMeta: '淡水河岸到期'
+    }
+  ];
+
+  host.innerHTML = cells.map(c => `
+    <div class="kpi-cell">
+      <div class="eyebrow">${escHtml(c.label)}</div>
+      <div class="kpi-num">${escHtml(c.value)}${c.unit ? `<span class="unit">${escHtml(c.unit)}</span>` : ''}</div>
+      <div class="kpi-delta">
+        <span class="${c.deltaCls}">${c.deltaSign} ${escHtml(c.delta)}</span>
+        <span class="deltameta">${escHtml(c.deltaMeta)}</span>
       </div>
     </div>`).join('');
 }
 
-/* ── Executive Summary ─────────────────────────────────── */
+/* ── Exposure map (stylised SVG of Greater Taipei) ──────── */
+function renderMap(d) {
+  const host = el('pf-map-body');
+  if (!host) return;
+
+  // Hand-positioned bubbles for the three assets across Greater Taipei.
+  // x/y are SVG coords; r scaled by asset value; peerR a translucent slate peer.
+  const meta = {
+    'asset-001': { label: '淡水河岸', city: '淡水', x: 250, y: 120 },
+    'asset-002': { label: '林口全聯', city: '林口', x: 170, y: 215 },
+    'asset-003': { label: '大安仁愛苑', city: '大安', x: 405, y: 230 }
+  };
+
+  const cards = d.assetCards || [];
+  const maxVal = Math.max(...cards.map(a => a.value), 1);
+  const bubbles = cards.map(a => {
+    const m = meta[a.id] || { label: a.shortName, city: '', x: 320, y: 180 };
+    const r = 14 + 26 * Math.sqrt(a.value / maxVal); // area-ish scaling
+    return { ...m, r, peerR: r + 9, mark: fmtCompact(a.value) };
+  });
+
+  const bubbleSvg = bubbles.map(b => `
+    <g>
+      <circle cx="${b.x}" cy="${b.y}" r="${b.peerR.toFixed(1)}" fill="#33547A" opacity="0.18" stroke="#33547A" stroke-width="0.75" />
+      <circle cx="${b.x}" cy="${b.y}" r="${b.r.toFixed(1)}" fill="#8E1B1F" opacity="0.85" />
+      <circle cx="${b.x}" cy="${b.y}" r="2" fill="#0B0B0C" />
+      <line x1="${b.x}" y1="${b.y}" x2="${b.x + 14}" y2="${b.y - 16}" stroke="#0B0B0C" stroke-width="0.75" />
+      <text x="${b.x + 16}" y="${b.y - 16}" font-family="${BPM_FONT}" font-size="11" font-weight="600" fill="#0B0B0C">${escHtml(b.label)} · ${escHtml(b.city)}</text>
+      <text x="${b.x + 16}" y="${b.y - 4}" font-family="${BPM_MONO}" font-size="10" fill="#5C5C61">${escHtml(b.mark)}</text>
+    </g>`).join('');
+
+  host.innerHTML = `
+    <svg viewBox="0 0 640 360" style="width:100%;height:100%;display:block;">
+      <defs>
+        <pattern id="bpm-grid" width="32" height="20" patternUnits="userSpaceOnUse">
+          <path d="M32 0H0V20" fill="none" stroke="#D8D5CE" stroke-width="0.5" />
+        </pattern>
+      </defs>
+      <rect width="640" height="360" fill="url(#bpm-grid)" opacity="0.6" />
+
+      <!-- Stylised Greater Taipei basin + coastline (pure decoration) -->
+      <path
+        d="M120 70 Q 200 60, 270 90 Q 320 110, 330 160 Q 340 215, 410 250 Q 470 280, 500 250 L 540 270 Q 520 310, 460 320 L 360 320 Q 270 320, 200 290 Q 130 260, 110 200 Q 95 140, 120 70 Z"
+        fill="var(--paper-2)" stroke="var(--ink-5)" stroke-width="0.75" />
+      <!-- Tamsui river thread to the coast -->
+      <path d="M250 120 Q 200 150, 170 200 Q 150 240, 130 270"
+        fill="none" stroke="var(--ink-5)" stroke-width="0.75" opacity="0.7" />
+
+      ${bubbleSvg}
+
+      <line x1="0" y1="358" x2="640" y2="358" stroke="#0B0B0C" stroke-width="1" />
+    </svg>`;
+}
+
+/* ── Summary band (narrative + top contributor / urgent) ── */
 function renderSummary(d) {
-  el('pf-narrative').textContent    = d.summary.narrative;
-  el('pf-keymessage').textContent   = d.summary.keyMessage;
+  const narr = el('pf-narrative');
+  if (narr) narr.textContent = d.summary.narrative;
+
+  // Top contributor = highest-value asset; urgent = highest-value-growth / refi
+  const cards = d.assetCards || [];
+  const top = cards.slice().sort((a, b) => b.value - a.value)[0];
+  if (top) {
+    const tc = el('pf-top-contributor');
+    if (tc) tc.textContent = top.name;
+    const tcm = el('pf-top-contributor-meta');
+    if (tcm) tcm.textContent = (top.location.includes('林口') ? '林口' : top.location.includes('淡水') ? '淡水' : '大安') + ' · ' + fmtCompact(top.value);
+  }
+
+  const urgent = cards.find(a => a.urgency === 'high') || cards[0];
+  if (urgent) {
+    const u = el('pf-top-urgent');
+    if (u) u.textContent = urgent.name;
+    const um = el('pf-top-urgent-meta');
+    if (um) um.textContent = urgent.keyHighlight;
+  }
+}
+
+/* ── Holdings table (clickable rows → drawer) ───────────── */
+function renderHoldings(d) {
+  const host = el('pf-holdings-table');
+  if (!host) return;
+  const cards = d.assetCards || [];
+
+  const sectorMap = {
+    '住宅／商業混合': '住商混合',
+    '商業零售（NNN長約）': '商業零售',
+    '高級住宅（自用）': '高級住宅'
+  };
+  const geoOf = loc => loc.includes('林口') ? '林口' : loc.includes('淡水') ? '淡水' : loc.includes('大安') ? '大安' : '雙北';
+
+  const signCompact = v => {
+    if (v == null) return '<span class="empty-dash">—</span>';
+    const display = v < 0 ? `(${fmtCompact(Math.abs(v))})` : fmtCompact(v);
+    return `<span class="${v < 0 ? 'neg' : ''}">${display}</span>`;
+  };
+
+  // totals
+  const sumValue = cards.reduce((s, c) => s + c.value, 0);
+  const sumNOI   = cards.reduce((s, c) => s + (c.noi || 0), 0);
+  const blendedLTV = d.totals ? d.totals.blendedLTV : 0;
+
+  const rows = cards.map(c => `
+    <tr class="clickable-row" data-asset-id="${escHtml(c.id)}">
+      <td>
+        <div class="cell-asset">${escHtml(c.name)}</div>
+        <div class="cell-meta">${escHtml(c.id.toUpperCase())} · ${escHtml(c.location)}</div>
+      </td>
+      <td>${escHtml(sectorMap[c.type] || c.type)}</td>
+      <td>${escHtml(geoOf(c.location))}</td>
+      <td class="num">${fmtCompact(c.value)}</td>
+      <td class="num">${fmtPct(c.ltv)}</td>
+      <td class="num">${signCompact(c.noi)}</td>
+      <td class="num">${c.capRate != null ? fmtPct(c.capRate) : '<span class="empty-dash">N/A</span>'}</td>
+      <td>
+        <span class="chip"><span class="dot" style="background:${statusDotColor(c.statusColor)}"></span>${escHtml(c.status)}</span>
+      </td>
+    </tr>`).join('');
+
+  host.innerHTML = `
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>資產</th><th>類別</th><th>地區</th>
+          <th class="num">估值</th><th class="num">LTV</th>
+          <th class="num">年度 NOI</th><th class="num">資本化率</th><th>狀態</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows}
+        <tr class="row-total">
+          <td>合計 · ${cards.length} 檔</td>
+          <td></td><td></td>
+          <td class="num">${fmtCompact(sumValue)}</td>
+          <td class="num">${fmtPct(blendedLTV)}</td>
+          <td class="num">${signCompact(sumNOI)}</td>
+          <td></td><td></td>
+        </tr>
+      </tbody>
+    </table>`;
+
+  // wire row clicks → drawer
+  host.querySelectorAll('.clickable-row').forEach(tr => {
+    tr.addEventListener('click', () => {
+      const id = tr.getAttribute('data-asset-id');
+      const asset = cards.find(a => a.id === id);
+      if (asset) openDrawer(asset);
+    });
+  });
+
+  wireDrawerControls();
+}
+
+/* ── Drawer ─────────────────────────────────────────────── */
+function openDrawer(asset) {
+  const drawer = el('pf-drawer');
+  const backdrop = el('pf-drawer-backdrop');
+  if (!drawer || !backdrop) return;
+
+  const eb = el('pf-drawer-eyebrow');
+  if (eb) eb.textContent = '資產明細 · ' + asset.id.toUpperCase();
+  const ti = el('pf-drawer-title');
+  if (ti) ti.textContent = asset.name;
+  const me = el('pf-drawer-meta');
+  if (me) me.textContent = asset.type + ' · ' + asset.location + ' · ' + asset.ownershipSummary;
+
+  // 3-up KPIs
+  const kpis = el('pf-drawer-kpis');
+  if (kpis) {
+    const noiCls = (asset.noi || 0) < 0 ? 'neg' : 'pos';
+    const noiLine = (asset.noi || 0) < 0 ? '持有成本' : '正向 NOI';
+    kpis.innerHTML = `
+      <div class="drawer-kpi">
+        <div class="eyebrow">估值</div>
+        <div class="v">${fmtCompact(asset.value)}</div>
+        <div class="d" style="color:var(--ink-3);">市場估值</div>
+      </div>
+      <div class="drawer-kpi">
+        <div class="eyebrow">LTV</div>
+        <div class="v">${fmtPct(asset.ltv)}</div>
+        <div class="d" style="color:${asset.ltv > 40 ? 'var(--warn)' : 'var(--pos)'};">${asset.ltv > 40 ? '槓桿偏高' : asset.ltv > 0 ? '保守槓桿' : '無貸款'}</div>
+      </div>
+      <div class="drawer-kpi">
+        <div class="eyebrow">資本化率</div>
+        <div class="v">${asset.capRate != null ? fmtPct(asset.capRate) : '—'}</div>
+        <div class="d ${noiCls}" style="color:${noiCls === 'neg' ? 'var(--bpm-red)' : 'var(--pos)'};">${noiLine}</div>
+      </div>`;
+  }
+
+  // detail section: key highlight + ownership + figures
+  const det = el('pf-drawer-detail');
+  if (det) {
+    const noiCls = (asset.noi || 0) < 0 ? 'neg' : 'pos';
+    det.innerHTML = `
+      <div class="eyebrow" style="margin-bottom:10px;">本季重點 · Key highlight</div>
+      <div class="summary-keymessage" style="margin-bottom:16px;">${escHtml(asset.keyHighlight)}</div>
+      <table class="info-table">
+        <tr><td class="info-label">持有結構</td><td class="info-value">${escHtml(asset.ownershipSummary)}</td></tr>
+        <tr><td class="info-label">家族淨權益</td><td class="info-value">${fmtCompact(asset.chenEquity)}</td></tr>
+        <tr><td class="info-label">貸款餘額</td><td class="info-value">${asset.debt > 0 ? fmtCompact(asset.debt) : '無貸款'}</td></tr>
+        <tr><td class="info-label">年度 NOI</td><td class="info-value ${noiCls}">${(asset.noi || 0) < 0 ? '(' + fmtCompact(Math.abs(asset.noi)) + ')' : fmtCompact(asset.noi)}</td></tr>
+        <tr><td class="info-label">年度淨現金流</td><td class="info-value ${(asset.netCF || 0) < 0 ? 'neg' : ''}">${(asset.netCF || 0) < 0 ? '(' + fmtCompact(Math.abs(asset.netCF)) + ')' : fmtCompact(asset.netCF)}</td></tr>
+      </table>`;
+  }
+
+  const rpt = el('pf-drawer-report');
+  if (rpt) rpt.setAttribute('href', 'index.html?id=' + asset.id);
+
+  backdrop.classList.add('open');
+  drawer.classList.add('open');
+  drawer.setAttribute('aria-hidden', 'false');
+}
+
+function closeDrawer() {
+  const drawer = el('pf-drawer');
+  const backdrop = el('pf-drawer-backdrop');
+  if (drawer) { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); }
+  if (backdrop) backdrop.classList.remove('open');
+}
+
+let drawerWired = false;
+function wireDrawerControls() {
+  if (drawerWired) return;
+  drawerWired = true;
+  const backdrop = el('pf-drawer-backdrop');
+  if (backdrop) backdrop.addEventListener('click', closeDrawer);
+  const c1 = el('pf-drawer-close');
+  if (c1) c1.addEventListener('click', closeDrawer);
+  const c2 = el('pf-drawer-close2');
+  if (c2) c2.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+}
+
+/* ── Composer ───────────────────────────────────────────── */
+function renderComposer(d) {
+  const sugHost = el('pf-composer-suggestions');
+  const input = el('pf-composer-input');
+  const send = el('pf-composer-send');
+  const form = el('pf-composer-form');
+
+  const suggestions = [
+    '淡水河岸再融資有哪些選項？',
+    '哪些資產本季估值變動最大？',
+    '林口全聯 2027 租金調漲影響為何？'
+  ];
+
+  if (sugHost) {
+    sugHost.innerHTML = suggestions.map(s => `<button type="button" class="composer-sugg">${escHtml(s)}</button>`).join('');
+    sugHost.querySelectorAll('.composer-sugg').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (input) { input.value = btn.textContent; input.dispatchEvent(new Event('input')); input.focus(); }
+      });
+    });
+  }
+
+  if (input && send) {
+    input.addEventListener('input', () => { send.disabled = input.value.trim() === ''; });
+  }
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (input && input.value.trim()) {
+        console.log('ask:', input.value);
+        input.value = '';
+        if (send) send.disabled = true;
+      }
+    });
+  }
 }
 
 /* ── Asset Cards ───────────────────────────────────────── */
 function renderAssetCards(d) {
-  const urgencyColor = u => ({ high: 'var(--red)', medium: 'var(--amber)', low: 'var(--green)' }[u] || 'var(--border)');
+  const host = el('pf-asset-cards');
+  if (!host) return;
+  const urgencyColor = u => ({ high: 'var(--bpm-red)', medium: 'var(--warn)', low: 'var(--pos)' }[u] || 'var(--rule)');
 
-  el('pf-asset-cards').innerHTML = d.assetCards.map(a => {
+  host.innerHTML = d.assetCards.map(a => {
     const statusCls = a.statusColor === 'amber' ? 'hold' : a.statusColor === 'green' ? 'active' : 'vacant';
     const noiCls    = a.noi >= 0 ? 'pos' : 'neg';
     const noiFmt    = a.noi < 0 ? `(${fmtCompact(Math.abs(a.noi))})` : fmtCompact(a.noi);
@@ -179,17 +510,18 @@ function renderAllocationChart(d) {
   chart.setOption({
     ...ECHARTS_BASE,
     tooltip: {
+      ...ECHARTS_BASE.tooltip,
       trigger: 'item',
       formatter: p => `${p.name}<br>估值：${fmtCompact(p.value)}<br>比重：${p.percent.toFixed(1)}%`
     },
-    legend: { bottom: 0, textStyle: { fontSize: 11 } },
+    legend: { bottom: 0, textStyle: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 } },
     series: [{
       type: 'pie',
       radius: ['42%', '68%'],
       center: ['50%', '44%'],
-      data: a.labels.map((label, i) => ({ name: label, value: a.values[i], itemStyle: { color: a.colors[i] } })),
-      label: { fontSize: 11, formatter: '{b}\n{d}%' },
-      itemStyle: { borderWidth: 2, borderColor: '#fff' }
+      data: a.labels.map((label, i) => ({ name: label, value: a.values[i], itemStyle: { color: BPM_SERIES[i] } })),
+      label: { fontSize: 11, formatter: '{b}\n{d}%', color: BPM.ink3 },
+      itemStyle: { borderWidth: 2, borderColor: '#FBF8F2' }
     }]
   });
 }
@@ -202,25 +534,26 @@ function renderIncomeChart(d) {
   chart.setOption({
     ...ECHARTS_BASE,
     tooltip: {
+      ...ECHARTS_BASE.tooltip,
       trigger: 'axis',
       formatter: p => `${p[0].axisValue}<br>${p.map(s => `${s.marker}${s.seriesName}: ${fmtCompact(s.value)}`).join('<br>')}`
     },
-    legend: { bottom: 0, textStyle: { fontSize: 11 } },
+    legend: { bottom: 0, textStyle: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 } },
     grid: { top: 16, bottom: 44, left: 80, right: 20 },
-    xAxis: { type: 'category', data: ib.labels, axisLabel: { fontSize: 10, interval: 0 } },
-    yAxis: { type: 'value', axisLabel: { formatter: v => fmtCompact(v), fontSize: 10 } },
+    xAxis: bpmAxis({ type: 'category', data: ib.labels, axisLabel: { color: BPM.ink3, fontSize: 10, interval: 0, fontFamily: BPM_FONT } }),
+    yAxis: bpmAxis({ type: 'value', axisLabel: { color: BPM.ink3, formatter: v => fmtCompact(v), fontSize: 10, fontFamily: BPM_FONT } }),
     series: [
       {
         name: 'NOI',
         type: 'bar',
-        data: ib.noi.map((v, i) => ({ value: v, itemStyle: { color: ib.colors[i] } })),
-        label: { show: true, position: 'top', formatter: p => fmtCompact(p.value), fontSize: 9, color: '#556272' }
+        data: ib.noi.map((v, i) => ({ value: v, itemStyle: { color: BPM_SERIES[i], borderRadius: 0 } })),
+        label: { show: true, position: 'top', formatter: p => fmtCompact(p.value), fontSize: 9, color: '#5C5C61' }
       },
       {
         name: '稅前淨現金流',
         type: 'bar',
-        data: ib.netCF.map((v, i) => ({ value: v, itemStyle: { color: ib.colors[i], opacity: 0.5 } })),
-        label: { show: true, position: 'top', formatter: p => fmtCompact(p.value), fontSize: 9, color: '#556272' }
+        data: ib.netCF.map((v, i) => ({ value: v, itemStyle: { color: BPM_SERIES[i], opacity: 0.5, borderRadius: 0 } })),
+        label: { show: true, position: 'top', formatter: p => fmtCompact(p.value), fontSize: 9, color: '#5C5C61' }
       }
     ]
   });
@@ -247,7 +580,7 @@ function renderComparisonTable(d) {
     ['年度淨現金流',     c => signCompact(c.netCF)],
     ['資本化率',         c => c.capRate != null ? fmtPct(c.capRate) : '<span class="text-muted">N/A</span>'],
     ['持有狀況',         c => escHtml(c.ownershipSummary)],
-    ['近期重點事項',     c => `<span style="font-size:12px;color:var(--text-secondary)">${escHtml(c.keyHighlight)}</span>`]
+    ['近期重點事項',     c => `<span style="font-size:12px;color:var(--ink-2)">${escHtml(c.keyHighlight)}</span>`]
   ];
 
   el('pf-comparison-table').innerHTML = `
@@ -314,26 +647,24 @@ function renderLTVChart(d) {
   const chart = initChart('pf-ltv-chart');
   if (!chart) return;
   const cards  = d.assetCards;
-  const colors = d.allocation.colors;
 
   chart.setOption({
     ...ECHARTS_BASE,
-    tooltip: { trigger: 'axis', formatter: p => `${p[0].name}<br>LTV：${p[0].value.toFixed(1)}%` },
+    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'axis', formatter: p => `${p[0].name}<br>LTV：${p[0].value.toFixed(1)}%` },
     grid: { top: 20, bottom: 30, left: 96, right: 64 },
-    xAxis: {
+    xAxis: bpmAxis({
       type: 'value', min: 0, max: 65,
-      axisLabel: { formatter: v => v + '%', fontSize: 10 },
-      splitLine: { lineStyle: { type: 'dashed' } }
-    },
-    yAxis: { type: 'category', data: cards.map(c => c.shortName), axisLabel: { fontSize: 11 } },
+      axisLabel: { color: BPM.ink3, formatter: v => v + '%', fontSize: 10, fontFamily: BPM_FONT }
+    }),
+    yAxis: bpmAxis({ type: 'category', data: cards.map(c => c.shortName), axisLabel: { color: BPM.ink3, fontSize: 11, fontFamily: BPM_FONT } }),
     series: [{
       type: 'bar',
       barMaxWidth: 28,
-      data: cards.map((c, i) => ({ value: c.ltv, itemStyle: { color: colors[i], borderRadius: [0, 4, 4, 0] } })),
+      data: cards.map((c, i) => ({ value: c.ltv, itemStyle: { color: BPM_SERIES[i], borderRadius: 0 } })),
       label: {
         show: true, position: 'right',
         formatter: p => p.value.toFixed(1) + '%',
-        fontSize: 11, fontWeight: 700, color: '#556272'
+        fontSize: 11, fontWeight: 700, color: '#5C5C61'
       }
     }]
   });
@@ -346,13 +677,15 @@ function renderHistoryChart(d) {
   const h = d.portfolioHistory;
 
   const assetMeta = {
-    'asset-001': { name: '港景住商', color: '#1a6ef5' },
-    'asset-002': { name: '林口全聯', color: '#1e8a4c' },
-    'asset-003': { name: '大安仁愛苑', color: '#e67e22' }
+    'asset-001': { name: '淡水河岸' },
+    'asset-002': { name: '林口全聯' },
+    'asset-003': { name: '大安仁愛苑' }
   };
 
-  const series = Object.entries(h.assets).map(([id, values]) => {
-    const m = assetMeta[id] || { name: id, color: '#8a97a8' };
+  const series = Object.entries(h.assets).map(([id, values], i) => {
+    const m = assetMeta[id] || { name: id };
+    const color = BPM_SERIES[i] || BPM_SERIES[BPM_SERIES.length - 1];
+    // red-led area gradient for the primary asset; flat tint for others
     return {
       name: m.name,
       type: 'line',
@@ -361,15 +694,21 @@ function renderHistoryChart(d) {
       symbol: 'circle',
       symbolSize: 6,
       data: values,
-      itemStyle: { color: m.color },
-      lineStyle: { width: 2, color: m.color },
-      areaStyle: { opacity: 0.45, color: m.color }
+      itemStyle: { color },
+      lineStyle: { width: 2, color },
+      areaStyle: color === '#8E1B1F'
+        ? { color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            { offset: 0, color: 'rgba(142,27,31,0.45)' },
+            { offset: 1, color: 'rgba(142,27,31,0.08)' }
+          ]) }
+        : { opacity: 0.45, color }
     };
   });
 
   chart.setOption({
     ...ECHARTS_BASE,
     tooltip: {
+      ...ECHARTS_BASE.tooltip,
       trigger: 'axis',
       formatter: p => {
         const total = p.reduce((s, item) => s + (item.value || 0), 0);
@@ -378,13 +717,13 @@ function renderHistoryChart(d) {
           `<br><b>合計：${fmtCompact(total)}</b>`;
       }
     },
-    legend: { bottom: 0, textStyle: { fontSize: 11 } },
+    legend: { bottom: 0, textStyle: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 } },
     grid: { top: 20, bottom: 50, left: 90, right: 20 },
-    xAxis: { type: 'category', data: h.labels, axisLabel: { fontSize: 11 } },
-    yAxis: {
+    xAxis: bpmAxis({ type: 'category', data: h.labels, axisLabel: { color: BPM.ink3, fontSize: 11, fontFamily: BPM_FONT } }),
+    yAxis: bpmAxis({
       type: 'value',
-      axisLabel: { formatter: v => '$' + (v / 1e6).toFixed(0) + 'M', fontSize: 10 }
-    },
+      axisLabel: { color: BPM.ink3, formatter: v => '$' + (v / 1e6).toFixed(0) + 'M', fontSize: 10, fontFamily: BPM_FONT }
+    }),
     series
   });
 }
@@ -393,7 +732,7 @@ function renderHistoryChart(d) {
 function renderActionsTable(d) {
   const priorityCls   = p => ({ 'High': 'high', 'Medium': 'medium', 'Low': 'low' }[p] || 'low');
   const priorityLabel = p => ({ 'High': '高優先', 'Medium': '中優先', 'Low': '低優先' }[p] || p);
-  const assetColor    = id => ({ 'asset-001': '#1a6ef5', 'asset-002': '#1e8a4c', 'asset-003': '#e67e22' }[id] || '#8a97a8');
+  const assetColor    = id => ({ 'asset-001': '#8E1B1F', 'asset-002': '#33547A', 'asset-003': '#1F5C4A' }[id] || '#8A8A8F');
 
   el('pf-actions-table').innerHTML = `
     <table class="data-table">
@@ -423,10 +762,10 @@ function renderActionsTable(d) {
 /* ── Risk Summary ──────────────────────────────────────── */
 function renderRiskSummary(d) {
   const rs = d.riskSummary;
-  el('pf-risk-high').textContent   = rs.highCount;
-  el('pf-risk-medium').textContent = rs.mediumCount;
-  el('pf-risk-low').textContent    = rs.lowCount;
-  el('pf-risk-concern').textContent = rs.topConcern;
+  const h = el('pf-risk-high');   if (h) h.textContent = rs.highCount;
+  const m = el('pf-risk-medium'); if (m) m.textContent = rs.mediumCount;
+  const l = el('pf-risk-low');    if (l) l.textContent = rs.lowCount;
+  const c = el('pf-risk-concern'); if (c) c.textContent = rs.topConcern;
 }
 
 /* ── Boot ──────────────────────────────────────────────── */

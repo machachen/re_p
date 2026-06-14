@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Spacing" name="Radius & shadow" subtitle="0 / 2 / 4 / pill · two shadows" viewport="700x280" -->
+<html lang="en"><head><meta charset="utf-8"><title>Radius & shadow</title><link rel="stylesheet" href="_card.css"></head>
+<body style="padding:24px 28px">
+  <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px">
+    <div>
+      <div style="height:88px; background:var(--bone); border:1px solid var(--rule); border-radius:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:18px">Card</div>
+      <div class="hex" style="margin-top:6px">r-0 · 0px</div>
+      <div class="hex">cards, tables, blocks</div>
+    </div>
+    <div>
+      <div style="height:88px; background:var(--bone); border:1px solid var(--rule); border-radius:2px; display:flex; align-items:center; justify-content:center; font-family:var(--font-sans); font-size:14px">Open report</div>
+      <div class="hex" style="margin-top:6px">r-1 · 2px</div>
+      <div class="hex">buttons, inputs</div>
+    </div>
+    <div>
+      <div style="height:88px; background:var(--bone); border:1px solid var(--rule); border-radius:4px; display:flex; align-items:center; justify-content:center; font-family:var(--font-sans); font-size:13px">Menu</div>
+      <div class="hex" style="margin-top:6px">r-2 · 4px</div>
+      <div class="hex">menus, tooltips</div>
+    </div>
+    <div>
+      <div style="height:88px; background:var(--bone); display:flex; align-items:center; justify-content:center">
+        <div style="border:1px solid var(--rule); border-radius:999px; padding:4px 12px; font-family:var(--font-sans); font-size:11px; letter-spacing:0.04em">Leased · 92%</div>
+      </div>
+      <div class="hex" style="margin-top:6px">r-pill</div>
+      <div class="hex">status chips only</div>
+    </div>
+  </div>
+  <hr class="divider" style="margin:18px 0 14px">
+  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:18px">
+    <div style="text-align:center">
+      <div style="height:72px; background:var(--bone); border:1px solid var(--rule); margin:6px"></div>
+      <div class="hex">shadow-0 · flat</div>
+      <div class="hex">default — hairline only</div>
+    </div>
+    <div style="text-align:center">
+      <div style="height:72px; background:var(--bone); margin:6px; box-shadow:0 1px 0 var(--rule), 0 8px 24px -12px rgba(11,11,12,0.15)"></div>
+      <div class="hex">shadow-1 · floating</div>
+      <div class="hex">menus, focused KPI</div>
+    </div>
+    <div style="text-align:center">
+      <div style="height:72px; background:var(--bone); margin:6px; box-shadow:0 1px 0 var(--rule), 0 32px 64px -24px rgba(11,11,12,0.30)"></div>
+      <div class="hex">shadow-2 · modal</div>
+      <div class="hex">dialogs, drawers</div>
+    </div>
+  </div>
+</body></html>

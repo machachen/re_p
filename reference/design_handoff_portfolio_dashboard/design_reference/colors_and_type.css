@@ -1,0 +1,389 @@
+/* ============================================================================
+   BPM Design System · Tokens
+   Real Estate Portfolio Intelligence · 不動產組合智能
+   ----------------------------------------------------------------------------
+   This is the single source of truth for all design tokens:
+     · Color (brand, neutral, semantic, data)
+     · Type (families, scale, weight, leading, tracking, semantic styles)
+     · Spacing (4px base grid)
+     · Radii, borders, hairlines, shadows
+     · Motion (durations, easings)
+     · Z-index layers
+   ----------------------------------------------------------------------------
+   Reference the Latin + CJK web fonts hosted in /fonts (declared at bottom).
+   ============================================================================ */
+
+:root {
+  /* ───────────────────────────────────────────────────────── COLOR · BRAND */
+  --bpm-red:        #8E1B1F;   /* primary brand red — oxblood, "house red" */
+  --bpm-red-hover:  #761519;   /* primary hover */
+  --bpm-red-press:  #5E1115;   /* primary press / pressed CTA */
+  --bpm-red-tint:   #F4E2E3;   /* faintest brand red, for tag backgrounds */
+  --bpm-red-ink:    #3B0608;   /* on-paper text accent (rarely used) */
+  --oxblood:        #5E1115;   /* dark wine, deck dividers */
+  --crimson:        #C32127;   /* bright red, used ONLY for live alerts */
+
+  /* ───────────────────────────────────────────────────── COLOR · INK / PAPER */
+  --ink:            #0B0B0C;   /* near-black, primary text + dark surface */
+  --ink-2:          #2A2A2D;   /* secondary ink */
+  --ink-3:          #5C5C61;   /* tertiary text, metadata */
+  --ink-4:          #8A8A8F;   /* placeholder, disabled */
+  --ink-5:          #B7B6B3;   /* hairline-emphasis */
+  --ink-03:         rgba(11,11,12,0.03);   /* row hover */
+  --ink-05:         rgba(11,11,12,0.05);   /* hover bg on neutrals */
+  --ink-08:         rgba(11,11,12,0.08);
+
+  --paper:          #F5F1EA;   /* warm off-white, primary surface */
+  --paper-2:        #ECE7DD;   /* depressed paper, table zebra */
+  --paper-3:        #E2DCCE;   /* slight tint, footer / aside */
+  --bone:           #FBF8F2;   /* lifted card paper */
+  --white:          #FFFFFF;
+
+  /* ─────────────────────────────────────────────────── COLOR · GRAPHITE SCALE */
+  /* Cool neutrals used for chrome, hairlines, dark surfaces, data axes.       */
+  --graphite-50:    #F2F2F3;
+  --graphite-100:   #E5E5E7;
+  --graphite-200:   #D2D2D6;
+  --graphite-300:   #B6B6BC;
+  --graphite-400:   #8E8E96;
+  --graphite-500:   #6A6A71;
+  --graphite-600:   #4E4E54;
+  --graphite-700:   #38383D;
+  --graphite-800:   #232327;
+  --graphite-900:   #141417;
+  --graphite-950:   #0B0B0C;
+
+  /* ─────────────────────────────────────────────────────────── COLOR · RULES */
+  --rule:           #D8D5CE;   /* the 1px hairline, used everywhere */
+  --rule-2:         #B7B2A6;   /* emphasised rule, e.g. table totals row */
+  --rule-ink:       #0B0B0C;   /* 2px strong rule, chart axes / cover top */
+
+  /* ────────────────────────────────────────────────────── COLOR · SEMANTIC */
+  /* Note: red is RESERVED for brand AND for negative values. Don't use red */
+  /* for generic "danger" — use --warn (amber/brass) instead. Green is for */
+  /* positive performance. */
+  --pos:            #1F5C4A;   /* forest — positive / above benchmark */
+  --pos-tint:       #DCE7E1;
+  --neg:            #8E1B1F;   /* SAME as bpm-red — below benchmark / loss */
+  --neg-tint:       #F4E2E3;
+  --warn:           #B5832A;   /* brass — caution / unverified / forecast */
+  --warn-tint:      #F2E8D2;
+  --info:           #33547A;   /* slate blue — peer / market reference */
+  --info-tint:      #DDE3EC;
+
+  /* ──────────────────────────────────────────────────────── COLOR · DATA VIZ */
+  /* A four-series institutional palette. Order is intentional. */
+  --series-1:       #8E1B1F;   /* you / portfolio (BPM red) */
+  --series-2:       #33547A;   /* peer index / market */
+  --series-3:       #1F5C4A;   /* benchmark / target */
+  --series-4:       #B5832A;   /* forecast / soft */
+  --series-mute:    #8A8A8F;   /* "other" series, deprioritised */
+
+  /* ──────────────────────────────────────────────────────────────── TYPE */
+  /* Source Serif 4 (English) + Noto Serif TC (CJK) — a paired serif system. */
+  /* Noto Serif TC loads from Google Fonts so it renders identically on all   */
+  /* platforms; Songti TC / PMingLiU remain as native fallbacks.              */
+  --font-serif:       "Source Serif 4", "Noto Serif TC", Georgia, serif;
+  --font-display:     "Source Serif 4", Georgia, serif;
+  --font-sans:        "Inter", system-ui, -apple-system, sans-serif;
+  --font-wordmark:    "Inter", system-ui, -apple-system, sans-serif;
+  --font-cjk-serif:   "Noto Serif TC", "Songti TC", "PMingLiU", "MingLiU", serif;
+  --font-cjk-sans:    "Noto Serif TC", "Songti TC", "PMingLiU", "MingLiU", serif;
+  --font-cjk-display: "Noto Serif TC", "Songti TC", "PMingLiU", "MingLiU", serif;
+  --font-mono:        "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Type scale (px) — nine steps */
+  --t-10:           10px;
+  --t-12:           12px;
+  --t-14:           14px;
+  --t-16:           16px;
+  --t-18:           18px;
+  --t-22:           22px;
+  --t-28:           28px;
+  --t-40:           40px;
+  --t-56:           56px;
+  --t-80:           80px;
+
+  /* Weights */
+  --w-regular:      400;
+  --w-medium:       500;
+  --w-semibold:     600;
+  --w-bold:         700;
+
+  /* Leading */
+  --lh-display:     1.08;
+  --lh-headline:    1.18;
+  --lh-body:        1.55;
+  --lh-tight:       1.32;
+  --lh-data:        1.40;
+
+  /* Tracking */
+  --tr-display:    -0.022em;
+  --tr-headline:   -0.012em;
+  --tr-body:        0;
+  --tr-caps:        0.14em;
+
+  /* ─────────────────────────────────────────────────────── SPACING (4px) */
+  --s-0:            0;
+  --s-1:            4px;
+  --s-2:            8px;
+  --s-3:            12px;
+  --s-4:            16px;
+  --s-5:            24px;
+  --s-6:            32px;
+  --s-7:            48px;
+  --s-8:            64px;
+  --s-9:            96px;
+  --s-10:           128px;
+
+  /* Page chrome */
+  --page-gutter:    64px;
+  --page-gutter-md: 32px;
+  --page-gutter-sm: 20px;
+  --topbar-h:       64px;
+  --footerbar-h:    48px;
+  --column-prose:   72ch;
+
+  /* ─────────────────────────────────────────────────── RADII (almost zero) */
+  --r-0:            0;       /* cards, tables, report blocks */
+  --r-1:            2px;     /* buttons, inputs (the workhorse) */
+  --r-2:            4px;     /* menus, tooltips */
+  --r-pill:         999px;   /* status chips */
+
+  /* ──────────────────────────────────────────────────────────────── BORDERS */
+  --bw-hair:        1px;
+  --bw-emph:        2px;
+  --border-hair:    1px solid var(--rule);
+  --border-emph:    2px solid var(--ink);
+
+  /* ─────────────────────────────────────────────────────────── SHADOWS */
+  /* Two shadows only. Both have a 1px ink lip on top (the "hairline kicker") */
+  /* to keep the card visually anchored when shadow alone is too soft. */
+  --shadow-1:       0 1px 0 var(--rule), 0 8px 24px -12px rgba(11,11,12,0.15);
+  --shadow-2:       0 1px 0 var(--rule), 0 32px 64px -24px rgba(11,11,12,0.30);
+  --shadow-press:   inset 0 1px 0 rgba(11,11,12,0.12);
+
+  /* ─────────────────────────────────────────────────────────── MOTION */
+  --ease:           cubic-bezier(0.22, 0.61, 0.36, 1);
+  --d-hover:        120ms;
+  --d-component:    200ms;
+  --d-route:        360ms;
+  --d-chart:        400ms;
+
+  /* ─────────────────────────────────────────────────────────── Z-INDEX */
+  --z-base:         0;
+  --z-sticky:       10;
+  --z-dropdown:     20;
+  --z-drawer:       30;
+  --z-modal:        40;
+  --z-toast:        50;
+}
+
+/* ============================================================================
+   SEMANTIC ELEMENT STYLES
+   ============================================================================ */
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--paper);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "ss01" 1, "cv11" 1;
+}
+
+body {
+  margin: 0;
+  line-height: var(--lh-body);
+}
+
+/* ── Display & headlines ───────────────────────────────────────────────── */
+.t-display-xl,
+.t-display,
+.t-headline,
+.t-subhead,
+.t-title,
+.t-h1, .t-h2, .t-h3, .t-h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: var(--lh-display);
+  margin: 0;
+}
+
+.t-display-xl { font-size: var(--t-80); font-weight: 500; line-height: 0.98; letter-spacing: -0.028em; }
+.t-display    { font-size: var(--t-56); font-weight: 500; line-height: 1.02; letter-spacing: -0.022em; }
+.t-headline   { font-size: var(--t-40); font-weight: 500; line-height: var(--lh-headline); letter-spacing: -0.018em; }
+.t-subhead    { font-size: var(--t-28); font-weight: 500; line-height: var(--lh-headline); letter-spacing: -0.012em; }
+.t-title      { font-size: var(--t-22); font-weight: 500; line-height: var(--lh-tight); letter-spacing: -0.012em; }
+
+.t-h1         { font-size: var(--t-40); font-weight: 500; letter-spacing: -0.018em; }
+.t-h2         { font-size: var(--t-28); font-weight: 500; letter-spacing: -0.012em; }
+.t-h3         { font-size: var(--t-22); font-weight: 500; letter-spacing: -0.012em; }
+.t-h4         { font-size: var(--t-18); font-family: var(--font-sans); font-weight: 600; letter-spacing: 0; }
+
+/* CJK display variants — Microsoft JhengHei UI, weight 600 reads as display */
+.t-display-cjk, .t-headline-cjk, .t-title-cjk {
+  font-family: var(--font-cjk-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0;
+}
+.t-display-cjk  { font-size: var(--t-56); }
+.t-headline-cjk { font-size: var(--t-40); }
+.t-title-cjk    { font-size: var(--t-22); }
+
+/* ── Body ──────────────────────────────────────────────────────────────── */
+.t-body-lg,
+.t-body,
+.t-body-sm,
+.t-caption,
+.t-meta {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  letter-spacing: var(--tr-body);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+.t-body-lg   { font-size: var(--t-18); }
+.t-body      { font-size: var(--t-16); }
+.t-body-sm   { font-size: var(--t-14); }
+.t-caption   { font-size: var(--t-12); color: var(--ink-3); line-height: 1.45; }
+.t-meta      { font-size: var(--t-10); color: var(--ink-3); line-height: 1.4; }
+
+/* ── Eyebrow / small-caps label ────────────────────────────────────────── */
+.t-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: var(--w-semibold);
+  letter-spacing: var(--tr-caps);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  line-height: 1.2;
+}
+.t-eyebrow-red {
+  color: var(--bpm-red);
+}
+
+/* ── Numeric / tabular ─────────────────────────────────────────────────── */
+.t-num,
+.t-num-lg,
+.t-num-xl,
+.t-num-display {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  font-weight: var(--w-medium);
+}
+.t-num         { font-size: var(--t-14); }
+.t-num-lg      { font-size: var(--t-22); }
+.t-num-xl      { font-size: var(--t-40); letter-spacing: -0.02em; }
+.t-num-display { font-family: var(--font-serif); font-size: var(--t-80); font-weight: var(--w-regular); letter-spacing: -0.03em; }
+
+/* ── Mono ──────────────────────────────────────────────────────────────── */
+.t-mono, code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  color: var(--ink-2);
+}
+
+/* ── Links ─────────────────────────────────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-4);
+  transition: border-color var(--d-hover) var(--ease);
+}
+a:hover { border-bottom-color: var(--ink); }
+
+/* ── Bilingual stack: TC over English ──────────────────────────────────── */
+.t-bilingual { display: flex; flex-direction: column; gap: 4px; }
+.t-bilingual .en { color: var(--ink-3); font-family: var(--font-sans); font-size: 0.7em; letter-spacing: 0; }
+
+/* ── Rule hairline ─────────────────────────────────────────────────────── */
+.rule       { height: 1px; background: var(--rule); border: 0; margin: 0; }
+.rule-emph  { height: 2px; background: var(--ink); border: 0; margin: 0; }
+
+/* ============================================================================
+   WEB FONTS  (place files in /fonts; declarations below assume the structure
+   noted in README.md). If a file is missing the system falls back to the
+   stack defined above (PingFang TC / Microsoft JhengHei / system serif).
+   ============================================================================ */
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/inter/Inter-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("fonts/source-serif-4/SourceSerif4-Variable.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/jetbrains-mono/JetBrainsMono-Variable.woff2") format("woff2-variations");
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Serif TC";
+  src: url("fonts/noto-serif-tc/NotoSerifTC-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Noto Serif TC";
+  src: url("fonts/noto-serif-tc/NotoSerifTC-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: "Noto Sans TC";
+  src: url("fonts/noto-sans-tc/NotoSansTC-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Noto Sans TC";
+  src: url("fonts/noto-sans-tc/NotoSansTC-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Noto Sans TC";
+  src: url("fonts/noto-sans-tc/NotoSansTC-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+4E00-9FFF, U+3000-303F, U+FF00-FFEF;
+}
+
+/* Google Fonts fallback — used by every preview/UI-kit page so the system
+   renders correctly even if the local /fonts directory is empty. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
