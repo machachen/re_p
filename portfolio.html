@@ -43,7 +43,7 @@
       <span class="live-tick"><span class="live-dot"></span>Live · <span id="nav-period-display">2026-05</span> TPE</span>
       <span class="top-divider"></span>
       <button class="locale-btn" type="button" title="語言（示範）"><span class="on">繁中</span><span class="sep">/</span><span class="off">EN</span></button>
-      <button class="avatar" type="button" data-i18n-title="common.signout" title="登出 · Sign out" onclick="bpmSignOut()" style="border:0;cursor:pointer;">陳</button>
+      <button class="avatar" id="nav-avatar" type="button" data-i18n-title="common.signout" title="登出 · Sign out" onclick="bpmSignOut()" style="border:0;cursor:pointer;">陳</button>
     </div>
   </header>
 
@@ -52,16 +52,12 @@
     <div class="side-section">
       <div class="side-head"><span class="eyebrow" data-i18n="side.portfolios">投資組合 · Portfolios</span><button class="side-add" aria-label="新增">＋</button></div>
       <ul class="side-list">
-        <li><a class="side-row active" href="portfolio.html"><span class="left"><span class="side-mark"></span><span class="side-label" data-i18n="side.realestate">不動產組合</span></span><span class="side-meta">3</span></a></li>
+        <li><a class="side-row active" href="portfolio.html"><span class="left"><span class="side-mark"></span><span class="side-label" data-i18n="side.realestate">不動產組合</span></span><span class="side-meta" id="side-portfolio-count">3</span></a></li>
       </ul>
     </div>
     <div class="side-section">
       <div class="side-head"><span class="eyebrow" data-i18n="side.assets">資產 · Assets</span></div>
-      <ul class="side-list">
-        <li><a class="side-row" href="index.html?id=asset-001"><span class="left"><span class="side-mark"></span><span class="side-label">淡水河岸住商</span></span><span class="side-meta">›</span></a></li>
-        <li><a class="side-row" href="index.html?id=asset-002"><span class="left"><span class="side-mark"></span><span class="side-label">林口全聯</span></span><span class="side-meta">›</span></a></li>
-        <li><a class="side-row" href="index.html?id=asset-003"><span class="left"><span class="side-mark"></span><span class="side-label">大安仁愛苑</span></span><span class="side-meta">›</span></a></li>
-      </ul>
+      <ul class="side-list" id="side-asset-list"></ul>
     </div>
     <div class="side-section">
       <div class="side-head"><span class="eyebrow" data-i18n="side.filters">篩選 · Filters</span></div>
@@ -81,9 +77,9 @@
     <div class="side-section bottom">
       <div class="analyst-card">
         <div class="eyebrow eyebrow-red" style="margin-bottom:4px;" data-i18n="side.analyst">您的分析師 · Your analyst</div>
-        <div class="analyst-name">鄭詠晴 Audrey Cheng</div>
-        <div class="meta" data-i18n="side.analystTitle">資深分析師 · 大中華區</div>
-        <div class="meta" style="margin-top:6px;">+886 2 8729 5000 · TPE</div>
+        <div class="analyst-name" id="analyst-name">陳政宏 Masa Chen</div>
+        <div class="meta" id="analyst-title">資深分析師 · 大中華區</div>
+        <div class="meta" id="analyst-contact" style="margin-top:6px;">+886 2 8729 5000 · TPE</div>
       </div>
     </div>
   </aside>
@@ -163,7 +159,7 @@
     <div style="margin-top:28px;">
       <div class="composer">
         <div class="composer-head">
-          <span class="eyebrow eyebrow-red"><span data-i18n="pf.askAnalyst">詢問分析師</span> · Audrey Cheng</span>
+          <span class="eyebrow eyebrow-red"><span data-i18n="pf.askAnalyst">詢問分析師</span> · <span id="composer-analyst-name">陳政宏 Masa Chen</span></span>
           <span class="meta" data-i18n="pf.askSla">台北辦公時間內 4 小時回覆 · TPE</span>
         </div>
         <div class="composer-suggestions" id="pf-composer-suggestions"></div>
@@ -264,8 +260,6 @@
   <!-- ===== FOOTER ===== -->
   <footer class="app-foot">
     <span><span data-i18n="foot.confidential">機密</span></span>
-    <span class="foot-sep"></span>
-    <span data-i18n="foot.sources">資料來源：託管行、世邦魏理仕、戴德梁行、內部模型</span>
     <span class="foot-spacer"></span>
     <span data-i18n="foot.copyright">© 2026 BPM Capital Partners</span>
   </footer>
@@ -297,6 +291,7 @@
 <script src="data.js"></script>
 <script src="ui.js"></script>
 <script src="i18n.js"></script>
+<script src="chrome.js"></script>
 <script src="portfolio.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
--- BPM seed — generated 2026-06-14T13:36:48.815Z
+-- BPM seed — generated 2026-06-16T07:02:48.780Z
 -- Idempotent: safe to re-run. Loads client 'chen-family', period 2026-05 (published).
 
 begin;
 
-insert into public.clients (name, slug) values ($c$陳氏家族信託 — 不動產資產組合$c$, 'chen-family')
-  on conflict (slug) do nothing;
+insert into public.clients (name, slug, config) values ($c$陳氏家族信託 — 不動產資產組合$c$, 'chen-family', $j${"displayName":"陳氏家族信託","avatarInitial":"陳","analyst":{"name":"陳政宏 Masa Chen","title":{"zh":"資深分析師 · 大中華區","en":"Senior analyst · Greater China"},"contact":{"zh":"+886 2 8729 5000 · 台北","en":"+886 2 8729 5000 · TPE"}}}$j$::jsonb)
+  on conflict (slug) do update set name = excluded.name, config = excluded.config;
 
 insert into public.periods (client_id, period, label, published, published_at)
   select id, '2026-05', $c$2026年5月$c$, true, now() from public.clients where slug = 'chen-family'

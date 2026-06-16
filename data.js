@@ -105,6 +105,25 @@ async function bpmLoadScenarioBundle() {
   return { client, period, assets: Object.values(byAsset), portfolio: (pfRes.data && pfRes.data.data) || {} };
 }
 
+// Shared chrome (sidebar/topbar/footer) — light queries on the existing schema.
+// Client config (analyst / avatar / display name) is fetched separately and
+// softly: a missing `config` column (migration 0004 not yet run) must never
+// break the asset list, period, or the rest of the page.
+async function bpmLoadChrome() {
+  const client = await bpmCurrentClient();
+  const period = await bpmLatestPeriod(client.id);
+  const { data: assets, error } = await window.sb
+    .from('assets').select('code,name,sort_order')
+    .eq('client_id', client.id).order('sort_order', { ascending: true });
+  if (error) throw new Error('讀取資產清單失敗：' + error.message);
+  let config = {};
+  try {
+    const { data } = await window.sb.from('clients').select('config').eq('id', client.id).maybeSingle();
+    if (data && data.config) config = data.config;
+  } catch (e) { /* config column may not exist yet — degrade gracefully */ }
+  return { client, period, assets: assets || [], config };
+}
+
 window.bpmCurrentClient = bpmCurrentClient;
 window.bpmLoadPortfolio = bpmLoadPortfolio;
 window.bpmLoadAsset = bpmLoadAsset;
@@ -112,3 +131,4 @@ window.bpmListPublishedPeriods = bpmListPublishedPeriods;
 window.bpmListClientDocuments = bpmListClientDocuments;
 window.bpmSignedDocUrl = bpmSignedDocUrl;
 window.bpmLoadScenarioBundle = bpmLoadScenarioBundle;
+window.bpmLoadChrome = bpmLoadChrome;

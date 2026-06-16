@@ -411,8 +411,7 @@ function renderNav() {
   if (updatedEl) updatedEl.textContent = updated;
   const periodSelect = el('nav-period-select');
   if (periodSelect) periodSelect.value = m.period;
-  const periodDisplay = el('nav-period-display');
-  if (periodDisplay) periodDisplay.textContent = m.period;
+  // Topbar period display is owned by the shared chrome (chrome.js).
   // Mark the matching asset row active in the sidebar
   document.querySelectorAll('.side-row[data-asset]').forEach(row => {
     row.classList.toggle('active', row.getAttribute('data-asset') === ASSET_ID);

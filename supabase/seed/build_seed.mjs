@@ -29,7 +29,8 @@ let sql = '';
 sql += `-- BPM seed — generated ${new Date().toISOString()}\n`;
 sql += `-- Idempotent: safe to re-run. Loads client '${SLUG}', period ${PERIOD} (published).\n\nbegin;\n\n`;
 
-sql += `insert into public.clients (name, slug) values (${c(clientName)}, '${SLUG}')\n  on conflict (slug) do nothing;\n\n`;
+const clientCfg = JSON.parse(readFileSync(join(dataDir, 'client.json'), 'utf8')).config;
+sql += `insert into public.clients (name, slug, config) values (${c(clientName)}, '${SLUG}', ${j(clientCfg)}::jsonb)\n  on conflict (slug) do update set name = excluded.name, config = excluded.config;\n\n`;
 
 sql += `insert into public.periods (client_id, period, label, published, published_at)\n` +
        `  select id, '${PERIOD}', ${c(periodLabel)}, true, now() from public.clients where slug = '${SLUG}'\n` +

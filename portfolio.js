@@ -343,8 +343,7 @@ function renderAll(d) {
 
 /* ── Navigation ─────────────────────────────────────────── */
 function renderNav(d) {
-  const np = el('nav-period-display');
-  if (np) np.textContent = d.meta.periodLabel;
+  // Topbar period display is owned by the shared chrome (chrome.js).
 }
 
 /* ── Page header ────────────────────────────────────────── */
