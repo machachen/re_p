@@ -3,7 +3,7 @@
 /* ── Page-specific i18n keys (interface chrome only; data stays Chinese) ── */
 if (window.bpmI18nAdd) bpmI18nAdd({
   // page header + map + summary
-  'pf.headEyebrow': '2026 第二季 · 組合審查',
+  'pf.headEyebrow': '組合審查',
   'pf.mapEyebrow': '地理曝險 · Geographic exposure',
   'pf.mapTitle': '大台北組合 · 依市值',
   'pf.mapLegendThis': '本組合曝險',
@@ -28,19 +28,18 @@ if (window.bpmI18nAdd) bpmI18nAdd({
   'pf.askSla': '台北辦公時間內 4 小時回覆 · TPE',
   'pf.composerPh': '輸入問題，或貼上一段備忘錄 …',
   'pf.attachBtn': '＋ 附件',
-  'pf.sugg1': '淡水河岸再融資有哪些選項？',
+  'pf.sugg1': '{asset}再融資有哪些選項？',
   'pf.sugg2': '哪些資產本季估值變動最大？',
-  'pf.sugg3': '林口全聯 2027 租金調漲影響為何？',
+  'pf.sugg3': '{asset}租金調漲的影響為何？',
   // KPI strip
   'pf.kpiGrossMark': '組合總估值 · Gross mark',
   'pf.kpiBlendedLtv': '加權 LTV · Blended LTV',
   'pf.kpiAnnualNoi': '年度 NOI · Annual NOI',
   'pf.kpiPending': '待決 · Pending',
   'pf.kpiYoy': '年增',
-  'pf.kpiLtvDelta': '財務結構穩健',
   'pf.kpiNoiMeta': '可收益兩資產',
   'pf.kpiPendingValue': '再融資',
-  'pf.kpiPendingMeta': '淡水河岸到期',
+  'pf.maturityWord': '到期',
   // sections / card titles
   'pf.secAssetOverview': '個別資產概覽 · Asset overview',
   'pf.secAssetOverviewNote': '點擊資產卡片查看完整報告',
@@ -114,7 +113,7 @@ if (window.bpmI18nAdd) bpmI18nAdd({
   'pf.loadError': '⚠ 資料載入失敗：'
 }, {
   // page header + map + summary
-  'pf.headEyebrow': 'Q2 2026 · Portfolio review',
+  'pf.headEyebrow': 'Portfolio review',
   'pf.mapEyebrow': 'Geographic exposure',
   'pf.mapTitle': 'Greater Taipei portfolio · by value',
   'pf.mapLegendThis': 'This portfolio',
@@ -139,19 +138,18 @@ if (window.bpmI18nAdd) bpmI18nAdd({
   'pf.askSla': 'Reply within 4 hours during Taipei office hours · TPE',
   'pf.composerPh': 'Type a question, or paste a memo …',
   'pf.attachBtn': '＋ Attach',
-  'pf.sugg1': 'What are the refinancing options for Tamsui?',
+  'pf.sugg1': 'What are the refinancing options for {asset}?',
   'pf.sugg2': 'Which assets had the largest valuation change this quarter?',
-  'pf.sugg3': 'What is the impact of the 2027 rent increase at Linkou PXMart?',
+  'pf.sugg3': 'What is the impact of a rent increase at {asset}?',
   // KPI strip
   'pf.kpiGrossMark': 'Gross mark',
   'pf.kpiBlendedLtv': 'Blended LTV',
   'pf.kpiAnnualNoi': 'Annual NOI',
   'pf.kpiPending': 'Pending',
   'pf.kpiYoy': 'YoY',
-  'pf.kpiLtvDelta': 'Sound capital structure',
   'pf.kpiNoiMeta': 'Two income-generating assets',
   'pf.kpiPendingValue': 'Refinancing',
-  'pf.kpiPendingMeta': 'Tamsui maturity',
+  'pf.maturityWord': 'maturity',
   // sections / card titles
   'pf.secAssetOverview': 'Asset overview',
   'pf.secAssetOverviewNote': 'Click an asset card for the full report',
@@ -354,7 +352,7 @@ function renderPageHead(d) {
   const name = el('pf-name');
   if (name) name.textContent = t('side.realestate');
   const sub = el('pf-sub');
-  if (sub) sub.textContent = 'Chen Family Trust · ' + d.meta.assetCount + ' assets · re-marked May 2026';
+  if (sub) sub.textContent = (d.meta.portfolioName || '') + ' · ' + (d.meta.periodLabel || '');
 }
 
 /* ── KPI strip (handoff 4-up band) ──────────────────────── */
@@ -363,9 +361,8 @@ function renderKpiStrip(d) {
   if (!host) return;
   const tot = d.totals;
 
-  // refinancing maturity from debt matrix (high-urgency loan)
+  // refinancing maturity from debt matrix (high-urgency loan) — all from data
   const refi = (d.debtMatrix || []).find(r => r.urgency === 'high');
-  const refiDate = refi ? refi.maturity : '2026-10-01';
 
   const cells = [
     {
@@ -376,25 +373,24 @@ function renderKpiStrip(d) {
       deltaMeta: t('pf.kpiYoy')
     },
     {
+      // blended LTV — value from data; no fabricated delta
       label: t('pf.kpiBlendedLtv'),
       value: tot.blendedLTV.toFixed(1), unit: '%',
-      deltaSign: '▲', deltaCls: 'pos',
-      delta: t('pf.kpiLtvDelta'),
       deltaMeta: t('pf.levConservative')
     },
     {
+      // annual NOI — value from data; no YoY delta (no such field in data)
       label: t('pf.kpiAnnualNoi'),
       value: fmtCompact(tot.incomeGeneratingNOI),
-      deltaSign: '▲', deltaCls: 'pos',
-      delta: '+2.4%',
       deltaMeta: t('pf.kpiNoiMeta')
     },
     {
+      // pending refinancing — maturity date + asset name both from data
       label: t('pf.kpiPending'),
       value: t('pf.kpiPendingValue'),
       deltaSign: '▼', deltaCls: 'neg',
-      delta: refiDate,
-      deltaMeta: t('pf.kpiPendingMeta')
+      delta: refi ? refi.maturity : '',
+      deltaMeta: refi ? (refi.asset + ' ' + t('pf.maturityWord')) : ''
     }
   ];
 
@@ -403,8 +399,8 @@ function renderKpiStrip(d) {
       <div class="eyebrow">${escHtml(c.label)}</div>
       <div class="kpi-num">${escHtml(c.value)}${c.unit ? `<span class="unit">${escHtml(c.unit)}</span>` : ''}</div>
       <div class="kpi-delta">
-        <span class="${c.deltaCls}">${c.deltaSign} ${escHtml(c.delta)}</span>
-        <span class="deltameta">${escHtml(c.deltaMeta)}</span>
+        ${c.delta ? `<span class="${c.deltaCls}">${c.deltaSign ? c.deltaSign + ' ' : ''}${escHtml(c.delta)}</span>` : ''}
+        ${c.deltaMeta ? `<span class="deltameta">${escHtml(c.deltaMeta)}</span>` : ''}
       </div>
     </div>`).join('');
 }
@@ -416,18 +412,20 @@ function renderMap(d) {
 
   // Hand-positioned bubbles for the three assets across Greater Taipei.
   // x/y are SVG coords; r scaled by asset value; peerR a translucent slate peer.
+  // Hand-positioned map coordinates only (cartographic config).
+  // Bubble labels come from data (assetCards), not hardcoded here.
   const meta = {
-    'asset-001': { label: '淡水河岸', city: '淡水', x: 250, y: 120 },
-    'asset-002': { label: '林口全聯', city: '林口', x: 170, y: 215 },
-    'asset-003': { label: '大安仁愛苑', city: '大安', x: 405, y: 230 }
+    'asset-001': { x: 250, y: 120 },
+    'asset-002': { x: 170, y: 215 },
+    'asset-003': { x: 405, y: 230 }
   };
 
   const cards = d.assetCards || [];
   const maxVal = Math.max(...cards.map(a => a.value), 1);
   const bubbles = cards.map(a => {
-    const m = meta[a.id] || { label: a.shortName, city: '', x: 320, y: 180 };
+    const m = meta[a.id] || { x: 320, y: 180 };
     const r = 14 + 26 * Math.sqrt(a.value / maxVal); // area-ish scaling
-    return { ...m, r, peerR: r + 9, mark: fmtCompact(a.value) };
+    return { ...m, label: a.shortName || a.name, r, peerR: r + 9, mark: fmtCompact(a.value) };
   });
 
   const bubbleSvg = bubbles.map(b => `
@@ -436,7 +434,7 @@ function renderMap(d) {
       <circle cx="${b.x}" cy="${b.y}" r="${b.r.toFixed(1)}" fill="#8E1B1F" opacity="0.85" />
       <circle cx="${b.x}" cy="${b.y}" r="2" fill="#0B0B0C" />
       <line x1="${b.x}" y1="${b.y}" x2="${b.x + 14}" y2="${b.y - 16}" stroke="#0B0B0C" stroke-width="0.75" />
-      <text x="${b.x + 16}" y="${b.y - 16}" font-family="${BPM_FONT}" font-size="11" font-weight="600" fill="#0B0B0C">${escHtml(b.label)} · ${escHtml(b.city)}</text>
+      <text x="${b.x + 16}" y="${b.y - 16}" font-family="${BPM_FONT}" font-size="11" font-weight="600" fill="#0B0B0C">${escHtml(b.label)}</text>
       <text x="${b.x + 16}" y="${b.y - 4}" font-family="${BPM_MONO}" font-size="10" fill="#5C5C61">${escHtml(b.mark)}</text>
     </g>`).join('');
 
@@ -649,10 +647,18 @@ function renderComposer(d) {
   const send = el('pf-composer-send');
   const form = el('pf-composer-form');
 
+  // suggestion chips: asset names sourced from data, phrasing from interface
+  const cards = d.assetCards || [];
+  const refi = (d.debtMatrix || []).find(r => r.urgency === 'high');
+  const refiName = refi ? refi.asset : (cards[0] ? (cards[0].shortName || cards[0].name) : '');
+  const incomeCard = cards
+    .filter(c => !refiName || (c.shortName || c.name) !== refiName)
+    .slice().sort((a, b) => (b.noi || 0) - (a.noi || 0))[0] || cards[0];
+  const incomeName = incomeCard ? (incomeCard.shortName || incomeCard.name) : '';
   const suggestions = [
-    t('pf.sugg1'),
+    t('pf.sugg1').replace('{asset}', refiName),
     t('pf.sugg2'),
-    t('pf.sugg3')
+    t('pf.sugg3').replace('{asset}', incomeName)
   ];
 
   if (sugHost) {
@@ -902,14 +908,12 @@ function renderHistoryChart(d) {
   if (!chart) return;
   const h = d.portfolioHistory;
 
-  const assetMeta = {
-    'asset-001': { name: '淡水河岸' },
-    'asset-002': { name: '林口全聯' },
-    'asset-003': { name: '大安仁愛苑' }
-  };
+  // series names sourced from data (assetCards), keyed by asset id
+  const nameById = {};
+  (d.assetCards || []).forEach(a => { nameById[a.id] = a.shortName || a.name; });
 
   const series = Object.entries(h.assets).map(([id, values], i) => {
-    const m = assetMeta[id] || { name: id };
+    const m = { name: nameById[id] || id };
     const color = BPM_SERIES[i] || BPM_SERIES[BPM_SERIES.length - 1];
     // red-led area gradient for the primary asset; flat tint for others
     return {

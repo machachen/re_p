@@ -54,14 +54,13 @@ if (window.bpmI18nAdd) bpmI18nAdd({
   'a.colLender': '貸款機構', 'a.colLoanBalance': '貸款餘額', 'a.colInterestRate': '利率',
   'a.colMaturity': '到期日', 'a.colDscr': 'DSCR', 'a.colLtv': 'LTV', 'a.colStatus': '狀態',
   /* ownership — net equity cards */
-  'a.assetValue': '資產價值', 'a.neAppraised': '估算，2026年5月',
+  'a.assetValue': '資產價值', 'a.neAppraised': '估算，',
   'a.neLtv': '貸款成數', 'a.neOfAssetValue': '占資產價值', 'a.neTotalInvested': '總投入資本',
   /* ownership — guarantee */
   'a.guaranteeTitle': '有效保證 / 義務', 'a.gObligor': '保證人', 'a.gBeneficiary': '受益人',
   'a.gExpiry': '到期日', 'a.gDescription': '說明',
   /* financial — income statement */
   'a.incomeStmtTitle': '損益表 — 實際 vs. 預算 vs. 去年同期',
-  'a.incomeStmtSub': '過去12個月（2025年6月 – 2026年5月）· 新台幣（NTD）',
   'a.valuationHistory': '歷史估值', 'a.valueProjection': '五年價值預測 — 情境分析',
   'a.capexSummary': '資本支出摘要',
   'a.colItem': '項目', 'a.colActualTtm': '實際（TTM）', 'a.colBudget': '預算',
@@ -178,14 +177,13 @@ if (window.bpmI18nAdd) bpmI18nAdd({
   'a.colLender': 'Lender', 'a.colLoanBalance': 'Loan balance', 'a.colInterestRate': 'Rate',
   'a.colMaturity': 'Maturity', 'a.colDscr': 'DSCR', 'a.colLtv': 'LTV', 'a.colStatus': 'Status',
   /* ownership — net equity cards */
-  'a.assetValue': 'Asset value', 'a.neAppraised': 'Estimated, May 2026',
+  'a.assetValue': 'Asset value', 'a.neAppraised': 'Estimated, ',
   'a.neLtv': 'LTV', 'a.neOfAssetValue': 'of asset value', 'a.neTotalInvested': 'Total invested capital',
   /* ownership — guarantee */
   'a.guaranteeTitle': 'Active guarantee / obligation', 'a.gObligor': 'Obligor', 'a.gBeneficiary': 'Beneficiary',
   'a.gExpiry': 'Expiry', 'a.gDescription': 'Description',
   /* financial — income statement */
   'a.incomeStmtTitle': 'Income statement — Actual vs. Budget vs. Prior year',
-  'a.incomeStmtSub': 'Trailing 12 months (Jun 2025 – May 2026) · NTD',
   'a.valuationHistory': 'Valuation history', 'a.valueProjection': 'Five-year value projection — Scenarios',
   'a.capexSummary': 'Capex summary',
   'a.colItem': 'Item', 'a.colActualTtm': 'Actual (TTM)', 'a.colBudget': 'Budget',
@@ -737,7 +735,7 @@ function renderOwnership() {
       <div class="card val-card">
         <div class="val-label">${t('a.assetValue')}</div>
         <div class="val-value">${fmtNTD(cs.assetValue)}</div>
-        <div class="val-sub">${t('a.neAppraised')}</div>
+        <div class="val-sub">${t('a.neAppraised')}${escHtml(state.manifest.periodLabel)}</div>
       </div>
       <div class="card val-card">
         <div class="val-label">${t('a.seniorLoan')}</div>
@@ -776,6 +774,10 @@ function renderOwnership() {
    ============================================================ */
 function renderFinancial() {
   const d = state.data['financial'];
+
+  /* Income statement subtitle — period + currency from data */
+  const isSub = el('income-stmt-sub');
+  if (isSub) isSub.textContent = d.incomeStatement.period + ' · ' + d.incomeStatement.currency;
 
   /* Income Statement */
   const typeMap = {
