@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div id="loading-overlay"><div class="loading-spinner"></div><div class="loading-text">載入報告與文件…</div></div>
+<div id="loading-overlay"><div class="loading-spinner"></div><div class="loading-text" data-i18n="rp.loading">載入報告與文件…</div></div>
 <div id="error-banner"></div>
 
 <div class="app-shell">
@@ -23,31 +23,31 @@
     </button>
     <a class="brand" href="portfolio.html">
       <span class="brand-mark">BPM</span><span class="brand-tri"></span>
-      <span class="brand-sub">Portfolio Intelligence</span>
+      <span class="brand-sub" data-i18n="brand.sub">Portfolio Intelligence</span>
     </a>
     <nav class="topnav">
-      <a class="topnav-item" href="portfolio.html">組合總覽</a>
-      <a class="topnav-item" href="#">資產</a>
-      <a class="topnav-item" href="scenarios.html">情境</a>
-      <a class="topnav-item active" href="reports.html">報告</a>
+      <a class="topnav-item" href="portfolio.html" data-i18n="nav.portfolio">組合總覽</a>
+      <a class="topnav-item" href="#" data-i18n="nav.assets">資產</a>
+      <a class="topnav-item" href="scenarios.html" data-i18n="nav.scenarios">情境</a>
+      <a class="topnav-item active" href="reports.html" data-i18n="nav.reports">報告</a>
     </nav>
     <div class="top-right">
       <span class="live-tick"><span class="live-dot"></span>Live · <span id="nav-period-display">2026-05</span> TPE</span>
       <span class="top-divider"></span>
       <button class="locale-btn" type="button" title="語言（示範）"><span class="on">繁中</span><span class="sep">/</span><span class="off">EN</span></button>
-      <button class="avatar" type="button" title="登出 · Sign out" onclick="bpmSignOut()" style="border:0;cursor:pointer;">陳</button>
+      <button class="avatar" type="button" title="登出 · Sign out" data-i18n-title="common.signout" onclick="bpmSignOut()" style="border:0;cursor:pointer;">陳</button>
     </div>
   </header>
 
   <aside class="sidebar">
     <div class="side-section">
-      <div class="side-head"><span class="eyebrow">投資組合 · Portfolios</span></div>
+      <div class="side-head"><span class="eyebrow" data-i18n="side.portfolios">投資組合 · Portfolios</span></div>
       <ul class="side-list">
-        <li><a class="side-row" href="portfolio.html"><span class="left"><span class="side-mark"></span><span class="side-label">不動產組合</span></span><span class="side-meta">3</span></a></li>
+        <li><a class="side-row" href="portfolio.html"><span class="left"><span class="side-mark"></span><span class="side-label" data-i18n="side.realestate">不動產組合</span></span><span class="side-meta">3</span></a></li>
       </ul>
     </div>
     <div class="side-section">
-      <div class="side-head"><span class="eyebrow">資產 · Assets</span></div>
+      <div class="side-head"><span class="eyebrow" data-i18n="side.assets">資產 · Assets</span></div>
       <ul class="side-list">
         <li><a class="side-row" href="index.html?id=asset-001"><span class="left"><span class="side-mark"></span><span class="side-label">淡水河岸住商</span></span><span class="side-meta">›</span></a></li>
         <li><a class="side-row" href="index.html?id=asset-002"><span class="left"><span class="side-mark"></span><span class="side-label">林口全聯</span></span><span class="side-meta">›</span></a></li>
@@ -55,17 +55,17 @@
       </ul>
     </div>
     <div class="side-section">
-      <div class="side-head"><span class="eyebrow">分析 · Analysis</span></div>
+      <div class="side-head"><span class="eyebrow" data-i18n="side.analysis">分析 · Analysis</span></div>
       <ul class="side-list">
-        <li><a class="side-row" href="scenarios.html"><span class="side-label">情境分析</span><span class="side-meta">›</span></a></li>
-        <li><a class="side-row active" href="reports.html"><span class="left"><span class="side-mark"></span><span class="side-label">報告與文件</span></span><span class="side-meta">›</span></a></li>
+        <li><a class="side-row" href="scenarios.html"><span class="side-label" data-i18n="side.scenarios">情境分析</span><span class="side-meta">›</span></a></li>
+        <li><a class="side-row active" href="reports.html"><span class="left"><span class="side-mark"></span><span class="side-label" data-i18n="side.reportsDocs">報告與文件</span></span><span class="side-meta">›</span></a></li>
       </ul>
     </div>
     <div class="side-section bottom">
       <div class="analyst-card">
-        <div class="eyebrow eyebrow-red" style="margin-bottom:4px;">您的分析師 · Your analyst</div>
+        <div class="eyebrow eyebrow-red" style="margin-bottom:4px;" data-i18n="side.analyst">您的分析師 · Your analyst</div>
         <div class="analyst-name">鄭詠晴 Audrey Cheng</div>
-        <div class="meta">資深分析師 · 大中華區</div>
+        <div class="meta" data-i18n="side.analystTitle">資深分析師 · 大中華區</div>
         <div class="meta" style="margin-top:6px;">+886 2 8729 5000 · TPE</div>
       </div>
     </div>
@@ -75,32 +75,33 @@
   <main class="app-main">
     <div class="page-head">
       <div>
-        <div class="eyebrow">報告 · Reports</div>
-        <h1 class="page-title">報告與文件</h1>
-        <div class="page-sub">Reporting periods &amp; documents</div>
+        <div class="eyebrow" data-i18n="rp.eyebrow">報告 · Reports</div>
+        <h1 class="page-title" data-i18n="rp.title">報告與文件</h1>
+        <div class="page-sub" data-i18n="rp.sub">Reporting periods &amp; documents</div>
       </div>
     </div>
     <hr class="rule" style="margin:20px 0 24px;" />
 
-    <div class="section-header"><div class="section-title">報告期間 · Reporting periods</div><div class="section-note">已發布之每月報告</div></div>
+    <div class="section-header"><div class="section-title" data-i18n="rp.periodsTitle">報告期間 · Reporting periods</div><div class="section-note" data-i18n="rp.periodsNote">已發布之每月報告</div></div>
     <div class="card mb-24" style="padding:0;"><div id="rp-periods"></div></div>
 
-    <div class="section-header"><div class="section-title">文件庫 · Documents</div><div class="section-note">安全儲存，僅授權使用者可下載</div></div>
+    <div class="section-header"><div class="section-title" data-i18n="rp.docsTitle">文件庫 · Documents</div><div class="section-note" data-i18n="rp.docsNote">安全儲存，僅授權使用者可下載</div></div>
     <div class="card" style="padding:0;"><div id="rp-docs"></div></div>
   </main>
 
   <footer class="app-foot">
-    <span>BPM Intelligence v4.2 · 機密</span>
+    <span><span data-i18n="foot.brandVer">BPM Intelligence v4.2</span> · <span data-i18n="foot.confidential">機密</span></span>
     <span class="foot-sep"></span>
-    <span>資料來源：託管行、世邦魏理仕、戴德梁行、內部模型</span>
+    <span data-i18n="foot.sources">資料來源：託管行、世邦魏理仕、戴德梁行、內部模型</span>
     <span class="foot-spacer"></span>
-    <span>© 2026 BPM Capital Partners</span>
+    <span data-i18n="foot.copyright">© 2026 BPM Capital Partners</span>
   </footer>
 
 </div>
 
 <script src="data.js"></script>
 <script src="ui.js"></script>
+<script src="i18n.js"></script>
 <script src="reports.js"></script>
 </body>
 </html>

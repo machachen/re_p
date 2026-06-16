@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" width="140" height="140" role="img" aria-label="BPM stamp">
-  <circle cx="70" cy="70" r="64" fill="none" stroke="#8E1B1F" stroke-width="1.25"></circle>
-  <circle cx="70" cy="70" r="58" fill="none" stroke="#8E1B1F" stroke-width="0.5"></circle>
-  <text x="70" y="70" text-anchor="middle" font-family="Inter, Noto Sans TC, system-ui, sans-serif" font-weight="800" font-size="28" fill="#8E1B1F" letter-spacing="-0.04em">BPM</text>
-  <polygon points="63,80 77,80 70,72" fill="#8E1B1F"></polygon>
-  <text x="70" y="98" text-anchor="middle" font-family="Inter, Noto Sans TC, system-ui, sans-serif" font-weight="600" font-size="6.5" fill="#8E1B1F" letter-spacing="0.22em">CONFIDENTIAL · 機密</text>
-  <text x="70" y="110" text-anchor="middle" font-family="Inter, Noto Sans TC, system-ui, sans-serif" font-weight="500" font-size="5.5" fill="#8E1B1F" letter-spacing="0.18em">PORTFOLIO INTELLIGENCE</text>
-</svg>

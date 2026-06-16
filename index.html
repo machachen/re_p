@@ -19,7 +19,7 @@
 <!-- ── Loading Overlay ────────────────────────────────────── -->
 <div id="loading-overlay">
   <div class="loading-spinner"></div>
-  <div class="loading-text">載入資產資料中…</div>
+  <div class="loading-text" data-i18n="common.loading">載入資產資料中…</div>
 </div>
 
 <!-- ── Error Banner ───────────────────────────────────────── -->
@@ -34,32 +34,32 @@
     </button>
     <a class="brand" href="portfolio.html">
       <span class="brand-mark">BPM</span><span class="brand-tri"></span>
-      <span class="brand-sub">Portfolio Intelligence</span>
+      <span class="brand-sub" data-i18n="brand.sub">Portfolio Intelligence</span>
     </a>
     <nav class="topnav">
-      <a class="topnav-item" href="portfolio.html">組合總覽</a>
-      <a class="topnav-item active" href="#">資產</a>
-      <a class="topnav-item" href="scenarios.html">情境</a>
-      <a class="topnav-item" href="reports.html">報告</a>
+      <a class="topnav-item" href="portfolio.html" data-i18n="nav.portfolio">組合總覽</a>
+      <a class="topnav-item active" href="#" data-i18n="nav.assets">資產</a>
+      <a class="topnav-item" href="scenarios.html" data-i18n="nav.scenarios">情境</a>
+      <a class="topnav-item" href="reports.html" data-i18n="nav.reports">報告</a>
     </nav>
     <div class="top-right">
       <span class="live-tick"><span class="live-dot"></span>Live · <span id="nav-period-display">2026-05</span> TPE</span>
       <span class="top-divider"></span>
       <button class="locale-btn" type="button" title="語言（示範）"><span class="on">繁中</span><span class="sep">/</span><span class="off">EN</span></button>
-      <button class="avatar" type="button" title="登出 · Sign out" onclick="bpmSignOut()" style="border:0;cursor:pointer;">陳</button>
+      <button class="avatar" type="button" data-i18n-title="common.signout" title="登出 · Sign out" onclick="bpmSignOut()" style="border:0;cursor:pointer;">陳</button>
     </div>
   </header>
 
   <!-- ===== SIDEBAR ===== -->
   <aside class="sidebar">
     <div class="side-section">
-      <div class="side-head"><span class="eyebrow">投資組合 · Portfolios</span><button class="side-add" aria-label="新增">＋</button></div>
+      <div class="side-head"><span class="eyebrow" data-i18n="side.portfolios">投資組合 · Portfolios</span><button class="side-add" aria-label="新增">＋</button></div>
       <ul class="side-list">
-        <li><a class="side-row" href="portfolio.html"><span class="left"><span class="side-mark"></span><span class="side-label">不動產組合</span></span><span class="side-meta">3</span></a></li>
+        <li><a class="side-row" href="portfolio.html"><span class="left"><span class="side-mark"></span><span class="side-label" data-i18n="side.realestate">不動產組合</span></span><span class="side-meta">3</span></a></li>
       </ul>
     </div>
     <div class="side-section">
-      <div class="side-head"><span class="eyebrow">資產 · Assets</span></div>
+      <div class="side-head"><span class="eyebrow" data-i18n="side.assets">資產 · Assets</span></div>
       <ul class="side-list">
         <li><a class="side-row" href="index.html?id=asset-001" data-asset="asset-001"><span class="left"><span class="side-mark"></span><span class="side-label">淡水河岸住商</span></span><span class="side-meta">›</span></a></li>
         <li><a class="side-row" href="index.html?id=asset-002" data-asset="asset-002"><span class="left"><span class="side-mark"></span><span class="side-label">林口全聯</span></span><span class="side-meta">›</span></a></li>
@@ -67,25 +67,25 @@
       </ul>
     </div>
     <div class="side-section">
-      <div class="side-head"><span class="eyebrow">篩選 · Filters</span></div>
+      <div class="side-head"><span class="eyebrow" data-i18n="side.filters">篩選 · Filters</span></div>
       <ul class="side-list">
-        <li><a class="side-row" href="#"><span class="side-label">待決行動</span><span class="side-meta">5</span></a></li>
-        <li><a class="side-row" href="#"><span class="side-label">本季異動</span><span class="side-meta">3</span></a></li>
-        <li><a class="side-row" href="#"><span class="side-label">再融資到期</span><span class="side-meta">1</span></a></li>
+        <li><a class="side-row" href="#"><span class="side-label" data-i18n="side.pending">待決行動</span><span class="side-meta">5</span></a></li>
+        <li><a class="side-row" href="#"><span class="side-label" data-i18n="side.changed">本季異動</span><span class="side-meta">3</span></a></li>
+        <li><a class="side-row" href="#"><span class="side-label" data-i18n="side.refi">再融資到期</span><span class="side-meta">1</span></a></li>
       </ul>
     </div>
     <div class="side-section">
-      <div class="side-head"><span class="eyebrow">分析 · Analysis</span></div>
+      <div class="side-head"><span class="eyebrow" data-i18n="side.analysis">分析 · Analysis</span></div>
       <ul class="side-list">
-        <li><a class="side-row" href="scenarios.html"><span class="side-label">情境分析</span><span class="side-meta">›</span></a></li>
-        <li><a class="side-row" href="reports.html"><span class="side-label">報告與文件</span><span class="side-meta">›</span></a></li>
+        <li><a class="side-row" href="scenarios.html"><span class="side-label" data-i18n="side.scenarios">情境分析</span><span class="side-meta">›</span></a></li>
+        <li><a class="side-row" href="reports.html"><span class="side-label" data-i18n="side.reportsDocs">報告與文件</span><span class="side-meta">›</span></a></li>
       </ul>
     </div>
     <div class="side-section bottom">
       <div class="analyst-card">
-        <div class="eyebrow eyebrow-red" style="margin-bottom:4px;">您的分析師 · Your analyst</div>
+        <div class="eyebrow eyebrow-red" style="margin-bottom:4px;" data-i18n="side.analyst">您的分析師 · Your analyst</div>
         <div class="analyst-name">鄭詠晴 Audrey Cheng</div>
-        <div class="meta">資深分析師 · 大中華區</div>
+        <div class="meta" data-i18n="side.analystTitle">資深分析師 · 大中華區</div>
         <div class="meta" style="margin-top:6px;">+886 2 8729 5000 · TPE</div>
       </div>
     </div>
@@ -98,7 +98,7 @@
   <!-- ── Breadcrumb ────────────────────────────────────────── -->
   <div class="print-only print-report-header">
     <span><strong style="font-weight:800;letter-spacing:-0.03em;">BPM</strong> · Portfolio Intelligence</span>
-    <span>機密 CONFIDENTIAL · 陳氏家族信託</span>
+    <span><span data-i18n="a.printConfidential">機密 CONFIDENTIAL</span> · 陳氏家族信託</span>
   </div>
   <div id="breadcrumb">
     <div class="bc-inner">
@@ -106,12 +106,12 @@
       <span class="bc-sep">›</span>
       <span class="bc-asset" id="bc-asset-name">—</span>
       <span class="bc-sep">›</span>
-      <span class="bc-current" id="bc-current-tab">總覽</span>
+      <span class="bc-current" id="bc-current-tab" data-i18n="a.tabOverview">總覽</span>
       <span class="bc-sep">·</span>
-      <span class="meta">最後更新 <span id="nav-updated-date">—</span></span>
+      <span class="meta"><span data-i18n="a.lastUpdated">最後更新</span> <span id="nav-updated-date">—</span></span>
       <button class="btn btn-secondary" id="export-pdf" type="button" style="margin-left:auto;">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 12l5 5 5-5"/><path d="M5 21h14"/></svg>
-        匯出 PDF
+        <span data-i18n="btn.exportPdf">匯出 PDF</span>
       </button>
     </div>
   </div>
@@ -122,7 +122,7 @@
     <div class="asset-header-card">
       <div class="asset-thumb">
         <svg viewBox="0 0 24 24"><path d="M3 21V7l9-4 9 4v14H3zm2-2h14V8.15l-7-3.11L5 8.15V19zm3-3h2v-5H8v5zm4 0h2v-5h-2v5zm4 0h2v-5h-2v5z"/></svg>
-        <span class="asset-thumb-label">資產</span>
+        <span class="asset-thumb-label" data-i18n="nav.assets">資產</span>
       </div>
       <div class="asset-header-body">
         <div class="asset-badges">
@@ -140,7 +140,7 @@
       </div>
       <div class="asset-header-metrics">
         <div class="hdr-metric">
-          <div class="hdr-metric-label">期間</div>
+          <div class="hdr-metric-label" data-i18n="a.period">期間</div>
           <select id="nav-period-select" class="asset-period-badge" style="margin-top:2px;cursor:pointer;">
             <option value="2026-05">2026年5月</option>
             <option value="2026-04">2026年4月</option>
@@ -148,11 +148,11 @@
           </select>
         </div>
         <div class="hdr-metric">
-          <div class="hdr-metric-label">資產估值</div>
+          <div class="hdr-metric-label" data-i18n="a.assetValuation">資產估值</div>
           <div class="hdr-metric-value" id="hdr-value">—</div>
         </div>
         <div class="hdr-metric">
-          <div class="hdr-metric-label">總建築面積</div>
+          <div class="hdr-metric-label" data-i18n="a.totalGba">總建築面積</div>
           <div class="hdr-metric-value" id="hdr-gba">—</div>
         </div>
       </div>
@@ -162,31 +162,31 @@
     <div class="tab-bar">
       <button class="tab-btn active" data-panel="panel-overview">
         <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
-        總覽
+        <span data-i18n="a.tabOverview">總覽</span>
       </button>
       <button class="tab-btn" data-panel="panel-ownership">
         <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-        持有人與資本
+        <span data-i18n="a.tabOwnership">持有人與資本</span>
       </button>
       <button class="tab-btn" data-panel="panel-financial">
         <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
-        財務與估值
+        <span data-i18n="a.tabFinancial">財務與估值</span>
       </button>
       <button class="tab-btn" data-panel="panel-risk">
         <svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.49L19.53 19H4.47L12 5.49zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/></svg>
-        風險分析
+        <span data-i18n="a.tabRisk">風險分析</span>
       </button>
       <button class="tab-btn" data-panel="panel-operations">
         <svg viewBox="0 0 24 24"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
-        營運管理
+        <span data-i18n="a.tabOperations">營運管理</span>
       </button>
       <button class="tab-btn" data-panel="panel-documents">
         <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>
-        文件
+        <span data-i18n="a.tabDocuments">文件</span>
       </button>
       <button class="tab-btn" data-panel="panel-market">
         <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
-        市場
+        <span data-i18n="a.tabMarket">市場</span>
       </button>
     </div>
     </div><!-- /.asset-card-wrap -->
@@ -204,7 +204,7 @@
 
       <!-- Summary -->
       <div class="card summary-card mb-16">
-        <div class="card-title">執行摘要</div>
+        <div class="card-title" data-i18n="a.execSummary">執行摘要</div>
         <p id="ov-summary-narrative" class="summary-narrative"></p>
         <div id="ov-summary-keymessage" class="summary-keymessage"></div>
       </div>
@@ -212,7 +212,7 @@
       <!-- Basic Info + Key Figures -->
       <div class="grid-2-3 mb-16" style="align-items:start">
         <div class="card" style="padding:18px 20px;">
-          <div class="card-title">資產基本資訊</div>
+          <div class="card-title" data-i18n="a.basicInfo">資產基本資訊</div>
           <div id="ov-basic-info"></div>
         </div>
         <div>
@@ -225,22 +225,22 @@
 
       <!-- Actions -->
       <div class="card mb-16">
-        <div class="card-title">待決事項與建議行動</div>
+        <div class="card-title" data-i18n="a.actionsTitle">待決事項與建議行動</div>
         <div id="ov-actions"></div>
       </div>
 
       <!-- Linked Docs + Top Risks + Market Snapshot -->
       <div class="grid-3">
         <div class="card">
-          <div class="card-title">重要文件</div>
+          <div class="card-title" data-i18n="a.keyDocs">重要文件</div>
           <div id="ov-linked-docs"></div>
         </div>
         <div class="card">
-          <div class="card-title">主要風險</div>
+          <div class="card-title" data-i18n="a.topRisks">主要風險</div>
           <div id="ov-top-risks"></div>
         </div>
         <div class="card">
-          <div class="card-title">市場快照</div>
+          <div class="card-title" data-i18n="a.marketSnapshot">市場快照</div>
           <div id="ov-market-snapshot"></div>
         </div>
       </div>
@@ -255,11 +255,11 @@
       <!-- Entity + Owners -->
       <div class="grid-3 mb-16">
         <div class="card">
-          <div class="card-title">法律實體</div>
+          <div class="card-title" data-i18n="a.legalEntity">法律實體</div>
           <div id="ow-entity-info"></div>
         </div>
         <div class="card" style="grid-column: span 2;">
-          <div class="card-title">持有人結構</div>
+          <div class="card-title" data-i18n="a.ownersStructure">持有人結構</div>
           <div id="ow-owners-table"></div>
         </div>
       </div>
@@ -267,11 +267,11 @@
       <!-- Donut + Capital Stack -->
       <div class="grid-2-3 mb-16">
         <div class="card">
-          <div class="card-title">持股比例分佈</div>
+          <div class="card-title" data-i18n="a.ownershipDist">持股比例分佈</div>
           <div id="ow-donut-chart" class="chart-container chart-md"></div>
         </div>
         <div class="card">
-          <div class="card-title">資本結構</div>
+          <div class="card-title" data-i18n="a.capitalStructure">資本結構</div>
           <div id="ow-capital-stack"></div>
           <div id="ow-stack-chart" class="chart-container chart-md"></div>
         </div>
@@ -279,19 +279,19 @@
 
       <!-- Net Equity -->
       <div class="mb-16">
-        <div class="section-header"><div class="section-title">淨權益部位</div></div>
+        <div class="section-header"><div class="section-title" data-i18n="a.netEquityPos">淨權益部位</div></div>
         <div id="ow-net-equity"></div>
       </div>
 
       <!-- Debt -->
       <div class="card mb-16">
-        <div class="card-title">負債摘要</div>
+        <div class="card-title" data-i18n="a.debtSummary">負債摘要</div>
         <div id="ow-debt-table"></div>
       </div>
 
       <!-- Capital Contributions -->
       <div class="card mb-16">
-        <div class="card-title">出資紀錄</div>
+        <div class="card-title" data-i18n="a.contributions">出資紀錄</div>
         <div id="ow-contributions-table"></div>
       </div>
 
@@ -310,26 +310,26 @@
 
       <!-- Income Statement -->
       <div class="card mb-16">
-        <div class="card-title">損益表 — 實際 vs. 預算 vs. 去年同期</div>
-        <div class="card-subtitle text-muted text-sm">過去12個月（2025年6月 – 2026年5月）· 新台幣（NTD）</div>
+        <div class="card-title" data-i18n="a.incomeStmtTitle">損益表 — 實際 vs. 預算 vs. 去年同期</div>
+        <div class="card-subtitle text-muted text-sm" data-i18n="a.incomeStmtSub">過去12個月（2025年6月 – 2026年5月）· 新台幣（NTD）</div>
         <div id="fin-income-statement"></div>
       </div>
 
       <!-- Valuation History + Projections -->
       <div class="grid-2 mb-16">
         <div class="card">
-          <div class="card-title">歷史估值</div>
+          <div class="card-title" data-i18n="a.valuationHistory">歷史估值</div>
           <div id="fin-valuation-chart" class="chart-container chart-lg"></div>
         </div>
         <div class="card">
-          <div class="card-title">五年價值預測 — 情境分析</div>
+          <div class="card-title" data-i18n="a.valueProjection">五年價值預測 — 情境分析</div>
           <div id="fin-projection-chart" class="chart-container chart-lg"></div>
         </div>
       </div>
 
       <!-- Capex -->
       <div class="card mb-16">
-        <div class="card-title">資本支出摘要</div>
+        <div class="card-title" data-i18n="a.capexSummary">資本支出摘要</div>
         <div id="fin-capex-table"></div>
       </div>
 
@@ -346,28 +346,28 @@
       <!-- Matrix + Register -->
       <div class="grid-1-2 mb-16">
         <div class="card">
-          <div class="card-title">機率 / 影響矩陣</div>
+          <div class="card-title" data-i18n="a.probImpactMatrix">機率 / 影響矩陣</div>
           <div id="risk-matrix-chart" class="chart-container chart-xl"></div>
-          <div class="text-xs text-muted" style="margin-top:6px;">X軸 = 影響程度 (1–5) · Y軸 = 發生機率 (1–5) · 圓點 = 風險代碼</div>
+          <div class="text-xs text-muted" style="margin-top:6px;" data-i18n="a.matrixHint">X軸 = 影響程度 (1–5) · Y軸 = 發生機率 (1–5) · 圓點 = 風險代碼</div>
         </div>
         <div class="card">
-          <div class="card-title">風險登記冊</div>
+          <div class="card-title" data-i18n="a.riskRegister">風險登記冊</div>
           <div id="risk-register-table"></div>
         </div>
       </div>
 
       <!-- Scenarios -->
       <div class="card mb-16">
-        <div class="card-title">情境壓力測試</div>
-        <div class="card-subtitle text-muted text-sm">各壓力情境下對現金流或資產價值的影響</div>
+        <div class="card-title" data-i18n="a.stressTest">情境壓力測試</div>
+        <div class="card-subtitle text-muted text-sm" data-i18n="a.stressTestSub">各壓力情境下對現金流或資產價值的影響</div>
         <div id="risk-scenarios" class="grid-3 mb-16" style="margin-top:12px;"></div>
-        <div class="section-header"><div class="section-title">三情境現金流量預測</div></div>
+        <div class="section-header"><div class="section-title" data-i18n="a.threeScenarioCf">三情境現金流量預測</div></div>
         <div id="risk-scenario-chart" class="chart-container chart-lg"></div>
       </div>
 
       <!-- Mitigation Plan -->
       <div class="card">
-        <div class="card-title">風險緩解行動計畫</div>
+        <div class="card-title" data-i18n="a.mitigationPlan">風險緩解行動計畫</div>
         <div id="risk-mitigation-table"></div>
       </div>
 
@@ -380,9 +380,9 @@
 
       <!-- Priority Matrix -->
       <div class="card mb-16">
-        <div class="card-title">事項優先順序矩陣</div>
+        <div class="card-title" data-i18n="a.priorityMatrix">事項優先順序矩陣</div>
         <div class="pm-axis-labels">
-          <div>← 高緊急度</div><div>低緊急度 →</div>
+          <div data-i18n="a.highUrgency">← 高緊急度</div><div data-i18n="a.lowUrgency">低緊急度 →</div>
         </div>
         <div class="pm-quadrant-grid">
           <div id="pm-q1" class="pm-quadrant pm-q1"></div>
@@ -394,25 +394,25 @@
 
       <!-- Capex Projects -->
       <div class="card mb-16">
-        <div class="card-title">資本支出計畫</div>
+        <div class="card-title" data-i18n="a.capexProjects">資本支出計畫</div>
         <div id="ops-capex-table"></div>
       </div>
 
       <!-- OpEx Recurring -->
       <div class="card mb-16">
-        <div class="card-title">定期營運費用</div>
+        <div class="card-title" data-i18n="a.recurringOpex">定期營運費用</div>
         <div id="ops-opex-table"></div>
       </div>
 
       <!-- Suppliers -->
       <div class="card mb-16">
-        <div class="card-title">廠商與供應商</div>
+        <div class="card-title" data-i18n="a.suppliers">廠商與供應商</div>
         <div id="ops-suppliers-table"></div>
       </div>
 
       <!-- Service History -->
       <div class="card">
-        <div class="card-title">服務紀錄</div>
+        <div class="card-title" data-i18n="a.serviceHistory">服務紀錄</div>
         <div id="ops-service-history"></div>
       </div>
 
@@ -425,13 +425,13 @@
 
       <!-- Important Documents -->
       <div class="card mb-16">
-        <div class="card-title">重要文件</div>
+        <div class="card-title" data-i18n="a.keyDocs">重要文件</div>
         <div id="docs-important"></div>
       </div>
 
       <!-- Document Library -->
       <div class="card">
-        <div class="card-title">文件庫</div>
+        <div class="card-title" data-i18n="a.docLibrary">文件庫</div>
         <div id="docs-filter-bar" class="doc-filter-bar"></div>
         <div id="docs-library-table"></div>
       </div>
@@ -445,24 +445,24 @@
 
       <!-- Market Narrative -->
       <div class="card mb-16">
-        <div class="card-title">當地市場摘要 — 大安/信義, 台北市</div>
+        <div class="card-title" data-i18n="a.localMarketSummary">當地市場摘要 — 大安/信義, 台北市</div>
         <div id="mkt-narrative"></div>
       </div>
 
       <!-- Competitiveness -->
       <div class="card mb-16">
-        <div class="card-title">資產競爭力分析 (SWOT)</div>
+        <div class="card-title" data-i18n="a.competitiveness">資產競爭力分析 (SWOT)</div>
         <div id="mkt-competitiveness"></div>
       </div>
 
       <!-- Comparable Sales + Cap Rate chart -->
       <div class="grid-3-2 mb-16">
         <div class="card">
-          <div class="card-title">可比較交易案例</div>
+          <div class="card-title" data-i18n="a.compSales">可比較交易案例</div>
           <div id="mkt-comp-sales"></div>
         </div>
         <div class="card">
-          <div class="card-title">資本化率趨勢 — 次市場</div>
+          <div class="card-title" data-i18n="a.capRateTrend">資本化率趨勢 — 次市場</div>
           <div id="mkt-caprate-chart" class="chart-container chart-lg"></div>
         </div>
       </div>
@@ -470,11 +470,11 @@
       <!-- Rent Comps + Vacancy chart -->
       <div class="grid-3-2 mb-16">
         <div class="card">
-          <div class="card-title">租金比較案例</div>
+          <div class="card-title" data-i18n="a.compRents">租金比較案例</div>
           <div id="mkt-comp-rents"></div>
         </div>
         <div class="card">
-          <div class="card-title">空置率趨勢 — 次市場 vs. 資產</div>
+          <div class="card-title" data-i18n="a.vacancyTrend">空置率趨勢 — 次市場 vs. 資產</div>
           <div id="mkt-vacancy-chart" class="chart-container chart-lg"></div>
         </div>
       </div>
@@ -482,11 +482,11 @@
       <!-- Market Risks + Opportunities -->
       <div class="grid-2 mb-16">
         <div class="card">
-          <div class="card-title">市場風險</div>
+          <div class="card-title" data-i18n="a.marketRisks">市場風險</div>
           <div id="mkt-risks"></div>
         </div>
         <div class="card">
-          <div class="card-title">市場機會</div>
+          <div class="card-title" data-i18n="a.marketOpps">市場機會</div>
           <div id="mkt-opportunities"></div>
         </div>
       </div>
@@ -502,17 +502,18 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="app-foot">
-    <span>BPM Intelligence v4.2 · 機密</span>
+    <span>BPM Intelligence v4.2 · <span data-i18n="foot.confidential">機密</span></span>
     <span class="foot-sep"></span>
-    <span>資料來源：託管行、世邦魏理仕、戴德梁行、內部模型</span>
+    <span data-i18n="foot.sources">資料來源：託管行、世邦魏理仕、戴德梁行、內部模型</span>
     <span class="foot-spacer"></span>
-    <span>© 2026 BPM Capital Partners</span>
+    <span data-i18n="foot.copyright">© 2026 BPM Capital Partners</span>
   </footer>
 
 </div><!-- /.app-shell -->
 
 <script src="data.js"></script>
 <script src="ui.js"></script>
+<script src="i18n.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

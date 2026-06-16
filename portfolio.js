@@ -1,5 +1,230 @@
 'use strict';
 
+/* ── Page-specific i18n keys (interface chrome only; data stays Chinese) ── */
+if (window.bpmI18nAdd) bpmI18nAdd({
+  // page header + map + summary
+  'pf.headEyebrow': '2026 第二季 · 組合審查',
+  'pf.mapEyebrow': '地理曝險 · Geographic exposure',
+  'pf.mapTitle': '大台北組合 · 依市值',
+  'pf.mapLegendThis': '本組合曝險',
+  'pf.mapLegendPeer': '同業均值',
+  'pf.summaryEyebrow': '本季摘要 · This quarter in one paragraph',
+  'pf.topContributor': '最大正向貢獻 · Top contributor',
+  'pf.mostUrgent': '最迫切事項 · Most urgent',
+  // holdings
+  'pf.holdingsEyebrow': '持有資產 · Holdings',
+  'pf.holdingsNote': '點選任一列查看資產明細',
+  'pf.thAsset': '資產',
+  'pf.thCategory': '類別',
+  'pf.thGeography': '地區',
+  'pf.thValuation': '估值',
+  'pf.lblLtv': 'LTV',
+  'pf.thNoi': '年度 NOI',
+  'pf.thCapRate': '資本化率',
+  'pf.thStatus': '狀態',
+  'pf.totalCount': '合計 · {n} 檔',
+  // composer
+  'pf.askAnalyst': '詢問分析師',
+  'pf.askSla': '台北辦公時間內 4 小時回覆 · TPE',
+  'pf.composerPh': '輸入問題，或貼上一段備忘錄 …',
+  'pf.attachBtn': '＋ 附件',
+  'pf.sugg1': '淡水河岸再融資有哪些選項？',
+  'pf.sugg2': '哪些資產本季估值變動最大？',
+  'pf.sugg3': '林口全聯 2027 租金調漲影響為何？',
+  // KPI strip
+  'pf.kpiGrossMark': '組合總估值 · Gross mark',
+  'pf.kpiBlendedLtv': '加權 LTV · Blended LTV',
+  'pf.kpiAnnualNoi': '年度 NOI · Annual NOI',
+  'pf.kpiPending': '待決 · Pending',
+  'pf.kpiYoy': '年增',
+  'pf.kpiLtvDelta': '財務結構穩健',
+  'pf.kpiNoiMeta': '可收益兩資產',
+  'pf.kpiPendingValue': '再融資',
+  'pf.kpiPendingMeta': '淡水河岸到期',
+  // sections / card titles
+  'pf.secAssetOverview': '個別資產概覽 · Asset overview',
+  'pf.secAssetOverviewNote': '點擊資產卡片查看完整報告',
+  'pf.secComposition': '組合構成分析 · Composition',
+  'pf.cardAllocation': '資產配置（依估值比重）',
+  'pf.cardIncome': '年度 NOI 與淨現金流比較',
+  'pf.cardIncomeSub': '各資產 NOI（左欄）及稅前淨現金流（右欄）',
+  'pf.secComparison': '三資產財務比較 · Comparison',
+  'pf.secDebt': '負債與槓桿結構 · Debt & leverage',
+  'pf.cardDebtSchedule': '貸款到期時間表 & 明細',
+  'pf.cardLtv': '各資產貸款成數（LTV）比較',
+  'pf.secHistory': '組合總估值成長軌跡 · Value history',
+  'pf.cardHistory': '三資產合計估值 — 歷史趨勢（2019–2026）',
+  'pf.cardHistorySub': '堆疊面積圖 · 各色代表各資產估值貢獻',
+  'pf.secActions': '待決行動項目 — 全部資產 · Actions',
+  'pf.secActionsNote': '依截止日期排序',
+  'pf.secRisk': '組合風險概況 · Risk profile',
+  'pf.riskHigh': '高度風險',
+  'pf.riskMedium': '中度風險',
+  'pf.riskLow': '低度風險',
+  'pf.cardTopConcern': '最主要風險警示',
+  // asset cards (metric labels)
+  'pf.acValuation': '估值',
+  'pf.acEquity': '淨權益',
+  'pf.acNoi': '年度NOI',
+  // drawer
+  'pf.loadingText': '載入組合資料中…',
+  'pf.drawerClose': '關閉',
+  'pf.drawerEyebrow': '資產明細',
+  'pf.drawerMarketVal': '市場估值',
+  'pf.levHigh': '槓桿偏高',
+  'pf.levConservative': '保守槓桿',
+  'pf.levNoLoan': '無貸款',
+  'pf.holdCost': '持有成本',
+  'pf.posNoi': '正向 NOI',
+  'pf.keyHighlight': '本季重點 · Key highlight',
+  'pf.ownStructure': '持有結構',
+  'pf.familyEquity': '家族淨權益',
+  'pf.loanBalance': '貸款餘額',
+  'pf.annualNoi': '年度 NOI',
+  'pf.annualNetCf': '年度淨現金流',
+  // comparison row labels
+  'pf.cmpMetric': '指標',
+  'pf.cmpMarketVal': '估計市值',
+  'pf.cmpNetEquity': '淨權益',
+  'pf.cmpChenPct': '陳氏家族持份',
+  'pf.cmpChenEquity': '陳氏家族淨權益',
+  'pf.cmpHoldStatus': '持有狀況',
+  'pf.cmpKeyItems': '近期重點事項',
+  // debt table
+  'pf.thLender': '貸款機構',
+  'pf.thRate': '利率',
+  'pf.thDscr': 'DSCR',
+  'pf.thMaturity': '到期日',
+  'pf.totalPortfolio': '組合合計',
+  'pf.weighted': '加權',
+  // actions table
+  'pf.thActionItem': '行動項目',
+  'pf.thPriority': '優先級',
+  'pf.thDeadline': '截止日期',
+  'pf.prioHigh': '高優先',
+  'pf.prioMedium': '中優先',
+  'pf.prioLow': '低優先',
+  // charts
+  'pf.chartValuation': '估值',
+  'pf.chartWeight': '比重',
+  'pf.seriesNoi': 'NOI',
+  'pf.seriesNetCf': '稅前淨現金流',
+  'pf.chartTotal': '合計',
+  // misc
+  'pf.loadError': '⚠ 資料載入失敗：'
+}, {
+  // page header + map + summary
+  'pf.headEyebrow': 'Q2 2026 · Portfolio review',
+  'pf.mapEyebrow': 'Geographic exposure',
+  'pf.mapTitle': 'Greater Taipei portfolio · by value',
+  'pf.mapLegendThis': 'This portfolio',
+  'pf.mapLegendPeer': 'Peer average',
+  'pf.summaryEyebrow': 'This quarter in one paragraph',
+  'pf.topContributor': 'Top contributor',
+  'pf.mostUrgent': 'Most urgent',
+  // holdings
+  'pf.holdingsEyebrow': 'Holdings',
+  'pf.holdingsNote': 'Click any row to view asset details',
+  'pf.thAsset': 'Asset',
+  'pf.thCategory': 'Category',
+  'pf.thGeography': 'Geography',
+  'pf.thValuation': 'Valuation',
+  'pf.lblLtv': 'LTV',
+  'pf.thNoi': 'Annual NOI',
+  'pf.thCapRate': 'Cap rate',
+  'pf.thStatus': 'Status',
+  'pf.totalCount': 'Total · {n} assets',
+  // composer
+  'pf.askAnalyst': 'Ask your analyst',
+  'pf.askSla': 'Reply within 4 hours during Taipei office hours · TPE',
+  'pf.composerPh': 'Type a question, or paste a memo …',
+  'pf.attachBtn': '＋ Attach',
+  'pf.sugg1': 'What are the refinancing options for Tamsui?',
+  'pf.sugg2': 'Which assets had the largest valuation change this quarter?',
+  'pf.sugg3': 'What is the impact of the 2027 rent increase at Linkou PXMart?',
+  // KPI strip
+  'pf.kpiGrossMark': 'Gross mark',
+  'pf.kpiBlendedLtv': 'Blended LTV',
+  'pf.kpiAnnualNoi': 'Annual NOI',
+  'pf.kpiPending': 'Pending',
+  'pf.kpiYoy': 'YoY',
+  'pf.kpiLtvDelta': 'Sound capital structure',
+  'pf.kpiNoiMeta': 'Two income-generating assets',
+  'pf.kpiPendingValue': 'Refinancing',
+  'pf.kpiPendingMeta': 'Tamsui maturity',
+  // sections / card titles
+  'pf.secAssetOverview': 'Asset overview',
+  'pf.secAssetOverviewNote': 'Click an asset card for the full report',
+  'pf.secComposition': 'Composition',
+  'pf.cardAllocation': 'Allocation (by valuation weight)',
+  'pf.cardIncome': 'Annual NOI vs. net cash flow',
+  'pf.cardIncomeSub': 'NOI (left bar) and pre-tax net cash flow (right bar) per asset',
+  'pf.secComparison': 'Comparison',
+  'pf.secDebt': 'Debt & leverage',
+  'pf.cardDebtSchedule': 'Loan maturity schedule & detail',
+  'pf.cardLtv': 'LTV by asset',
+  'pf.secHistory': 'Value history',
+  'pf.cardHistory': 'Combined valuation — historical trend (2019–2026)',
+  'pf.cardHistorySub': 'Stacked area · each colour is one asset’s contribution',
+  'pf.secActions': 'Actions — all assets',
+  'pf.secActionsNote': 'Sorted by deadline',
+  'pf.secRisk': 'Risk profile',
+  'pf.riskHigh': 'High risk',
+  'pf.riskMedium': 'Medium risk',
+  'pf.riskLow': 'Low risk',
+  'pf.cardTopConcern': 'Top risk alert',
+  // asset cards (metric labels)
+  'pf.acValuation': 'Valuation',
+  'pf.acEquity': 'Net equity',
+  'pf.acNoi': 'Annual NOI',
+  // drawer
+  'pf.loadingText': 'Loading portfolio data…',
+  'pf.drawerClose': 'Close',
+  'pf.drawerEyebrow': 'Asset detail',
+  'pf.drawerMarketVal': 'Market valuation',
+  'pf.levHigh': 'Elevated leverage',
+  'pf.levConservative': 'Conservative leverage',
+  'pf.levNoLoan': 'No debt',
+  'pf.holdCost': 'Carrying cost',
+  'pf.posNoi': 'Positive NOI',
+  'pf.keyHighlight': 'Key highlight',
+  'pf.ownStructure': 'Ownership structure',
+  'pf.familyEquity': 'Family net equity',
+  'pf.loanBalance': 'Loan balance',
+  'pf.annualNoi': 'Annual NOI',
+  'pf.annualNetCf': 'Annual net cash flow',
+  // comparison row labels
+  'pf.cmpMetric': 'Metric',
+  'pf.cmpMarketVal': 'Estimated market value',
+  'pf.cmpNetEquity': 'Net equity',
+  'pf.cmpChenPct': 'Chen family stake',
+  'pf.cmpChenEquity': 'Chen family net equity',
+  'pf.cmpHoldStatus': 'Ownership status',
+  'pf.cmpKeyItems': 'Recent highlights',
+  // debt table
+  'pf.thLender': 'Lender',
+  'pf.thRate': 'Rate',
+  'pf.thDscr': 'DSCR',
+  'pf.thMaturity': 'Maturity',
+  'pf.totalPortfolio': 'Portfolio total',
+  'pf.weighted': 'Blended',
+  // actions table
+  'pf.thActionItem': 'Action item',
+  'pf.thPriority': 'Priority',
+  'pf.thDeadline': 'Deadline',
+  'pf.prioHigh': 'High priority',
+  'pf.prioMedium': 'Medium priority',
+  'pf.prioLow': 'Low priority',
+  // charts
+  'pf.chartValuation': 'Valuation',
+  'pf.chartWeight': 'Weight',
+  'pf.seriesNoi': 'NOI',
+  'pf.seriesNetCf': 'Pre-tax net cash flow',
+  'pf.chartTotal': 'Total',
+  // misc
+  'pf.loadError': '⚠ Failed to load data: '
+});
+
 const PF_DATA_URL = './data/portfolio.json';
 const chartInstances = [];
 
@@ -65,7 +290,7 @@ function el(id) { return document.getElementById(id); }
 
 function statusBadgeHtml(s) {
   const clsMap   = { 'Open': 'open', 'In Progress': 'in-progress', 'Complete': 'complete' };
-  const labelMap = { 'Open': '待處理', 'In Progress': '進行中', 'Complete': '已完成' };
+  const labelMap = { 'Open': t('status.open'), 'In Progress': t('status.inProgress'), 'Complete': t('status.complete') };
   return `<span class="status-badge ${clsMap[s] || 'not-started'}">${labelMap[s] || escHtml(s)}</span>`;
 }
 
@@ -81,7 +306,7 @@ function showLoading(v) { const o = el('loading-overlay'); if (o) o.style.displa
 function showError(msg) {
   const b = el('error-banner');
   if (!b) return;
-  b.textContent = '⚠ 資料載入失敗：' + msg;
+  b.textContent = t('pf.loadError') + msg;
   b.style.display = 'block';
 }
 
@@ -127,7 +352,7 @@ function renderNav(d) {
 /* ── Page header ────────────────────────────────────────── */
 function renderPageHead(d) {
   const name = el('pf-name');
-  if (name) name.textContent = '不動產組合';
+  if (name) name.textContent = t('side.realestate');
   const sub = el('pf-sub');
   if (sub) sub.textContent = 'Chen Family Trust · ' + d.meta.assetCount + ' assets · re-marked May 2026';
 }
@@ -136,7 +361,7 @@ function renderPageHead(d) {
 function renderKpiStrip(d) {
   const host = el('pf-kpi-strip');
   if (!host) return;
-  const t = d.totals;
+  const tot = d.totals;
 
   // refinancing maturity from debt matrix (high-urgency loan)
   const refi = (d.debtMatrix || []).find(r => r.urgency === 'high');
@@ -144,32 +369,32 @@ function renderKpiStrip(d) {
 
   const cells = [
     {
-      label: '組合總估值 · Gross mark',
-      value: fmtCompact(t.totalAUM),
+      label: t('pf.kpiGrossMark'),
+      value: fmtCompact(tot.totalAUM),
       deltaSign: '▲', deltaCls: 'pos',
-      delta: '+' + t.yoyAUMGrowth.toFixed(1) + '%',
-      deltaMeta: '年增'
+      delta: '+' + tot.yoyAUMGrowth.toFixed(1) + '%',
+      deltaMeta: t('pf.kpiYoy')
     },
     {
-      label: '加權 LTV · Blended LTV',
-      value: t.blendedLTV.toFixed(1), unit: '%',
+      label: t('pf.kpiBlendedLtv'),
+      value: tot.blendedLTV.toFixed(1), unit: '%',
       deltaSign: '▲', deltaCls: 'pos',
-      delta: '財務結構穩健',
-      deltaMeta: '保守槓桿'
+      delta: t('pf.kpiLtvDelta'),
+      deltaMeta: t('pf.levConservative')
     },
     {
-      label: '年度 NOI · Annual NOI',
-      value: fmtCompact(t.incomeGeneratingNOI),
+      label: t('pf.kpiAnnualNoi'),
+      value: fmtCompact(tot.incomeGeneratingNOI),
       deltaSign: '▲', deltaCls: 'pos',
       delta: '+2.4%',
-      deltaMeta: '可收益兩資產'
+      deltaMeta: t('pf.kpiNoiMeta')
     },
     {
-      label: '待決 · Pending',
-      value: '再融資',
+      label: t('pf.kpiPending'),
+      value: t('pf.kpiPendingValue'),
       deltaSign: '▼', deltaCls: 'neg',
       delta: refiDate,
-      deltaMeta: '淡水河岸到期'
+      deltaMeta: t('pf.kpiPendingMeta')
     }
   ];
 
@@ -307,15 +532,15 @@ function renderHoldings(d) {
     <table class="data-table">
       <thead>
         <tr>
-          <th>資產</th><th>類別</th><th>地區</th>
-          <th class="num">估值</th><th class="num">LTV</th>
-          <th class="num">年度 NOI</th><th class="num">資本化率</th><th>狀態</th>
+          <th>${t('pf.thAsset')}</th><th>${t('pf.thCategory')}</th><th>${t('pf.thGeography')}</th>
+          <th class="num">${t('pf.thValuation')}</th><th class="num">${t('pf.lblLtv')}</th>
+          <th class="num">${t('pf.thNoi')}</th><th class="num">${t('pf.thCapRate')}</th><th>${t('pf.thStatus')}</th>
         </tr>
       </thead>
       <tbody>
         ${rows}
         <tr class="row-total">
-          <td>合計 · ${cards.length} 檔</td>
+          <td>${t('pf.totalCount').replace('{n}', cards.length)}</td>
           <td></td><td></td>
           <td class="num">${fmtCompact(sumValue)}</td>
           <td class="num">${fmtPct(blendedLTV)}</td>
@@ -344,7 +569,7 @@ function openDrawer(asset) {
   if (!drawer || !backdrop) return;
 
   const eb = el('pf-drawer-eyebrow');
-  if (eb) eb.textContent = '資產明細 · ' + asset.id.toUpperCase();
+  if (eb) eb.textContent = t('pf.drawerEyebrow') + ' · ' + asset.id.toUpperCase();
   const ti = el('pf-drawer-title');
   if (ti) ti.textContent = asset.name;
   const me = el('pf-drawer-meta');
@@ -354,20 +579,20 @@ function openDrawer(asset) {
   const kpis = el('pf-drawer-kpis');
   if (kpis) {
     const noiCls = (asset.noi || 0) < 0 ? 'neg' : 'pos';
-    const noiLine = (asset.noi || 0) < 0 ? '持有成本' : '正向 NOI';
+    const noiLine = (asset.noi || 0) < 0 ? t('pf.holdCost') : t('pf.posNoi');
     kpis.innerHTML = `
       <div class="drawer-kpi">
-        <div class="eyebrow">估值</div>
+        <div class="eyebrow">${t('pf.thValuation')}</div>
         <div class="v">${fmtCompact(asset.value)}</div>
-        <div class="d" style="color:var(--ink-3);">市場估值</div>
+        <div class="d" style="color:var(--ink-3);">${t('pf.drawerMarketVal')}</div>
       </div>
       <div class="drawer-kpi">
-        <div class="eyebrow">LTV</div>
+        <div class="eyebrow">${t('pf.lblLtv')}</div>
         <div class="v">${fmtPct(asset.ltv)}</div>
-        <div class="d" style="color:${asset.ltv > 40 ? 'var(--warn)' : 'var(--pos)'};">${asset.ltv > 40 ? '槓桿偏高' : asset.ltv > 0 ? '保守槓桿' : '無貸款'}</div>
+        <div class="d" style="color:${asset.ltv > 40 ? 'var(--warn)' : 'var(--pos)'};">${asset.ltv > 40 ? t('pf.levHigh') : asset.ltv > 0 ? t('pf.levConservative') : t('pf.levNoLoan')}</div>
       </div>
       <div class="drawer-kpi">
-        <div class="eyebrow">資本化率</div>
+        <div class="eyebrow">${t('pf.thCapRate')}</div>
         <div class="v">${asset.capRate != null ? fmtPct(asset.capRate) : '—'}</div>
         <div class="d ${noiCls}" style="color:${noiCls === 'neg' ? 'var(--bpm-red)' : 'var(--pos)'};">${noiLine}</div>
       </div>`;
@@ -378,14 +603,14 @@ function openDrawer(asset) {
   if (det) {
     const noiCls = (asset.noi || 0) < 0 ? 'neg' : 'pos';
     det.innerHTML = `
-      <div class="eyebrow" style="margin-bottom:10px;">本季重點 · Key highlight</div>
+      <div class="eyebrow" style="margin-bottom:10px;">${t('pf.keyHighlight')}</div>
       <div class="summary-keymessage" style="margin-bottom:16px;">${escHtml(asset.keyHighlight)}</div>
       <table class="info-table">
-        <tr><td class="info-label">持有結構</td><td class="info-value">${escHtml(asset.ownershipSummary)}</td></tr>
-        <tr><td class="info-label">家族淨權益</td><td class="info-value">${fmtCompact(asset.chenEquity)}</td></tr>
-        <tr><td class="info-label">貸款餘額</td><td class="info-value">${asset.debt > 0 ? fmtCompact(asset.debt) : '無貸款'}</td></tr>
-        <tr><td class="info-label">年度 NOI</td><td class="info-value ${noiCls}">${(asset.noi || 0) < 0 ? '(' + fmtCompact(Math.abs(asset.noi)) + ')' : fmtCompact(asset.noi)}</td></tr>
-        <tr><td class="info-label">年度淨現金流</td><td class="info-value ${(asset.netCF || 0) < 0 ? 'neg' : ''}">${(asset.netCF || 0) < 0 ? '(' + fmtCompact(Math.abs(asset.netCF)) + ')' : fmtCompact(asset.netCF)}</td></tr>
+        <tr><td class="info-label">${t('pf.ownStructure')}</td><td class="info-value">${escHtml(asset.ownershipSummary)}</td></tr>
+        <tr><td class="info-label">${t('pf.familyEquity')}</td><td class="info-value">${fmtCompact(asset.chenEquity)}</td></tr>
+        <tr><td class="info-label">${t('pf.loanBalance')}</td><td class="info-value">${asset.debt > 0 ? fmtCompact(asset.debt) : t('pf.levNoLoan')}</td></tr>
+        <tr><td class="info-label">${t('pf.annualNoi')}</td><td class="info-value ${noiCls}">${(asset.noi || 0) < 0 ? '(' + fmtCompact(Math.abs(asset.noi)) + ')' : fmtCompact(asset.noi)}</td></tr>
+        <tr><td class="info-label">${t('pf.annualNetCf')}</td><td class="info-value ${(asset.netCF || 0) < 0 ? 'neg' : ''}">${(asset.netCF || 0) < 0 ? '(' + fmtCompact(Math.abs(asset.netCF)) + ')' : fmtCompact(asset.netCF)}</td></tr>
       </table>`;
   }
 
@@ -425,9 +650,9 @@ function renderComposer(d) {
   const form = el('pf-composer-form');
 
   const suggestions = [
-    '淡水河岸再融資有哪些選項？',
-    '哪些資產本季估值變動最大？',
-    '林口全聯 2027 租金調漲影響為何？'
+    t('pf.sugg1'),
+    t('pf.sugg2'),
+    t('pf.sugg3')
   ];
 
   if (sugHost) {
@@ -479,19 +704,19 @@ function renderAssetCards(d) {
       </div>
       <div class="pf-ac-metrics">
         <div class="pf-ac-metric">
-          <div class="pf-ac-metric-label">估值</div>
+          <div class="pf-ac-metric-label">${t('pf.acValuation')}</div>
           <div class="pf-ac-metric-value">${fmtCompact(a.value)}</div>
         </div>
         <div class="pf-ac-metric">
-          <div class="pf-ac-metric-label">淨權益</div>
+          <div class="pf-ac-metric-label">${t('pf.acEquity')}</div>
           <div class="pf-ac-metric-value">${fmtCompact(a.equity)}</div>
         </div>
         <div class="pf-ac-metric">
-          <div class="pf-ac-metric-label">LTV</div>
+          <div class="pf-ac-metric-label">${t('pf.lblLtv')}</div>
           <div class="pf-ac-metric-value">${fmtPct(a.ltv)}</div>
         </div>
         <div class="pf-ac-metric">
-          <div class="pf-ac-metric-label">年度NOI</div>
+          <div class="pf-ac-metric-label">${t('pf.acNoi')}</div>
           <div class="pf-ac-metric-value ${noiCls}">${noiFmt}</div>
         </div>
       </div>
@@ -513,7 +738,7 @@ function renderAllocationChart(d) {
     tooltip: {
       ...ECHARTS_BASE.tooltip,
       trigger: 'item',
-      formatter: p => `${p.name}<br>估值：${fmtCompact(p.value)}<br>比重：${p.percent.toFixed(1)}%`
+      formatter: p => `${p.name}<br>${t('pf.chartValuation')}：${fmtCompact(p.value)}<br>${t('pf.chartWeight')}：${p.percent.toFixed(1)}%`
     },
     legend: { bottom: 0, textStyle: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 } },
     series: [{
@@ -545,13 +770,13 @@ function renderIncomeChart(d) {
     yAxis: bpmAxis({ type: 'value', axisLabel: { color: BPM.ink3, formatter: v => fmtCompact(v), fontSize: 10, fontFamily: BPM_FONT } }),
     series: [
       {
-        name: 'NOI',
+        name: t('pf.seriesNoi'),
         type: 'bar',
         data: ib.noi.map((v, i) => ({ value: v, itemStyle: { color: BPM_SERIES[i], borderRadius: 0 } })),
         label: { show: true, position: 'top', formatter: p => fmtCompact(p.value), fontSize: 9, color: '#5C5C61' }
       },
       {
-        name: '稅前淨現金流',
+        name: t('pf.seriesNetCf'),
         type: 'bar',
         data: ib.netCF.map((v, i) => ({ value: v, itemStyle: { color: BPM_SERIES[i], opacity: 0.5, borderRadius: 0 } })),
         label: { show: true, position: 'top', formatter: p => fmtCompact(p.value), fontSize: 9, color: '#5C5C61' }
@@ -571,24 +796,24 @@ function renderComparisonTable(d) {
   };
 
   const rows = [
-    ['估計市值',         c => fmtCompact(c.value)],
-    ['貸款餘額',         c => c.debt > 0 ? fmtCompact(c.debt) : '<span class="text-muted">無貸款</span>'],
-    ['淨權益',           c => fmtCompact(c.equity)],
-    ['陳氏家族持份',     c => fmtPct(c.chenPct)],
-    ['陳氏家族淨權益',   c => fmtCompact(c.chenEquity)],
-    ['LTV',              c => fmtPct(c.ltv)],
-    ['年度NOI',          c => signCompact(c.noi)],
-    ['年度淨現金流',     c => signCompact(c.netCF)],
-    ['資本化率',         c => c.capRate != null ? fmtPct(c.capRate) : '<span class="text-muted">N/A</span>'],
-    ['持有狀況',         c => escHtml(c.ownershipSummary)],
-    ['近期重點事項',     c => `<span style="font-size:12px;color:var(--ink-2)">${escHtml(c.keyHighlight)}</span>`]
+    [t('pf.cmpMarketVal'),   c => fmtCompact(c.value)],
+    [t('pf.loanBalance'),    c => c.debt > 0 ? fmtCompact(c.debt) : `<span class="text-muted">${t('pf.levNoLoan')}</span>`],
+    [t('pf.cmpNetEquity'),   c => fmtCompact(c.equity)],
+    [t('pf.cmpChenPct'),     c => fmtPct(c.chenPct)],
+    [t('pf.cmpChenEquity'),  c => fmtCompact(c.chenEquity)],
+    [t('pf.lblLtv'),         c => fmtPct(c.ltv)],
+    [t('pf.annualNoi'),      c => signCompact(c.noi)],
+    [t('pf.annualNetCf'),    c => signCompact(c.netCF)],
+    [t('pf.thCapRate'),      c => c.capRate != null ? fmtPct(c.capRate) : '<span class="text-muted">N/A</span>'],
+    [t('pf.cmpHoldStatus'),  c => escHtml(c.ownershipSummary)],
+    [t('pf.cmpKeyItems'),    c => `<span style="font-size:12px;color:var(--ink-2)">${escHtml(c.keyHighlight)}</span>`]
   ];
 
   el('pf-comparison-table').innerHTML = `
     <table class="data-table">
       <thead>
         <tr>
-          <th style="min-width:140px">指標</th>
+          <th style="min-width:140px">${t('pf.cmpMetric')}</th>
           ${cards.map(c => `<th class="num">${escHtml(c.shortName)}</th>`).join('')}
         </tr>
       </thead>
@@ -613,10 +838,10 @@ function renderDebtTable(d) {
     <table class="data-table">
       <thead>
         <tr>
-          <th>資產</th><th>貸款機構</th>
-          <th class="num">貸款餘額</th>
-          <th>利率</th><th>LTV</th><th>DSCR</th>
-          <th>到期日</th><th>狀態</th>
+          <th>${t('pf.thAsset')}</th><th>${t('pf.thLender')}</th>
+          <th class="num">${t('pf.loanBalance')}</th>
+          <th>${t('pf.thRate')}</th><th>${t('pf.lblLtv')}</th><th>${t('pf.thDscr')}</th>
+          <th>${t('pf.thMaturity')}</th><th>${t('pf.thStatus')}</th>
         </tr>
       </thead>
       <tbody>
@@ -632,11 +857,11 @@ function renderDebtTable(d) {
             <td>${urgencyBadge(row.urgency, row.urgencyLabel)}</td>
           </tr>`).join('')}
         <tr class="row-total">
-          <td class="font-bold">組合合計</td>
+          <td class="font-bold">${t('pf.totalPortfolio')}</td>
           <td></td>
           <td class="num font-bold">${fmtNTD(d.totals.totalDebt)}</td>
           <td></td>
-          <td class="font-bold">${fmtPct(d.totals.blendedLTV)} <span class="text-muted text-xs">加權</span></td>
+          <td class="font-bold">${fmtPct(d.totals.blendedLTV)} <span class="text-muted text-xs">${t('pf.weighted')}</span></td>
           <td></td><td></td><td></td>
         </tr>
       </tbody>
@@ -651,7 +876,7 @@ function renderLTVChart(d) {
 
   chart.setOption({
     ...ECHARTS_BASE,
-    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'axis', formatter: p => `${p[0].name}<br>LTV：${p[0].value.toFixed(1)}%` },
+    tooltip: { ...ECHARTS_BASE.tooltip, trigger: 'axis', formatter: p => `${p[0].name}<br>${t('pf.lblLtv')}：${p[0].value.toFixed(1)}%` },
     grid: { top: 20, bottom: 30, left: 96, right: 64 },
     xAxis: bpmAxis({
       type: 'value', min: 0, max: 65,
@@ -715,7 +940,7 @@ function renderHistoryChart(d) {
         const total = p.reduce((s, item) => s + (item.value || 0), 0);
         return `${p[0].axisValue}<br>` +
           p.map(item => `${item.marker}${item.seriesName}: ${fmtCompact(item.value)}`).join('<br>') +
-          `<br><b>合計：${fmtCompact(total)}</b>`;
+          `<br><b>${t('pf.chartTotal')}：${fmtCompact(total)}</b>`;
       }
     },
     legend: { bottom: 0, textStyle: { color: BPM.ink3, fontFamily: BPM_FONT, fontSize: 11 } },
@@ -732,15 +957,15 @@ function renderHistoryChart(d) {
 /* ── Actions Table ─────────────────────────────────────── */
 function renderActionsTable(d) {
   const priorityCls   = p => ({ 'High': 'high', 'Medium': 'medium', 'Low': 'low' }[p] || 'low');
-  const priorityLabel = p => ({ 'High': '高優先', 'Medium': '中優先', 'Low': '低優先' }[p] || p);
+  const priorityLabel = p => ({ 'High': t('pf.prioHigh'), 'Medium': t('pf.prioMedium'), 'Low': t('pf.prioLow') }[p] || p);
   const assetColor    = id => ({ 'asset-001': '#8E1B1F', 'asset-002': '#33547A', 'asset-003': '#1F5C4A' }[id] || '#8A8A8F');
 
   el('pf-actions-table').innerHTML = `
     <table class="data-table">
       <thead>
         <tr>
-          <th>資產</th><th>行動項目</th>
-          <th>優先級</th><th>截止日期</th><th>狀態</th>
+          <th>${t('pf.thAsset')}</th><th>${t('pf.thActionItem')}</th>
+          <th>${t('pf.thPriority')}</th><th>${t('pf.thDeadline')}</th><th>${t('pf.thStatus')}</th>
         </tr>
       </thead>
       <tbody>

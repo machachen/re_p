@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="auth.js"></script>
+  <script src="i18n.js"></script>
   <style>
     /* ── Page-specific styling — BPM tokens only ─────────────────────────── */
     html, body {
@@ -278,18 +279,18 @@
         <span class="brand">
           <span class="brand-mark">BPM</span><span class="brand-tri"></span>
         </span>
-        <span class="brand-sub">Portfolio Intelligence</span>
+        <span class="brand-sub" data-i18n="brand.sub">Portfolio Intelligence</span>
       </div>
 
       <hr class="login-rule" />
 
       <!-- Client context -->
       <p class="login-client">陳氏家族信託</p>
-      <p class="login-scope">資產組合管理系統 · 受限存取 · 機密文件</p>
+      <p class="login-scope" data-i18n="login.scope">資產組合管理系統 · 受限存取 · 機密文件</p>
 
       <!-- Email -->
       <div class="login-field">
-        <label class="login-label" for="email">電子郵件 · Email</label>
+        <label class="login-label" for="email" data-i18n="login.email">電子郵件 · Email</label>
         <div class="login-input-wrap">
           <input
             type="email"
@@ -304,13 +305,14 @@
       </div>
 
       <!-- Password -->
-      <label class="login-label" for="password">密碼 · Password</label>
+      <label class="login-label" for="password" data-i18n="login.password">密碼 · Password</label>
       <div class="login-input-wrap">
         <input
           type="password"
           id="password"
           class="login-input"
           placeholder="輸入密碼"
+          data-i18n-ph="login.pwPlaceholder"
           autocomplete="current-password"
           spellcheck="false"
         />
@@ -326,7 +328,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;flex-shrink:0">
           <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
         </svg>
-        <span id="login-error-text">登入失敗，請確認電子郵件與密碼</span>
+        <span id="login-error-text" data-i18n="login.errBad">登入失敗，請確認電子郵件與密碼</span>
       </div>
 
       <!-- CTA -->
@@ -334,7 +336,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px">
           <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/>
         </svg>
-        進入系統
+        <span data-i18n="login.enter">進入系統</span>
       </button>
 
       <!-- Footer -->
@@ -342,13 +344,13 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
         </svg>
-        受限存取系統 · 僅供授權使用者登入
+        <span data-i18n="login.footer">受限存取系統 · 僅供授權使用者登入</span>
       </div>
 
     </div>
   </div>
 
-  <p class="login-legal">
+  <p class="login-legal" data-i18n="login.legal">
     © 2026 BPM Capital Partners · 保密資訊，禁止轉發或重製
   </p>
 
@@ -357,6 +359,37 @@
 <script>
   /* If already signed in, go straight to the dashboard. */
   if (window.redirectIfAuthed) window.redirectIfAuthed();
+
+  /* ── interface i18n (chrome only — login renders in the stored language) ── */
+  if (window.bpmI18nAdd) bpmI18nAdd({
+    'login.scope': '資產組合管理系統 · 受限存取 · 機密文件',
+    'login.email': '電子郵件 · Email',
+    'login.password': '密碼 · Password',
+    'login.pwPlaceholder': '輸入密碼',
+    'login.enter': '進入系統',
+    'login.footer': '受限存取系統 · 僅供授權使用者登入',
+    'login.legal': '© 2026 BPM Capital Partners · 保密資訊，禁止轉發或重製',
+    'login.verifying': '驗證中…',
+    'login.errBad': '登入失敗，請確認電子郵件與密碼',
+    'login.errEmpty': '請輸入電子郵件與密碼',
+    'login.errNoServer': '無法連線至伺服器，請稍後再試',
+    'login.errGeneric': '登入時發生錯誤，請稍後再試'
+  }, {
+    'login.scope': 'Portfolio management system · Restricted access · Confidential',
+    'login.email': 'Email',
+    'login.password': 'Password',
+    'login.pwPlaceholder': 'Enter password',
+    'login.enter': 'Enter system',
+    'login.footer': 'Restricted-access system · Authorized users only',
+    'login.legal': '© 2026 BPM Capital Partners · Confidential; do not forward or reproduce',
+    'login.verifying': 'Verifying…',
+    'login.errBad': 'Sign-in failed. Please check your email and password',
+    'login.errEmpty': 'Please enter your email and password',
+    'login.errNoServer': 'Cannot reach the server. Please try again later',
+    'login.errGeneric': 'An error occurred while signing in. Please try again later'
+  });
+  /* Fill data-i18n labels now so the captured button HTML is already localized. */
+  if (window.bpmApplyI18n) bpmApplyI18n(document);
 
   const emailEl = document.getElementById('email');
   const pwEl    = document.getElementById('password');
@@ -386,7 +419,7 @@
   function setLoading(on) {
     if (on) {
       btn.classList.add('loading');
-      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;animation:spin 0.7s linear infinite"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.08-8.2"/></svg> 驗證中…';
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;animation:spin 0.7s linear infinite"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.08-8.2"/></svg> ' + (window.t ? t('login.verifying') : '驗證中…');
     } else {
       btn.classList.remove('loading');
       btn.innerHTML = BTN_HTML;
@@ -398,11 +431,11 @@
     const email = emailEl.value.trim();
     const password = pwEl.value;
     if (!email || !password) {
-      showError('請輸入電子郵件與密碼');
+      showError(t('login.errEmpty'));
       return;
     }
     if (!window.sb) {
-      showError('無法連線至伺服器，請稍後再試');
+      showError(t('login.errNoServer'));
       return;
     }
     setLoading(true);
@@ -410,14 +443,14 @@
       const { error } = await window.sb.auth.signInWithPassword({ email, password });
       if (error) {
         setLoading(false);
-        showError('登入失敗，請確認電子郵件與密碼');
+        showError(t('login.errBad'));
         pwEl.select();
       } else {
         window.location.replace('portfolio.html');
       }
     } catch (e) {
       setLoading(false);
-      showError('登入時發生錯誤，請稍後再試');
+      showError(t('login.errGeneric'));
     }
   }
 

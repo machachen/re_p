@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="BPM monogram">
-  <rect x="0" y="0" width="96" height="96" fill="#0B0B0C"></rect>
-  <polygon points="78,18 86,18 82,12" fill="#8E1B1F"></polygon>
-  <text x="48" y="62" text-anchor="middle" font-family="Inter, Noto Sans TC, system-ui, sans-serif" font-weight="800" font-size="42" fill="#F5F1EA" letter-spacing="-0.04em">BPM</text>
-</svg>
