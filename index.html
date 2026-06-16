@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BPM Intelligence — 資產明細</title>
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
 
@@ -29,6 +29,9 @@
 
   <!-- ===== TOPBAR ===== -->
   <header class="topbar">
+    <button class="nav-toggle" id="nav-toggle" aria-label="開啟選單" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
     <a class="brand" href="portfolio.html">
       <span class="brand-mark">BPM</span><span class="brand-tri"></span>
       <span class="brand-sub">Portfolio Intelligence</span>
@@ -36,8 +39,8 @@
     <nav class="topnav">
       <a class="topnav-item" href="portfolio.html">組合總覽</a>
       <a class="topnav-item active" href="#">資產</a>
-      <a class="topnav-item" href="#">情境</a>
-      <a class="topnav-item" href="#">報告</a>
+      <a class="topnav-item" href="scenarios.html">情境</a>
+      <a class="topnav-item" href="reports.html">報告</a>
     </nav>
     <div class="top-right">
       <span class="live-tick"><span class="live-dot"></span>Live · <span id="nav-period-display">2026-05</span> TPE</span>
@@ -71,6 +74,13 @@
         <li><a class="side-row" href="#"><span class="side-label">再融資到期</span><span class="side-meta">1</span></a></li>
       </ul>
     </div>
+    <div class="side-section">
+      <div class="side-head"><span class="eyebrow">分析 · Analysis</span></div>
+      <ul class="side-list">
+        <li><a class="side-row" href="scenarios.html"><span class="side-label">情境分析</span><span class="side-meta">›</span></a></li>
+        <li><a class="side-row" href="reports.html"><span class="side-label">報告與文件</span><span class="side-meta">›</span></a></li>
+      </ul>
+    </div>
     <div class="side-section bottom">
       <div class="analyst-card">
         <div class="eyebrow eyebrow-red" style="margin-bottom:4px;">您的分析師 · Your analyst</div>
@@ -80,11 +90,16 @@
       </div>
     </div>
   </aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
 
   <!-- ===== MAIN ===== -->
   <main class="app-main">
 
   <!-- ── Breadcrumb ────────────────────────────────────────── -->
+  <div class="print-only print-report-header">
+    <span><strong style="font-weight:800;letter-spacing:-0.03em;">BPM</strong> · Portfolio Intelligence</span>
+    <span>機密 CONFIDENTIAL · 陳氏家族信託</span>
+  </div>
   <div id="breadcrumb">
     <div class="bc-inner">
       <a class="bc-root" href="portfolio.html">陳氏家族信託</a>
@@ -94,6 +109,10 @@
       <span class="bc-current" id="bc-current-tab">總覽</span>
       <span class="bc-sep">·</span>
       <span class="meta">最後更新 <span id="nav-updated-date">—</span></span>
+      <button class="btn btn-secondary" id="export-pdf" type="button" style="margin-left:auto;">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 12l5 5 5-5"/><path d="M5 21h14"/></svg>
+        匯出 PDF
+      </button>
     </div>
   </div>
 
@@ -493,6 +512,7 @@
 </div><!-- /.app-shell -->
 
 <script src="data.js"></script>
+<script src="ui.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

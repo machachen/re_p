@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Slides" name="Slide · Data table" subtitle="Typeset financial table with totals row" viewport="1280x720" -->
+<html lang="en"><head><meta charset="utf-8"><title>BPM · Data table</title><link rel="stylesheet" href="deck.css">
+<style>
+  table.deck { border-collapse:collapse; width:100%; font-family:var(--font-sans); font-size:15px; font-feature-settings:'tnum' 1, 'lnum' 1; }
+  table.deck th { font-weight:600; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); text-align:right; padding:14px 16px; border-bottom:1px solid var(--rule-2); white-space:nowrap; }
+  table.deck th.l { text-align:left; }
+  table.deck td { padding:13px 16px; text-align:right; border-bottom:1px solid var(--graphite-100); color:var(--ink); white-space:nowrap; }
+  table.deck td.l { text-align:left; }
+  table.deck td.meta { color:var(--ink-3); }
+  table.deck .neg { color:var(--bpm-red); font-weight:600; }
+  table.deck .pos { color:var(--pos); font-weight:600; }
+  table.deck tr.total td { border-top:2px solid var(--ink); border-bottom:none; padding-top:16px; font-weight:700; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="slide-chrome-top"></div>
+  <div class="slide-brand"><span class="mark">BPM</span><span class="tri"></span><span class="sub">Portfolio Intelligence</span></div>
+  <div class="slide-meta-right"><span>Q2 2025 · 第二季</span><span class="dot"></span><span>14 JUL 2025</span></div>
+
+  <div style="margin:104px 64px 0">
+    <div class="s-eyebrow" style="margin-bottom:12px">All exposures · 持有資產</div>
+    <h1 class="s-headline" style="font-size:40px; margin-bottom:6px">Every asset, every line.</h1>
+    <p style="font-family:var(--font-sans); font-size:16px; color:var(--ink-3); margin:0; font-style:italic">Sorted by absolute mark change · NT$ millions</p>
+
+    <table class="deck" style="margin-top:32px">
+      <thead>
+        <tr>
+          <th class="l">Asset · 資產</th>
+          <th class="l">Sector</th>
+          <th class="l">Geo</th>
+          <th>Mark</th>
+          <th>Cap rate</th>
+          <th>WALT</th>
+          <th>QoQ</th>
+          <th class="l">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="l" style="font-family:var(--font-cjk-display); font-weight:600">中環商辦 C3</td><td class="l meta">Office</td><td class="l meta">HKG</td><td>2,480.5</td><td>3.30%</td><td>5.1 yrs</td><td class="pos">▲ +8.81%</td><td class="l meta">Held to maturity</td></tr>
+        <tr><td class="l" style="font-family:var(--font-cjk-display); font-weight:600">濱海商辦 M2</td><td class="l meta">Office</td><td class="l meta">SGP</td><td>1,880.4</td><td>3.65%</td><td>4.9 yrs</td><td class="pos">▲ +3.10%</td><td class="l meta">Leased · 91%</td></tr>
+        <tr><td class="l" style="font-family:var(--font-cjk-display); font-weight:600">信義 A18 商辦</td><td class="l meta">Office</td><td class="l meta">TPE</td><td>1,318.9</td><td>3.82%</td><td>4.6 yrs</td><td class="pos">▲ +0.42%</td><td class="l meta">Leased · 96%</td></tr>
+        <tr><td class="l" style="font-family:var(--font-cjk-display); font-weight:600">中山北段 R2</td><td class="l meta">Retail</td><td class="l meta">TPE</td><td>  862.4</td><td>4.10%</td><td>3.2 yrs</td><td class="neg">▼ −12.57%</td><td class="l meta">Under review</td></tr>
+        <tr><td class="l" style="font-family:var(--font-cjk-display); font-weight:600">內湖物流 L7</td><td class="l meta">Logistics</td><td class="l meta">TPE</td><td>  544.2</td><td>4.95%</td><td>6.8 yrs</td><td class="pos">▲ +0.18%</td><td class="l meta">Leased · 100%</td></tr>
+        <tr><td class="l" style="font-family:var(--font-cjk-display); font-weight:600">桃園航空城 L11</td><td class="l meta">Logistics</td><td class="l meta">TYN</td><td>  312.0</td><td>5.20%</td><td>5.4 yrs</td><td class="neg">▼ −0.62%</td><td class="l meta">Below WALT</td></tr>
+        <tr><td class="l" style="font-family:var(--font-cjk-display); font-weight:600">高雄亞灣 H4</td><td class="l meta">Hospitality</td><td class="l meta">KHH</td><td>  208.4</td><td>5.80%</td><td>2.1 yrs</td><td class="pos">▲ +0.94%</td><td class="l meta">Leased · 88%</td></tr>
+        <tr class="total"><td class="l">Total · 23 assets shown · 7 of 23</td><td class="l"></td><td class="l"></td><td>7,606.8</td><td>3.94%</td><td>4.6 yrs</td><td class="pos">▲ +0.42%</td><td class="l"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="slide-foot-left">BPM · Q2 2025 Review · NT$M unless stated</div>
+  <div class="slide-foot-right">08 / 12</div>
+  <div class="slide-chrome-bottom"></div>
+</div>
+</body></html>

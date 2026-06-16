@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BPM Intelligence — 情境分析</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="auth.js"></script>
+  <script>if (window.requireAuth) requireAuth();</script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <link rel="stylesheet" href="styles.css?v=4" />
+</head>
+<body>
+
+<div id="loading-overlay"><div class="loading-spinner"></div><div class="loading-text">載入情境分析…</div></div>
+<div id="error-banner"></div>
+
+<div class="app-shell">
+
+  <header class="topbar">
+    <button class="nav-toggle" id="nav-toggle" aria-label="開啟選單" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+    <a class="brand" href="portfolio.html">
+      <span class="brand-mark">BPM</span><span class="brand-tri"></span>
+      <span class="brand-sub">Portfolio Intelligence</span>
+    </a>
+    <nav class="topnav">
+      <a class="topnav-item" href="portfolio.html">組合總覽</a>
+      <a class="topnav-item" href="#">資產</a>
+      <a class="topnav-item active" href="scenarios.html">情境</a>
+      <a class="topnav-item" href="reports.html">報告</a>
+    </nav>
+    <div class="top-right">
+      <span class="live-tick"><span class="live-dot"></span>Live · <span id="nav-period-display">2026-05</span> TPE</span>
+      <span class="top-divider"></span>
+      <button class="locale-btn" type="button" title="語言（示範）"><span class="on">繁中</span><span class="sep">/</span><span class="off">EN</span></button>
+      <button class="avatar" type="button" title="登出 · Sign out" onclick="bpmSignOut()" style="border:0;cursor:pointer;">陳</button>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <div class="side-section">
+      <div class="side-head"><span class="eyebrow">投資組合 · Portfolios</span></div>
+      <ul class="side-list">
+        <li><a class="side-row" href="portfolio.html"><span class="left"><span class="side-mark"></span><span class="side-label">不動產組合</span></span><span class="side-meta">3</span></a></li>
+      </ul>
+    </div>
+    <div class="side-section">
+      <div class="side-head"><span class="eyebrow">資產 · Assets</span></div>
+      <ul class="side-list">
+        <li><a class="side-row" href="index.html?id=asset-001"><span class="left"><span class="side-mark"></span><span class="side-label">淡水河岸住商</span></span><span class="side-meta">›</span></a></li>
+        <li><a class="side-row" href="index.html?id=asset-002"><span class="left"><span class="side-mark"></span><span class="side-label">林口全聯</span></span><span class="side-meta">›</span></a></li>
+        <li><a class="side-row" href="index.html?id=asset-003"><span class="left"><span class="side-mark"></span><span class="side-label">大安仁愛苑</span></span><span class="side-meta">›</span></a></li>
+      </ul>
+    </div>
+    <div class="side-section">
+      <div class="side-head"><span class="eyebrow">分析 · Analysis</span></div>
+      <ul class="side-list">
+        <li><a class="side-row active" href="scenarios.html"><span class="left"><span class="side-mark"></span><span class="side-label">情境分析</span></span><span class="side-meta">›</span></a></li>
+        <li><a class="side-row" href="reports.html"><span class="side-label">報告與文件</span><span class="side-meta">›</span></a></li>
+      </ul>
+    </div>
+    <div class="side-section bottom">
+      <div class="analyst-card">
+        <div class="eyebrow eyebrow-red" style="margin-bottom:4px;">您的分析師 · Your analyst</div>
+        <div class="analyst-name">鄭詠晴 Audrey Cheng</div>
+        <div class="meta">資深分析師 · 大中華區</div>
+        <div class="meta" style="margin-top:6px;">+886 2 8729 5000 · TPE</div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <main class="app-main">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow">情境分析 · Scenario analysis</div>
+        <h1 class="page-title">組合壓力測試</h1>
+        <div class="page-sub">三情境 · 五年展望 · <span id="sc-period">—</span></div>
+      </div>
+    </div>
+    <hr class="rule" style="margin:20px 0 18px;" />
+
+    <div class="row" style="gap:8px;align-items:center;margin-bottom:18px;">
+      <span class="eyebrow" style="margin-right:4px;">情境強調</span>
+      <div class="seg" id="sc-toggle">
+        <button data-sc="Downside" type="button">悲觀</button>
+        <button data-sc="Base" class="active" type="button">基本</button>
+        <button data-sc="Upside" type="button">樂觀</button>
+      </div>
+      <span class="meta" style="margin-left:8px;">數字皆由各資產分析師情境彙總（可追溯）</span>
+    </div>
+
+    <div id="sc-cards" class="grid-3 mb-24"></div>
+
+    <div class="grid-2 mb-24">
+      <div class="card"><div class="card-title">組合五年價值預測</div><div id="sc-value-chart" class="chart-container chart-lg"></div></div>
+      <div class="card"><div class="card-title">組合五年淨現金流情境</div><div id="sc-cash-chart" class="chart-container chart-lg"></div></div>
+    </div>
+
+    <div class="grid-2 mb-24">
+      <div class="card"><div class="card-title">主要壓力來源</div><div id="sc-drivers"></div></div>
+      <div class="card" style="padding:0;"><div class="card-title" style="padding:18px 20px 0;">各資產情境貢獻</div><div id="sc-contrib" style="margin-top:12px;"></div></div>
+    </div>
+  </main>
+
+  <footer class="app-foot">
+    <span>BPM Intelligence v4.2 · 機密</span>
+    <span class="foot-sep"></span>
+    <span>情境為分析師假設彙總，僅供參考，非投資建議</span>
+    <span class="foot-spacer"></span>
+    <span>© 2026 BPM Capital Partners</span>
+  </footer>
+
+</div>
+
+<script src="data.js"></script>
+<script src="ui.js"></script>
+<script src="scenarios.js"></script>
+</body>
+</html>

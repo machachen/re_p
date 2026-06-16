@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="BPM · Name card — Heisenberg Bao" subtitle="Double-sided 90×54mm name card \u2014 Director, Capital Solutions" viewport="620x860" -->
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>BPM · Name card · 鮑奕安</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ink:#0B0B0C; --ink-2:#2A2A2D; --ink-3:#5C5C61; --ink-4:#8A8A8F;
+    --paper:#F5F1EA; --bone:#FBF8F2; --rule:#D8D5CE; --rule-2:#B7B2A6;
+    --bpm-red:#8E1B1F; --bpm-red-dark:#C8232C;
+    --font-sans:"Inter","Noto Sans TC",system-ui,sans-serif;
+    --font-serif:"Source Serif 4",Georgia,serif;
+    --font-cjk:"Noto Serif TC","Source Serif 4",serif;
+    --font-mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#6A6A71;
+    font-family:var(--font-sans);
+    color:var(--ink);
+    min-height:100vh;
+    display:flex; flex-direction:column; align-items:center;
+    gap:40px;
+    padding:56px 24px 72px;
+  }
+
+  .lede{ text-align:center; color:#F5F1EA; }
+  .lede .t{ font-family:var(--font-serif); font-size:22px; font-weight:500; letter-spacing:-0.01em; }
+  .lede .s{ font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(245,241,234,0.6); margin-top:6px; }
+
+  /* Card is 90 × 54 mm. On screen we render at a comfortable scale. */
+  .card{
+    width:540px; height:324px;     /* 90×54mm at 6px/mm */
+    position:relative; overflow:hidden;
+    box-shadow:0 1px 0 rgba(0,0,0,0.2), 0 24px 60px -24px rgba(0,0,0,0.55);
+  }
+
+  /* ───────────── FRONT (ink) ───────────── */
+  .front{ background:var(--ink); color:var(--paper); }
+  .front .topbar{ position:absolute; top:0; left:0; right:0; height:4px; background:var(--bpm-red); }
+  .front .pad{ position:absolute; inset:0; padding:42px 44px; display:flex; flex-direction:column; }
+
+  .lockup{ display:flex; align-items:baseline; gap:9px; }
+  .lockup .mark{ font-family:var(--font-sans); font-weight:800; font-size:52px; letter-spacing:-0.045em; color:var(--paper); line-height:1; }
+  .lockup .tri{ width:0;height:0; border-left:8px solid transparent; border-right:8px solid transparent; border-bottom:13px solid var(--bpm-red); display:inline-block; transform:translateY(-13px); }
+
+  .front .division{ margin-top:14px; font-family:var(--font-sans); font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:rgba(245,241,234,0.62); }
+
+  .front .foot{ margin-top:auto; display:flex; align-items:flex-end; justify-content:space-between; }
+  .front .tagline{ font-family:var(--font-cjk); font-size:18px; font-weight:400; color:rgba(245,241,234,0.9); letter-spacing:0.04em; line-height:1.5; }
+  .front .tagline .en{ display:block; font-family:var(--font-serif); font-style:italic; font-size:12.5px; color:rgba(245,241,234,0.5); letter-spacing:0; margin-top:6px; }
+  .front .stamp{ font-family:var(--font-mono); font-size:10px; letter-spacing:0.16em; color:rgba(245,241,234,0.4); text-align:right; line-height:1.7; white-space:nowrap; }
+
+  /* ───────────── BACK (paper) ───────────── */
+  .back{ background:var(--paper); color:var(--ink); }
+  .back .topbar{ position:absolute; top:0; left:0; right:0; height:4px; background:var(--bpm-red); }
+  .back .pad{ position:absolute; inset:0; padding:38px 44px 34px; display:flex; flex-direction:column; }
+
+  .back .head{ display:flex; align-items:flex-start; justify-content:space-between; }
+  .name-block .cn{ font-family:var(--font-cjk); font-size:34px; font-weight:600; letter-spacing:0.06em; line-height:1; color:var(--ink); }
+  .name-block .en{ font-family:var(--font-serif); font-size:16px; font-weight:500; color:var(--ink-2); margin-top:8px; letter-spacing:0; }
+  .name-block .title{ font-family:var(--font-sans); font-size:11px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--bpm-red); margin-top:12px; }
+
+  .mini-lockup{ display:flex; align-items:baseline; gap:5px; }
+  .mini-lockup .mark{ font-family:var(--font-sans); font-weight:800; font-size:25px; letter-spacing:-0.045em; color:var(--ink); line-height:1; }
+  .mini-lockup .tri{ width:0;height:0; border-left:4px solid transparent; border-right:4px solid transparent; border-bottom:7px solid var(--bpm-red); display:inline-block; transform:translateY(-7px); }
+
+  .back .rule{ height:1px; background:var(--rule); border:0; margin:20px 0 18px; }
+
+  .contact{ display:flex; flex-direction:column; gap:10px; }
+  .row{ display:flex; align-items:baseline; gap:14px; }
+  .row .lab{ font-family:var(--font-mono); font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-4); min-width:38px; }
+  .row .val{ font-family:var(--font-sans); font-size:13px; color:var(--ink); letter-spacing:0; line-height:1.45; }
+  .row .val.mono{ font-family:var(--font-mono); font-variant-numeric:tabular-nums; letter-spacing:0.02em; white-space:nowrap; }
+  .row .val .en-addr{ display:block; color:var(--ink-3); font-size:11px; margin-top:3px; line-height:1.4; }
+
+  .back .foot{ margin-top:auto; display:flex; align-items:center; justify-content:space-between; padding-top:16px; }
+  .back .foot .web{ font-family:var(--font-sans); font-size:11px; font-weight:600; letter-spacing:0.04em; color:var(--ink-2); }
+  .back .foot .conf{ font-family:var(--font-mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-4); }
+
+  @media print{
+    @page{ size:90mm 54mm; margin:0; }
+    body{ background:#fff; padding:0; gap:0; display:block; }
+    .lede{ display:none; }
+    .card{ width:90mm; height:54mm; box-shadow:none; page-break-after:always; break-after:page; }
+    .card:last-child{ page-break-after:auto; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="lede">
+    <div class="t">Name card · 90 × 54 mm</div>
+    <div class="s">Heisenberg Bao · 鮑奕安 · double-sided</div>
+  </div>
+
+  <!-- FRONT -->
+  <div class="card front">
+    <div class="topbar"></div>
+    <div class="pad">
+      <div class="lockup">
+        <span class="mark">BPM</span><span class="tri"></span>
+      </div>
+      <div class="division">Portfolio · Asset · Capital · Governance</div>
+
+      <div class="foot">
+        <div class="tagline">
+          看穿一棟樓，再看穿整本帳。
+          <span class="en">Read the building. Then read the book.</span>
+        </div>
+        <div class="stamp">不動產<br/>組合智能</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK -->
+  <div class="card back">
+    <div class="topbar"></div>
+    <div class="pad">
+      <div class="head">
+        <div class="name-block">
+          <div class="cn">鮑奕安</div>
+          <div class="en">Heisenberg Bao</div>
+          <div class="title">Director, Capital Solutions</div>
+        </div>
+        <div class="mini-lockup">
+          <span class="mark">BPM</span><span class="tri"></span>
+        </div>
+      </div>
+
+      <hr class="rule"/>
+
+      <div class="contact">
+        <div class="row">
+          <span class="lab">Email</span>
+          <span class="val">bao@bpm.com.tw</span>
+        </div>
+        <div class="row">
+          <span class="lab">Mobile</span>
+          <span class="val mono">0902 205 187</span>
+        </div>
+        <div class="row">
+          <span class="lab">Office</span>
+          <span class="val">
+            110 臺北市信義區基隆路一段 206 號 16 樓
+            <span class="en-addr">16F, No. 206, Sec. 1, Keelung Rd, Xinyi Dist, Taipei 110</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="foot">
+        <span class="web">bpm.com.tw</span>
+        <span class="conf">Capital Solutions</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

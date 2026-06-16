@@ -27,7 +27,7 @@ const chartInstances = [];
 function initChart(domId) {
   const dom = el(domId);
   if (!dom) return null;
-  const chart = echarts.init(dom);
+  const chart = echarts.init(dom, null, { renderer: 'svg' });
   chartInstances.push(chart);
   return chart;
 }
@@ -1114,8 +1114,23 @@ function renderMarket() {
     </div>`;
 }
 
+/* ── PDF export (print stylesheet → browser Save as PDF) ──── */
+function exportAssetPdf() {
+  document.body.classList.add('print-prep');   // reveal all tabs so charts size correctly
+  requestAnimationFrame(() => {
+    chartInstances.forEach(c => { try { c.resize(); } catch (e) {} });
+    setTimeout(() => { window.print(); }, 300);
+  });
+}
+window.addEventListener('afterprint', () => {
+  document.body.classList.remove('print-prep');
+  requestAnimationFrame(() => chartInstances.forEach(c => { try { c.resize(); } catch (e) {} }));
+});
+
 /* ── Boot ────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initTabs();
   loadData();
+  const ex = el('export-pdf');
+  if (ex) ex.addEventListener('click', exportAssetPdf);
 });

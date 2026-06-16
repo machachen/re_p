@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Colors" name="Data-viz palette" subtitle="Four-series institutional chart palette" viewport="700x320" -->
+<html lang="en"><head><meta charset="utf-8"><title>Data viz palette</title><link rel="stylesheet" href="_card.css"></head>
+<body style="padding:24px 28px">
+  <div class="tag" style="margin-bottom:12px">FOUR-SERIES INSTITUTIONAL PALETTE · 圖表系列</div>
+  <div style="display:flex; gap:0; border:1px solid var(--rule); height:140px; position:relative; background:var(--bone)">
+    <!-- inline svg chart -->
+    <svg viewBox="0 0 640 140" width="100%" height="140" preserveAspectRatio="none" style="display:block">
+      <defs>
+        <pattern id="g" width="32" height="20" patternUnits="userSpaceOnUse">
+          <path d="M32 0H0V20" fill="none" stroke="#D8D5CE" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="640" height="140" fill="url(#g)" opacity="0.5"/>
+      <!-- series 1: portfolio (red) -->
+      <polyline fill="none" stroke="#8E1B1F" stroke-width="2"
+        points="0,90 60,82 120,88 180,72 240,66 300,60 360,52 420,46 480,40 540,32 600,28 640,24"/>
+      <!-- series 2: peer index (slate) -->
+      <polyline fill="none" stroke="#33547A" stroke-width="1.5"
+        points="0,96 60,92 120,86 180,82 240,80 300,76 360,72 420,68 480,64 540,60 600,58 640,56"/>
+      <!-- series 3: benchmark (green) -->
+      <polyline fill="none" stroke="#1F5C4A" stroke-width="1.5" stroke-dasharray="0"
+        points="0,104 60,100 120,98 180,94 240,90 300,86 360,82 420,78 480,76 540,74 600,72 640,70"/>
+      <!-- series 4: forecast (brass) - dotted continuation -->
+      <polyline fill="none" stroke="#B5832A" stroke-width="1.5" stroke-dasharray="2 3"
+        points="420,46 480,38 540,28 600,20 640,14"/>
+      <line x1="0" y1="138" x2="640" y2="138" stroke="#0B0B0C" stroke-width="1"/>
+    </svg>
+  </div>
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--rule); border-top:0">
+    <div style="padding:10px 14px; border-right:1px solid var(--rule); display:flex; align-items:center; gap:8px">
+      <span style="width:10px; height:10px; background:#8E1B1F"></span>
+      <div><div class="name">Portfolio</div><div class="hex">#8E1B1F · series-1</div></div>
+    </div>
+    <div style="padding:10px 14px; border-right:1px solid var(--rule); display:flex; align-items:center; gap:8px">
+      <span style="width:10px; height:10px; background:#33547A"></span>
+      <div><div class="name">Peer index</div><div class="hex">#33547A · series-2</div></div>
+    </div>
+    <div style="padding:10px 14px; border-right:1px solid var(--rule); display:flex; align-items:center; gap:8px">
+      <span style="width:10px; height:10px; background:#1F5C4A"></span>
+      <div><div class="name">Benchmark</div><div class="hex">#1F5C4A · series-3</div></div>
+    </div>
+    <div style="padding:10px 14px; display:flex; align-items:center; gap:8px">
+      <span style="width:10px; height:10px; background:#B5832A"></span>
+      <div><div class="name">Forecast</div><div class="hex">#B5832A · series-4</div></div>
+    </div>
+  </div>
+</body></html>

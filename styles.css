@@ -653,9 +653,131 @@ input, select, textarea { font-family: inherit; }
 .text-sm { font-size: 12px; } .text-xs { font-size: 11px; }
 .empty-dash { color: var(--ink-4); }
 
+/* Segmented control (e.g. scenario emphasis toggle) */
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 2px; overflow: hidden; background: var(--bone); }
+.seg button { font-family: var(--font-sans); font-size: 12px; font-weight: 500; color: var(--ink-3); background: transparent; border: 0; border-right: 1px solid var(--rule); padding: 7px 14px; cursor: pointer; }
+.seg button:last-child { border-right: 0; }
+.seg button.active { background: var(--ink); color: var(--paper); }
+.sc-card.sel { border-color: var(--bpm-red); border-width: 2px; }
+
 /* ── Loading / error ─────────────────────────────────────────────────────── */
 #loading-overlay { position: fixed; inset: 0; z-index: 200; background: rgba(245,241,234,0.92); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
 .loading-spinner { width: 34px; height: 34px; border: 2px solid var(--rule); border-top-color: var(--bpm-red); border-radius: 50%; animation: spin 0.7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .loading-text { font-size: 14px; color: var(--ink-3); font-weight: 500; }
 #error-banner { background: var(--neg-tint); color: var(--bpm-red); padding: 12px 20px; font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--rule); display: none; }
+
+/* ============================================================================
+   RESPONSIVE — best-practices mobile/tablet pass
+   ----------------------------------------------------------------------------
+   Desktop-first overrides. The 240px sidebar becomes an off-canvas drawer (via
+   .app-shell.nav-open + #nav-toggle/#sidebar-backdrop), dense bands stack, and
+   wide financial tables scroll horizontally instead of squishing.
+   ============================================================================ */
+
+/* Map + summary band: 2-col default, declared here so it can collapse responsively */
+.grid-band { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; margin-top: 18px; }
+.cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* Mobile-only nav controls (hidden on desktop) */
+.nav-toggle { display: none; background: transparent; border: 1px solid var(--rule); border-radius: 2px; width: 34px; height: 34px; font-size: 18px; line-height: 1; color: var(--ink); cursor: pointer; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; }
+.nav-toggle:hover { background: var(--ink-05); }
+.sidebar-backdrop { display: none; position: fixed; inset: var(--topbar-h) 0 0 0; background: rgba(11,11,12,0.35); z-index: 19; }
+
+@media (max-width: 1100px) {
+  .grid-band { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  /* Shell collapses to one column; sidebar becomes a drawer */
+  .app-shell { grid-template-columns: 1fr; grid-template-areas: "topbar" "main" "footer"; }
+  .nav-toggle { display: inline-flex; }
+  .topnav { display: none; }            /* primary destinations live in the drawer */
+  .live-tick { display: none; }         /* condense the right cluster */
+  .brand-sub { display: none; }         /* drop the tagline, keep the BPM mark */
+  .topbar { padding: 0 16px; }
+
+  .sidebar {
+    position: fixed; top: var(--topbar-h); bottom: 0; left: 0;
+    width: 264px; max-width: 82vw;
+    transform: translateX(-100%);
+    transition: transform var(--d-component) var(--ease);
+    z-index: 20; box-shadow: var(--shadow-2);
+  }
+  .app-shell.nav-open .sidebar { transform: translateX(0); }
+  .app-shell.nav-open .sidebar-backdrop { display: block; }
+
+  .app-main { padding: 18px 16px 32px; }
+  .page-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .page-actions { width: 100%; flex-wrap: wrap; }
+  .page-title { font-size: 26px; }
+
+  /* dense bands stack to 2-up */
+  .kpi-strip, .kf-strip { grid-template-columns: repeat(2, 1fr); }
+
+  /* asset / portfolio header stacks */
+  .asset-header-card, .pf-header-card { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .asset-header-metrics { border-left: 0; padding-left: 0; width: 100%; }
+  .hdr-metric:first-child { padding-left: 0; }
+
+  /* wide tables scroll horizontally rather than squish */
+  .card { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .data-table { white-space: nowrap; }
+
+  /* composer stacks */
+  .composer-row { flex-wrap: wrap; }
+  .composer-input { flex: 1 1 100%; }
+
+  /* shorter charts on small screens */
+  .chart-lg { height: 280px; } .chart-xl { height: 300px; }
+}
+
+@media (max-width: 600px) {
+  .kpi-strip, .kf-strip, .grid-2, .grid-3, .grid-4, .grid-2-3, .grid-3-2, .grid-1-2, .cols-2 { grid-template-columns: 1fr; }
+  .kpi-num { font-size: 32px; }
+  .kf-value { font-size: 22px; }
+  .page-title { font-size: 22px; }
+  .app-main { padding: 14px 12px 28px; }
+  .topbar { padding: 0 12px; }
+  .brand-sub { display: none; }         /* keep the BPM mark, drop the tagline */
+  .asset-header-metrics { flex-wrap: wrap; gap: 10px; }
+  .hdr-metric { padding: 0 14px 0 0; }
+  .hdr-metric + .hdr-metric { border-left: 0; }
+  .pm-quadrant-grid { grid-template-columns: 1fr; height: auto; }
+}
+
+/* Reveal all tabs while preparing to print, so charts size correctly (screen) */
+.print-prep .tab-bar { display: none; }
+.print-prep .tab-panel { display: block !important; }
+.print-only { display: none; }
+
+/* ============================================================================
+   PRINT — export the asset detail as a clean, selectable-text PDF
+   ============================================================================ */
+@media print {
+  @page { margin: 14mm 12mm; }
+  html, body { background: #fff !important; }
+  body { font-size: 10.5pt; line-height: 1.5; }
+
+  .topbar, .sidebar, .app-foot, .nav-toggle, .sidebar-backdrop,
+  #loading-overlay, #error-banner, .tab-bar, #breadcrumb, #export-pdf,
+  .locale-btn, .live-tick { display: none !important; }
+
+  .app-shell { display: block !important; }
+  .app-main { padding: 0 !important; overflow: visible !important; }
+
+  .print-only { display: block !important; }
+  .print-report-header { display: flex !important; justify-content: space-between; align-items: baseline;
+    border-bottom: 2px solid #0B0B0C; padding-bottom: 8px; margin-bottom: 16px; font-size: 11px; color: #0B0B0C; }
+
+  .tab-panel { display: block !important; margin-bottom: 8px; }
+  /* sections flow naturally — no forced page-per-tab (keeps the PDF compact) */
+
+  .card, .kpi-card, .kf-strip, .asset-card-wrap { background: #fff !important; box-shadow: none !important; }
+  .card, .kf-item, .kpi-card, .val-card, .scenario-card, .pf-asset-card, .implication-card,
+  .guarantee-card, table, tr, .chart-container { break-inside: avoid; page-break-inside: avoid; }
+  .section-header, .card-title { break-after: avoid; page-break-after: avoid; }
+
+  .chart-container { max-height: 300px; }
+  a { color: #0B0B0C !important; text-decoration: none !important; border: 0 !important; }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Financial table" subtitle="Tabular nums · totals row · gain/loss colours" viewport="700x280" -->
+<html lang="en"><head><meta charset="utf-8"><title>Financial table</title><link rel="stylesheet" href="_card.css">
+<style>
+  table.fin { border-collapse:collapse; width:100%; font-family:var(--font-sans); font-size:13px; font-feature-settings:'tnum' 1, 'lnum' 1; }
+  table.fin th { font-weight:600; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#5C5C61; text-align:right; padding:10px 12px; border-bottom:1px solid #B7B2A6; }
+  table.fin th.l { text-align:left; }
+  table.fin td { padding:9px 12px; text-align:right; border-bottom:1px solid #E5E5E7; color:#0B0B0C; }
+  table.fin td.l { text-align:left; }
+  table.fin td.meta { color:#5C5C61; font-size:12px; }
+  table.fin tr:hover td { background:rgba(11,11,12,0.03); }
+  .neg { color:#8E1B1F; }
+  .pos { color:#1F5C4A; }
+  table.fin tr.total td { border-top:2px solid #0B0B0C; border-bottom:none; padding-top:11px; font-weight:600; }
+</style>
+</head>
+<body style="padding:20px 28px">
+  <table class="fin">
+    <thead>
+      <tr>
+        <th class="l">Asset · 資產</th>
+        <th class="l">Sector</th>
+        <th>Mark (NT$)</th>
+        <th>Cap rate</th>
+        <th>WALT</th>
+        <th>QoQ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="l">信義 A18 商辦</td><td class="l meta">Office</td><td>1,318,900,000</td><td>3.82%</td><td>4.6 yrs</td><td class="pos">▲ +0.42%</td></tr>
+      <tr><td class="l">中山北段 R2 零售</td><td class="l meta">Retail</td><td>   862,400,000</td><td>4.10%</td><td>3.2 yrs</td><td class="neg">▼ −1.42%</td></tr>
+      <tr><td class="l">內湖物流 L7</td><td class="l meta">Logistics</td><td>   544,200,000</td><td>4.95%</td><td>6.8 yrs</td><td class="pos">▲ +0.18%</td></tr>
+      <tr><td class="l">桃園航空城 L11</td><td class="l meta">Logistics</td><td>   312,000,000</td><td>5.20%</td><td>5.4 yrs</td><td class="neg">▼ −0.62%</td></tr>
+      <tr><td class="l">高雄亞灣 H4</td><td class="l meta">Hospitality</td><td>   208,400,000</td><td>5.80%</td><td>2.1 yrs</td><td class="pos">▲ +0.94%</td></tr>
+      <tr class="total"><td class="l">Total · 23 assets</td><td></td><td>24,802,500,000</td><td>3.94%</td><td>4.6 yrs</td><td class="pos">▲ +0.42%</td></tr>
+    </tbody>
+  </table>
+</body></html>

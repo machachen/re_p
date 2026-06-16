@@ -67,5 +67,48 @@ async function bpmLoadAsset(code) {
   };
 }
 
+// ── Reports + Scenarios ────────────────────────────────────────────────────
+async function bpmListPublishedPeriods(clientId) {
+  const { data, error } = await window.sb.from('periods')
+    .select('id,period,label,published_at').eq('client_id', clientId).eq('published', true)
+    .order('period', { ascending: false });
+  if (error) throw new Error('讀取報告期間失敗：' + error.message);
+  return data || [];
+}
+async function bpmListClientDocuments(clientId) {
+  const { data, error } = await window.sb.from('documents')
+    .select('id,title,category,doc_type,size_bytes,storage_path,asset_id,created_at')
+    .eq('client_id', clientId).order('created_at', { ascending: false });
+  if (error) throw new Error('讀取文件失敗：' + error.message);
+  return data || [];
+}
+async function bpmSignedDocUrl(path) {
+  const { data, error } = await window.sb.storage.from('documents').createSignedUrl(path, 120);
+  if (error) { console.error(error); return null; }
+  return data.signedUrl;
+}
+// Loads everything the Scenarios page aggregates: all assets' financial + risk
+// sections for the latest published period, plus the portfolio blob.
+async function bpmLoadScenarioBundle() {
+  const client = await bpmCurrentClient();
+  const period = await bpmLatestPeriod(client.id);
+  const [assetsRes, secRes, pfRes] = await Promise.all([
+    window.sb.from('assets').select('id,code,name,sort_order').eq('client_id', client.id).order('sort_order', { ascending: true }),
+    window.sb.from('asset_section_data').select('asset_id,section,data').eq('period_id', period.id).in('section', ['financial', 'risk']),
+    window.sb.from('portfolio_data').select('data').eq('client_id', client.id).eq('period_id', period.id).maybeSingle()
+  ]);
+  if (assetsRes.error) throw new Error('讀取資產失敗：' + assetsRes.error.message);
+  if (secRes.error) throw new Error('讀取資產明細失敗：' + secRes.error.message);
+  const byAsset = {};
+  (assetsRes.data || []).forEach(a => { byAsset[a.id] = { id: a.id, code: a.code, name: a.name, financial: null, risk: null }; });
+  (secRes.data || []).forEach(r => { if (byAsset[r.asset_id]) byAsset[r.asset_id][r.section] = r.data; });
+  return { client, period, assets: Object.values(byAsset), portfolio: (pfRes.data && pfRes.data.data) || {} };
+}
+
+window.bpmCurrentClient = bpmCurrentClient;
 window.bpmLoadPortfolio = bpmLoadPortfolio;
 window.bpmLoadAsset = bpmLoadAsset;
+window.bpmListPublishedPeriods = bpmListPublishedPeriods;
+window.bpmListClientDocuments = bpmListClientDocuments;
+window.bpmSignedDocUrl = bpmSignedDocUrl;
+window.bpmLoadScenarioBundle = bpmLoadScenarioBundle;
