@@ -35,9 +35,17 @@ async function bpmLoadPortfolio() {
 }
 
 // Asset detail — returns { latest, manifest, data } matching the old file flow.
-async function bpmLoadAsset(code) {
+async function bpmLoadAsset(code, periodId) {
   const client = await bpmCurrentClient();
-  const period = await bpmLatestPeriod(client.id);
+  let period = null;
+  if (periodId) {
+    const { data, error } = await window.sb
+      .from('periods').select('id,period,label,published,published_at,created_at')
+      .eq('id', periodId).eq('client_id', client.id).maybeSingle();
+    if (error) throw new Error('讀取報告期間失敗：' + error.message);
+    if (data && data.published) period = data;
+  }
+  if (!period) period = await bpmLatestPeriod(client.id);
 
   const { data: asset, error: aerr } = await window.sb
     .from('assets').select('*')
@@ -60,11 +68,17 @@ async function bpmLoadAsset(code) {
       statusColor: asset.status_color, currentPeriod: period.period
     },
     manifest: {
-      period: period.period, periodLabel: period.label,
+      periodId: period.id, period: period.period, periodLabel: period.label,
       lastUpdated: period.published_at || period.created_at
     },
     data: sections
   };
+}
+
+// Published periods for the current client (asset-page quarter switcher).
+async function bpmListPeriods() {
+  const client = await bpmCurrentClient();
+  return bpmListPublishedPeriods(client.id);
 }
 
 // ── Reports + Scenarios ────────────────────────────────────────────────────
@@ -132,3 +146,4 @@ window.bpmListClientDocuments = bpmListClientDocuments;
 window.bpmSignedDocUrl = bpmSignedDocUrl;
 window.bpmLoadScenarioBundle = bpmLoadScenarioBundle;
 window.bpmLoadChrome = bpmLoadChrome;
+window.bpmListPeriods = bpmListPeriods;

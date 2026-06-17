@@ -280,6 +280,10 @@ function initChart(domId) {
   chartInstances.push(chart);
   return chart;
 }
+function disposeCharts() {
+  chartInstances.forEach(c => { try { c.dispose(); } catch (e) {} });
+  chartInstances.length = 0;
+}
 window.addEventListener('resize', () => chartInstances.forEach(c => c.resize()));
 
 /* ── ECharts base theme (BPM palette) ────────────────────── */
@@ -370,15 +374,16 @@ async function fetchJSON(url) {
   return res.json();
 }
 
-async function loadData() {
+async function loadData(periodId) {
   showLoading(true);
   try {
     if (window.requireAuth) { const s = await window.requireAuth(); if (!s) return; }
-    const res = await bpmLoadAsset(ASSET_ID);
+    const res = await bpmLoadAsset(ASSET_ID, periodId);
     state.latest = res.latest;
     state.manifest = res.manifest;
     state.data = res.data;
     renderAll();
+    await populatePeriodSelect();
   } catch (err) {
     console.error(err);
     showError(err.message);
@@ -392,6 +397,7 @@ function showError(msg)  { const b = el('error-banner'); b.textContent = '⚠ ' 
 
 /* ── Render orchestrator ─────────────────────────────────── */
 function renderAll() {
+  disposeCharts();
   renderNav();
   renderAssetHeader();
   renderOverview();
@@ -409,13 +415,23 @@ function renderNav() {
   const updated = new Date(m.lastUpdated).toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' });
   const updatedEl = el('nav-updated-date');
   if (updatedEl) updatedEl.textContent = updated;
-  const periodSelect = el('nav-period-select');
-  if (periodSelect) periodSelect.value = m.period;
-  // Topbar period display is owned by the shared chrome (chrome.js).
+  // Period select is managed by populatePeriodSelect(); topbar period by chrome.js.
   // Mark the matching asset row active in the sidebar
   document.querySelectorAll('.side-row[data-asset]').forEach(row => {
     row.classList.toggle('active', row.getAttribute('data-asset') === ASSET_ID);
   });
+}
+
+/* ── Quarter switcher (asset-level period select) ────────── */
+async function populatePeriodSelect() {
+  const sel = el('nav-period-select');
+  if (!sel || !window.bpmListPeriods) return;
+  let periods = [];
+  try { periods = await window.bpmListPeriods(); } catch (e) { console.error(e); return; }
+  if (!periods.length) return;
+  sel.innerHTML = periods.map(p => `<option value="${p.id}">${escHtml(p.label || p.period)}</option>`).join('');
+  if (state.manifest && state.manifest.periodId) sel.value = state.manifest.periodId;
+  sel.onchange = () => { if (sel.value) loadData(sel.value); };
 }
 
 /* ── Asset Header ────────────────────────────────────────── */

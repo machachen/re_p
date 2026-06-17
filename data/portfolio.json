@@ -1,8 +1,8 @@
 {
   "meta": {
     "portfolioName": "陳氏家族信託 — 不動產資產組合",
-    "reportingPeriod": "2026年5月",
-    "periodLabel": "2026年5月",
+    "reportingPeriod": "2026 Q2",
+    "periodLabel": "2026 Q2",
     "lastUpdated": "2026-05-08",
     "assetCount": 3,
     "currency": "NTD",
@@ -26,12 +26,48 @@
     "yoyAUMGrowth": 6.5
   },
   "keyFigures": [
-    { "label": "組合總估值",    "value": "$449M",  "subLabel": "三資產合計市場估值",        "trend": "up",   "trendValue": "+6.5% 年增" },
-    { "label": "家族淨權益",    "value": "$349M",  "subLabel": "陳氏家族信託持有部分",      "trend": "up",   "trendValue": "+$27M 年增" },
-    { "label": "加權LTV",      "value": "19.4%",  "subLabel": "整體財務槓桿保守",          "trend": "up",   "trendValue": "財務結構穩健" },
-    { "label": "年度NOI",      "value": "$11.5M", "subLabel": "可收益兩資產合計",          "trend": "up",   "trendValue": "+2.4% 年增" },
-    { "label": "年度淨現金流",  "value": "$4.2M",  "subLabel": "債務本息後淨流入",          "trend": "up",   "trendValue": "穩定正向" },
-    { "label": "持有資產數",    "value": "3",      "subLabel": "雙北市核心地段",            "trend": "flat", "trendValue": "多元配置" }
+    {
+      "label": "組合總估值",
+      "value": "$449M",
+      "subLabel": "三資產合計市場估值",
+      "trend": "up",
+      "trendValue": "+6.5% 年增"
+    },
+    {
+      "label": "家族淨權益",
+      "value": "$349M",
+      "subLabel": "陳氏家族信託持有部分",
+      "trend": "up",
+      "trendValue": "+$27M 年增"
+    },
+    {
+      "label": "加權LTV",
+      "value": "19.4%",
+      "subLabel": "整體財務槓桿保守",
+      "trend": "up",
+      "trendValue": "財務結構穩健"
+    },
+    {
+      "label": "年度NOI",
+      "value": "$11.5M",
+      "subLabel": "可收益兩資產合計",
+      "trend": "up",
+      "trendValue": "+2.4% 年增"
+    },
+    {
+      "label": "年度淨現金流",
+      "value": "$4.2M",
+      "subLabel": "債務本息後淨流入",
+      "trend": "up",
+      "trendValue": "穩定正向"
+    },
+    {
+      "label": "持有資產數",
+      "value": "3",
+      "subLabel": "雙北市核心地段",
+      "trend": "flat",
+      "trendValue": "多元配置"
+    }
   ],
   "assetCards": [
     {
@@ -102,16 +138,48 @@
     }
   ],
   "allocation": {
-    "labels":  ["淡水河岸", "林口全聯", "大安仁愛苑"],
-    "values":  [121673519, 233584617, 93512417],
-    "pcts":    [27.1, 52.1, 20.8],
-    "colors":  ["#1a6ef5", "#1e8a4c", "#e67e22"]
+    "labels": [
+      "淡水河岸",
+      "林口全聯",
+      "大安仁愛苑"
+    ],
+    "values": [
+      121673519,
+      233584617,
+      93512417
+    ],
+    "pcts": [
+      27.1,
+      52.1,
+      20.8
+    ],
+    "colors": [
+      "#1a6ef5",
+      "#1e8a4c",
+      "#e67e22"
+    ]
   },
   "incomeBreakdown": {
-    "labels":  ["淡水河岸", "林口全聯", "大安仁愛苑（持有成本）"],
-    "noi":     [7140058, 4343124, -657495],
-    "netCF":   [3575299, 1271712, -657495],
-    "colors":  ["#1a6ef5", "#1e8a4c", "#c0392b"]
+    "labels": [
+      "淡水河岸",
+      "林口全聯",
+      "大安仁愛苑（持有成本）"
+    ],
+    "noi": [
+      7140058,
+      4343124,
+      -657495
+    ],
+    "netCF": [
+      3575299,
+      1271712,
+      -657495
+    ],
+    "colors": [
+      "#1a6ef5",
+      "#1e8a4c",
+      "#c0392b"
+    ]
   },
   "debtMatrix": [
     {
@@ -152,59 +220,111 @@
     }
   ],
   "portfolioHistory": {
-    "labels": ["2019", "2022", "2025", "2026"],
+    "labels": [
+      "2019",
+      "2022",
+      "2025",
+      "2026"
+    ],
     "assets": {
-      "asset-001": [85924317,  103518729, 117348264, 121673519],
-      "asset-002": [138464312, 167424847, 218464293, 233584617],
-      "asset-003": [72624847,  82376518,  85624739,  93512417]
+      "asset-001": [
+        85924317,
+        103518729,
+        117348264,
+        121673519
+      ],
+      "asset-002": [
+        138464312,
+        167424847,
+        218464293,
+        233584617
+      ],
+      "asset-003": [
+        72624847,
+        82376518,
+        85624739,
+        93512417
+      ]
     },
-    "total": [297013476, 353320094, 421437296, 448770553]
+    "total": [
+      297013476,
+      353320094,
+      421437296,
+      448770553
+    ]
   },
   "actions": [
     {
-      "assetId": "asset-001", "assetName": "淡水河岸",
+      "assetId": "asset-001",
+      "assetName": "淡水河岸",
       "title": "4B及7A戶翻修 — 竣工授權",
-      "priority": "Medium", "deadline": "2026-06-15", "status": "In Progress"
+      "priority": "Medium",
+      "deadline": "2026-06-15",
+      "status": "In Progress"
     },
     {
-      "assetId": "asset-001", "assetName": "淡水河岸",
+      "assetId": "asset-001",
+      "assetName": "淡水河岸",
       "title": "再融資決策 — 現有貸款2026年第四季到期",
-      "priority": "High", "deadline": "2026-06-30", "status": "Open"
+      "priority": "High",
+      "deadline": "2026-06-30",
+      "status": "Open"
     },
     {
-      "assetId": "asset-003", "assetName": "大安仁愛苑",
+      "assetId": "asset-003",
+      "assetName": "大安仁愛苑",
       "title": "委任正式鑑價 — 距上次已逾14個月",
-      "priority": "Medium", "deadline": "2026-06-30", "status": "Open"
+      "priority": "Medium",
+      "deadline": "2026-06-30",
+      "status": "Open"
     },
     {
-      "assetId": "asset-001", "assetName": "淡水河岸",
+      "assetId": "asset-001",
+      "assetName": "淡水河岸",
       "title": "屋頂檢查 — 延遲維護警示",
-      "priority": "Low", "deadline": "2026-08-31", "status": "Open"
+      "priority": "Low",
+      "deadline": "2026-08-31",
+      "status": "Open"
     },
     {
-      "assetId": "asset-002", "assetName": "林口全聯",
+      "assetId": "asset-002",
+      "assetName": "林口全聯",
       "title": "停車場翻新 — 改善設施競爭力",
-      "priority": "Low", "deadline": "2026-09-30", "status": "Open"
+      "priority": "Low",
+      "deadline": "2026-09-30",
+      "status": "Open"
     },
     {
-      "assetId": "asset-003", "assetName": "大安仁愛苑",
+      "assetId": "asset-003",
+      "assetName": "大安仁愛苑",
       "title": "抵押融資規劃 — 評估最適動用時機",
-      "priority": "Low", "deadline": "2026-09-30", "status": "Open"
+      "priority": "Low",
+      "deadline": "2026-09-30",
+      "status": "Open"
     },
     {
-      "assetId": "asset-002", "assetName": "林口全聯",
+      "assetId": "asset-002",
+      "assetName": "林口全聯",
       "title": "2027年1月租金調漲 — 確認執行與通知",
-      "priority": "High", "deadline": "2026-10-01", "status": "Open"
+      "priority": "High",
+      "deadline": "2026-10-01",
+      "status": "Open"
     },
     {
-      "assetId": "asset-003", "assetName": "大安仁愛苑",
+      "assetId": "asset-003",
+      "assetName": "大安仁愛苑",
       "title": "室內裝潢翻新評估（2016年完工逾10年）",
-      "priority": "Low", "deadline": "2026-12-31", "status": "Open"
+      "priority": "Low",
+      "deadline": "2026-12-31",
+      "status": "Open"
     },
     {
-      "assetId": "asset-002", "assetName": "林口全聯",
+      "assetId": "asset-002",
+      "assetName": "林口全聯",
       "title": "2033年租約到期 — 早期租賃策略規劃",
-      "priority": "Medium", "deadline": "2026-12-31", "status": "Open"
+      "priority": "Medium",
+      "deadline": "2026-12-31",
+      "status": "Open"
     }
   ],
   "riskSummary": {

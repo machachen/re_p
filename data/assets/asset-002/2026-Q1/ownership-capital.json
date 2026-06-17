@@ -1,0 +1,123 @@
+{
+  "entity": {
+    "name": "林口商業置產有限公司",
+    "type": "台灣有限公司",
+    "ubn": "XX-XXXXXXX",
+    "formed": "2003-05-20",
+    "registered": "台灣",
+    "registeredAgent": "信義法律事務所",
+    "taxElection": "法人課稅（營利事業所得稅 20%）"
+  },
+  "owners": [
+    {
+      "name": "陳氏家族信託",
+      "type": "可撤銷生前信託",
+      "ownershipPct": 100.0,
+      "equityContributed": 22000000,
+      "currentEquityValue": 202563439,
+      "role": "唯一所有人",
+      "since": "2003-07-15"
+    }
+  ],
+  "capitalContributions": [
+    {
+      "date": "2003-07-15",
+      "contributor": "陳氏家族信託",
+      "amount": 22000000,
+      "type": "取得股權",
+      "note": "購地及建物初始資本"
+    },
+    {
+      "date": "2006-08-01",
+      "contributor": "陳氏家族信託",
+      "amount": 4500000,
+      "type": "資本支出出資",
+      "note": "興建全聯賣場建物"
+    },
+    {
+      "date": "2012-10-01",
+      "contributor": "陳氏家族信託",
+      "amount": 1920000,
+      "type": "資本支出出資",
+      "note": "外牆及屋頂翻新"
+    }
+  ],
+  "totalEquityContributed": 28420000,
+  "debtSummary": [
+    {
+      "id": "D-001",
+      "lender": "臺灣土地銀行",
+      "type": "商業不動產抵押貸款",
+      "originalBalance": 70000000,
+      "currentBalance": 28479093,
+      "interestRate": "1.85%",
+      "rateType": "固定",
+      "maturityDate": "2036-08-01",
+      "monthlyPayment": 255951,
+      "annualDebtService": 3071412,
+      "ltv": "12.3%",
+      "dscr": "1.41x",
+      "covenants": "DSCR ≥ 1.20x；LTV ≤ 60%",
+      "guarantor": "陳氏家族信託（個人連帶保證）",
+      "collateral": "土地及建物第一順位抵押權",
+      "status": "Current"
+    }
+  ],
+  "capitalStack": {
+    "assetValue": 231042532,
+    "seniorDebt": 28479093,
+    "equityContributed": 28420000,
+    "accumulatedRetainedEarnings": 34722222,
+    "netEquity": 202563439,
+    "seniorDebtPct": 12.3,
+    "equityPct": 87.7
+  },
+  "distributions": [
+    {
+      "date": "2020-12-15",
+      "amount": 900000,
+      "type": "年度分配",
+      "chenShare": 900000
+    },
+    {
+      "date": "2021-12-20",
+      "amount": 960000,
+      "type": "年度分配",
+      "chenShare": 960000
+    },
+    {
+      "date": "2022-12-18",
+      "amount": 1020000,
+      "type": "年度分配",
+      "chenShare": 1020000
+    },
+    {
+      "date": "2023-12-16",
+      "amount": 1080000,
+      "type": "年度分配",
+      "chenShare": 1080000
+    },
+    {
+      "date": "2024-12-12",
+      "amount": 1140000,
+      "type": "年度分配",
+      "chenShare": 1140000
+    }
+  ],
+  "guaranteesObligations": [
+    {
+      "type": "個人連帶保證",
+      "obligor": "陳氏家族信託",
+      "beneficiary": "臺灣土地銀行",
+      "amount": 28479093,
+      "description": "優先抵押貸款全額連帶保證。當LTV降至20%以下或貸款清償時，保證責任解除。",
+      "expiryDate": "2036-08-01",
+      "status": "Active"
+    }
+  ],
+  "equityWaterfall": {
+    "description": "100%單一所有人（陳氏家族信託），無超額收益條款，無優先報酬安排。",
+    "preferredReturn": "N/A",
+    "abovePreferred": "100%歸屬陳氏家族信託"
+  }
+}
