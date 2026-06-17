@@ -1,7 +1,9 @@
--- BPM seed — generated 2026-06-17T04:31:44.324Z
+-- BPM seed — generated 2026-06-17T05:25:04.068Z
 -- Idempotent quarter seed: client 'chen-family', periods 2026-Q1 + 2026-Q2 (published).
 
 begin;
+
+alter table public.clients add column if not exists config jsonb;
 
 insert into public.clients (name, slug, config) values ($c$陳氏家族信託 — 不動產資產組合$c$, 'chen-family', $j${"displayName":"陳氏家族信託","avatarInitial":"陳","analyst":{"name":"陳政宏 Masa Chen","title":{"zh":"資深分析師 · 大中華區","en":"Senior analyst · Greater China"},"contact":{"zh":"+886 2 8729 5000 · 台北","en":"+886 2 8729 5000 · TPE"}}}$j$::jsonb)
   on conflict (slug) do update set name = excluded.name, config = excluded.config;

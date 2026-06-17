@@ -38,6 +38,9 @@ let sql = '';
 sql += `-- BPM seed — generated ${new Date().toISOString()}\n`;
 sql += `-- Idempotent quarter seed: client '${SLUG}', periods ${PERIODS.map(p => p.code).join(' + ')} (published).\n\nbegin;\n\n`;
 
+// ensure the client config column exists (covers databases created before migration 0004)
+sql += `alter table public.clients add column if not exists config jsonb;\n\n`;
+
 // client (with UI config)
 sql += `insert into public.clients (name, slug, config) values (${c(clientName)}, '${SLUG}', ${j(clientCfg)}::jsonb)\n  on conflict (slug) do update set name = excluded.name, config = excluded.config;\n\n`;
 
