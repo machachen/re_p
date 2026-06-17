@@ -63,25 +63,22 @@
 
   async function renderAdminBar(current) {
     if (document.getElementById('admin-bar')) return;
-    var main = document.querySelector('.app-main');
-    if (!main) return;
+    var sidebar = document.querySelector('.sidebar');
+    if (!sidebar) return;
     var clients = [];
     try { clients = await window.bpmListAllClients(); } catch (e) { return; }
-    var lang = window.bpmLang ? window.bpmLang() : 'zh';
-    var tag = lang === 'en' ? 'Admin view' : '管理者檢視';
-    var back = lang === 'en' ? '← Console' : '← 返回控制台';
     var opts = clients.map(function (c) {
       var nm = (c.config && c.config.displayName) || c.name;
       var sel = (current && c.id === current.id) ? ' selected' : '';
       return '<option value="' + escAttr(c.id) + '"' + sel + '>' + escHtml(nm) + '</option>';
     }).join('');
-    var bar = document.createElement('div');
-    bar.id = 'admin-bar';
-    bar.className = 'admin-bar';
-    bar.innerHTML = '<span class="admin-bar-tag">' + tag + '</span>'
-      + '<select id="admin-bar-switch" class="admin-bar-select" aria-label="client">' + opts + '</select>'
-      + '<a class="admin-bar-back" href="admin.html">' + back + '</a>';
-    main.insertBefore(bar, main.firstChild);
+    var box = document.createElement('div');
+    box.id = 'admin-bar';
+    box.className = 'admin-side';
+    box.innerHTML = '<div class="admin-side-tag">管理者檢視</div>'
+      + '<select id="admin-bar-switch" class="admin-side-select" aria-label="client">' + opts + '</select>'
+      + '<a class="admin-side-back" href="admin.html">← 返回控制台</a>';
+    sidebar.insertBefore(box, sidebar.firstChild);
     var s = document.getElementById('admin-bar-switch');
     if (s) s.addEventListener('change', function () { if (s.value) { window.bpmSetActiveClient(s.value); location.reload(); } });
   }
