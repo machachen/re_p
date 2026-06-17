@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BPM Intelligence — 安全登入</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="auth.js"></script>
@@ -448,7 +448,7 @@
         showError(t('login.errBad'));
         pwEl.select();
       } else {
-        window.location.replace('portfolio.html');
+        window.location.replace(await window.bpmLandingPage());
       }
     } catch (e) {
       setLoading(false);

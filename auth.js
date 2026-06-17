@@ -27,11 +27,17 @@
     }
   };
 
+  // Where to send a user after auth, by role.
+  window.bpmLandingPage = async function () {
+    try { var p = await window.bpmProfile(); return (p && p.role === 'admin') ? 'admin.html' : 'portfolio.html'; }
+    catch (e) { return 'portfolio.html'; }
+  };
+
   // Login page calls this: if already signed in, skip straight to the app.
   window.redirectIfAuthed = async function () {
     try {
       var res = await sb.auth.getSession();
-      if (res.data && res.data.session) window.location.replace('portfolio.html');
+      if (res.data && res.data.session) window.location.replace(await window.bpmLandingPage());
     } catch (e) { /* stay on login */ }
   };
 

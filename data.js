@@ -6,10 +6,53 @@
 async function bpmCurrentClient() {
   const { data, error } = await window.sb
     .from('clients').select('id,name,slug')
-    .order('created_at', { ascending: true }).limit(1);
+    .order('created_at', { ascending: true });
   if (error) throw new Error('讀取客戶失敗：' + error.message);
   if (!data || !data.length) throw new Error('沒有可存取的客戶資料（請確認帳號權限）');
+  // Admins may pin an "active" client (advisor console / switcher). Regular users
+  // only ever see their own client via RLS, so the pin is harmless for them.
+  try {
+    const active = localStorage.getItem('bpm_active_client');
+    if (active) { const hit = data.find(c => c.id === active); if (hit) return hit; }
+  } catch (e) {}
   return data[0];
+}
+
+function bpmActiveClient() { try { return localStorage.getItem('bpm_active_client'); } catch (e) { return null; } }
+function bpmSetActiveClient(id) { try { id ? localStorage.setItem('bpm_active_client', id) : localStorage.removeItem('bpm_active_client'); } catch (e) {} }
+
+let _bpmIsAdmin;
+async function bpmIsAdmin() {
+  if (_bpmIsAdmin !== undefined) return _bpmIsAdmin;
+  try { const p = window.bpmProfile ? await window.bpmProfile() : null; _bpmIsAdmin = !!(p && p.role === 'admin'); }
+  catch (e) { _bpmIsAdmin = false; }
+  return _bpmIsAdmin;
+}
+
+async function bpmListAllClients() {
+  const { data, error } = await window.sb.from('clients').select('id,name,slug,config').order('created_at', { ascending: true });
+  if (error) throw new Error('讀取客戶清單失敗：' + error.message);
+  return data || [];
+}
+
+// Cross-client roster for the advisor console (admin RLS reads every client).
+async function bpmAdminRoster() {
+  const clients = await bpmListAllClients();
+  const rows = [];
+  for (const c of clients) {
+    let period = null, totals = null, meta = null;
+    const { data: per } = await window.sb.from('periods').select('id,period,label,published_at')
+      .eq('client_id', c.id).eq('published', true).order('period', { ascending: false }).limit(1);
+    if (per && per.length) {
+      period = per[0];
+      const { data: pd } = await window.sb.from('portfolio_data').select('data')
+        .eq('client_id', c.id).eq('period_id', period.id).maybeSingle();
+      if (pd && pd.data) { totals = pd.data.totals || null; meta = pd.data.meta || null; }
+    }
+    const { count } = await window.sb.from('assets').select('id', { count: 'exact', head: true }).eq('client_id', c.id);
+    rows.push({ client: c, period, totals, meta, assetCount: count || 0 });
+  }
+  return rows;
 }
 
 async function bpmLatestPeriod(clientId) {
@@ -147,3 +190,8 @@ window.bpmSignedDocUrl = bpmSignedDocUrl;
 window.bpmLoadScenarioBundle = bpmLoadScenarioBundle;
 window.bpmLoadChrome = bpmLoadChrome;
 window.bpmListPeriods = bpmListPeriods;
+window.bpmActiveClient = bpmActiveClient;
+window.bpmSetActiveClient = bpmSetActiveClient;
+window.bpmIsAdmin = bpmIsAdmin;
+window.bpmListAllClients = bpmListAllClients;
+window.bpmAdminRoster = bpmAdminRoster;

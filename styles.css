@@ -781,3 +781,22 @@ input, select, textarea { font-family: inherit; }
   .chart-container { max-height: 300px; }
   a { color: #0B0B0C !important; text-decoration: none !important; border: 0 !important; }
 }
+
+/* ── Admin console + view-as bar ─────────────────────────── */
+.admin-shell { display:grid; grid-template-rows: var(--topbar-h) 1fr var(--footer-h); min-height:100vh; }
+.admin-main { overflow:auto; padding:28px 32px 40px; width:100%; max-width:1180px; margin:0 auto; }
+.admin-client-card { display:flex; flex-direction:column; gap:16px; }
+.admin-client-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.admin-client-name { font-family:var(--font-display); font-size:20px; letter-spacing:-0.01em; color:var(--ink); margin-top:2px; }
+.admin-client-avatar { width:40px; height:40px; border-radius:var(--r-pill); background:var(--bpm-red); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:600; flex:none; }
+.admin-client-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; padding:14px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.admin-client-stats .meta { font-size:11px; }
+.admin-stat-num { font-size:15px; color:var(--ink); margin-top:2px; }
+.admin-enter { align-self:flex-start; }
+.admin-bar { display:flex; align-items:center; gap:12px; background:var(--bpm-red); color:#fff; padding:8px 14px; border-radius:var(--r-2); margin-bottom:18px; font-size:13px; }
+.admin-bar-tag { font-weight:700; letter-spacing:0.04em; text-transform:uppercase; font-size:11px; }
+.admin-bar-select { background:rgba(255,255,255,0.16); color:#fff; border:1px solid rgba(255,255,255,0.45); border-radius:var(--r-1); padding:3px 8px; font:inherit; cursor:pointer; }
+.admin-bar-select option { color:var(--ink); }
+.admin-bar-back { color:#fff; text-decoration:underline; margin-left:auto; font-size:12px; white-space:nowrap; }
+@media print { .admin-bar { display:none !important; } }
+@media (max-width:700px){ .admin-client-stats{ grid-template-columns:repeat(2,1fr);} }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BPM Intelligence — 管理控制台</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="auth.js"></script>
+  <script>if (window.requireAuth) requireAuth();</script>
+  <link rel="stylesheet" href="styles.css?v=7" />
+</head>
+<body>
+
+<div id="loading-overlay"><div class="loading-spinner"></div><div class="loading-text" data-i18n="adm.loading">載入客戶資料…</div></div>
+<div id="error-banner"></div>
+
+<div class="admin-shell">
+
+  <header class="topbar">
+    <a class="brand" href="admin.html">
+      <span class="brand-mark">BPM</span><span class="brand-tri"></span>
+      <span class="brand-sub" data-i18n="adm.brandSub">Advisor Console</span>
+    </a>
+    <div class="top-right">
+      <span class="live-tick"><span class="live-dot"></span>Admin · <span id="admin-period">—</span></span>
+      <span class="top-divider"></span>
+      <button class="locale-btn" type="button" title="語言"><span class="on">繁中</span><span class="sep">/</span><span class="off">EN</span></button>
+      <button class="avatar" type="button" data-i18n-title="common.signout" title="登出 · Sign out" onclick="bpmSignOut()" style="border:0;cursor:pointer;">管</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="page-head">
+      <div>
+        <div class="eyebrow" data-i18n="adm.eyebrow">管理控制台 · Advisor console</div>
+        <h1 class="page-title" data-i18n="adm.title">客戶總覽</h1>
+        <div class="page-sub" data-i18n="adm.sub">所有受管客戶家族 · All client households under management</div>
+      </div>
+    </div>
+    <hr class="rule" style="margin:20px 0 18px;" />
+
+    <div id="adm-kpi" class="kpi-strip"></div>
+
+    <div class="section-header" style="margin-top:24px;">
+      <div class="section-title" data-i18n="adm.clients">客戶家族 · Client households</div>
+      <div class="section-note" data-i18n="adm.clientsNote">點擊「進入組合」以管理者身分檢視該客戶</div>
+    </div>
+    <div id="adm-roster" class="grid-2 mb-24"></div>
+  </main>
+
+  <footer class="app-foot">
+    <span><span data-i18n="foot.brandVer">BPM Intelligence v4.2</span> · <span data-i18n="foot.confidential">機密</span></span>
+    <span class="foot-spacer"></span>
+    <span data-i18n="foot.copyright">© 2026 BPM Capital Partners</span>
+  </footer>
+
+</div>
+
+<script src="data.js"></script>
+<script src="ui.js"></script>
+<script src="i18n.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
