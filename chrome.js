@@ -59,8 +59,9 @@
 
   async function renderAdminBar(current) {
     if (document.getElementById('admin-bar')) return;
+    var card = document.querySelector('.analyst-card');   // admins: switcher takes the PM card's slot
     var sidebar = document.querySelector('.sidebar');
-    if (!sidebar) return;
+    if (!card && !sidebar) return;
     var clients = [];
     try { clients = await window.bpmListAllClients(); } catch (e) { return; }
     var opts = clients.map(function (c) {
@@ -73,7 +74,7 @@
     box.className = 'admin-side';
     box.innerHTML = '<select id="admin-bar-switch" class="admin-side-select" aria-label="client">' + opts + '</select>'
       + '<a class="admin-side-back" href="admin.html">← 返回控制台</a>';
-    sidebar.insertBefore(box, sidebar.firstChild);
+    if (card) card.replaceWith(box); else sidebar.appendChild(box);
     var s = document.getElementById('admin-bar-switch');
     if (s) s.addEventListener('change', function () { if (s.value) { window.bpmSetActiveClient(s.value); location.reload(); } });
   }
