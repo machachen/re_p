@@ -31,7 +31,7 @@
     'side.portfolios': '投資組合 · Portfolios', 'side.assets': '資產 · Assets', 'side.analysis': '分析 · Analysis', 'side.filters': '篩選 · Filters',
     'side.realestate': '不動產組合', 'side.scenarios': '情境分析', 'side.reportsDocs': '報告與文件',
     'side.pending': '待決行動', 'side.changed': '本季異動', 'side.refi': '再融資到期',
-    'side.analyst': '您的分析師 · Your analyst',
+    'side.analyst': '您的專案經理',
     'foot.confidential': '機密', 'foot.copyright': '© 2026 BPM Capital Partners',
     'btn.exportPdf': '匯出 PDF', 'btn.committeePack': '開啟委員會資料包', 'btn.attach': '附件', 'btn.send': '送出',
     'common.signout': '登出 · Sign out', 'common.loading': '載入中…', 'common.viewReport': '開啟完整報告', 'common.backDash': '← 返回儀表板',

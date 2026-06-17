@@ -169,7 +169,7 @@ input, select, textarea { font-family: inherit; }
   grid-template-columns: var(--sidebar-w) 1fr;
   grid-template-rows: var(--topbar-h) 1fr var(--footer-h);
   grid-template-areas: "topbar topbar" "sidebar main" "footer footer";
-  height: 100vh;
+  min-height: 100vh;
 }
 .topbar  { grid-area: topbar; }
 .sidebar { grid-area: sidebar; }
@@ -221,7 +221,7 @@ input, select, textarea { font-family: inherit; }
 .nav-search-mini input::placeholder { color: var(--ink-4); }
 
 /* ── Sidebar ─────────────────────────────────────────────────────────────── */
-.sidebar { background: var(--bone); border-right: 1px solid var(--rule); display: flex; flex-direction: column; padding: 20px 0 0; overflow: auto; }
+.sidebar { background: var(--bone); border-right: 1px solid var(--rule); display: flex; flex-direction: column; padding: 20px 0 0; overflow: auto; position: sticky; top: var(--topbar-h); height: calc(100vh - var(--topbar-h)); align-self: start; }
 .side-section { padding: 0 16px 18px; }
 .side-section.bottom { margin-top: auto; padding-bottom: 16px; }
 .side-head { display: flex; align-items: center; justify-content: space-between; padding: 0 4px 8px; }
@@ -795,7 +795,7 @@ input, select, textarea { font-family: inherit; }
 .admin-stat-num { font-size:15px; color:var(--ink); margin-top:2px; }
 .admin-enter { align-self:flex-start; }
 /* admin view-as block — pinned at the top of the left sidebar */
-.admin-side { background:var(--bpm-red); color:#fff; margin:0 12px 14px; padding:12px 14px; border-radius:var(--r-2); }
+.admin-side { background:var(--bpm-red); color:#fff; margin:0 12px 12px; padding:10px 12px; border-radius:var(--r-2); }
 .admin-side-tag { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; opacity:0.85; margin-bottom:8px; }
 .admin-side-select { width:100%; background:rgba(255,255,255,0.16); color:#fff; border:1px solid rgba(255,255,255,0.45); border-radius:var(--r-1); padding:5px 8px; font:inherit; cursor:pointer; }
 .admin-side-select option { color:var(--ink); }

@@ -45,12 +45,8 @@
       }).join('');
     }
 
-    // ── Sidebar: analyst card (name bilingual; title/contact by language) ─
-    var an = cfg.analyst || {};
-    setText('analyst-name', an.name);
-    setText('analyst-title', pickLang(an.title, lang));
-    setText('analyst-contact', pickLang(an.contact, lang));
-    setText('composer-analyst-name', an.name); // portfolio composer (optional)
+    // ── Sidebar analyst/PM card is static now; only the composer name is data-driven ─
+    setText('composer-analyst-name', (cfg.analyst || {}).name);
 
     // ── Breadcrumb / print header client name ────────────────
     var dn = cfg.displayName || (res.client && res.client.name) || '';
@@ -75,8 +71,7 @@
     var box = document.createElement('div');
     box.id = 'admin-bar';
     box.className = 'admin-side';
-    box.innerHTML = '<div class="admin-side-tag">管理者檢視</div>'
-      + '<select id="admin-bar-switch" class="admin-side-select" aria-label="client">' + opts + '</select>'
+    box.innerHTML = '<select id="admin-bar-switch" class="admin-side-select" aria-label="client">' + opts + '</select>'
       + '<a class="admin-side-back" href="admin.html">← 返回控制台</a>';
     sidebar.insertBefore(box, sidebar.firstChild);
     var s = document.getElementById('admin-bar-switch');
