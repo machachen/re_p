@@ -1,0 +1,316 @@
+{
+  "priorityMatrix": {
+    "title": "待處理事項及行動項目（依優先順序）",
+    "items": [
+      {
+        "id": "OP-001",
+        "title": "完成4B及7A戶翻修工程",
+        "urgency": 4,
+        "importance": 5,
+        "quadrant": "Do First",
+        "owner": "物業管理人",
+        "deadline": "2026-06-15",
+        "status": "In Progress"
+      },
+      {
+        "id": "OP-002",
+        "title": "啟動再融資流程",
+        "urgency": 4,
+        "importance": 5,
+        "quadrant": "Do First",
+        "owner": "蔡氏家族",
+        "deadline": "2026-06-30",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-003",
+        "title": "屋頂檢查及準備金更新",
+        "urgency": 2,
+        "importance": 4,
+        "quadrant": "Schedule",
+        "owner": "物業管理人",
+        "deadline": "2026-08-31",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-004",
+        "title": "解決9C戶租戶糾紛",
+        "urgency": 3,
+        "importance": 3,
+        "quadrant": "Do First",
+        "owner": "法律顧問",
+        "deadline": "2026-06-30",
+        "status": "In Progress"
+      },
+      {
+        "id": "OP-005",
+        "title": "物業管理合約續約",
+        "urgency": 2,
+        "importance": 4,
+        "quadrant": "Schedule",
+        "owner": "蔡氏家族",
+        "deadline": "2026-09-01",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-006",
+        "title": "全棟年度冷氣空調保養",
+        "urgency": 3,
+        "importance": 3,
+        "quadrant": "Schedule",
+        "owner": "物業管理人",
+        "deadline": "2026-07-31",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-007",
+        "title": "更新資本準備金研究報告",
+        "urgency": 2,
+        "importance": 3,
+        "quadrant": "Schedule",
+        "owner": "物業管理人",
+        "deadline": "2026-10-31",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-008",
+        "title": "病蟲害防治合約續簽",
+        "urgency": 2,
+        "importance": 2,
+        "quadrant": "Delegate",
+        "owner": "物業管理人",
+        "deadline": "2026-06-01",
+        "status": "In Progress"
+      },
+      {
+        "id": "OP-009",
+        "title": "第三季景觀維護排程",
+        "urgency": 1,
+        "importance": 2,
+        "quadrant": "Delegate",
+        "owner": "物業管理人",
+        "deadline": "2026-07-01",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-010",
+        "title": "年度保險續約審查",
+        "urgency": 3,
+        "importance": 4,
+        "quadrant": "Do First",
+        "owner": "蔡氏家族",
+        "deadline": "2026-07-15",
+        "status": "Not Started"
+      }
+    ]
+  },
+  "capexProjects": [
+    {
+      "id": "CX-001",
+      "project": "第二期戶型翻修（4B及7A戶）",
+      "scope": "全室翻修：廚房、浴室、地板、油漆、燈具",
+      "budgeted": 5782359,
+      "spent": 0,
+      "remaining": 5782359,
+      "pctComplete": 0,
+      "contractor": "永達室內裝修有限公司",
+      "startDate": "2026-03-15",
+      "estCompletion": "2026-07-01",
+      "status": "規劃中",
+      "expectedROI": "每戶租金提升NT$13,500/月；資本支出回報約13.2%"
+    },
+    {
+      "id": "CX-002",
+      "project": "屋頂防水膜更換（提案中）",
+      "scope": "全面更換TPO防水膜；依工程師估算",
+      "budgeted": 5288743,
+      "spent": 0,
+      "remaining": 5288743,
+      "pctComplete": 0,
+      "contractor": "待定",
+      "startDate": "待定",
+      "estCompletion": "待定",
+      "status": "規劃中",
+      "expectedROI": "風險緩解；避免NT$3,600,000以上緊急修繕費用"
+    },
+    {
+      "id": "CX-003",
+      "project": "電動車充電設施安裝（2個車位）",
+      "scope": "於平面停車場安裝Level 2 EV充電樁",
+      "budgeted": 1269298,
+      "spent": 0,
+      "remaining": 1269298,
+      "pctComplete": 0,
+      "contractor": "待定",
+      "startDate": "待定",
+      "estCompletion": "待定",
+      "status": "規劃中",
+      "expectedROI": "提升競爭力；停車位每月可增加NT$4,500額外收入"
+    }
+  ],
+  "opexRecurring": [
+    {
+      "category": "物業管理",
+      "vendor": "信義物業管理顧問有限公司",
+      "annualCost": 1920025,
+      "frequency": "每月",
+      "contractExpiry": "2026-09-01",
+      "notes": "EGI 5%"
+    },
+    {
+      "category": "地價稅及房屋稅",
+      "vendor": "台北市稅捐稽徵處",
+      "annualCost": 3723275,
+      "frequency": "每半年",
+      "contractExpiry": "N/A",
+      "notes": "4月及10月繳納"
+    },
+    {
+      "category": "保險費",
+      "vendor": "富邦產險股份有限公司",
+      "annualCost": 1311608,
+      "frequency": "每年",
+      "contractExpiry": "2026-07-15",
+      "notes": "2026年7月到期須續約"
+    },
+    {
+      "category": "公共水電費",
+      "vendor": "台電 / 台北自來水事業處",
+      "annualCost": 1551365,
+      "frequency": "每月",
+      "contractExpiry": "N/A",
+      "notes": "公共區域電費及水費"
+    },
+    {
+      "category": "景觀維護",
+      "vendor": "綠境景觀工程有限公司",
+      "annualCost": 507719,
+      "frequency": "每月",
+      "contractExpiry": "2026-12-31",
+      "notes": "全年度合約"
+    },
+    {
+      "category": "病蟲害防治",
+      "vendor": "台灣環保防治有限公司",
+      "annualCost": 169240,
+      "frequency": "每季",
+      "contractExpiry": "2026-05-31",
+      "notes": "待續約"
+    },
+    {
+      "category": "法律及專業服務",
+      "vendor": "港景法律事務所",
+      "annualCost": 1015439,
+      "frequency": "依需求",
+      "contractExpiry": "N/A",
+      "notes": "含租戶糾紛處理"
+    }
+  ],
+  "suppliers": [
+    {
+      "name": "信義物業管理顧問有限公司",
+      "category": "物業管理",
+      "contact": "林雅婷 — y.lin@sinyi-pm.com.tw — (02) 2700-0142",
+      "contractPeriod": "2021年10月 – 2026年9月",
+      "warrantyOrSLA": "24小時緊急應變SLA",
+      "status": "Active",
+      "notes": "2026年第三季須洽談續約；建議取得市場競標報價"
+    },
+    {
+      "name": "永達室內裝修有限公司",
+      "category": "建設/翻修",
+      "contact": "陳建宏 — c.chen@yongda-interior.com.tw — (02) 2700-0298",
+      "contractPeriod": "2026年3月 – 2026年7月",
+      "warrantyOrSLA": "1年施工品質保固",
+      "status": "Active",
+      "notes": "第二期翻修承包商；目前施工表現：滿意"
+    },
+    {
+      "name": "富邦產險股份有限公司",
+      "category": "保險",
+      "contact": "王美玲 — m.wang@fubon.com — (02) 2700-0371",
+      "contractPeriod": "2025年7月 – 2026年7月",
+      "warrantyOrSLA": "N/A",
+      "status": "Renewal Due",
+      "notes": "2026年7月15日前需取得競標報價；去年保費調漲8%"
+    },
+    {
+      "name": "綠境景觀工程有限公司",
+      "category": "景觀維護",
+      "contact": "黃志明 — z.huang@greenv.com.tw — (02) 2700-0514",
+      "contractPeriod": "2024年1月 – 2026年12月",
+      "warrantyOrSLA": "每週服務；季節性保固",
+      "status": "Active",
+      "notes": "服務穩定；市場行情合理"
+    },
+    {
+      "name": "台灣中央空調服務有限公司",
+      "category": "空調服務",
+      "contact": "服務中心 — (02) 2700-0655",
+      "contractPeriod": "年度服務合約",
+      "warrantyOrSLA": "48小時緊急應變；零件90天保固",
+      "status": "Active",
+      "notes": "年度保養2026年7月到期；建議儘早排程"
+    },
+    {
+      "name": "台灣環保防治有限公司",
+      "category": "病蟲害防治",
+      "contact": "ops@taiwan-pest.com.tw — (02) 2700-0712",
+      "contractPeriod": "2025年6月 – 2026年5月",
+      "warrantyOrSLA": "每季處理 + 再處理保固",
+      "status": "Renewal Due",
+      "notes": "合約2026年5月到期；須立即辦理續約或更換廠商"
+    },
+    {
+      "name": "港景法律事務所",
+      "category": "法律",
+      "contact": "吳明哲律師 — m.wu@harborlegal.com.tw — (02) 2700-0891",
+      "contractPeriod": "月費顧問 — 持續中",
+      "warrantyOrSLA": "N/A",
+      "status": "Active",
+      "notes": "處理9C戶糾紛；一般不動產法律顧問"
+    }
+  ],
+  "serviceHistory": [
+    {
+      "date": "2026-02-08",
+      "vendor": "綠境景觀工程有限公司",
+      "description": "冬季清理及覆蓋植栽",
+      "cost": 47951,
+      "category": "景觀",
+      "status": "Complete"
+    },
+    {
+      "date": "2026-01-12",
+      "vendor": "台灣環保防治有限公司",
+      "description": "第一季病蟲害防治作業",
+      "cost": 42310,
+      "category": "病蟲害防治",
+      "status": "Complete"
+    },
+    {
+      "date": "2025-11-05",
+      "vendor": "全台水電工程有限公司",
+      "description": "污水管道攝影機檢查 — 依工程師建議辦理",
+      "cost": 66991,
+      "category": "水電",
+      "status": "Complete"
+    },
+    {
+      "date": "2025-09-18",
+      "vendor": "台灣中央空調服務有限公司",
+      "description": "全棟年度空調保養",
+      "cost": 225653,
+      "category": "空調",
+      "status": "Complete"
+    },
+    {
+      "date": "2025-07-30",
+      "vendor": "台灣屋頂顧問有限公司",
+      "description": "屋頂狀況評估 — 發現防水膜磨損",
+      "cost": 84620,
+      "category": "屋頂",
+      "status": "Complete"
+    }
+  ]
+}

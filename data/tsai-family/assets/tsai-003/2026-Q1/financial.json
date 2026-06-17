@@ -1,0 +1,253 @@
+{
+  "incomeStatement": {
+    "period": "過去12個月（2025年3月 – 2026年2月）",
+    "currency": "NTD",
+    "rows": [
+      {
+        "label": "加油站租金收入",
+        "actual": 13715131,
+        "budget": 13715131,
+        "priorYear": 4870099,
+        "type": "income",
+        "indent": 0
+      },
+      {
+        "label": "其他收入（停車、天線站租金）",
+        "actual": 345164,
+        "budget": 325898,
+        "priorYear": 117149,
+        "type": "income",
+        "indent": 1
+      },
+      {
+        "label": "有效總收入 (EGI)",
+        "actual": 14060295,
+        "budget": 14041029,
+        "priorYear": 4987248,
+        "type": "subtotal",
+        "indent": 0
+      },
+      {
+        "label": "— 地價稅",
+        "actual": -648791,
+        "budget": -651795,
+        "priorYear": -226212,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 房屋稅",
+        "actual": -292035,
+        "budget": -293373,
+        "priorYear": -102107,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 保險費",
+        "actual": -226985,
+        "budget": -227965,
+        "priorYear": -78345,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 物業管理費",
+        "actual": -499427,
+        "budget": -489435,
+        "priorYear": -173976,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 維修保養準備金",
+        "actual": -257747,
+        "budget": -260914,
+        "priorYear": -90214,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 專業服務費",
+        "actual": -316558,
+        "budget": -326093,
+        "priorYear": -108642,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "營運費用合計",
+        "actual": -2241543,
+        "budget": -2249575,
+        "priorYear": -779495,
+        "type": "subtotal",
+        "indent": 0
+      },
+      {
+        "label": "淨營業收益 (NOI)",
+        "actual": 11818752,
+        "budget": 11791453,
+        "priorYear": 4207752,
+        "type": "noi",
+        "indent": 0
+      },
+      {
+        "label": "債務本息攤還",
+        "actual": -8358099,
+        "budget": -8358099,
+        "priorYear": -3041002,
+        "type": "deduction",
+        "indent": 1
+      },
+      {
+        "label": "稅前淨現金流",
+        "actual": 3460654,
+        "budget": 3433354,
+        "priorYear": 1166750,
+        "type": "total",
+        "indent": 0
+      }
+    ]
+  },
+  "valuation": {
+    "purchasePrice": 60102092,
+    "purchaseDate": "2003-07-15",
+    "lastAppraisalValue": 600442263,
+    "lastAppraisalDate": "2025-10-15",
+    "currentEstimatedValue": 633761106,
+    "estimationBasis": "戴德梁行商業不動產部門估價意見書（2026年2月）；採收益法及市場比較法",
+    "impliedCapRate": "1.86%",
+    "valuePM2": 179664,
+    "valueChange": 573659014,
+    "valueChangePct": 954.5,
+    "netEquity": 555487212,
+    "history": [
+      {
+        "date": "2003-07-15",
+        "value": 60102092,
+        "source": "取得價格"
+      },
+      {
+        "date": "2008-06-01",
+        "value": 97230608,
+        "source": "仲介估價"
+      },
+      {
+        "date": "2012-11-01",
+        "value": 158378187,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2016-05-01",
+        "value": 260490870,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2019-11-01",
+        "value": 380564822,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2022-10-01",
+        "value": 460161945,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2025-10-15",
+        "value": 600442263,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2026-02-01",
+        "value": 633761106,
+        "source": "仲介估價意見書"
+      }
+    ]
+  },
+  "capex": [
+    {
+      "project": "建物外牆及屋頂翻新",
+      "year": 2012,
+      "budgeted": 4947244,
+      "actual": 5277060,
+      "status": "Complete",
+      "notes": "2012年10月完工；加油站進駐前整修"
+    },
+    {
+      "project": "停車場地坪及劃線更新",
+      "year": 2019,
+      "budgeted": 989449,
+      "actual": 1055412,
+      "status": "Complete",
+      "notes": "2019年3月完工"
+    },
+    {
+      "project": "停車場翻新及EV充電設施（提案）",
+      "year": 2026,
+      "budgeted": 2033867,
+      "actual": 0,
+      "status": "Proposed",
+      "notes": "待業主核准；EV充電2組"
+    }
+  ],
+  "projections": {
+    "scenarios": [
+      "悲觀",
+      "基本",
+      "樂觀"
+    ],
+    "years": [
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "noi": {
+      "Downside": [
+        3950495,
+        3950495,
+        3950495,
+        4009901,
+        4009901
+      ],
+      "Base": [
+        4300123,
+        4407921,
+        4407921,
+        4502970,
+        4502970
+      ],
+      "Upside": [
+        4300123,
+        4574257,
+        4752475,
+        4930693,
+        5108911
+      ]
+    },
+    "value": {
+      "Downside": [
+        220138203,
+        222902270,
+        225666338,
+        228430405,
+        231194472
+      ],
+      "Base": [
+        230586986,
+        237314906,
+        244225074,
+        251530109,
+        259230010
+      ],
+      "Upside": [
+        230586986,
+        244027641,
+        258440276,
+        273642646,
+        290128332
+      ]
+    }
+  }
+}

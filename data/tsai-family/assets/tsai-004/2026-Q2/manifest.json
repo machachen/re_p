@@ -1,0 +1,35 @@
+{
+  "period": "2026-Q2",
+  "periodLabel": "2026 Q2",
+  "lastUpdated": "2026-05-12T10:00:00Z",
+  "sections": [
+    {
+      "id": "overview",
+      "file": "overview.json"
+    },
+    {
+      "id": "ownership-capital",
+      "file": "ownership-capital.json"
+    },
+    {
+      "id": "financial",
+      "file": "financial.json"
+    },
+    {
+      "id": "risk",
+      "file": "risk.json"
+    },
+    {
+      "id": "operations",
+      "file": "operations.json"
+    },
+    {
+      "id": "documents",
+      "file": "documents.json"
+    },
+    {
+      "id": "market",
+      "file": "market.json"
+    }
+  ]
+}

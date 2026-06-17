@@ -90,7 +90,9 @@
       "ownershipSummary": "陳氏家族信託 80%",
       "keyHighlight": "再融資 — 2026年10月到期",
       "urgency": "high",
-      "href": "index.html?id=asset-001"
+      "href": "index.html?id=asset-001",
+      "mapX": 250,
+      "mapY": 120
     },
     {
       "id": "asset-002",
@@ -112,7 +114,9 @@
       "ownershipSummary": "陳氏家族信託 100%",
       "keyHighlight": "租金調漲 — 2027年1月",
       "urgency": "medium",
-      "href": "index.html?id=asset-002"
+      "href": "index.html?id=asset-002",
+      "mapX": 170,
+      "mapY": 215
     },
     {
       "id": "asset-003",
@@ -134,7 +138,9 @@
       "ownershipSummary": "陳氏家族信託 100%",
       "keyHighlight": "無貸款 · 潛在抵押空間NT$5,611萬",
       "urgency": "low",
-      "href": "index.html?id=asset-003"
+      "href": "index.html?id=asset-003",
+      "mapX": 405,
+      "mapY": 230
     }
   ],
   "allocation": {

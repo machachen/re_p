@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "portfolioName": "蔡家族 — 土地與營運資產組合",
+    "reportingPeriod": "2026 Q2",
+    "periodLabel": "2026 Q2",
+    "lastUpdated": "2026-05-12",
+    "assetCount": 5,
+    "currency": "NTD",
+    "preparedBy": "Asset Intelligence 資產智能平台"
+  },
+  "summary": {
+    "narrative": "蔡家族資產組合以板橋–土城土地為核心，含開發案基地、加油站、精密金屬工廠、住宅公寓與大型停車場，共五項資產、總值約NT$28.9億，土地佔比約85%（land-rich、結構鬆散）。家族正推進開發案基地之合資開發融資（Deal A）與加油站／廠房／公寓之組合再融資（Deal B），合計規模約NT$10億。",
+    "keyMessage": "組合總值NT$28.9億 · 家族淨權益NT$18.97億 · 加權LTV 34.3% · 重點：開發案基地合資開發融資與組合再融資（~NT$10億）推進中，停車場價值認列為關鍵突破點"
+  },
+  "totals": {
+    "totalAUM": 2887000000,
+    "totalDebt": 990000000,
+    "portfolioNetEquity": 1897000000,
+    "chenFamilyEquity": 1897000000,
+    "blendedLTV": 34.3,
+    "weightedAvgRate": 2.45,
+    "incomeGeneratingNOI": 58000000,
+    "netPortfolioIncome": 53940000,
+    "totalNetCashFlow": 18800000,
+    "annualDebtService": 39200000,
+    "yoyAUMGrowth": 7.0
+  },
+  "keyFigures": [
+    {
+      "label": "組合總估值",
+      "value": "$2.89B",
+      "subLabel": "五資產合計市場估值",
+      "trend": "up",
+      "trendValue": "+7.0% 年增"
+    },
+    {
+      "label": "家族淨權益",
+      "value": "$1.90B",
+      "subLabel": "扣除負債後家族權益",
+      "trend": "up",
+      "trendValue": "土地增值帶動"
+    },
+    {
+      "label": "加權 LTV",
+      "value": "34.3%",
+      "subLabel": "負債／總估值",
+      "trend": "flat",
+      "trendValue": "land-rich · 低槓桿"
+    },
+    {
+      "label": "年度 NOI",
+      "value": "$58.0M",
+      "subLabel": "可收益資產合計",
+      "trend": "up",
+      "trendValue": "加油站為主力"
+    },
+    {
+      "label": "年度淨現金流",
+      "value": "$18.8M",
+      "subLabel": "稅前淨現金流",
+      "trend": "flat",
+      "trendValue": "再融資後釋出"
+    },
+    {
+      "label": "待決事項",
+      "value": "2",
+      "subLabel": "合資開發 + 組合再融資",
+      "trend": "down",
+      "trendValue": "~NT$10億"
+    }
+  ],
+  "assetCards": [
+    {
+      "id": "tsai-001",
+      "name": "板土開發案基地",
+      "shortName": "開發案基地",
+      "type": "土地 · 合資開發",
+      "location": "新北市板橋–土城界（重劃帶）",
+      "value": 924000000,
+      "debt": 100000000,
+      "equity": 824000000,
+      "chenEquity": 824000000,
+      "chenPct": 100.0,
+      "ltv": 10.8,
+      "noi": 0,
+      "netCF": 0,
+      "capRate": null,
+      "status": "合資開發",
+      "statusColor": "slate",
+      "ownershipSummary": "蔡天賜（G1）100%",
+      "keyHighlight": "合資開發 · 分潤時程未定",
+      "urgency": "high",
+      "href": "index.html?id=tsai-001",
+      "mapX": 205,
+      "mapY": 235
+    },
+    {
+      "id": "tsai-002",
+      "name": "板橋信義路停車場",
+      "shortName": "大型停車場",
+      "type": "平面停車場 · 待開發",
+      "location": "新北市板橋區信義路（近加油站）",
+      "value": 690000000,
+      "debt": 0,
+      "equity": 690000000,
+      "chenEquity": 690000000,
+      "chenPct": 100.0,
+      "ltv": 0.0,
+      "noi": 0,
+      "netCF": 0,
+      "capRate": null,
+      "status": "待開發",
+      "statusColor": "slate",
+      "ownershipSummary": "蔡天賜（G1）100%",
+      "keyHighlight": "raw land · 銀行不認列",
+      "urgency": "medium",
+      "href": "index.html?id=tsai-002",
+      "mapX": 270,
+      "mapY": 258
+    },
+    {
+      "id": "tsai-003",
+      "name": "板橋信義路加油站",
+      "shortName": "加油站",
+      "type": "加油站 · 自營",
+      "location": "新北市板橋區光復里信義路267號",
+      "value": 642000000,
+      "debt": 449000000,
+      "equity": 193000000,
+      "chenEquity": 193000000,
+      "chenPct": 100.0,
+      "ltv": 69.9,
+      "noi": 30000000,
+      "netCF": 19500000,
+      "capRate": 4.67,
+      "status": "自營",
+      "statusColor": "green",
+      "ownershipSummary": "蔡氏家族 100%",
+      "keyHighlight": "組合再融資 · 70% LTV",
+      "urgency": "medium",
+      "href": "index.html?id=tsai-003",
+      "mapX": 255,
+      "mapY": 248
+    },
+    {
+      "id": "tsai-004",
+      "name": "土城精密金屬工廠",
+      "shortName": "精密金屬工廠",
+      "type": "廠房 · 營運中",
+      "location": "新北市土城區復興里光復街77巷6-13號",
+      "value": 345000000,
+      "debt": 241000000,
+      "equity": 104000000,
+      "chenEquity": 104000000,
+      "chenPct": 100.0,
+      "ltv": 69.9,
+      "noi": 16000000,
+      "netCF": 10400000,
+      "capRate": 4.64,
+      "status": "營運中",
+      "statusColor": "green",
+      "ownershipSummary": "蔡國棟（G2）家族 100%",
+      "keyHighlight": "30年營運 · G3接班可見",
+      "urgency": "low",
+      "href": "index.html?id=tsai-004",
+      "mapX": 180,
+      "mapY": 295
+    },
+    {
+      "id": "tsai-005",
+      "name": "土城瑞興住宅公寓",
+      "shortName": "住宅公寓×4",
+      "type": "住宅 · 出租",
+      "location": "新北市土城區瑞興里光明街90巷",
+      "value": 286000000,
+      "debt": 200000000,
+      "equity": 86000000,
+      "chenEquity": 86000000,
+      "chenPct": 100.0,
+      "ltv": 69.9,
+      "noi": 12000000,
+      "netCF": 7800000,
+      "capRate": 4.2,
+      "status": "出租",
+      "statusColor": "amber",
+      "ownershipSummary": "蔡氏家族 100%",
+      "keyHighlight": "短約 · 危老候選",
+      "urgency": "low",
+      "href": "index.html?id=tsai-005",
+      "mapX": 220,
+      "mapY": 300
+    }
+  ],
+  "allocation": {
+    "labels": [
+      "開發案基地",
+      "大型停車場",
+      "加油站",
+      "精密金屬工廠",
+      "住宅公寓×4"
+    ],
+    "values": [
+      924000000,
+      690000000,
+      642000000,
+      345000000,
+      286000000
+    ],
+    "pcts": [
+      32.0,
+      23.9,
+      22.2,
+      12.0,
+      9.9
+    ],
+    "colors": [
+      "#8E1B1F",
+      "#33547A",
+      "#1F5C4A",
+      "#B5832A",
+      "#5C5C61"
+    ]
+  },
+  "incomeBreakdown": {
+    "labels": [
+      "開發案基地",
+      "大型停車場",
+      "加油站",
+      "精密金屬工廠",
+      "住宅公寓×4"
+    ],
+    "noi": [
+      0,
+      0,
+      30000000,
+      16000000,
+      12000000
+    ],
+    "netCF": [
+      0,
+      0,
+      19500000,
+      10400000,
+      7800000
+    ],
+    "colors": [
+      "#8E1B1F",
+      "#33547A",
+      "#1F5C4A",
+      "#B5832A",
+      "#5C5C61"
+    ]
+  },
+  "debtMatrix": [
+    {
+      "asset": "開發案基地",
+      "assetId": "tsai-001",
+      "lender": "兆豐銀行",
+      "balance": 100000000,
+      "rate": "2.45%",
+      "ltv": "10.8%",
+      "dscr": "1.48x",
+      "maturity": "2031-06-01",
+      "urgency": "high",
+      "urgencyLabel": "緊急"
+    },
+    {
+      "asset": "大型停車場",
+      "assetId": "tsai-002",
+      "lender": "—",
+      "balance": 0,
+      "rate": "—",
+      "ltv": "0.0%",
+      "dscr": "—",
+      "maturity": "—",
+      "urgency": "medium",
+      "urgencyLabel": "關注"
+    },
+    {
+      "asset": "加油站",
+      "assetId": "tsai-003",
+      "lender": "兆豐銀行",
+      "balance": 449000000,
+      "rate": "2.45%",
+      "ltv": "69.9%",
+      "dscr": "1.48x",
+      "maturity": "2031-06-01",
+      "urgency": "medium",
+      "urgencyLabel": "關注"
+    },
+    {
+      "asset": "精密金屬工廠",
+      "assetId": "tsai-004",
+      "lender": "兆豐銀行",
+      "balance": 241000000,
+      "rate": "2.45%",
+      "ltv": "69.9%",
+      "dscr": "1.48x",
+      "maturity": "2031-06-01",
+      "urgency": "low",
+      "urgencyLabel": "正常"
+    },
+    {
+      "asset": "住宅公寓×4",
+      "assetId": "tsai-005",
+      "lender": "兆豐銀行",
+      "balance": 200000000,
+      "rate": "2.45%",
+      "ltv": "69.9%",
+      "dscr": "1.48x",
+      "maturity": "2031-06-01",
+      "urgency": "low",
+      "urgencyLabel": "正常"
+    }
+  ],
+  "portfolioHistory": {
+    "labels": [
+      "2019",
+      "2022",
+      "2025",
+      "2026"
+    ],
+    "assets": {
+      "tsai-001": [
+        683760000,
+        794640000,
+        877800000,
+        924000000
+      ],
+      "tsai-002": [
+        510600000,
+        593400000,
+        655500000,
+        690000000
+      ],
+      "tsai-003": [
+        475080000,
+        552120000,
+        609900000,
+        642000000
+      ],
+      "tsai-004": [
+        255300000,
+        296700000,
+        327750000,
+        345000000
+      ],
+      "tsai-005": [
+        211640000,
+        245960000,
+        271700000,
+        286000000
+      ]
+    },
+    "total": [
+      2136380000,
+      2482820000,
+      2742650000,
+      2887000000
+    ]
+  },
+  "actions": [
+    {
+      "assetId": "tsai-001",
+      "assetName": "開發案基地",
+      "title": "合資開發融資 — 分潤架構定案",
+      "priority": "High",
+      "deadline": "2026-08-31",
+      "status": "In Progress"
+    },
+    {
+      "assetId": "tsai-002",
+      "assetName": "大型停車場",
+      "title": "停車場開發許可 — 啟動申請以爭取認列",
+      "priority": "High",
+      "deadline": "2026-09-30",
+      "status": "Open"
+    },
+    {
+      "assetId": "tsai-003",
+      "assetName": "加油站",
+      "title": "供油與租約書面化 — 提升銀行可信度",
+      "priority": "Medium",
+      "deadline": "2026-07-15",
+      "status": "In Progress"
+    },
+    {
+      "assetId": "tsai-004",
+      "assetName": "精密金屬工廠",
+      "title": "治理章程與接班規劃 — sponsor hardening",
+      "priority": "Medium",
+      "deadline": "2026-08-15",
+      "status": "Open"
+    },
+    {
+      "assetId": "tsai-005",
+      "assetName": "住宅公寓×4",
+      "title": "危老重建評估 — 委任都更顧問",
+      "priority": "Low",
+      "deadline": "2026-10-31",
+      "status": "Open"
+    }
+  ],
+  "riskSummary": {
+    "totalOpenRisks": 12,
+    "highCount": 3,
+    "mediumCount": 5,
+    "lowCount": 4,
+    "topConcern": "開發案基地合資開發分潤時程與比例未定，且大型停車場因無開發許可遭銀行排除於擔保價值之外；二者為釋出組合融資價值之主要瓶頸，建議優先補齊開發許可與分潤協議。"
+  }
+}

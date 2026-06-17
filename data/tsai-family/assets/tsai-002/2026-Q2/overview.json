@@ -1,0 +1,263 @@
+{
+  "summary": {
+    "narrative": "板橋區信義路大型平面停車場，面積約720坪，鄰近自營加油站。地段價值高，惟尚無開發許可，現金流以停車收入為主、相對偏低。銀行視角將其列為raw land、暫不認列擔保價值，為BPM協助釋出價值之重點資產。",
+    "period": "2026年5月",
+    "preparedBy": "Asset Intelligence 資產智能平台",
+    "keyMessage": "大型平面停車場（~720坪）位於板橋信義路黃金地段，現以自營停車產生穩定但偏低之現金流；因無開發許可，銀行目前以raw land認定、暫不認列融資價值，為釋出價值之關鍵標的。"
+  },
+  "basicInfo": {
+    "assetName": "板橋信義路停車場",
+    "assetType": "高級住宅（自營停車）",
+    "location": "新北市板橋區信義路（近加油站）",
+    "submarket": "板橋信義路商圈，新北市",
+    "yearBuilt": 2016,
+    "yearAcquired": 2013,
+    "totalUnits": 1,
+    "residentialUnits": 1,
+    "commercialUnits": 0,
+    "totalGSF": 3552,
+    "siteAreaSF": 3552,
+    "parking": "2個地下停車位（產權持分）",
+    "currentStatus": "自營停車持有",
+    "reportingPeriod": "2026年5月",
+    "ownershipSummary": "蔡氏家族直接持有（個人名義）。無共同持有人。"
+  },
+  "keyFigures": [
+    {
+      "label": "每m²均價",
+      "value": "$283,000",
+      "subLabel": "停車場用地市場估值基準",
+      "trend": "up",
+      "trendValue": "+$15,000 vs 去年"
+    },
+    {
+      "label": "目前貸款",
+      "value": "NT$0",
+      "subLabel": "無任何抵押貸款",
+      "trend": "flat",
+      "trendValue": "零負債"
+    },
+    {
+      "label": "業主淨權益",
+      "value": "$93.5M",
+      "subLabel": "100% 無貸款淨權益",
+      "trend": "up",
+      "trendValue": "+$4.8M 年增"
+    },
+    {
+      "label": "可抵押空間",
+      "value": "$56.1M",
+      "subLabel": "60% LTV 可動用額度",
+      "trend": "up",
+      "trendValue": "財務彈性充裕"
+    }
+  ],
+  "kpiCards": [
+    {
+      "id": "market_value",
+      "title": "市場估值",
+      "value": "$93.5M",
+      "period": "2026年5月估計市值",
+      "trend": "+49.6% 自預售取得以來",
+      "trendDir": "up",
+      "chartType": "line",
+      "chartData": {
+        "labels": [
+          "2013",
+          "2016",
+          "2018",
+          "2020",
+          "2022",
+          "2024",
+          "2026"
+        ],
+        "values": [
+          62400000,
+          68376000,
+          72624000,
+          77792000,
+          82376000,
+          85624000,
+          93512000
+        ]
+      }
+    },
+    {
+      "id": "net_equity",
+      "title": "業主淨權益",
+      "value": "$93.5M",
+      "period": "無貸款淨權益",
+      "trend": "100% 持有",
+      "trendDir": "up",
+      "chartType": "line",
+      "chartData": {
+        "labels": [
+          "2013",
+          "2016",
+          "2018",
+          "2020",
+          "2022",
+          "2024",
+          "2026"
+        ],
+        "values": [
+          62400000,
+          68376000,
+          72624000,
+          77792000,
+          82376000,
+          85624000,
+          93512000
+        ]
+      }
+    },
+    {
+      "id": "ltv",
+      "title": "貸款成數 (LTV)",
+      "value": "0.0%",
+      "period": "目前貸款成數",
+      "trend": "無貸款；60% LTV 可動用NT$5,611萬",
+      "trendDir": "up",
+      "chartType": "line",
+      "chartData": {
+        "labels": [
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "holding_cost",
+      "title": "年度持有成本",
+      "value": "$657K",
+      "period": "2026年年化持有費用",
+      "trend": "自營停車資產；無租金收益",
+      "trendDir": "flat",
+      "chartType": "bar",
+      "chartData": {
+        "labels": [
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026E"
+        ],
+        "values": [
+          621600,
+          634800,
+          641400,
+          648000,
+          657495
+        ]
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "act-001",
+      "title": "委任正式鑑價 — 距上次已逾14個月",
+      "recommendation": "上次正式鑑價完成於2025年2月（NT$85,624,000），距今已逾14個月。建議於2026年6月委任不動產估價師重新辦理正式鑑價，以維持資產紀錄更新及財務規劃精確度。若考慮申辦抵押融資，最新鑑價亦為銀行必要文件。",
+      "decisionNeeded": "委任估價師；確認鑑價時間",
+      "owner": "蔡氏家族",
+      "priority": "Medium",
+      "deadline": "2026-06-30",
+      "status": "Open"
+    },
+    {
+      "id": "act-002",
+      "title": "室內裝潢翻新評估 — 2016年完工至今逾10年",
+      "recommendation": "本宅室內裝潢完成於2016年，已逾10年，部分設施（廚具、衛浴、地板）有更新需求。建議委任室內設計師進行評估，預算初估NT$300萬至NT$500萬。翻新除可提升居住品質外，亦可維持資產在停車場用地市場之競爭力（若未來考慮出售）。",
+      "decisionNeeded": "決定翻新時程及預算；委任室內設計師",
+      "owner": "蔡氏家族",
+      "priority": "Low",
+      "deadline": "2026-12-31",
+      "status": "Open"
+    },
+    {
+      "id": "act-003",
+      "title": "抵押融資規劃 — 評估最適動用時機",
+      "recommendation": "本資產目前無任何貸款，以60% LTV計算，可動用抵押融資空間約NT$5,610萬元，可作為其他投資（例如港景資產再融資或新投資機會）之靈活資金來源。建議評估若利率環境在2026年下半年趨於改善，是否為適合申辦抵押貸款之時機。",
+      "decisionNeeded": "確認融資需求及時程；授權向往來銀行詢問貸款條件",
+      "owner": "蔡氏家族",
+      "priority": "Low",
+      "deadline": "2026-09-30",
+      "status": "Open"
+    }
+  ],
+  "linkedDocuments": [
+    {
+      "name": "2026年5月資產報告（本文件）",
+      "category": "報告",
+      "date": "2026-05-08",
+      "type": "PDF"
+    },
+    {
+      "name": "2025年房地產鑑價報告",
+      "category": "估值",
+      "date": "2025-02-15",
+      "type": "PDF"
+    },
+    {
+      "name": "建物及土地所有權狀",
+      "category": "所有權",
+      "date": "2016-05-20",
+      "type": "PDF"
+    },
+    {
+      "name": "預售屋買賣契約書（2013年）",
+      "category": "取得",
+      "date": "2013-03-18",
+      "type": "PDF"
+    }
+  ],
+  "topRisks": [
+    {
+      "id": "R-01",
+      "title": "停車場用地市場估值波動",
+      "level": "Medium",
+      "impact": "台北停車場用地市場估值若回調10–15%，本資產市值將減少NT$935萬至NT$1,403萬，惟無貸款故不存在財務壓力"
+    },
+    {
+      "id": "R-02",
+      "title": "停車場用地持有稅調漲",
+      "level": "Low",
+      "impact": "政府若調升停車場用地房屋稅率，每年持有成本可能增加NT$12萬至NT$30萬"
+    },
+    {
+      "id": "R-03",
+      "title": "資產流動性風險（停車場用地）",
+      "level": "Low",
+      "impact": "停車場用地市場交易量少，若需快速變現，可能需要折價出售或延長銷售時程"
+    }
+  ],
+  "marketSnapshot": {
+    "submarket": "板橋信義路商圈，新北市",
+    "medianRentPM2": "$1,667/m²/月",
+    "vacancyRate": "2.8%",
+    "yoyRentGrowth": "+2.5%",
+    "assetVsMarket": "本資產自營停車持有，不具租金收益。若按市場行情出租，估計月租金NT$15萬至NT$18萬。",
+    "capRateBenchmark": "可比停車場用地資產1.8%–2.4%"
+  }
+}

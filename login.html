@@ -285,7 +285,7 @@
       <hr class="login-rule" />
 
       <!-- Client context -->
-      <p class="login-client">陳氏家族信託</p>
+      <p class="login-client" data-i18n="login.portal">私人客戶資產入口</p>
       <p class="login-scope" data-i18n="login.scope">資產組合管理系統 · 受限存取 · 機密文件</p>
 
       <!-- Email -->
@@ -362,6 +362,7 @@
 
   /* ── interface i18n (chrome only — login renders in the stored language) ── */
   if (window.bpmI18nAdd) bpmI18nAdd({
+    'login.portal': '私人客戶資產入口',
     'login.scope': '資產組合管理系統 · 受限存取 · 機密文件',
     'login.email': '電子郵件 · Email',
     'login.password': '密碼 · Password',
@@ -375,6 +376,7 @@
     'login.errNoServer': '無法連線至伺服器，請稍後再試',
     'login.errGeneric': '登入時發生錯誤，請稍後再試'
   }, {
+    'login.portal': 'Private Client Portal',
     'login.scope': 'Portfolio management system · Restricted access · Confidential',
     'login.email': 'Email',
     'login.password': 'Password',

@@ -1,0 +1,18 @@
+{
+  "slug": "tsai-family",
+  "config": {
+    "displayName": "蔡家族",
+    "avatarInitial": "蔡",
+    "analyst": {
+      "name": "陳政宏 Masa Chen",
+      "title": {
+        "zh": "資深分析師 · 大中華區",
+        "en": "Senior analyst · Greater China"
+      },
+      "contact": {
+        "zh": "+886 2 8729 5000 · 台北",
+        "en": "+886 2 8729 5000 · TPE"
+      }
+    }
+  }
+}

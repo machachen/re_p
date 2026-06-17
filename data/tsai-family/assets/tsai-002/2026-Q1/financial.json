@@ -1,0 +1,240 @@
+{
+  "incomeStatement": {
+    "period": "2026年度（自營停車持有，無租金收益）",
+    "currency": "NTD",
+    "rows": [
+      {
+        "label": "租金收入（自營停車，不計入）",
+        "actual": 0,
+        "budget": 0,
+        "priorYear": 0,
+        "type": "income",
+        "indent": 0
+      },
+      {
+        "label": "市場租金參考值（未實現）",
+        "actual": 0,
+        "budget": 0,
+        "priorYear": 0,
+        "type": "income",
+        "indent": 1
+      },
+      {
+        "label": "有效總收入 (EGI)",
+        "actual": 0,
+        "budget": 0,
+        "priorYear": 0,
+        "type": "subtotal",
+        "indent": 0
+      },
+      {
+        "label": "— 管理費（月費NT$35,000）",
+        "actual": -3083636,
+        "budget": -3083636,
+        "priorYear": -406687,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 房屋稅",
+        "actual": -612520,
+        "budget": -615846,
+        "priorYear": -78227,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 地價稅",
+        "actual": -256367,
+        "budget": -262549,
+        "priorYear": -33417,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 保險費",
+        "actual": -347394,
+        "budget": -351534,
+        "priorYear": -45958,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 水電費及維修",
+        "actual": -527404,
+        "budget": -526861,
+        "priorYear": -67475,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "年度持有費用合計",
+        "actual": -4827321,
+        "budget": -4840427,
+        "priorYear": -631763,
+        "type": "subtotal",
+        "indent": 0
+      },
+      {
+        "label": "淨持有成本 (NOI)",
+        "actual": -4827321,
+        "budget": -4840427,
+        "priorYear": -631763,
+        "type": "noi",
+        "indent": 0
+      },
+      {
+        "label": "債務本息攤還",
+        "actual": 0,
+        "budget": 0,
+        "priorYear": 0,
+        "type": "deduction",
+        "indent": 1
+      },
+      {
+        "label": "年度淨現金支出",
+        "actual": -4827321,
+        "budget": -4840427,
+        "priorYear": -631763,
+        "type": "total",
+        "indent": 0
+      }
+    ]
+  },
+  "valuation": {
+    "purchasePrice": 461266721,
+    "purchaseDate": "2013-03-18",
+    "lastAppraisalValue": 631799196,
+    "lastAppraisalDate": "2025-02-15",
+    "currentEstimatedValue": 683168317,
+    "estimationBasis": "戴德梁行估價意見書（2026年2月）；採市場比較法",
+    "impliedCapRate": "N/A（自營停車）",
+    "valuePM2": 280198,
+    "valueChange": 221901596,
+    "valueChangePct": 48.1,
+    "netEquity": 683168317,
+    "history": [
+      {
+        "date": "2013-03-18",
+        "value": 461266721,
+        "source": "預售取得價格"
+      },
+      {
+        "date": "2016-05-20",
+        "value": 504528101,
+        "source": "交屋市值評估"
+      },
+      {
+        "date": "2018-11-01",
+        "value": 535876903,
+        "source": "仲介估價"
+      },
+      {
+        "date": "2020-10-01",
+        "value": 574004974,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2022-11-01",
+        "value": 607831551,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2025-02-15",
+        "value": 631799196,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2026-02-01",
+        "value": 683168317,
+        "source": "仲介估價意見書"
+      }
+    ]
+  },
+  "capex": [
+    {
+      "project": "室內裝潢（交屋後裝修）",
+      "year": 2016,
+      "budgeted": 81165692,
+      "actual": 88544391,
+      "status": "Complete",
+      "notes": "2016年9月完工；廚衛設備、地板、燈具"
+    },
+    {
+      "project": "智能家居系統升級",
+      "year": 2021,
+      "budgeted": 3541776,
+      "actual": 3836924,
+      "status": "Complete",
+      "notes": "2021年11月完工；門禁、空調控制、安全監控"
+    },
+    {
+      "project": "室內翻新（評估中）",
+      "year": 2027,
+      "budgeted": 29514797,
+      "actual": 0,
+      "status": "Proposed",
+      "notes": "廚房、主浴及地板翻新；待業主決策"
+    }
+  ],
+  "projections": {
+    "scenarios": [
+      "悲觀",
+      "基本",
+      "樂觀"
+    ],
+    "years": [
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "noi": {
+      "Downside": [
+        -716418,
+        -740299,
+        -764179,
+        -788060,
+        -811940
+      ],
+      "Base": [
+        -654224,
+        -665672,
+        -678209,
+        -690945,
+        -703682
+      ],
+      "Upside": [
+        -591045,
+        -604179,
+        -616119,
+        -628060,
+        -640000
+      ]
+    },
+    "value": {
+      "Downside": [
+        89405941,
+        87722772,
+        86336634,
+        85247525,
+        84554455
+      ],
+      "Base": [
+        92586551,
+        95841584,
+        99306931,
+        102871287,
+        106633663
+      ],
+      "Upside": [
+        92586551,
+        98217822,
+        104356436,
+        110891089,
+        118019802
+      ]
+    }
+  }
+}

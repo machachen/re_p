@@ -1,0 +1,177 @@
+{
+  "summary": {
+    "overallRiskLevel": "低至中度",
+    "openRisks": 5,
+    "highRisks": 0,
+    "mediumRisks": 2,
+    "lowRisks": 3,
+    "lastReviewed": "2026-05-08"
+  },
+  "register": [
+    {
+      "id": "R-01",
+      "category": "租賃",
+      "title": "單一租戶集中風險（工廠福利中心）",
+      "description": "本資產100%依賴工廠單一租戶，若工廠提前解約、財務困難或拒絕續約，資產將面臨100%空置，年現金流損失達NT$5,160,000，並可能影響貸款還款能力。",
+      "probability": 2,
+      "impact": 5,
+      "riskScore": 10,
+      "level": "Medium",
+      "owner": "蔡氏家族",
+      "mitigation": "工廠福利中心財務結構穩健，為台灣最大金屬加工超市，目前無破產跡象。租約至2033年，剩餘約7年。密切追蹤工廠營運動態及財報。",
+      "status": "Monitoring",
+      "reviewDate": "2026-12-31"
+    },
+    {
+      "id": "R-02",
+      "category": "市場",
+      "title": "實體零售電商替代壓力長期持續",
+      "description": "網路購物及外送平台持續成長，可能壓縮工廠門市流量，影響其展店意願及2033年後之租約續簽意願。",
+      "probability": 3,
+      "impact": 3,
+      "riskScore": 9,
+      "level": "Medium",
+      "owner": "蔡氏家族",
+      "mitigation": "工廠生鮮及日常用品定位較能抵禦電商競爭；持續追蹤工廠市占率及同店銷售成長。在2033年租約到期前評估潛在替代租戶。",
+      "status": "Monitoring",
+      "reviewDate": "2026-12-31"
+    },
+    {
+      "id": "R-03",
+      "category": "法規",
+      "title": "公告地價調漲導致稅負增加",
+      "description": "新北市公告地價每2年重新評定，持續調漲將增加地價稅。若調漲15%，每年地價稅增加約NT$36,000，影響有限。",
+      "probability": 4,
+      "impact": 1,
+      "riskScore": 4,
+      "level": "Low",
+      "owner": "土城商業置產有限公司",
+      "mitigation": "依法申報，列入費用預算。稅負增加幅度有限，且可於次年租金調漲時部分轉嫁。",
+      "status": "Monitoring",
+      "reviewDate": "2026-12-31"
+    },
+    {
+      "id": "R-04",
+      "category": "物理",
+      "title": "建物老化及資本支出需求",
+      "description": "建物建於2006年，已逾20年，屋頂防水、水電管線及外牆設施逐漸進入更新週期。預估未來5年資本支出需求約NT$200萬至NT$400萬。",
+      "probability": 3,
+      "impact": 2,
+      "riskScore": 6,
+      "level": "Low",
+      "owner": "物業管理人",
+      "mitigation": "每年定期委託工程師進行建物健診；更新資本準備金計畫。目前租約中工廠負責內部設施維護，降低業主負擔。",
+      "status": "Monitoring",
+      "reviewDate": "2026-12-31"
+    },
+    {
+      "id": "R-05",
+      "category": "融資",
+      "title": "2036年貸款到期再融資風險",
+      "description": "土地銀行貸款2036年8月到期，屆時需辦理再融資。若利率環境顯著惡化或商業不動產融資條件收緊，可能影響再融資成本。",
+      "probability": 2,
+      "impact": 2,
+      "riskScore": 4,
+      "level": "Low",
+      "owner": "蔡氏家族",
+      "mitigation": "距到期日尚有10年，屆時LTV預計降至10%以下，融資條件優異，再融資風險極低。",
+      "status": "Monitoring",
+      "reviewDate": "2030-01-01"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S-01",
+      "name": "工廠2033年不續約，資產空置1年",
+      "category": "租賃",
+      "baseNOI": 6398281,
+      "baseDebtService": 4555009,
+      "baseCashFlow": 1843272,
+      "scenarioNOI": 0,
+      "scenarioCashFlow": -4555009,
+      "cashFlowDelta": -6398281,
+      "newDSCR": "0.00x",
+      "verdict": "現金流嚴重受損；需動用儲備金支應貸款。惟LTV 15%之抵押品保護充足，得以時間換取重新招租空間。建議提前5年啟動替代租戶評估。"
+    },
+    {
+      "id": "S-02",
+      "name": "2033年以低市場租金（較目前-10%）續約",
+      "category": "租賃",
+      "baseNOI": 6398281,
+      "baseDebtService": 4555009,
+      "baseCashFlow": 1843272,
+      "scenarioNOI": 5742501,
+      "scenarioCashFlow": 1187493,
+      "cashFlowDelta": -655779,
+      "newDSCR": "1.26x",
+      "verdict": "仍可維持正現金流及超過1.25x之DSCR財務契約要求；需調整分配計畫。"
+    },
+    {
+      "id": "S-03",
+      "name": "建物重大維修費用NT$300萬",
+      "category": "資本支出",
+      "baseNOI": 6398281,
+      "baseDebtService": 4555009,
+      "baseCashFlow": 1843272,
+      "scenarioCashFlow": -2587670,
+      "cashFlowDelta": -4430942,
+      "newDSCR": "1.40x",
+      "verdict": "一次性現金衝擊；建議以準備金支應，不影響DSCR。"
+    }
+  ],
+  "scenarioChart": {
+    "labels": [
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "cashFlow": {
+      "Downside": [
+        900000,
+        930000,
+        960000,
+        990000,
+        1020000
+      ],
+      "Base": [
+        1248000,
+        1356000,
+        1356000,
+        1446000,
+        1446000
+      ],
+      "Upside": [
+        1248000,
+        1536000,
+        1716000,
+        1896000,
+        2076000
+      ]
+    }
+  },
+  "mitigationPlan": [
+    {
+      "riskId": "R-01",
+      "action": "委任商業不動產顧問，評估2033年後潛在替代業態及可比租金水準",
+      "owner": "蔡氏家族",
+      "deadline": "2026-12-31",
+      "status": "Not Started"
+    },
+    {
+      "riskId": "R-02",
+      "action": "每半年追蹤工廠各店銷售動態及整體財務表現",
+      "owner": "蔡氏家族",
+      "deadline": "2026-12-31",
+      "status": "In Progress"
+    },
+    {
+      "riskId": "R-04",
+      "action": "委託工程師進行建物健康診斷，更新5年資本支出計畫",
+      "owner": "物業管理人",
+      "deadline": "2026-09-30",
+      "status": "Not Started"
+    }
+  ]
+}

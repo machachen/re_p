@@ -1,0 +1,277 @@
+{
+  "incomeStatement": {
+    "period": "過去12個月（2025年6月 – 2026年5月）",
+    "currency": "NTD",
+    "rows": [
+      {
+        "label": "潛在租金總收入",
+        "actual": 27768072,
+        "budget": 27490391,
+        "priorYear": 11459020,
+        "type": "income",
+        "indent": 0
+      },
+      {
+        "label": "空置及信用損失",
+        "actual": -1666083,
+        "budget": -1649423,
+        "priorYear": -687541,
+        "type": "deduction",
+        "indent": 1
+      },
+      {
+        "label": "其他收入（洗衣機、停車）",
+        "actual": 717800,
+        "budget": 710621,
+        "priorYear": 296214,
+        "type": "income",
+        "indent": 1
+      },
+      {
+        "label": "有效總收入 (EGI)",
+        "actual": 26819788,
+        "budget": 26551590,
+        "priorYear": 11067693,
+        "type": "subtotal",
+        "indent": 0
+      },
+      {
+        "label": "— 地價稅與房屋稅",
+        "actual": -2611741,
+        "budget": -2585389,
+        "priorYear": -1077784,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 保險費",
+        "actual": -915044,
+        "budget": -905894,
+        "priorYear": -377710,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 公共設施水電費",
+        "actual": -1092276,
+        "budget": -1080883,
+        "priorYear": -450748,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 修繕及維護費",
+        "actual": -1890159,
+        "budget": -1871258,
+        "priorYear": -780010,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 物業管理費",
+        "actual": -1345978,
+        "budget": -1332519,
+        "priorYear": -555443,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 專業服務費",
+        "actual": -704747,
+        "budget": -697700,
+        "priorYear": -290827,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "— 資本準備金（已提列）",
+        "actual": -1476760,
+        "budget": -1461287,
+        "priorYear": -609413,
+        "type": "expense",
+        "indent": 1
+      },
+      {
+        "label": "營運費用合計",
+        "actual": -10036707,
+        "budget": -9934930,
+        "priorYear": -4141935,
+        "type": "subtotal",
+        "indent": 0
+      },
+      {
+        "label": "淨營業收益 (NOI)",
+        "actual": 16783082,
+        "budget": 16616660,
+        "priorYear": 6925758,
+        "type": "noi",
+        "indent": 0
+      },
+      {
+        "label": "債務本息攤還",
+        "actual": -8379153,
+        "budget": -8379153,
+        "priorYear": -3564759,
+        "type": "deduction",
+        "indent": 1
+      },
+      {
+        "label": "稅前淨現金流",
+        "actual": 8403928,
+        "budget": 8237507,
+        "priorYear": 3360999,
+        "type": "total",
+        "indent": 0
+      }
+    ]
+  },
+  "valuation": {
+    "purchasePrice": 201969622,
+    "purchaseDate": "2019-03-01",
+    "lastAppraisalValue": 275833261,
+    "lastAppraisalDate": "2025-11-20",
+    "currentEstimatedValue": 286000000,
+    "estimationBasis": "戴德梁行估價意見書（2026年5月）；採市場比較法（每m² NT$114,900）",
+    "impliedCapRate": "4.20%",
+    "valuePM2": 114900,
+    "valueChange": 84030378,
+    "valueChangePct": 41.6,
+    "netEquity": 146713681,
+    "history": [
+      {
+        "date": "2019-03-01",
+        "value": 201969622,
+        "source": "取得價格"
+      },
+      {
+        "date": "2020-12-01",
+        "value": 214881130,
+        "source": "仲介估價"
+      },
+      {
+        "date": "2021-11-15",
+        "value": 229985480,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2022-11-20",
+        "value": 243326212,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2023-11-18",
+        "value": 254509469,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2024-11-22",
+        "value": 264871760,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2025-11-20",
+        "value": 275833261,
+        "source": "正式鑑價"
+      },
+      {
+        "date": "2026-05-01",
+        "value": 286000000,
+        "source": "仲介估價意見書"
+      }
+    ]
+  },
+  "capex": [
+    {
+      "project": "第一期戶型翻修（1A–3B戶）",
+      "year": 2021,
+      "budgeted": 5429776,
+      "actual": 5845824,
+      "status": "Complete",
+      "notes": "2021年6月完工"
+    },
+    {
+      "project": "外牆及公共區域升級",
+      "year": 2024,
+      "budgeted": 2862973,
+      "actual": 3020460,
+      "status": "Complete",
+      "notes": "2024年4月完工"
+    },
+    {
+      "project": "第二期戶型翻修（4B及7A戶）",
+      "year": 2026,
+      "budgeted": 4047651,
+      "actual": 2428121,
+      "status": "In Progress",
+      "notes": "完工60%；預計2026年7月完工"
+    },
+    {
+      "project": "屋頂防水膜更換（提案中）",
+      "year": 2027,
+      "budgeted": 3702120,
+      "actual": 0,
+      "status": "Proposed",
+      "notes": "待屋頂檢查後決定"
+    }
+  ],
+  "projections": {
+    "scenarios": [
+      "悲觀",
+      "基本",
+      "樂觀"
+    ],
+    "years": [
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "noi": {
+      "Downside": [
+        5880000,
+        6048000,
+        6216000,
+        6384000,
+        6552000
+      ],
+      "Base": [
+        7140058,
+        7604000,
+        8098000,
+        8624000,
+        9184000
+      ],
+      "Upside": [
+        7518000,
+        8088000,
+        8556000,
+        9072000,
+        9618000
+      ]
+    },
+    "value": {
+      "Downside": [
+        116820000,
+        115590000,
+        114370000,
+        113160000,
+        111960000
+      ],
+      "Base": [
+        121673519,
+        125931000,
+        130338000,
+        134900000,
+        139621000
+      ],
+      "Upside": [
+        121673519,
+        127756000,
+        134143000,
+        140850000,
+        147892000
+      ]
+    }
+  }
+}

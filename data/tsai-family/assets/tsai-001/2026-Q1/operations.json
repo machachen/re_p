@@ -1,0 +1,206 @@
+{
+  "priorityMatrix": {
+    "title": "待處理事項及行動項目（依優先順序）",
+    "items": [
+      {
+        "id": "OP-001",
+        "title": "委任正式不動產鑑價",
+        "urgency": 3,
+        "importance": 4,
+        "quadrant": "Do First",
+        "owner": "蔡氏家族",
+        "deadline": "2026-06-30",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-002",
+        "title": "保險單年度續約",
+        "urgency": 3,
+        "importance": 4,
+        "quadrant": "Do First",
+        "owner": "蔡氏家族",
+        "deadline": "2026-07-01",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-003",
+        "title": "室內翻新設計師評估",
+        "urgency": 2,
+        "importance": 3,
+        "quadrant": "Schedule",
+        "owner": "蔡氏家族",
+        "deadline": "2026-12-31",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-004",
+        "title": "管理費年度審查",
+        "urgency": 2,
+        "importance": 3,
+        "quadrant": "Schedule",
+        "owner": "蔡氏家族",
+        "deadline": "2026-12-31",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-005",
+        "title": "房屋稅及地價稅申報",
+        "urgency": 4,
+        "importance": 3,
+        "quadrant": "Do First",
+        "owner": "蔡氏家族",
+        "deadline": "2026-05-31",
+        "status": "In Progress"
+      },
+      {
+        "id": "OP-006",
+        "title": "信託法律顧問定期審查",
+        "urgency": 1,
+        "importance": 4,
+        "quadrant": "Schedule",
+        "owner": "法律顧問",
+        "deadline": "2027-01-31",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-007",
+        "title": "空調設備年度保養",
+        "urgency": 2,
+        "importance": 3,
+        "quadrant": "Schedule",
+        "owner": "物業管理委員會",
+        "deadline": "2026-08-31",
+        "status": "Not Started"
+      }
+    ]
+  },
+  "capexProjects": [
+    {
+      "id": "CX-001",
+      "project": "室內全室翻新（評估中）",
+      "scope": "主臥及主浴翻新、廚房設備更換、客廳及餐廳地板更新、燈具全面更換",
+      "budgeted": 39524163,
+      "spent": 0,
+      "remaining": 39524163,
+      "pctComplete": 0,
+      "contractor": "待定（建議邀3家優質設計公司比稿）",
+      "startDate": "待定（預計2027年初）",
+      "estCompletion": "待定",
+      "status": "規劃中",
+      "expectedROI": "提升居住品質及維持開發案基地市場競爭地位；若未來出售，翻新可支撐售價NT$500萬以上差異"
+    }
+  ],
+  "opexRecurring": [
+    {
+      "category": "大樓管理費",
+      "vendor": "仁愛苑管理委員會",
+      "annualCost": 4150037,
+      "frequency": "每月",
+      "contractExpiry": "N/A",
+      "notes": "每月NT$35,000；含公共清潔、保全、電梯維護"
+    },
+    {
+      "category": "房屋稅",
+      "vendor": "新北市稅捐稽徵處",
+      "annualCost": 830007,
+      "frequency": "每年",
+      "contractExpiry": "N/A",
+      "notes": "開發案基地稅率；5月繳納"
+    },
+    {
+      "category": "地價稅",
+      "vendor": "新北市稅捐稽徵處",
+      "annualCost": 355717,
+      "frequency": "每年",
+      "contractExpiry": "N/A",
+      "notes": "10月繳納"
+    },
+    {
+      "category": "住宅保險",
+      "vendor": "國泰人壽產物保險",
+      "annualCost": 474290,
+      "frequency": "每年",
+      "contractExpiry": "2026-07-01",
+      "notes": "火險及責任險；7月需續約"
+    },
+    {
+      "category": "水電費",
+      "vendor": "台電 / 台北自來水事業處",
+      "annualCost": 592862,
+      "frequency": "每月",
+      "contractExpiry": "N/A",
+      "notes": "含室內用電及用水"
+    },
+    {
+      "category": "維修雜費",
+      "vendor": "各廠商",
+      "annualCost": 118572,
+      "frequency": "依需求",
+      "contractExpiry": "N/A",
+      "notes": "日常小修繕"
+    }
+  ],
+  "suppliers": [
+    {
+      "name": "仁愛苑管理委員會",
+      "category": "大樓管理",
+      "contact": "管理室 — (02) 2700-1234",
+      "contractPeriod": "N/A（依住宅規約）",
+      "warrantyOrSLA": "24小時保全；緊急維修48小時",
+      "status": "Active",
+      "notes": "大樓整體管理優良；每年管理費調漲約2–3%"
+    },
+    {
+      "name": "台灣中央空調服務有限公司",
+      "category": "空調保養",
+      "contact": "服務中心 — (02) 2700-0655",
+      "contractPeriod": "年度服務合約",
+      "warrantyOrSLA": "48小時緊急應變",
+      "status": "Active",
+      "notes": "年度保養2026年8月到期；建議儘早排程"
+    },
+    {
+      "name": "信義法律事務所",
+      "category": "法律顧問（信託）",
+      "contact": "吳明哲律師 — m.wu@sinyi-legal.com.tw",
+      "contractPeriod": "每3年審查",
+      "warrantyOrSLA": "N/A",
+      "status": "Active",
+      "notes": "負責蔡氏家族文件維護及資產傳承規劃"
+    }
+  ],
+  "serviceHistory": [
+    {
+      "date": "2026-02-20",
+      "vendor": "台灣中央空調服務有限公司",
+      "description": "冬季空調保養",
+      "cost": 177859,
+      "category": "空調",
+      "status": "Complete"
+    },
+    {
+      "date": "2025-11-15",
+      "vendor": "各廠商",
+      "description": "浴室矽利康及廚房水龍頭維修",
+      "cost": 83989,
+      "category": "維修",
+      "status": "Complete"
+    },
+    {
+      "date": "2025-09-05",
+      "vendor": "台灣中央空調服務有限公司",
+      "description": "年度空調全系統檢查",
+      "cost": 217383,
+      "category": "空調",
+      "status": "Complete"
+    },
+    {
+      "date": "2025-02-15",
+      "vendor": "太平洋不動產估價師事務所",
+      "description": "年度正式鑑價",
+      "cost": 839888,
+      "category": "估值",
+      "status": "Complete"
+    }
+  ]
+}

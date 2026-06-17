@@ -1,0 +1,244 @@
+{
+  "importantDocuments": [
+    {
+      "name": "預售屋買賣契約書（2013年）",
+      "category": "取得",
+      "date": "2013-03-18",
+      "type": "PDF",
+      "url": "#",
+      "notes": "原始預售契約。總價NT$62,513,284。分期付款計畫載明於此。"
+    },
+    {
+      "name": "建物及土地所有權狀",
+      "category": "所有權",
+      "date": "2016-05-20",
+      "type": "PDF",
+      "url": "#",
+      "notes": "交屋後地政登記完成。建物面積330m²（含公設）。"
+    },
+    {
+      "name": "2025年房地產鑑價報告",
+      "category": "估值",
+      "date": "2025-02-15",
+      "type": "PDF",
+      "url": "#",
+      "notes": "NT$85,624,739。市場比較法。"
+    },
+    {
+      "name": "2026年5月資產報告（本文件）",
+      "category": "報告",
+      "date": "2026-05-08",
+      "type": "PDF",
+      "url": "#",
+      "notes": "本期報告摘要。"
+    },
+    {
+      "name": "室內裝潢合約（2016年）",
+      "category": "營運",
+      "date": "2016-06-01",
+      "type": "PDF",
+      "url": "#",
+      "notes": "NT$12,000,000室內設計及施工合約。2016年9月完工。"
+    }
+  ],
+  "library": [
+    {
+      "id": "DOC-001",
+      "name": "預售屋買賣契約書",
+      "category": "取得",
+      "date": "2013-03-18",
+      "source": "仁愛苑建設有限公司",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "NT$62,513,284；預售分期付款計畫"
+    },
+    {
+      "id": "DOC-002",
+      "name": "交屋驗收紀錄表",
+      "category": "取得",
+      "date": "2016-05-15",
+      "source": "仁愛苑建設有限公司",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "交屋驗收合格；缺失修繕清單已結案"
+    },
+    {
+      "id": "DOC-003",
+      "name": "建物所有權狀",
+      "category": "所有權",
+      "date": "2016-05-20",
+      "source": "新北市板橋–土城地政事務所",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "建物面積：330m²（含公設）；地址：板土重劃帶285號"
+    },
+    {
+      "id": "DOC-004",
+      "name": "土地所有權狀（持分）",
+      "category": "所有權",
+      "date": "2016-05-20",
+      "source": "新北市板橋–土城地政事務所",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "土地持分登記；板橋–土城區仁愛段XXXXXXXX"
+    },
+    {
+      "id": "DOC-005",
+      "name": "停車位所有權狀（2個車位）",
+      "category": "所有權",
+      "date": "2016-05-20",
+      "source": "新北市板橋–土城地政事務所",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "B1地下室停車位2個（B1-12及B1-13）"
+    },
+    {
+      "id": "DOC-006",
+      "name": "蔡氏家族信託書",
+      "category": "所有權",
+      "date": "2016-04-15",
+      "source": "信義法律事務所",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "信託架構文件；受益人為陳氏家族成員"
+    },
+    {
+      "id": "DOC-007",
+      "name": "室內裝潢設計合約",
+      "category": "營運",
+      "date": "2016-06-01",
+      "source": "澄境室內裝修設計有限公司",
+      "relatedSection": "營運",
+      "type": "PDF",
+      "url": "#",
+      "notes": "NT$12,000,000；廚衛設備、地板、木作、燈具"
+    },
+    {
+      "id": "DOC-008",
+      "name": "智能家居系統安裝合約",
+      "category": "營運",
+      "date": "2021-09-15",
+      "source": "智宅科技有限公司",
+      "relatedSection": "營運",
+      "type": "PDF",
+      "url": "#",
+      "notes": "NT$520,000；門禁、空調控制、安全監控整合"
+    },
+    {
+      "id": "DOC-009",
+      "name": "建物竣工圖說",
+      "category": "圖說",
+      "date": "2016-04-01",
+      "source": "仁愛苑建設有限公司 / 建築師事務所",
+      "relatedSection": "總覽",
+      "type": "DWG",
+      "url": "#",
+      "notes": "竣工平面圖及立面圖"
+    },
+    {
+      "id": "DOC-010",
+      "name": "使用執照",
+      "category": "法規",
+      "date": "2016-03-15",
+      "source": "新北市建築管理工程處",
+      "relatedSection": "總覽",
+      "type": "PDF",
+      "url": "#",
+      "notes": "建物使用執照；RC結構；12層樓"
+    },
+    {
+      "id": "DOC-011",
+      "name": "2025年房地產鑑價報告",
+      "category": "估值",
+      "date": "2025-02-15",
+      "source": "台灣太平洋不動產估價師事務所",
+      "relatedSection": "財務",
+      "type": "PDF",
+      "url": "#",
+      "notes": "NT$85,624,739；市場比較法"
+    },
+    {
+      "id": "DOC-012",
+      "name": "2022年房地產鑑價報告",
+      "category": "估值",
+      "date": "2022-11-10",
+      "source": "台灣太平洋不動產估價師事務所",
+      "relatedSection": "財務",
+      "type": "PDF",
+      "url": "#",
+      "notes": "NT$82,376,518"
+    },
+    {
+      "id": "DOC-013",
+      "name": "保固書 — 主結構及設備",
+      "category": "法規",
+      "date": "2016-05-20",
+      "source": "仁愛苑建設有限公司",
+      "relatedSection": "總覽",
+      "type": "PDF",
+      "url": "#",
+      "notes": "主結構15年、防水5年、設備1年"
+    },
+    {
+      "id": "DOC-014",
+      "name": "住宅保險單",
+      "category": "廠商",
+      "date": "2025-07-01",
+      "source": "國泰人壽產物保險",
+      "relatedSection": "風險",
+      "type": "PDF",
+      "url": "#",
+      "notes": "火險及個人責任險；2026年7月到期"
+    },
+    {
+      "id": "DOC-015",
+      "name": "2025年財產申報資料",
+      "category": "財務",
+      "date": "2026-03-15",
+      "source": "CPA — 陳顧問事務所",
+      "relatedSection": "財務",
+      "type": "PDF",
+      "url": "#",
+      "notes": "個人財產申報；含本資產估值"
+    },
+    {
+      "id": "DOC-016",
+      "name": "大樓規約及公設分配說明書",
+      "category": "法規",
+      "date": "2016-05-20",
+      "source": "仁愛苑管理委員會",
+      "relatedSection": "總覽",
+      "type": "PDF",
+      "url": "#",
+      "notes": "住宅管理規約；公設比說明；停車場規則"
+    },
+    {
+      "id": "DOC-017",
+      "name": "建物現況照片 — 2026年5月",
+      "category": "圖說",
+      "date": "2026-05-01",
+      "source": "蔡氏家族",
+      "relatedSection": "總覽",
+      "type": "ZIP",
+      "url": "#",
+      "notes": "客廳、主臥、廚房、主浴現況照片"
+    },
+    {
+      "id": "DOC-018",
+      "name": "2026年5月資產報告",
+      "category": "報告",
+      "date": "2026-05-08",
+      "source": "Asset Intelligence",
+      "relatedSection": "總覽",
+      "type": "PDF",
+      "url": "#",
+      "notes": "本期報告（本文件）"
+    }
+  ]
+}

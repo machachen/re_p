@@ -1,0 +1,224 @@
+{
+  "priorityMatrix": {
+    "title": "待處理事項及行動項目（依優先順序）",
+    "items": [
+      {
+        "id": "OP-001",
+        "title": "2027年1月租金調漲通知準備",
+        "urgency": 4,
+        "importance": 5,
+        "quadrant": "Do First",
+        "owner": "蔡氏家族",
+        "deadline": "2026-10-01",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-002",
+        "title": "2033年租約策略規劃啟動",
+        "urgency": 2,
+        "importance": 5,
+        "quadrant": "Schedule",
+        "owner": "蔡氏家族",
+        "deadline": "2026-12-31",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-003",
+        "title": "年度保險續約審查",
+        "urgency": 3,
+        "importance": 4,
+        "quadrant": "Do First",
+        "owner": "板橋商業置產有限公司",
+        "deadline": "2026-07-15",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-004",
+        "title": "停車場翻新及EV充電設施評估",
+        "urgency": 2,
+        "importance": 3,
+        "quadrant": "Schedule",
+        "owner": "物業管理人",
+        "deadline": "2026-09-30",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-005",
+        "title": "建物健診及資本支出計畫更新",
+        "urgency": 2,
+        "importance": 4,
+        "quadrant": "Schedule",
+        "owner": "物業管理人",
+        "deadline": "2026-09-30",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-006",
+        "title": "地價稅繳納（10月）",
+        "urgency": 3,
+        "importance": 3,
+        "quadrant": "Do First",
+        "owner": "板橋商業置產有限公司",
+        "deadline": "2026-10-31",
+        "status": "Not Started"
+      },
+      {
+        "id": "OP-007",
+        "title": "加油站租金每月核對及入帳確認",
+        "urgency": 4,
+        "importance": 4,
+        "quadrant": "Do First",
+        "owner": "物業管理人",
+        "deadline": "2026-06-01",
+        "status": "In Progress"
+      },
+      {
+        "id": "OP-008",
+        "title": "消防設備年度檢查",
+        "urgency": 2,
+        "importance": 3,
+        "quadrant": "Schedule",
+        "owner": "物業管理人",
+        "deadline": "2026-08-31",
+        "status": "Not Started"
+      }
+    ]
+  },
+  "capexProjects": [
+    {
+      "id": "CX-001",
+      "project": "停車場地坪翻新及EV充電設施安裝",
+      "scope": "25個車位地坪及劃線更新；安裝2組Level 2 EV充電樁",
+      "budgeted": 2033867,
+      "spent": 0,
+      "remaining": 2033867,
+      "pctComplete": 0,
+      "contractor": "待定",
+      "startDate": "待定",
+      "estCompletion": "2026-10-31",
+      "status": "Proposed",
+      "expectedROI": "提升租戶（加油站）客戶體驗；符合新北市商業用地補助資格，預估補助NT$130,000"
+    }
+  ],
+  "opexRecurring": [
+    {
+      "category": "物業管理",
+      "vendor": "新北土地開發管理顧問有限公司",
+      "annualCost": 494724,
+      "frequency": "每月",
+      "contractExpiry": "2026-12-31",
+      "notes": "租金3.5%；含月租收取及帳務管理"
+    },
+    {
+      "category": "地價稅",
+      "vendor": "新北市稅捐稽徵處",
+      "annualCost": 659632,
+      "frequency": "每年",
+      "contractExpiry": "N/A",
+      "notes": "商業用地地價稅；10月繳納"
+    },
+    {
+      "category": "房屋稅",
+      "vendor": "新北市稅捐稽徵處",
+      "annualCost": 296835,
+      "frequency": "每年",
+      "contractExpiry": "N/A",
+      "notes": "營業用房屋稅；5月繳納"
+    },
+    {
+      "category": "保險費",
+      "vendor": "國泰產物保險股份有限公司",
+      "annualCost": 230871,
+      "frequency": "每年",
+      "contractExpiry": "2026-07-15",
+      "notes": "火險及公共意外責任險；需於7月前續約"
+    },
+    {
+      "category": "消防設備",
+      "vendor": "立安消防設備有限公司",
+      "annualCost": 98945,
+      "frequency": "每年",
+      "contractExpiry": "2026-12-31",
+      "notes": "年度檢查及維護"
+    },
+    {
+      "category": "法律及會計",
+      "vendor": "港景法律事務所 / 陳顧問事務所",
+      "annualCost": 329816,
+      "frequency": "依需求",
+      "contractExpiry": "N/A",
+      "notes": "稅務申報及法律諮詢"
+    }
+  ],
+  "suppliers": [
+    {
+      "name": "新北土地開發管理顧問有限公司",
+      "category": "物業管理",
+      "contact": "謝家豪 — j.hsieh@ntland.com.tw — (02) 2600-0156",
+      "contractPeriod": "2022年1月 – 2026年12月",
+      "warrantyOrSLA": "次日回應；緊急24小時SLA",
+      "status": "Active",
+      "notes": "管理板橋商業物業逾4年；表現穩定"
+    },
+    {
+      "name": "加油站福利中心股份有限公司",
+      "category": "主要租戶",
+      "contact": "物業部 — property@pxmart.com.tw — (02) 2700-0100",
+      "contractPeriod": "2023年1月 – 2033年12月",
+      "warrantyOrSLA": "租約條款規範",
+      "status": "Active",
+      "notes": "10年租約；每2年租金調漲2.5%；上次調漲2025年1月"
+    },
+    {
+      "name": "臺灣土地銀行",
+      "category": "融資機構",
+      "contact": "板橋分行 — (02) 2601-3456",
+      "contractPeriod": "2006年8月 – 2036年8月",
+      "warrantyOrSLA": "N/A",
+      "status": "Active",
+      "notes": "1.85%固定利率；貸款關係維持20年；往來良好"
+    }
+  ],
+  "serviceHistory": [
+    {
+      "date": "2026-04-01",
+      "vendor": "新北土地開發管理顧問有限公司",
+      "description": "加油站4月租金收取及入帳確認",
+      "cost": 0,
+      "category": "租賃管理",
+      "status": "Complete"
+    },
+    {
+      "date": "2026-03-15",
+      "vendor": "立安消防設備有限公司",
+      "description": "消防設備半年例行檢查",
+      "cost": 49472,
+      "category": "消防",
+      "status": "Complete"
+    },
+    {
+      "date": "2026-01-10",
+      "vendor": "加油站福利中心",
+      "description": "2027年1月租金調漲通知確認（預備）",
+      "cost": 0,
+      "category": "租賃管理",
+      "status": "In Progress"
+    },
+    {
+      "date": "2025-10-20",
+      "vendor": "太平洋不動產估價師事務所",
+      "description": "年度正式鑑價作業",
+      "cost": 261105,
+      "category": "估值",
+      "status": "Complete"
+    },
+    {
+      "date": "2025-07-10",
+      "vendor": "國泰產物保險",
+      "description": "保險單年度續約",
+      "cost": 230871,
+      "category": "保險",
+      "status": "Complete"
+    }
+  ]
+}

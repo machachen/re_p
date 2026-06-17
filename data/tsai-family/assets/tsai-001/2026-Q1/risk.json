@@ -1,0 +1,159 @@
+{
+  "summary": {
+    "overallRiskLevel": "低度",
+    "openRisks": 4,
+    "highRisks": 0,
+    "mediumRisks": 1,
+    "lowRisks": 3,
+    "lastReviewed": "2026-02-08"
+  },
+  "register": [
+    {
+      "id": "R-01",
+      "category": "市場",
+      "title": "台北開發案基地市場估值回調風險",
+      "description": "台北開發案基地市場受政策打壓（房地合一稅、開發案基地稅）及全球景氣波動影響，若市場回調10–15%，本資產估值將減少NT$935萬至NT$1,403萬。惟無貸款之財務結構使此風險影響有限。",
+      "probability": 2,
+      "impact": 4,
+      "riskScore": 8,
+      "level": "Medium",
+      "owner": "蔡氏家族",
+      "mitigation": "無負債持有大幅降低財務風險；長期持有策略不受短期市場波動影響。定期委任正式鑑價掌握市值動態。",
+      "status": "Monitoring",
+      "reviewDate": "2026-12-31"
+    },
+    {
+      "id": "R-02",
+      "category": "法規",
+      "title": "開發案基地房屋稅及地價稅持續調漲",
+      "description": "新北市定期調整公告現值及公告地價，開發案基地稅率課徵持續擴大，每年持有成本可能增加NT$5萬至NT$20萬。",
+      "probability": 4,
+      "impact": 1,
+      "riskScore": 4,
+      "level": "Low",
+      "owner": "蔡氏家族",
+      "mitigation": "依法申報；列入年度持有成本預算。稅負增加幅度相對資產價值而言影響有限。",
+      "status": "Monitoring",
+      "reviewDate": "2026-12-31"
+    },
+    {
+      "id": "R-03",
+      "category": "物理",
+      "title": "室內設施老化及維修需求",
+      "description": "2016年完工之室內裝潢及機電設施已使用逾10年，廚具、衛浴及部分管線進入更換週期，若發生重大損壞，緊急維修費用可能達NT$50萬以上。",
+      "probability": 3,
+      "impact": 2,
+      "riskScore": 6,
+      "level": "Low",
+      "owner": "蔡氏家族",
+      "mitigation": "規劃2027年進行全室翻新（預算NT$400萬），可一次解決設施老化問題並提升資產品質。",
+      "status": "Open",
+      "reviewDate": "2026-12-31"
+    },
+    {
+      "id": "R-04",
+      "category": "法律",
+      "title": "遺產規劃及信託資產移轉安排",
+      "description": "本資產為蔡氏家族核心資產之一，若信託架構未妥善規劃，資產移轉可能面臨繼承稅及法律複雜性。",
+      "probability": 1,
+      "impact": 3,
+      "riskScore": 3,
+      "level": "Low",
+      "owner": "蔡氏家族 / 法律顧問",
+      "mitigation": "每3年委任信託法律顧問審查信託文件；確保資產傳承安排符合最新稅法規定。",
+      "status": "Monitoring",
+      "reviewDate": "2027-01-01"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S-01",
+      "name": "開發案基地市場回調-15%",
+      "category": "估值",
+      "baseValue": 913039407,
+      "baseEquity": 913039407,
+      "baseLTV": 0.0,
+      "scenarioValue": 776083496,
+      "scenarioEquity": 776083496,
+      "scenarioLTV": 0.0,
+      "verdict": "無貸款結構下，估值回調僅影響帳面財富，不產生財務壓力或違約風險。"
+    },
+    {
+      "id": "S-02",
+      "name": "申辦60% LTV抵押貸款後市場回調-15%",
+      "category": "估值",
+      "baseValue": 913039407,
+      "baseEquity": 365215763,
+      "baseLTV": 60.0,
+      "scenarioValue": 776083496,
+      "scenarioEquity": 228259852,
+      "scenarioLTV": 70.6,
+      "verdict": "LTV升至70.6%，可能觸發部分貸款條款；顯示若申辦抵押貸款應保守操作（40–50% LTV較佳）。"
+    },
+    {
+      "id": "S-03",
+      "name": "開發案基地稅調漲+50%",
+      "category": "持有成本",
+      "baseNOI": -6496735,
+      "scenarioNOI": -7101455,
+      "cashFlowDelta": -604720,
+      "newDSCR": "N/A",
+      "verdict": "持有成本增加，影響有限，年增約NT$60,000，不影響資產持有決策。"
+    }
+  ],
+  "scenarioChart": {
+    "labels": [
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "cashFlow": {
+      "Downside": [
+        -720000,
+        -744000,
+        -768000,
+        -792000,
+        -816000
+      ],
+      "Base": [
+        -657495,
+        -669000,
+        -681600,
+        -694400,
+        -707200
+      ],
+      "Upside": [
+        -600000,
+        -612000,
+        -624000,
+        -636000,
+        -648000
+      ]
+    }
+  },
+  "mitigationPlan": [
+    {
+      "riskId": "R-01",
+      "action": "每年委任正式鑑價，掌握市值動態；制定若市值回調20%以上之應對方案",
+      "owner": "蔡氏家族",
+      "deadline": "2026-06-30",
+      "status": "Not Started"
+    },
+    {
+      "riskId": "R-03",
+      "action": "委任室內設計師進行全室翻新評估，確認2027年翻新預算及時程",
+      "owner": "蔡氏家族",
+      "deadline": "2026-12-31",
+      "status": "Not Started"
+    },
+    {
+      "riskId": "R-04",
+      "action": "委任信託法律顧問審查蔡氏家族文件，確保資產傳承安排完善",
+      "owner": "法律顧問",
+      "deadline": "2027-01-31",
+      "status": "Not Started"
+    }
+  ]
+}

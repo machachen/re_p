@@ -1,0 +1,251 @@
+{
+  "summary": {
+    "narrative": "板橋區信義路自營加油站，面積約510坪，由家族自行營運多年。具穩定油品與附屬商品收入，惟供油及租約過去多未書面化、單站營收存在季節波動。BPM協助補齊書面合約與營收bridge，作為組合再融資之主力現金流。",
+    "period": "2026年5月",
+    "preparedBy": "Asset Intelligence 資產智能平台",
+    "keyMessage": "板橋信義路自營加油站，年NOI約NT$3,000萬、LTV約70%；供油與租約多以口頭約定、單站營收波動，是組合再融資（Deal B）的核心穩定現金流來源，已書面化供油合約以提升銀行可信度。"
+  },
+  "basicInfo": {
+    "assetName": "板橋信義路加油站",
+    "assetType": "商業零售用地",
+    "location": "新北市板橋區光復里信義路267號",
+    "submarket": "板橋信義路商圈，新北市",
+    "yearBuilt": 2006,
+    "yearAcquired": 2003,
+    "totalUnits": 1,
+    "residentialUnits": 0,
+    "commercialUnits": 1,
+    "totalGSF": 13800,
+    "siteAreaSF": 17300,
+    "parking": "25個平面停車位（含無障礙）",
+    "currentStatus": "穩定持有",
+    "reportingPeriod": "2026年5月",
+    "ownershipSummary": "由板橋商業置產有限公司持有（台灣公司）。100%所有人：蔡氏家族。"
+  },
+  "keyFigures": [
+    {
+      "label": "每m²均價",
+      "value": "$182,000",
+      "subLabel": "土地及建物綜合均價",
+      "trend": "up",
+      "trendValue": "+$12,000 vs 去年"
+    },
+    {
+      "label": "租賃入住率",
+      "value": "100%",
+      "subLabel": "加油站福利中心（單一租戶）",
+      "trend": "flat",
+      "trendValue": "穩定"
+    },
+    {
+      "label": "貸款餘額",
+      "value": "$27.8M",
+      "subLabel": "截至2026年5月",
+      "trend": "down",
+      "trendValue": "-$2.2M 年初至今"
+    },
+    {
+      "label": "業主淨權益",
+      "value": "$205.7M",
+      "subLabel": "資產價值扣除貸款",
+      "trend": "up",
+      "trendValue": "+$13.5M 年增"
+    }
+  ],
+  "kpiCards": [
+    {
+      "id": "noi",
+      "title": "淨營業收益 (NOI)",
+      "value": "$4.3M",
+      "period": "過去12個月",
+      "trend": "+2.2% 優於去年同期",
+      "trendDir": "up",
+      "chartType": "bar",
+      "chartData": {
+        "labels": [
+          "Q2'25",
+          "Q3'25",
+          "Q4'25",
+          "Q1'26",
+          "Q2'26E"
+        ],
+        "values": [
+          1056000,
+          1092600,
+          1056000,
+          1110000,
+          1116000
+        ]
+      }
+    },
+    {
+      "id": "debt_coverage",
+      "title": "償債覆蓋率 (DSCR)",
+      "value": "1.41x",
+      "period": "過去12個月 DSCR",
+      "trend": "優於1.25x財務契約要求",
+      "trendDir": "up",
+      "chartType": "line",
+      "chartData": {
+        "labels": [
+          "May'25",
+          "Jul'25",
+          "Sep'25",
+          "Nov'25",
+          "Jan'26",
+          "Mar'26",
+          "May'26"
+        ],
+        "values": [
+          1.38,
+          1.39,
+          1.4,
+          1.39,
+          1.42,
+          1.41,
+          1.41
+        ]
+      }
+    },
+    {
+      "id": "net_cashflow",
+      "title": "淨現金流量",
+      "value": "$1.3M",
+      "period": "過去12個月",
+      "trend": "+4.0% 優於去年同期",
+      "trendDir": "up",
+      "chartType": "bar",
+      "chartData": {
+        "labels": [
+          "Q2'25",
+          "Q3'25",
+          "Q4'25",
+          "Q1'26",
+          "Q2'26E"
+        ],
+        "values": [
+          288000,
+          306000,
+          291000,
+          330000,
+          312000
+        ]
+      }
+    },
+    {
+      "id": "ltv",
+      "title": "貸款成數 (LTV)",
+      "value": "11.9%",
+      "period": "目前貸款成數",
+      "trend": "較取得時偏低；結構穩健",
+      "trendDir": "up",
+      "chartType": "line",
+      "chartData": {
+        "labels": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "values": [
+          22.5,
+          21.3,
+          20.1,
+          18.8,
+          17.5,
+          16.3,
+          11.9
+        ]
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "act-001",
+      "title": "2033年租約到期 — 早期策略規劃",
+      "recommendation": "現行加油站租約將於2033年12月到期，距今約7年。建議於2026年下半年啟動租賃策略檢討，評估：（1）以市場行情與加油站辦理長期續約；（2）結束租賃後自行招租高租金業態；（3）評估改建重開發可行性。加油站目前租金低於板橋區同類商業用地市場行情約6%，下次談判有調漲空間。",
+      "decisionNeeded": "確認2033年租賃策略方向；授權委任商業不動產顧問提供租賃市場意見",
+      "owner": "蔡氏家族",
+      "priority": "Medium",
+      "deadline": "2026-12-31",
+      "status": "Open"
+    },
+    {
+      "id": "act-002",
+      "title": "2027年1月租金調漲 — 確認執行",
+      "recommendation": "依據現行租約，加油站租金每2年調漲2.5%，下次調漲日期為2027年1月1日。調漲後月租金將自NT$420,000提升至NT$430,500，全年增加NT$126,000。建議提前確認通知義務及調漲計算方式，確保按時執行。",
+      "decisionNeeded": "確認已向加油站發出正式調漲通知（應於2026年10月前發出）",
+      "owner": "板橋商業置產有限公司 / 物業管理人",
+      "priority": "High",
+      "deadline": "2026-10-01",
+      "status": "Open"
+    },
+    {
+      "id": "act-003",
+      "title": "停車場翻新 — 改善設施競爭力",
+      "recommendation": "現有25個平面停車位，部分劃線及照明設備老化。建議投入約NT$480,000進行翻新，並安裝2組EV充電樁（約NT$260,000），可提升加油站顧客體驗，亦符合新北市商業用地設施更新補助資格。",
+      "decisionNeeded": "核准停車場翻新預算及EV充電設施安裝計畫",
+      "owner": "物業管理人",
+      "priority": "Low",
+      "deadline": "2026-09-30",
+      "status": "Open"
+    }
+  ],
+  "linkedDocuments": [
+    {
+      "name": "2026年5月資產報告（本文件）",
+      "category": "報告",
+      "date": "2026-05-08",
+      "type": "PDF"
+    },
+    {
+      "name": "加油站租賃合約 — 2023年至2033年",
+      "category": "租賃",
+      "date": "2023-01-01",
+      "type": "PDF"
+    },
+    {
+      "name": "2025年土地及建物鑑價報告",
+      "category": "估值",
+      "date": "2025-10-15",
+      "type": "PDF"
+    },
+    {
+      "name": "土地銀行貸款合約",
+      "category": "融資",
+      "date": "2006-08-01",
+      "type": "PDF"
+    }
+  ],
+  "topRisks": [
+    {
+      "id": "R-01",
+      "title": "單一租戶集中風險（加油站）",
+      "level": "Medium",
+      "impact": "若加油站提前退租或無法續約，資產短期將面臨100%空置，NOI歸零，衝擊債務覆蓋比率"
+    },
+    {
+      "id": "R-02",
+      "title": "實體零售電商替代壓力",
+      "level": "Medium",
+      "impact": "電子商務持續侵蝕實體超市流量；惟加油站獨特低價定位及生鮮採購習慣提供一定緩衝"
+    },
+    {
+      "id": "R-03",
+      "title": "公告地價調漲導致稅負增加",
+      "level": "Low",
+      "impact": "新北市公告地價每2年調整；若上漲10%，地價稅年增約NT$24,000，影響有限"
+    }
+  ],
+  "marketSnapshot": {
+    "submarket": "板橋信義路商圈，新北市",
+    "medianRentPM2": "$328/m²/月",
+    "vacancyRate": "4.8%",
+    "yoyRentGrowth": "+2.3%",
+    "assetVsMarket": "本資產現行租金低於板橋區同類商業零售市場行情約6%，2033年租約到期時有顯著調漲空間。",
+    "capRateBenchmark": "可比資產2.8%–3.5%"
+  }
+}

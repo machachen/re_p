@@ -1,0 +1,253 @@
+{
+  "summary": {
+    "narrative": "土城區瑞興里住宅公寓，共4戶（其中1戶自住、3戶出租），總面積約310坪。租約以短約為主、屋齡偏高，具危老重建潛力。穩定租金收入納入組合再融資之現金流組成。",
+    "period": "2026年2月",
+    "preparedBy": "Asset Intelligence 資產智能平台",
+    "keyMessage": "土城瑞興里住宅公寓共4戶（3戶出租、1戶自住），年NOI約NT$1,200萬、LTV約70%。屋齡偏高、租約偏短，屬危老重建候選；為組合再融資之輔助現金流。"
+  },
+  "basicInfo": {
+    "assetName": "土城瑞興住宅公寓",
+    "assetType": "住宅/商業混合用途",
+    "location": "新北市土城區瑞興里光明街90巷",
+    "submarket": "土城瑞興里，新北市",
+    "yearBuilt": 1975,
+    "yearAcquired": 2019,
+    "totalUnits": 12,
+    "residentialUnits": 10,
+    "commercialUnits": 2,
+    "totalGSF": 11400,
+    "siteAreaSF": 6200,
+    "parking": "4個平面停車位",
+    "currentStatus": "持有並改善",
+    "reportingPeriod": "2026年2月",
+    "ownershipSummary": "由住宅公寓置業有限公司持有（台灣公司）。主要所有人：蔡氏家族（80%）。共同投資人：蔡氏家族（20%）。"
+  },
+  "keyFigures": [
+    {
+      "label": "每m²均價",
+      "value": "$113,314",
+      "subLabel": "每m²市場估值",
+      "trend": "up",
+      "trendValue": "+$4,100 vs 去年"
+    },
+    {
+      "label": "入住率（穩定戶）",
+      "value": "92%",
+      "subLabel": "10戶穩定戶中10戶",
+      "trend": "flat",
+      "trendValue": "穩定"
+    },
+    {
+      "label": "貸款餘額",
+      "value": "$58.5M",
+      "subLabel": "截至2026年5月",
+      "trend": "down",
+      "trendValue": "-$88K 年初至今"
+    },
+    {
+      "label": "業主淨權益",
+      "value": "$61.5M",
+      "subLabel": "資產價值扣除貸款",
+      "trend": "up",
+      "trendValue": "+$3.0M 年增"
+    }
+  ],
+  "kpiCards": [
+    {
+      "id": "noi",
+      "title": "淨營業收益 (NOI)",
+      "value": "$7.0M",
+      "period": "過去12個月",
+      "trend": "+3.1% 優於去年同期",
+      "trendDir": "up",
+      "chartType": "bar",
+      "chartData": {
+        "labels": [
+          "Q1'25",
+          "Q2'25",
+          "Q3'25",
+          "Q4'25",
+          "Q1'26E"
+        ],
+        "values": [
+          1621782,
+          1638000,
+          1734000,
+          1782000,
+          1840000
+        ]
+      }
+    },
+    {
+      "id": "debt_coverage",
+      "title": "償債覆蓋率 (DSCR)",
+      "value": "2.00x",
+      "period": "過去12個月 DSCR",
+      "trend": "優於1.25x財務契約要求",
+      "trendDir": "up",
+      "chartType": "line",
+      "chartData": {
+        "labels": [
+          "Feb'25",
+          "Apr'25",
+          "Jun'25",
+          "Aug'25",
+          "Oct'25",
+          "Dec'25",
+          "Feb'26"
+        ],
+        "values": [
+          1.94,
+          1.94,
+          1.97,
+          1.98,
+          1.97,
+          2.01,
+          2.02
+        ]
+      }
+    },
+    {
+      "id": "net_cashflow",
+      "title": "淨現金流量",
+      "value": "$3.6M",
+      "period": "過去12個月",
+      "trend": "+6.4% 優於去年同期",
+      "trendDir": "up",
+      "chartType": "bar",
+      "chartData": {
+        "labels": [
+          "Q1'25",
+          "Q2'25",
+          "Q3'25",
+          "Q4'25",
+          "Q1'26E"
+        ],
+        "values": [
+          723762,
+          731000,
+          816000,
+          780000,
+          878000
+        ]
+      }
+    },
+    {
+      "id": "ltv",
+      "title": "貸款成數 (LTV)",
+      "value": "48.7%",
+      "period": "目前貸款成數",
+      "trend": "較取得時58%下降",
+      "trendDir": "up",
+      "chartType": "line",
+      "chartData": {
+        "labels": [
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025",
+          "2026"
+        ],
+        "values": [
+          58.0,
+          56.3,
+          54.1,
+          52.6,
+          53.0,
+          51.4,
+          48.7,
+          48.7
+        ]
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "act-001",
+      "title": "再融資決策 — 現有貸款2026年第四季到期",
+      "recommendation": "建議立即啟動再融資流程。兆豐銀行現有5年期固定利率貸款將於2026年10月到期。鑑於市場不確定性，建議鎖定新7年期利率約2.25%，確保資金確定性並支應剩餘資本支出。延遲風險：若到期前未完成再融資，將面臨浮動利率敞口，可能顯著壓縮現金流。",
+      "decisionNeeded": "授權聘請金融機構顧問並啟動條件書洽詢流程",
+      "owner": "蔡氏家族 / 法律顧問",
+      "priority": "High",
+      "deadline": "2026-06-30",
+      "status": "Open"
+    },
+    {
+      "id": "act-002",
+      "title": "4B及7A戶翻修 — 竣工授權",
+      "recommendation": "翻修工程進度達60%。請授權剩餘NT$689,000完成收尾工程。翻修後每戶預計租金提升NT$9,400/月，每年NOI改善約NT$226,000。",
+      "decisionNeeded": "核准最終翻修預算及承包商施工時程",
+      "owner": "物業管理人 / 業主",
+      "priority": "Medium",
+      "deadline": "2026-06-15",
+      "status": "In Progress"
+    },
+    {
+      "id": "act-003",
+      "title": "屋頂檢查 — 延遲維護警示",
+      "recommendation": "工程報告指出屋頂防水膜出現磨損跡象。建議在2026年冬季前完成全面檢查並更新資本準備金研究。若延遲超過2年，預估更換費用將達NT$1,365,000至NT$1,785,000。",
+      "decisionNeeded": "安排屋頂檢查；更新資本準備金",
+      "owner": "物業管理人",
+      "priority": "Low",
+      "deadline": "2026-08-31",
+      "status": "Open"
+    }
+  ],
+  "linkedDocuments": [
+    {
+      "name": "2026年2月資產報告（本文件）",
+      "category": "報告",
+      "date": "2026-02-08",
+      "type": "PDF"
+    },
+    {
+      "name": "貸款合約 — 兆豐銀行",
+      "category": "融資",
+      "date": "2021-10-15",
+      "type": "PDF"
+    },
+    {
+      "name": "2025年房地產鑑價報告",
+      "category": "估值",
+      "date": "2025-11-20",
+      "type": "PDF"
+    },
+    {
+      "name": "翻修範圍說明書 — 4B及7A戶",
+      "category": "營運",
+      "date": "2025-12-01",
+      "type": "PDF"
+    }
+  ],
+  "topRisks": [
+    {
+      "id": "R-01",
+      "title": "以較高利率辦理再融資",
+      "level": "Medium",
+      "impact": "若利率上升0.5%，每年現金流約減少NT$30萬至NT$40萬"
+    },
+    {
+      "id": "R-02",
+      "title": "翻修費用超支",
+      "level": "Low",
+      "impact": "超出核准預算最多NT$25萬；可由準備金支應"
+    },
+    {
+      "id": "R-03",
+      "title": "土城觀光景氣波動",
+      "level": "Medium",
+      "impact": "土城區住宅聚落商業租金與旅客量高度相關；若景氣下滑，一樓商業空間空置風險上升"
+    }
+  ],
+  "marketSnapshot": {
+    "submarket": "土城瑞興里，新北市",
+    "medianRentPM2": "$644/m²",
+    "vacancyRate": "5.8%",
+    "yoyRentGrowth": "+2.5%",
+    "assetVsMarket": "本資產租金約低於翻修後市場行情3%，4戶於下次續租時有上調空間。",
+    "capRateBenchmark": "可比資產4.2%–5.8%"
+  }
+}

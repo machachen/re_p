@@ -85,8 +85,8 @@ if (window.bpmI18nAdd) bpmI18nAdd({
   'pf.cmpMetric': '指標',
   'pf.cmpMarketVal': '估計市值',
   'pf.cmpNetEquity': '淨權益',
-  'pf.cmpChenPct': '陳氏家族持份',
-  'pf.cmpChenEquity': '陳氏家族淨權益',
+  'pf.cmpChenPct': '家族持份',
+  'pf.cmpChenEquity': '家族淨權益',
   'pf.cmpHoldStatus': '持有狀況',
   'pf.cmpKeyItems': '近期重點事項',
   // debt table
@@ -195,8 +195,8 @@ if (window.bpmI18nAdd) bpmI18nAdd({
   'pf.cmpMetric': 'Metric',
   'pf.cmpMarketVal': 'Estimated market value',
   'pf.cmpNetEquity': 'Net equity',
-  'pf.cmpChenPct': 'Chen family stake',
-  'pf.cmpChenEquity': 'Chen family net equity',
+  'pf.cmpChenPct': 'Family stake',
+  'pf.cmpChenEquity': 'Family net equity',
   'pf.cmpHoldStatus': 'Ownership status',
   'pf.cmpKeyItems': 'Recent highlights',
   // debt table
@@ -422,7 +422,7 @@ function renderMap(d) {
   const cards = d.assetCards || [];
   const maxVal = Math.max(...cards.map(a => a.value), 1);
   const bubbles = cards.map(a => {
-    const m = meta[a.id] || { x: 320, y: 180 };
+    const m = (a.mapX != null && a.mapY != null) ? { x: a.mapX, y: a.mapY } : (meta[a.id] || { x: 320, y: 180 });
     const r = 14 + 26 * Math.sqrt(a.value / maxVal); // area-ish scaling
     return { ...m, label: a.shortName || a.name, r, peerR: r + 9, mark: fmtCompact(a.value) };
   });

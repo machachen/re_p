@@ -1,0 +1,63 @@
+{
+  "entity": {
+    "name": "蔡天賜（個人持有）",
+    "type": "可撤銷生前信託（個人直接持有）",
+    "ubn": "N/A（個人持有）",
+    "formed": "2016-04-15",
+    "registered": "台灣",
+    "registeredAgent": "信義法律事務所",
+    "taxElection": "個人綜合所得稅（無營業收入，持有稅申報）"
+  },
+  "owners": [
+    {
+      "name": "蔡氏家族",
+      "type": "可撤銷生前信託",
+      "ownershipPct": 100.0,
+      "equityContributed": 548975223,
+      "currentEquityValue": 689996923,
+      "role": "唯一所有人（受益人：陳氏家族成員）",
+      "since": "2013-03-18"
+    }
+  ],
+  "capitalContributions": [
+    {
+      "date": "2013-03-18",
+      "contributor": "蔡氏家族",
+      "amount": 460430832,
+      "type": "取得股權",
+      "note": "預售屋買賣契約簽訂；分期付款"
+    },
+    {
+      "date": "2016-05-20",
+      "contributor": "蔡氏家族",
+      "amount": 0,
+      "type": "交屋入住",
+      "note": "尾款已於預售期程付清"
+    },
+    {
+      "date": "2016-09-01",
+      "contributor": "蔡氏家族",
+      "amount": 88544391,
+      "type": "資本支出出資",
+      "note": "室內裝潢及客製化設施"
+    }
+  ],
+  "totalEquityContributed": 548975223,
+  "debtSummary": [],
+  "capitalStack": {
+    "assetValue": 690000000,
+    "seniorDebt": 0,
+    "equityContributed": 548975223,
+    "accumulatedRetainedEarnings": 0,
+    "netEquity": 690000000,
+    "seniorDebtPct": 0.0,
+    "equityPct": 100.0
+  },
+  "distributions": [],
+  "guaranteesObligations": [],
+  "equityWaterfall": {
+    "description": "個人直接持有，無外部投資人，無貸款，無分配瀑布安排。",
+    "preferredReturn": "N/A",
+    "abovePreferred": "100%歸屬蔡氏家族"
+  }
+}

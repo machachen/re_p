@@ -1,0 +1,244 @@
+{
+  "importantDocuments": [
+    {
+      "name": "加油站租賃合約 — 2023年至2033年",
+      "category": "租賃",
+      "date": "2023-01-01",
+      "type": "PDF",
+      "url": "#",
+      "notes": "現行10年租約。NT$420,000/月。含2.5%租金調漲條款。"
+    },
+    {
+      "name": "臺灣土地銀行貸款合約",
+      "category": "融資",
+      "date": "2006-08-01",
+      "type": "PDF",
+      "url": "#",
+      "notes": "30年期。1.85%固定利率。餘額NT$27,840,648。到期2036年。"
+    },
+    {
+      "name": "2025年不動產鑑價報告",
+      "category": "估值",
+      "date": "2025-10-15",
+      "type": "PDF",
+      "url": "#",
+      "notes": "NT$218,464,293。收益法及市場比較法。"
+    },
+    {
+      "name": "2026年5月資產報告（本文件）",
+      "category": "報告",
+      "date": "2026-05-08",
+      "type": "PDF",
+      "url": "#",
+      "notes": "本期摘要報告。"
+    },
+    {
+      "name": "土地所有權狀",
+      "category": "所有權",
+      "date": "2003-07-15",
+      "type": "PDF",
+      "url": "#",
+      "notes": "地號 板橋區南勢段XXXXXXXX。面積1,607m²。"
+    }
+  ],
+  "library": [
+    {
+      "id": "DOC-001",
+      "name": "土地買賣契約書（2003年）",
+      "category": "取得",
+      "date": "2003-06-20",
+      "source": "履約保證公司",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "原始土地購入契約；NT$21,867,483"
+    },
+    {
+      "id": "DOC-002",
+      "name": "土地交割對帳單",
+      "category": "取得",
+      "date": "2003-07-15",
+      "source": "地政士事務所",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "地政過戶完成對帳單"
+    },
+    {
+      "id": "DOC-003",
+      "name": "土地所有權狀",
+      "category": "所有權",
+      "date": "2003-07-15",
+      "source": "新北市板橋地政事務所",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "地號：板橋區南勢段XXXXXXXX；面積：1,607m²"
+    },
+    {
+      "id": "DOC-004",
+      "name": "建物所有權狀",
+      "category": "所有權",
+      "date": "2006-10-20",
+      "source": "新北市板橋地政事務所",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "地上建物所有權狀；面積：1,282m²"
+    },
+    {
+      "id": "DOC-005",
+      "name": "板橋商業置產有限公司章程",
+      "category": "所有權",
+      "date": "2003-05-20",
+      "source": "信義法律事務所",
+      "relatedSection": "所有權",
+      "type": "PDF",
+      "url": "#",
+      "notes": "設立章程及股東協議"
+    },
+    {
+      "id": "DOC-006",
+      "name": "加油站租賃合約 — 第一期（2008–2023年）",
+      "category": "租賃",
+      "date": "2008-01-01",
+      "source": "加油站福利中心",
+      "relatedSection": "財務",
+      "type": "PDF",
+      "url": "#",
+      "notes": "15年累計租賃歷史紀錄"
+    },
+    {
+      "id": "DOC-007",
+      "name": "加油站租賃合約 — 現行（2023–2033年）",
+      "category": "租賃",
+      "date": "2023-01-01",
+      "source": "加油站福利中心",
+      "relatedSection": "財務",
+      "type": "PDF",
+      "url": "#",
+      "notes": "10年；NT$420,000/月；每2年調漲2.5%"
+    },
+    {
+      "id": "DOC-008",
+      "name": "臺灣土地銀行貸款合約",
+      "category": "融資",
+      "date": "2006-08-01",
+      "source": "臺灣土地銀行板橋分行",
+      "relatedSection": "財務",
+      "type": "PDF",
+      "url": "#",
+      "notes": "原始NT$70,000,000；1.85%固定利率；30年期"
+    },
+    {
+      "id": "DOC-009",
+      "name": "不動產抵押設定契約",
+      "category": "融資",
+      "date": "2006-08-01",
+      "source": "地政士事務所",
+      "relatedSection": "財務",
+      "type": "PDF",
+      "url": "#",
+      "notes": "土地及建物第一順位抵押"
+    },
+    {
+      "id": "DOC-010",
+      "name": "個人連帶保證書 — 蔡氏家族",
+      "category": "融資",
+      "date": "2006-08-01",
+      "source": "臺灣土地銀行",
+      "relatedSection": "財務",
+      "type": "PDF",
+      "url": "#",
+      "notes": "全額連帶保證"
+    },
+    {
+      "id": "DOC-011",
+      "name": "建築執照及使用執照",
+      "category": "法規",
+      "date": "2006-09-30",
+      "source": "新北市工務局",
+      "relatedSection": "總覽",
+      "type": "PDF",
+      "url": "#",
+      "notes": "2006年建物竣工使照"
+    },
+    {
+      "id": "DOC-012",
+      "name": "2025年不動產鑑價報告",
+      "category": "估值",
+      "date": "2025-10-15",
+      "source": "台灣太平洋不動產估價師事務所",
+      "relatedSection": "財務",
+      "type": "PDF",
+      "url": "#",
+      "notes": "NT$218,464,293；收益法及比較法"
+    },
+    {
+      "id": "DOC-013",
+      "name": "2025年度財務報表",
+      "category": "財務",
+      "date": "2026-02-28",
+      "source": "CPA — 陳顧問事務所",
+      "relatedSection": "財務",
+      "type": "PDF",
+      "url": "#",
+      "notes": "已審計"
+    },
+    {
+      "id": "DOC-014",
+      "name": "地籍圖謄本",
+      "category": "圖說",
+      "date": "2026-01-10",
+      "source": "新北市板橋地政事務所",
+      "relatedSection": "總覽",
+      "type": "PDF",
+      "url": "#",
+      "notes": "最新地籍圖謄本"
+    },
+    {
+      "id": "DOC-015",
+      "name": "建物現況照片 — 2026年5月",
+      "category": "圖說",
+      "date": "2026-05-01",
+      "source": "物業管理人",
+      "relatedSection": "總覽",
+      "type": "ZIP",
+      "url": "#",
+      "notes": "外觀及停車場現況照片"
+    },
+    {
+      "id": "DOC-016",
+      "name": "保險單 — 火險及公共意外責任",
+      "category": "廠商",
+      "date": "2025-07-15",
+      "source": "國泰產物保險",
+      "relatedSection": "風險",
+      "type": "PDF",
+      "url": "#",
+      "notes": "2026年7月到期需續約"
+    },
+    {
+      "id": "DOC-017",
+      "name": "消防設備檢查報告 — 2026年3月",
+      "category": "法規",
+      "date": "2026-03-15",
+      "source": "立安消防設備有限公司",
+      "relatedSection": "營運",
+      "type": "PDF",
+      "url": "#",
+      "notes": "符合消防安全規定"
+    },
+    {
+      "id": "DOC-018",
+      "name": "2026年5月資產報告",
+      "category": "報告",
+      "date": "2026-05-08",
+      "source": "Asset Intelligence",
+      "relatedSection": "總覽",
+      "type": "PDF",
+      "url": "#",
+      "notes": "本期報告（本文件）"
+    }
+  ]
+}

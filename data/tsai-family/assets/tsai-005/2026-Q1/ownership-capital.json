@@ -1,0 +1,158 @@
+{
+  "entity": {
+    "name": "蔡氏家族（家族持有）",
+    "type": "台灣有限公司",
+    "ein": "XX-XXXXXXX",
+    "formed": "2019-01-15",
+    "registered": "台灣",
+    "registeredAgent": "信義法律事務所",
+    "taxElection": "法人課稅（營利事業所得稅 20%）"
+  },
+  "owners": [
+    {
+      "name": "蔡氏家族",
+      "type": "可撤銷生前信託",
+      "ownershipPct": 80.0,
+      "equityContributed": 70290923,
+      "currentEquityValue": 113162930,
+      "role": "管理成員",
+      "since": "2019-03-01"
+    },
+    {
+      "name": "蔡氏家族",
+      "type": "私募股權有限合夥",
+      "ownershipPct": 20.0,
+      "equityContributed": 17572731,
+      "currentEquityValue": 28290733,
+      "role": "被動投資人",
+      "since": "2019-03-01"
+    }
+  ],
+  "capitalContributions": [
+    {
+      "date": "2019-03-01",
+      "contributor": "蔡氏家族",
+      "amount": 63182852,
+      "type": "取得股權",
+      "note": "交割時初始股權"
+    },
+    {
+      "date": "2019-03-01",
+      "contributor": "蔡氏家族",
+      "amount": 15795713,
+      "type": "取得股權",
+      "note": "共同投資人股權"
+    },
+    {
+      "date": "2021-06-10",
+      "contributor": "蔡氏家族",
+      "amount": 4738714,
+      "type": "資本支出出資",
+      "note": "第一期戶型翻修計畫"
+    },
+    {
+      "date": "2021-06-10",
+      "contributor": "蔡氏家族",
+      "amount": 1184678,
+      "type": "資本支出出資",
+      "note": "第一期戶型翻修計畫"
+    },
+    {
+      "date": "2024-02-20",
+      "contributor": "蔡氏家族",
+      "amount": 2369357,
+      "type": "資本支出出資",
+      "note": "外牆及公共區域升級"
+    },
+    {
+      "date": "2024-02-20",
+      "contributor": "蔡氏家族",
+      "amount": 592339,
+      "type": "資本支出出資",
+      "note": "外牆及公共區域升級"
+    }
+  ],
+  "totalEquityContributed": 87863654,
+  "debtSummary": [
+    {
+      "id": "D-001",
+      "lender": "兆豐銀行",
+      "type": "商業不動產抵押貸款",
+      "originalBalance": 155136468,
+      "currentBalance": 140597619,
+      "interestRate": "2.25%",
+      "rateType": "固定",
+      "maturityDate": "2026-10-01",
+      "monthlyPayment": 698262,
+      "annualDebtService": 8379153,
+      "ltv": "49.8%",
+      "dscr": "2.00x",
+      "covenants": "DSCR ≥ 1.25x；LTV ≤ 65%",
+      "guarantor": "蔡氏家族（個人連帶保證）",
+      "collateral": "不動產第一順位抵押權",
+      "status": "Current"
+    }
+  ],
+  "capitalStack": {
+    "assetValue": 282051282,
+    "seniorDebt": 140597619,
+    "equityContributed": 87863654,
+    "accumulatedRetainedEarnings": 5198020,
+    "netEquity": 141453663,
+    "seniorDebtPct": 49.8,
+    "equityPct": 50.2
+  },
+  "distributions": [
+    {
+      "date": "2021-12-15",
+      "amount": 2221272,
+      "type": "年度分配",
+      "chenShare": 756000,
+      "pacificShare": 189000
+    },
+    {
+      "date": "2022-12-20",
+      "amount": 3060419,
+      "type": "年度分配",
+      "chenShare": 1041600,
+      "pacificShare": 260400
+    },
+    {
+      "date": "2023-12-18",
+      "amount": 3702120,
+      "type": "年度分配",
+      "chenShare": 1260000,
+      "pacificShare": 315000
+    },
+    {
+      "date": "2024-12-16",
+      "amount": 4343821,
+      "type": "年度分配",
+      "chenShare": 1478400,
+      "pacificShare": 369600
+    },
+    {
+      "date": "2025-12-12",
+      "amount": 4738714,
+      "type": "年度分配",
+      "chenShare": 1612800,
+      "pacificShare": 403200
+    }
+  ],
+  "guaranteesObligations": [
+    {
+      "type": "個人連帶保證",
+      "obligor": "蔡氏家族",
+      "beneficiary": "兆豐銀行",
+      "amount": 140597619,
+      "description": "優先抵押貸款全額連帶保證。當LTV降至40%以下或貸款清償時，保證責任解除。",
+      "expiryDate": "2026-10-01",
+      "status": "Active"
+    }
+  ],
+  "equityWaterfall": {
+    "description": "按比例分配（80/20），蔡氏家族8%優先報酬後按此比例分配。無超額收益條款。",
+    "preferredReturn": "蔡氏家族享8% IRR優先報酬",
+    "abovePreferred": "80/20分配"
+  }
+}
