@@ -783,8 +783,9 @@ input, select, textarea { font-family: inherit; }
 }
 
 /* ── Admin console + view-as bar ─────────────────────────── */
-.admin-shell { display:grid; grid-template-rows: var(--topbar-h) 1fr var(--footer-h); min-height:100vh; }
-.admin-main { overflow:auto; padding:28px 32px 40px; width:100%; max-width:1180px; margin:0 auto; }
+.admin-shell { display:flex; flex-direction:column; min-height:100vh; }
+.admin-shell > .topbar, .admin-shell > .app-foot { flex:none; }
+.admin-main { flex:1 1 auto; padding:28px 32px 40px; width:100%; max-width:1180px; margin:0 auto; }
 .admin-client-card { display:flex; flex-direction:column; gap:16px; }
 .admin-client-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
 .admin-client-name { font-family:var(--font-display); font-size:20px; letter-spacing:-0.01em; color:var(--ink); margin-top:2px; }
